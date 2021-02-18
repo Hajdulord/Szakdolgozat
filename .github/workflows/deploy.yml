@@ -10,7 +10,7 @@ jobs:
   doxydeploy:
     name: Doxy deploy
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: github.ref == 'refs/heads/main' && github.event.workflow_run.conclusion == 'success'
     steps:
       - uses: actions/checkout@v2
         with:
