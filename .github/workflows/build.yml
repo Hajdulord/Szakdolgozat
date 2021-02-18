@@ -1,18 +1,38 @@
+  
 name: Build
-on: [push]
+on:
+ workflow_run:
+  workflows: ["Test"]
+  branches: [main]
+  types: 
+    - completed
 
+env:
+ UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  
 jobs:
-  activation:
-    name: Request manual activation file 🔑
+  buildForSomePlatforms:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2020.2.3f1
+        targetPlatform:
+          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+    if: github.ref == 'refs/heads/main' && ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Request manual activation file
-        id: getManualLicenseFile
-        uses: webbertakken/unity-request-manual-activation-file@v2.0-alpha-1
+      - uses: actions/checkout@v2
         with:
-          unityVersion: 2020.2.3f1
-      - name: Expose as artifact
-        uses: actions/upload-artifact@v2
+          lfs: true
+      - uses: webbertakken/unity-builder@v2.0-alpha-6
         with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          versioning: Semantic
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: build
