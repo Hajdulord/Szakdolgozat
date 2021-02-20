@@ -5,7 +5,7 @@ using UnityEngine;
 namespace HMF.Thesis.Player
 {
     /// This class is used for storing the player's data.
-    public class Player : MonoBehaviour
+    public class PlayerItems : MonoBehaviour
     {
         [SerializeField] private int _health = 5; ///< The player's health.
         [SerializeField] private int _speed = 10; ///< The player's speed.
@@ -22,14 +22,14 @@ namespace HMF.Thesis.Player
         public int Speed
         {
             get{ return Mathf.Max(0, _speed); }
-            private set{ _speed = Mathf.Max(0, value); }
+            set{ _speed = Mathf.Max(0, value); }
         }
 
         /// Public property for JumpForce.
         public int JumpForce
         {
             get{ return Mathf.Max(0, _jumpForce); }
-            private set{ _speed = Mathf.Max(0, _jumpForce); }
+            set{ _jumpForce = Mathf.Max(0, value); }
         }
     }
 }

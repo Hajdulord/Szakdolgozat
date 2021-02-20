@@ -8,11 +8,11 @@ namespace HMF.Thesis.Player
     /// Input Controller that parse the player input.
     /// This class has the methodes for the Input system to call when an input action is performed.
     [RequireComponent(typeof(PlayerInput))]
-    [RequireComponent(typeof(Player))]
+    [RequireComponent(typeof(PlayerItems))]
     public class InputController : MonoBehaviour
     {
         [Header("Serialized Fields")]
-        [SerializeField] private Player _player = null!; ///< The player's active data. Needed for interacting with the Player.
+        [SerializeField] private PlayerItems _player = null!; ///< The player's active data. Needed for interacting with the Player.
 
         /// Sets the falg to enter the Jump sate.
         /*!
