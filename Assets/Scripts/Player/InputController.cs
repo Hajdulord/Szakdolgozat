@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 //! Needs Unit Tests!
+//! Create interface for it for Testing!
 namespace HMF.Thesis.Player
 {
     /// Input Controller that parse the player input.

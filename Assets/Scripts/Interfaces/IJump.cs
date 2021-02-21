@@ -1,6 +1,6 @@
 namespace HMF.Thesis.Interfaces
 {
-    //! Decide if it has more logic!
+    //! Refactor to has functions to implement Jump logic
     /// Interface for the objects that can Jump
     public interface IJump
     {

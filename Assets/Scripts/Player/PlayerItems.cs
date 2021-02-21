@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using HMF.Thesis.Interfaces;
 
+//! Refactor
+// TODO: Create an ICharacter and Impelent a Character Script!
 namespace HMF.Thesis.Player
 {
     /// This class is used for storing the player's data.
@@ -11,7 +13,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private int _health = 5; ///< The player's health.
         [SerializeField] private int _speed = 10; ///< The player's speed.
 
-        //? Decide if it is implemented here or in a different class!
+        //! Implement a Jump class!
         [SerializeField] private int _jumpForce = 5; ///< The player's jump force. 
 
         /// Public property for Health.
@@ -28,7 +30,7 @@ namespace HMF.Thesis.Player
             set{ _speed = Mathf.Max(0, value); }
         }
 
-        //? Decide if it is implemented here or in a different class!
+        //! Implement a Jump class!
         /// Public property for JumpForce. 
         public int JumpForce
         {
