@@ -224,19 +224,25 @@ var assemblies = [
   {
     "name": "Assembly-CSharp",
     "classes": [
-      { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 132, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 77, "cal": 77, "tl": 241, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
+  {
+    "name": "EffectorAssembly",
+    "classes": [
+      { "name": "HMF.Thesis.Effectors.Damageable", "rp": "EffectorAssembly_Damageable.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "PlayerAssembly",
     "classes": [
-      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 53, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerItems", "rp": "PlayerAssembly_PlayerItems.html", "cl": 8, "ucl": 1, "cal": 9, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 22, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 55, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerItems", "rp": "PlayerAssembly_PlayerItems.html", "cl": 9, "ucl": 0, "cal": 9, "tl": 41, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 24, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Tests",
     "classes": [
-      { "name": "HMF.Thesis.Tests.PlayerTest", "rp": "Tests_PlayerTest.html", "cl": 25, "ucl": 0, "cal": 25, "tl": 67, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Tests.DamageableTest", "rp": "Tests_DamageableTest.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Tests.PlayerTest", "rp": "Tests_PlayerTest.html", "cl": 30, "ucl": 0, "cal": 30, "tl": 83, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
