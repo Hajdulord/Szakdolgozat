@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>02/21/2021 - 08:25:00</Generatedon>
+    <Generatedon>02/21/2021 - 08:25:21</Generatedon>
     <Parser>OpenCoverParser</Parser>
-    <Assemblies>2</Assemblies>
-    <Classes>2</Classes>
-    <Files>2</Files>
-    <Coveredlines>5</Coveredlines>
-    <Uncoveredlines>53</Uncoveredlines>
-    <Coverablelines>58</Coverablelines>
-    <Totallines>157</Totallines>
-    <Linecoverage>8.6</Linecoverage>
+    <Assemblies>3</Assemblies>
+    <Classes>5</Classes>
+    <Files>5</Files>
+    <Coveredlines>33</Coveredlines>
+    <Uncoveredlines>67</Uncoveredlines>
+    <Coverablelines>100</Coverablelines>
+    <Totallines>309</Totallines>
+    <Linecoverage>33</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
@@ -18,8 +18,13 @@
     <Assembly name="Assembly-CSharp" classes="1" coverage="0" coveredlines="0" coverablelines="53" totallines="132" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Controls" coverage="0" coveredlines="0" coverablelines="53" totallines="132" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Tests" classes="1" coverage="100" coveredlines="5" coverablelines="5" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="TempTest" coverage="100" coveredlines="5" coverablelines="5" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="PlayerAssembly" classes="3" coverage="36.3" coveredlines="8" coverablelines="22" totallines="110" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Player.InputController" coverage="0" coveredlines="0" coverablelines="9" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.PlayerItems" coverage="88.8" coveredlines="8" coverablelines="9" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="4" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+    <Assembly name="Tests" classes="1" coverage="100" coveredlines="25" coverablelines="25" totallines="67" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Tests.PlayerTest" coverage="100" coveredlines="25" coverablelines="25" totallines="67" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
   </Coverage>
 </CoverageReport>

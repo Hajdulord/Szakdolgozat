@@ -227,9 +227,16 @@ var assemblies = [
       { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 132, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
+    "name": "PlayerAssembly",
+    "classes": [
+      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 53, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerItems", "rp": "PlayerAssembly_PlayerItems.html", "cl": 8, "ucl": 1, "cal": 9, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 22, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
+  {
     "name": "Tests",
     "classes": [
-      { "name": "TempTest", "rp": "Tests_TempTest.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Tests.PlayerTest", "rp": "Tests_PlayerTest.html", "cl": 25, "ucl": 0, "cal": 25, "tl": 67, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
