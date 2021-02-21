@@ -1,0 +1,50 @@
+name: Test
+on:
+ push:
+    branches:
+      - develop
+      - main
+ pull_request:
+    branches:
+      - develop
+      - main
+
+env:
+ UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  
+jobs:
+ testAllModes:
+    name: Test in ${{ matrix.testMode }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - ./
+        unityVersion:
+          - 2020.2.3f1
+        testMode:
+          - playmode
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - uses: webbertakken/unity-test-runner@v2.0-alpha-2
+        id: tests
+        with:
+          customParameters: -nographics -debugCodeOptimization -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;generateHtmlReport;generateBadgeReport; #nographics needed for proper run - known bug 
+          unityVersion: ${{ matrix.unityVersion }}
+          projectPath: ${{ matrix.projectPath }}
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+      - name: Code Coverage
+        uses: s0/git-publish-subdir-action@v2.4.0
+        env:
+         REPO: self
+         BRANCH: codeCoverage
+         FOLDER: CodeCoverage
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}

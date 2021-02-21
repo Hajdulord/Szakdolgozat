@@ -1,0 +1,28 @@
+name: Doxy Deploy
+on:
+ workflow_run:
+  workflows: ["Build"]
+  branches: [main]
+  types: 
+    - completed
+    
+jobs: 
+  doxydeploy:
+    name: Doxy deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event.workflow_run.conclusion == 'success'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          working-directory: .
+          doxyfile-path: ./doxygen/Doxyfile
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./html
+          allow_empty_commit: true
+          enable_jekyll: true
