@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.Player
 {
     /// This class is used for storing the player's data.
-    public class PlayerItems : MonoBehaviour
+    public class PlayerItems : MonoBehaviour, IEntity 
     {
         [SerializeField] private int _health = 5; ///< The player's health.
         [SerializeField] private int _speed = 10; ///< The player's speed.
@@ -15,7 +16,7 @@ namespace HMF.Thesis.Player
         public int Health
         {
             get{ return Mathf.Max(0, _health); }
-            private set{ _health = Mathf.Max(0, value); }
+            set{ _health = Mathf.Max(0, value); }
         }
         
         /// Public property for Speed.

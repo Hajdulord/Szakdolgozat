@@ -20,7 +20,7 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-            
+
         }
 
         /// Sets the falg to enter the Move sate.

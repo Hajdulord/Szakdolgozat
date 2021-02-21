@@ -18,7 +18,17 @@ namespace HMF.Thesis.Tests
 
             dummy.AddComponent<PlayerItems>();
 
-            Assert.AreEqual(5, dummy.GetComponent<PlayerItems>().Health);
+            var playerItem = dummy.GetComponent<PlayerItems>();
+
+            Assert.AreEqual(5, playerItem.Health);
+
+            playerItem.Speed = 4;
+
+            Assert.AreEqual(4, playerItem.Health);
+
+            playerItem.Speed = -4;
+
+            Assert.AreEqual(0, playerItem.Health);
         }
 
         /// Testing property logic of Speed
