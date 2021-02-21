@@ -14,23 +14,37 @@ namespace HMF.Thesis.Tests
         [Test]
         public void HealthTest()
         {
-            GameObject dummy = new GameObject();
-
-            dummy.AddComponent<PlayerItems>();
-
-            Assert.AreEqual(5, dummy.GetComponent<PlayerItems>().Health);
-        }
-
-        /// Testing property logic of Speed
-        [Test]
-        public void SpeedTest()
-        {
+            //* Setup
             GameObject dummy = new GameObject();
 
             dummy.AddComponent<PlayerItems>();
 
             var playerItem = dummy.GetComponent<PlayerItems>();
 
+            //* Testing
+            Assert.AreEqual(5, playerItem.Health);
+
+            playerItem.Speed = 4;
+
+            Assert.AreEqual(4, playerItem.Health);
+
+            playerItem.Speed = -4;
+
+            Assert.AreEqual(0, playerItem.Health);
+        }
+
+        /// Testing property logic of Speed
+        [Test]
+        public void SpeedTest()
+        {
+            //* Setup
+            GameObject dummy = new GameObject();
+
+            dummy.AddComponent<PlayerItems>();
+
+            var playerItem = dummy.GetComponent<PlayerItems>();
+
+            //* Testing
             Assert.AreEqual(10, playerItem.Speed);
 
             playerItem.Speed = 4;
@@ -46,12 +60,14 @@ namespace HMF.Thesis.Tests
         [Test]
         public void JumpForceTest()
         {
+            //* Setup
             GameObject dummy = new GameObject();
 
             dummy.AddComponent<PlayerItems>();
 
             var playerItem = dummy.GetComponent<PlayerItems>();
 
+            //* Testing
             Assert.AreEqual(5, playerItem.JumpForce);
 
             playerItem.JumpForce = 4;

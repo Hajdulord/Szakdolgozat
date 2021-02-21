@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//! Needs Unit Tests!
+//! Create interface for it for Testing!
 namespace HMF.Thesis.Player
 {
     /// Input Controller that parse the player input.
@@ -20,7 +22,7 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-            
+
         }
 
         /// Sets the falg to enter the Move sate.
