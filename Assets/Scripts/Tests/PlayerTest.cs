@@ -14,12 +14,14 @@ namespace HMF.Thesis.Tests
         [Test]
         public void HealthTest()
         {
+            //* Setup
             GameObject dummy = new GameObject();
 
             dummy.AddComponent<PlayerItems>();
 
             var playerItem = dummy.GetComponent<PlayerItems>();
 
+            //* Testing
             Assert.AreEqual(5, playerItem.Health);
 
             playerItem.Speed = 4;
@@ -35,12 +37,14 @@ namespace HMF.Thesis.Tests
         [Test]
         public void SpeedTest()
         {
+            //* Setup
             GameObject dummy = new GameObject();
 
             dummy.AddComponent<PlayerItems>();
 
             var playerItem = dummy.GetComponent<PlayerItems>();
 
+            //* Testing
             Assert.AreEqual(10, playerItem.Speed);
 
             playerItem.Speed = 4;
@@ -56,12 +60,14 @@ namespace HMF.Thesis.Tests
         [Test]
         public void JumpForceTest()
         {
+            //* Setup
             GameObject dummy = new GameObject();
 
             dummy.AddComponent<PlayerItems>();
 
             var playerItem = dummy.GetComponent<PlayerItems>();
 
+            //* Testing
             Assert.AreEqual(5, playerItem.JumpForce);
 
             playerItem.JumpForce = 4;

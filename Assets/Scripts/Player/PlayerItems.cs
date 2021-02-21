@@ -6,11 +6,13 @@ using HMF.Thesis.Interfaces;
 namespace HMF.Thesis.Player
 {
     /// This class is used for storing the player's data.
-    public class PlayerItems : MonoBehaviour, IEntity 
+    public class PlayerItems : MonoBehaviour, IEntity, IJump
     {
         [SerializeField] private int _health = 5; ///< The player's health.
         [SerializeField] private int _speed = 10; ///< The player's speed.
-        [SerializeField] private int _jumpForce = 5; ///< The player's jump force.
+
+        //? Decide if it is implemented here or in a different class!
+        [SerializeField] private int _jumpForce = 5; ///< The player's jump force. 
 
         /// Public property for Health.
         public int Health
@@ -26,7 +28,8 @@ namespace HMF.Thesis.Player
             set{ _speed = Mathf.Max(0, value); }
         }
 
-        /// Public property for JumpForce.
+        //? Decide if it is implemented here or in a different class!
+        /// Public property for JumpForce. 
         public int JumpForce
         {
             get{ return Mathf.Max(0, _jumpForce); }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 
+//! Needs Unit Testing!
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 

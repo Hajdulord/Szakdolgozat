@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace HMF.Thesis.Interfaces
 {
     /// The Interface for all object that are Interactable.
@@ -12,7 +8,6 @@ namespace HMF.Thesis.Interfaces
         int Health {get; set;} 
         /// Speed of the object.
         int Speed {get; set;} 
-        /// Jump Force of the object.
-        int JumpForce {get; set;} 
+         
     }
 }

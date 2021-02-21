@@ -1,8 +1,9 @@
 {
-    "name": "InterfacesAssembly",
-    "rootNamespace": "HMF.Thesis.Interfaces",
+    "name": "EffectorAssembly",
+    "rootNamespace": "HMF.Thesis.Effectors",
     "references": [
-        "GUID:d365c8a574a25714da0f1dc6da745997"
+        "GUID:d365c8a574a25714da0f1dc6da745997",
+        "GUID:4e4c1ff0517b97e43880a5ac48269532"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
