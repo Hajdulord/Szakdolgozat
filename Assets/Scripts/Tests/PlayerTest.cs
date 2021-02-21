@@ -24,11 +24,11 @@ namespace HMF.Thesis.Tests
             //* Testing
             Assert.AreEqual(5, playerItem.Health);
 
-            playerItem.Speed = 4;
+            playerItem.Health = 4;
 
             Assert.AreEqual(4, playerItem.Health);
 
-            playerItem.Speed = -4;
+            playerItem.Health = -4;
 
             Assert.AreEqual(0, playerItem.Health);
         }
