@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using HMF.Thesis.Interfaces;
 
 //! Needs Unit Tests!
-//! Create interface for it for Testing!
 namespace HMF.Thesis.Player
 {
     /// Input Controller that parse the player input.
     /// This class has the methodes for the Input system to call when an input action is performed.
     [RequireComponent(typeof(PlayerInput))]
-    [RequireComponent(typeof(PlayerItems))]
-    public class InputController : MonoBehaviour
+    public class InputController : MonoBehaviour, IInputController
     {
-        [Header("Serialized Fields")]
-        [SerializeField] private PlayerItems _player = null!; ///< The player's active data. Needed for interacting with the Player.
 
         /// Sets the falg to enter the Jump sate.
         /*!

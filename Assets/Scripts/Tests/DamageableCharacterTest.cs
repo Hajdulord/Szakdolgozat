@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using HMF.Thesis.Player;
 using HMF.Thesis.Effectors;
+using HMF.Thesis.ScriptableObjects;
+using Moq;
 
 namespace HMF.Thesis.Tests
 {
     /// Tets for the Damageable class.
-    public class DamageableTest
+    public class DamageableCharacterTest
     {
         /// Test for TakeDamage without an input damage.
         [Test]
@@ -17,8 +18,14 @@ namespace HMF.Thesis.Tests
         {
             //* Setup
             var dummyGameObject = new GameObject();
-            var player = dummyGameObject.AddComponent<PlayerItems>();
-            var damageable = dummyGameObject.AddComponent<Damageable>();
+            var player = dummyGameObject.AddComponent<Character>();
+            var characterData = ScriptableObject.CreateInstance<CharacterData>();
+            characterData.maxHealth = 5;
+            player.CharacterData = characterData;
+
+            var damageable = dummyGameObject.AddComponent<DamageableCharacter>();
+
+            player.Health = 5;
 
             //* Testing
             Assert.AreEqual(5, player.Health);
@@ -34,8 +41,14 @@ namespace HMF.Thesis.Tests
         {
             //* Setup
             var dummyGameObject = new GameObject();
-            var player = dummyGameObject.AddComponent<PlayerItems>();
-            var damageable = dummyGameObject.AddComponent<Damageable>();
+            var player = dummyGameObject.AddComponent<Character>();
+            var characterData = ScriptableObject.CreateInstance<CharacterData>();
+            characterData.maxHealth = 5;
+            player.CharacterData = characterData;
+
+            var damageable = dummyGameObject.AddComponent<DamageableCharacter>();
+
+            player.Health = 5;
 
             //* Testing
             Assert.AreEqual(5, player.Health);

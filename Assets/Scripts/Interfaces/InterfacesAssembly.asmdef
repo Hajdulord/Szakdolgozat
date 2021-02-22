@@ -2,7 +2,8 @@
     "name": "InterfacesAssembly",
     "rootNamespace": "HMF.Thesis.Interfaces",
     "references": [
-        "GUID:d365c8a574a25714da0f1dc6da745997"
+        "GUID:d365c8a574a25714da0f1dc6da745997",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
