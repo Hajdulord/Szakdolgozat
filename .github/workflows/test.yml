@@ -30,7 +30,7 @@ jobs:
         with:
           lfs: true
       - name: hash test
-        run: ${{ hashFiles('Packages/package-lock.json') }}
+        run: cat ${{ hashFiles('Packages/package-lock.json') }}
       - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
