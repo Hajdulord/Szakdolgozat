@@ -224,27 +224,12 @@ var assemblies = [
   {
     "name": "Assembly-CSharp",
     "classes": [
-      { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 77, "cal": 77, "tl": 241, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
-    "name": "EffectorAssembly",
-    "classes": [
-      { "name": "HMF.Thesis.Effectors.Character", "rp": "EffectorAssembly_Character.html", "cl": 8, "ucl": 4, "cal": 12, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.DamageableCharacter", "rp": "EffectorAssembly_DamageableCharacter.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.Jumping", "rp": "EffectorAssembly_Jumping.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.Movable", "rp": "EffectorAssembly_Movable.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
-    "name": "PlayerAssembly",
-    "classes": [
-      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 52, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 24, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 132, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Tests",
     "classes": [
-      { "name": "HMF.Thesis.Tests.CharacterTest", "rp": "Tests_CharacterTest.html", "cl": 39, "ucl": 0, "cal": 39, "tl": 92, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Tests.DamageableCharacterTest", "rp": "Tests_DamageableCharacterTest.html", "cl": 24, "ucl": 0, "cal": 24, "tl": 61, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "TempTest", "rp": "Tests_TempTest.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
