@@ -32,8 +32,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}
+          key: Library-${{ matrix.projectPath }}-test
           restore-keys: |
+            Library-${{ matrix.projectPath }}-
             Library-
       - uses: webbertakken/unity-test-runner@v2.0-alpha-2
         id: tests
