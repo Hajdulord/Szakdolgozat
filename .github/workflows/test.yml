@@ -32,8 +32,9 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}-test
+          key: Library-${{ matrix.projectPath }}-test-${{ hashFiles('Packages/package-lock.json') }}
           restore-keys: |
+            Library-${{ matrix.projectPath }}-test-
             Library-${{ matrix.projectPath }}-
             Library-
       - uses: webbertakken/unity-test-runner@v2.0-alpha-2
