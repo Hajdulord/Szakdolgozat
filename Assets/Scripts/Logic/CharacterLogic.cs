@@ -8,7 +8,7 @@ namespace HMF.Thesis.Logic
     public class CharacterLogic : ICharacter
     {
         private int _health; ///< The Current health of the Character.
-        private CharacterData _characterData = null; ///< The data of the Character.
+        private CharacterData _characterData = null!; ///< The data of the Character.
 
         /// Basic constructor with CharacterData as data
         /*!
