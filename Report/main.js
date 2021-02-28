@@ -222,18 +222,6 @@ for (i = 0, l = charts.length; i < l; i++) {
 
 var assemblies = [
   {
-    "name": "Assembly-CSharp",
-    "classes": [
-      { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 77, "cal": 77, "tl": 241, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
-    "name": "ComponentsAssembly",
-    "classes": [
-      { "name": "HMF.Thesis.Components.CharacterComponent", "rp": "ComponentsAssembly_CharacterComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 27, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Components.DamageableCharacterComponent", "rp": "ComponentsAssembly_DamageableCharacterComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Components.MoveComponent", "rp": "ComponentsAssembly_MoveComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 26, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
     "name": "LogicAssembly",
     "classes": [
       { "name": "HMF.Thesis.Logic.CharacterLogic", "rp": "LogicAssembly_CharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -245,12 +233,6 @@ var assemblies = [
     "classes": [
       { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 52, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 24, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
-    "name": "Tests",
-    "classes": [
-      { "name": "HMF.Thesis.Tests.CharacterLogicTest", "rp": "Tests_CharacterLogicTest.html", "cl": 48, "ucl": 0, "cal": 48, "tl": 131, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Tests.DamageableCharacterLogicTest", "rp": "Tests_DamageableCharacterLogicTest.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 52, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 

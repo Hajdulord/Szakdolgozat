@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>02/28/2021 - 19:15:05</Generatedon>
+    <Generatedon>02/28/2021 - 19:26:47</Generatedon>
     <Parser>OpenCoverParser</Parser>
-    <Assemblies>5</Assemblies>
-    <Classes>11</Classes>
-    <Files>11</Files>
-    <Coveredlines>82</Coveredlines>
-    <Uncoveredlines>124</Uncoveredlines>
-    <Coverablelines>206</Coverablelines>
-    <Totallines>712</Totallines>
-    <Linecoverage>39.8</Linecoverage>
+    <Assemblies>2</Assemblies>
+    <Classes>5</Classes>
+    <Files>5</Files>
+    <Coveredlines>20</Coveredlines>
+    <Uncoveredlines>29</Uncoveredlines>
+    <Coverablelines>49</Coverablelines>
+    <Totallines>210</Totallines>
+    <Linecoverage>40.8</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Assembly-CSharp" classes="1" coverage="0" coveredlines="0" coverablelines="77" totallines="241" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="Controls" coverage="0" coveredlines="0" coverablelines="77" totallines="241" branchcoverage="" coveredbranches="0" totalbranches="0" />
-    </Assembly>
-    <Assembly name="ComponentsAssembly" classes="3" coverage="0" coveredlines="0" coverablelines="18" totallines="78" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Components.CharacterComponent" coverage="0" coveredlines="0" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Components.DamageableCharacterComponent" coverage="0" coveredlines="0" coverablelines="6" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Components.MoveComponent" coverage="0" coveredlines="0" coverablelines="6" totallines="26" branchcoverage="" coveredbranches="0" totalbranches="0" />
-    </Assembly>
     <Assembly name="LogicAssembly" classes="3" coverage="54" coveredlines="20" coverablelines="37" totallines="134" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Logic.CharacterLogic" coverage="100" coveredlines="10" coverablelines="10" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Logic.DamageableCharacterLogic" coverage="100" coveredlines="10" coverablelines="10" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -31,10 +23,6 @@
     <Assembly name="PlayerAssembly" classes="2" coverage="0" coveredlines="0" coverablelines="12" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Player.InputController" coverage="0" coveredlines="0" coverablelines="8" totallines="52" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="4" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
-    </Assembly>
-    <Assembly name="Tests" classes="2" coverage="100" coveredlines="62" coverablelines="62" totallines="183" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Tests.CharacterLogicTest" coverage="100" coveredlines="48" coverablelines="48" totallines="131" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Tests.DamageableCharacterLogicTest" coverage="100" coveredlines="14" coverablelines="14" totallines="52" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
   </Coverage>
 </CoverageReport>
