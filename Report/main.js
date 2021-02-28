@@ -227,12 +227,18 @@ var assemblies = [
       { "name": "Controls", "rp": "Assembly_CSharp_Controls.html", "cl": 0, "ucl": 77, "cal": 77, "tl": 241, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
-    "name": "EffectorAssembly",
+    "name": "ComponentsAssembly",
     "classes": [
-      { "name": "HMF.Thesis.Effectors.Character", "rp": "EffectorAssembly_Character.html", "cl": 8, "ucl": 4, "cal": 12, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.DamageableCharacter", "rp": "EffectorAssembly_DamageableCharacter.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.Jumping", "rp": "EffectorAssembly_Jumping.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Effectors.Movable", "rp": "EffectorAssembly_Movable.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Components.CharacterComponent", "rp": "ComponentsAssembly_CharacterComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 27, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Components.DamageableCharacterComponent", "rp": "ComponentsAssembly_DamageableCharacterComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 25, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Components.MoveComponent", "rp": "ComponentsAssembly_MoveComponent.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 26, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
+  {
+    "name": "LogicAssembly",
+    "classes": [
+      { "name": "HMF.Thesis.Logic.CharacterLogic", "rp": "LogicAssembly_CharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "LogicAssembly_DamageableCharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "LogicAssembly_MoveLogic.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 65, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "PlayerAssembly",
@@ -243,8 +249,8 @@ var assemblies = [
   {
     "name": "Tests",
     "classes": [
-      { "name": "HMF.Thesis.Tests.CharacterTest", "rp": "Tests_CharacterTest.html", "cl": 39, "ucl": 0, "cal": 39, "tl": 92, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Tests.DamageableCharacterTest", "rp": "Tests_DamageableCharacterTest.html", "cl": 24, "ucl": 0, "cal": 24, "tl": 61, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Tests.CharacterLogicTest", "rp": "Tests_CharacterLogicTest.html", "cl": 48, "ucl": 0, "cal": 48, "tl": 131, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Tests.DamageableCharacterLogicTest", "rp": "Tests_DamageableCharacterLogicTest.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 52, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
