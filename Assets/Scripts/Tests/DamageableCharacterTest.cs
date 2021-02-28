@@ -3,59 +3,50 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using HMF.Thesis.Effectors;
 using HMF.Thesis.ScriptableObjects;
+using HMF.Thesis.Logic;
+using HMF.Thesis.Interfaces;
 using Moq;
 
 namespace HMF.Thesis.Tests
 {
     /// Tets for the Damageable class.
-    public class DamageableCharacterTest
+    public class DamageableCharacterLogicTest
     {
         /// Test for TakeDamage without an input damage.
         [Test]
-        public void TakeDamageTest()
+        public void TakeDamage()
         {
             //* Setup
-            var dummyGameObject = new GameObject();
-            var player = dummyGameObject.AddComponent<Character>();
-            var characterData = ScriptableObject.CreateInstance<CharacterData>();
-            characterData.maxHealth = 5;
-            player.CharacterData = characterData;
+            var characterMoq = new Mock<ICharacter>();
+            characterMoq.SetupProperty(e => e.Health, 5);
 
-            var damageable = dummyGameObject.AddComponent<DamageableCharacter>();
+            var damageable = new DamageableCharacterLogic(characterMoq.Object);
 
-            player.Health = 5;
-
-            //* Testing
-            Assert.AreEqual(5, player.Health);
-
+            //* Affect
             damageable.TakeDamage();
 
-            Assert.AreEqual(4, player.Health);
+            //* Testing
+            Assert.AreEqual(4, characterMoq.Object.Health);
+            
         }
 
         /// Test for TakeDamage with an input damage.
         [Test]
-        public void TakeDamageWithInputTest()
+        public void TakeDamageWithInputParameter()
         {
             //* Setup
-            var dummyGameObject = new GameObject();
-            var player = dummyGameObject.AddComponent<Character>();
-            var characterData = ScriptableObject.CreateInstance<CharacterData>();
-            characterData.maxHealth = 5;
-            player.CharacterData = characterData;
+            var characterMoq = new Mock<ICharacter>();
+            characterMoq.SetupProperty(e => e.Health, 5);
 
-            var damageable = dummyGameObject.AddComponent<DamageableCharacter>();
+            var damageable = new DamageableCharacterLogic(characterMoq.Object);
 
-            player.Health = 5;
-
-            //* Testing
-            Assert.AreEqual(5, player.Health);
-
+            //* Affect
             damageable.TakeDamage(2);
 
-            Assert.AreEqual(3, player.Health);
+            //* Testing
+            Assert.AreEqual(3, characterMoq.Object.Health);
+            
         }
     }
 }

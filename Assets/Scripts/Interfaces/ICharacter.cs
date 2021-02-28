@@ -15,5 +15,8 @@ namespace HMF.Thesis.Interfaces
 
         /// The name of the Character.
         string CharacterName {get;}
+
+        /// The Sprite of the Character.
+        Sprite CharacterSprite{get;}
     }
 }

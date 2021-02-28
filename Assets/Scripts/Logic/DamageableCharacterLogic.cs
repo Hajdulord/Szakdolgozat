@@ -1,14 +1,20 @@
-using UnityEngine;
 using HMF.Thesis.Interfaces;
 
-namespace HMF.Thesis.Effectors
+namespace HMF.Thesis.Logic
 {
     /// A class for objects that are damageable.
-    [RequireComponent(typeof(Character))]
-    public class DamageableCharacter : MonoBehaviour, IDamageable
+    public class DamageableCharacterLogic : IDamageable
     {
-        [Header("Serializable Fields")]
-        [SerializeField] private ICharacter _character = null!; ///< The Character's health comes from here.
+        private ICharacter _character; ///< The Character's health comes from here.
+
+        /// public Constructor where I set the character's value.
+        /*!
+        \param character is a ICharacter, we need this to access the health of the Character.
+        */
+        public DamageableCharacterLogic(ICharacter character)
+        {
+            _character = character;
+        }
 
         /// Reduces the Health of the Character by one.
         public void TakeDamage()
@@ -24,12 +30,5 @@ namespace HMF.Thesis.Effectors
         {
             _character.Health -= damage;
         }
-
-        /// Here we set the defaukt value of the Character.
-        private void Awake() 
-        {
-            _character = GetComponent<ICharacter>();
-        }
     }
 }
-
