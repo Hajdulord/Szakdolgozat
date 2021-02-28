@@ -8,6 +8,8 @@ namespace HMF.Thesis.Interfaces
     /// Interface for Movement.
     public interface IMove
     {
+        /// Base speed of the object.
+        int BaseSpeed {get; set;}
         /// Jump Force of the object.
         int JumpForce {get; set;}
         /// Basic movement logic.

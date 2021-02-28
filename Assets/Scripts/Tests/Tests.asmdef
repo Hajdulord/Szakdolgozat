@@ -6,8 +6,8 @@
         "UnityEditor.TestRunner",
         "PlayerAssembly",
         "InterfacesAssembly",
-        "EffectorAssembly",
-        "ScriptableObjectsAssembly"
+        "ScriptableObjectsAssembly",
+        "LogicAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
