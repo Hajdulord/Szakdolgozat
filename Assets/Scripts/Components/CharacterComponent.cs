@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HMF.Thesis
+namespace HMF.Thesis.Components
 {
     public class CharacterComponent : MonoBehaviour
     {
