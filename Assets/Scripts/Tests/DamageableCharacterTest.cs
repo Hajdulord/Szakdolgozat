@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
+using HMF.Thesis.Interfaces;
 using Moq;
 
 namespace HMF.Thesis.Tests
@@ -14,21 +15,37 @@ namespace HMF.Thesis.Tests
     {
         /// Test for TakeDamage without an input damage.
         [Test]
-        public void TakeDamageTest()
+        public void TakeDamage()
         {
             //* Setup
+            var characterMoq = new Mock<ICharacter>();
+            characterMoq.SetupProperty(e => e.Health, 5);
+
+            var damageable = new DamageableCharacterLogic(characterMoq.Object);
+
+            //* Affect
+            damageable.TakeDamage();
 
             //* Testing
+            Assert.AreEqual(4, characterMoq.Object.Health);
             
         }
 
         /// Test for TakeDamage with an input damage.
         [Test]
-        public void TakeDamageWithInputTest()
+        public void TakeDamageWithInputParameter()
         {
             //* Setup
+            var characterMoq = new Mock<ICharacter>();
+            characterMoq.SetupProperty(e => e.Health, 5);
+
+            var damageable = new DamageableCharacterLogic(characterMoq.Object);
+
+            //* Affect
+            damageable.TakeDamage(2);
 
             //* Testing
+            Assert.AreEqual(3, characterMoq.Object.Health);
             
         }
     }
