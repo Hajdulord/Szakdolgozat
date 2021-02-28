@@ -1,21 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using HMF.Thesis.Interfaces;
 
-namespace HMF.Thesis
+namespace HMF.Thesis.Logic
 {
-    public class DamageableCharacterLogic : MonoBehaviour
+    /// A class for objects that are damageable.
+    public class DamageableCharacterLogic : IDamageable
     {
-        // Start is called before the first frame update
-        void Start()
+        private ICharacter _character; ///< The Character's health comes from here.
+
+        /// public Constructor where I set the character's value.
+        /*!
+        \param character is a ICharacter, we need this to access the health of the Character.
+        */
+        public DamageableCharacterLogic(ICharacter character)
         {
-        
+            _character = character;
         }
 
-        // Update is called once per frame
-        void Update()
+        /// Reduces the Health of the Character by one.
+        public void TakeDamage()
         {
-        
+            --_character.Health;
+        }
+
+        /// Reduces the Health of the Character by a set amount.
+        /*!
+        \param damage is the damage you substract from your health.
+        */
+        public void TakeDamage(int damage = 1)
+        {
+            _character.Health -= damage;
         }
     }
 }
