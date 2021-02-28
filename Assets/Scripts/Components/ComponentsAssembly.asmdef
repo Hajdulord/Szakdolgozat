@@ -1,0 +1,16 @@
+{
+    "name": "ComponentsAssembly",
+    "rootNamespace": "HMF.Thesis.Components",
+    "references": [
+        "GUID:b5c6b362c60156344988f5779bcda01a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
