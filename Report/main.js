@@ -226,15 +226,15 @@ var assemblies = [
     "classes": [
       { "name": "HMF.Thesis.Logic.CharacterLogic", "rp": "LogicAssembly_CharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "LogicAssembly_DamageableCharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "LogicAssembly_MoveLogic.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 65, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "LogicAssembly_MoveLogic.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 87, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "PlayerAssembly",
     "classes": [
-      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 52, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 21, "cal": 21, "tl": 65, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 55, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Idle", "rp": "PlayerAssembly_Idle.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 27, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "PlayerAssembly_Move.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "PlayerAssembly_Move.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
 ];
 
