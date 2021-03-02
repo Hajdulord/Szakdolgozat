@@ -21,6 +21,8 @@ namespace HMF.Thesis.Player
         private CharacterComponent _characterComponent;
         private InputController _inputController;
 
+        public float MoveDirection { get; internal set;}
+
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Awake() 
         {
@@ -31,6 +33,12 @@ namespace HMF.Thesis.Player
 
             var idle = new Idle();
             var move = new Move(_moveComponent.Move);
+
+            At(idle, move, isMoving());
+            At(move, idle, isIdle());
+
+            Func<bool> isIdle() => () => MoveDirection == 0;
+            Func<bool> isMoving() => () => MoveDirection != 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             

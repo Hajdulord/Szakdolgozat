@@ -4,14 +4,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
 
-//! Needs Unit Tests!
 namespace HMF.Thesis.Player
 {
     /// Input Controller that parse the player input.
     /// This class has the methodes for the Input system to call when an input action is performed.
     [RequireComponent(typeof(PlayerInput))]
+    [RequireComponent(typeof(PlayerStateMachine))]
     public class InputController : MonoBehaviour, IInputController
     {
+
+        [Header("Serializable Fields")]
+        [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
 
         /// Sets the falg to enter the Jump sate.
         /*!
@@ -28,7 +31,14 @@ namespace HMF.Thesis.Player
         */ 
         public void Move(InputAction.CallbackContext callback)
         {
-
+            if(callback.started)
+            {
+                _stateMachine.MoveDirection = callback.ReadValue<float>();
+            }
+            else if(callback.canceled)
+            {
+                _stateMachine.MoveDirection = 0f;
+            }
         }
 
         /// Sets the falg to enter the Attack sate.

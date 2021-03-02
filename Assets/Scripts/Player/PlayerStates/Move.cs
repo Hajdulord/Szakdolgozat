@@ -27,7 +27,8 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void Tick()
         {
-            _move.Move();
+            //_move.Move();
+            Debug.Log("Move");
         }
     }
 }
