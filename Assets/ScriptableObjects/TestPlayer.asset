@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: TestPlayer
   maxHealth: 5
   baseSpeed: 10
-  sprite: {fileID: 0}
+  sprite: {fileID: -9095717837082945937, guid: 4d19a5a979488be459d90250b5c2fa1a, type: 3}

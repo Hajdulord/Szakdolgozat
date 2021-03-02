@@ -21,10 +21,10 @@ namespace HMF.Thesis.Player
         private CharacterComponent _characterComponent;
         private InputController _inputController;
 
-        public float MoveDirection { get; internal set;}
+        public int MoveDirection { get; internal set;}
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
-        private void Awake() 
+        private void Start() 
         {
             _stateMachine = new StateMachine();
             _moveComponent = GetComponent<MoveComponent>();
@@ -32,7 +32,7 @@ namespace HMF.Thesis.Player
             _inputController = GetComponent<InputController>();
 
             var idle = new Idle();
-            var move = new Move(_moveComponent.Move);
+            var move = new Move(_moveComponent.Move, this);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());

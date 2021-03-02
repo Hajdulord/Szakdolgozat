@@ -10,10 +10,15 @@ namespace HMF.Thesis.Interfaces
     {
         /// Base speed of the object.
         int BaseSpeed {get; set;}
+        /// The current speed of the Character;
+        int Speed {get;set;}
         /// Jump Force of the object.
         int JumpForce {get; set;}
         /// Basic movement logic.
-        void Move();
+        /*!
+          \param direction is the direction of the movement.
+        */
+        void Move(int direction);
         /// Dashing logic.
         void Dash();
         /// Applying force to push back the object.

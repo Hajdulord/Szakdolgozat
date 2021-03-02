@@ -21,7 +21,7 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void Tick()
         {
-            Debug.Log("Idle");
+            //Debug.Log("Idle");
         }
     }
 }

@@ -10,9 +10,12 @@ namespace HMF.Thesis.Player.PlayerStates
     {
         private IMove _move;
 
-        public Move(IMove move)
+        private PlayerStateMachine _playerStateMachine;
+
+        public Move(IMove move, PlayerStateMachine playerStateMachine)
         {
             _move = move;
+            _playerStateMachine = playerStateMachine;
         }
 
         public void OnEnter()
@@ -27,8 +30,8 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void Tick()
         {
-            //_move.Move();
-            Debug.Log("Move");
+            _move.Move(_playerStateMachine.MoveDirection);
+            Debug.Log("Move ");
         }
     }
 }

@@ -33,11 +33,11 @@ namespace HMF.Thesis.Player
         {
             if(callback.started)
             {
-                _stateMachine.MoveDirection = callback.ReadValue<float>();
+                _stateMachine.MoveDirection = (int)callback.ReadValue<float>();
             }
             else if(callback.canceled)
             {
-                _stateMachine.MoveDirection = 0f;
+                _stateMachine.MoveDirection = 0;
             }
         }
 

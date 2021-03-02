@@ -8,23 +8,32 @@ namespace HMF.Thesis.Logic
     /// Logic fore the mocement.
     public class MoveLogic : IMove
     {
+        private float GRAVITY;
         private CharacterData _character; ///< The thata of a Character.
-
-        private CharacterController _characterController; ///< Used for basic movement.
+        private Rigidbody2D _rigidbody; ///< Used for physics.
+        private Vector2 _movementVector;
 
         /// The Constructor where we set the cahracterData and the characterController.
         /*!
           \param character is a CharacterData where we get the common data of a character.
-          \param characterController is a CharacterController that  we need for the movement.
+          \param rigidbody is a Rigidbody2D that  we need for the movement.
         */
-        public MoveLogic(CharacterData character, CharacterController characterController)
+        public MoveLogic(CharacterData character, Rigidbody2D rigidbody)
         {
             _character = character;
-            _characterController = characterController;
+            _rigidbody = rigidbody;
+            BaseSpeed = _character.baseSpeed;
+            Speed = BaseSpeed;
+            _movementVector = Vector2.zero;
+
+            GRAVITY = Physics2D.gravity.y;
         }
 
         /// Base speed of the object.
         public int BaseSpeed {get; set;}
+
+        /// The current speed of the Character;
+        public int Speed {get;set;}
 
         /// The Jumpfore of the object.
         public int JumpForce { get; set;}
@@ -51,9 +60,14 @@ namespace HMF.Thesis.Logic
         }
 
         /// Moves to a direction.
-        public void Move()
+        /*!
+          \param direction is the direction of the movement.
+        */
+        public void Move(int direction)
         {
-            throw new System.NotImplementedException();
+            _movementVector.x = direction;
+
+            _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * Speed);
         }
 
         /// Makes the object Jump.
