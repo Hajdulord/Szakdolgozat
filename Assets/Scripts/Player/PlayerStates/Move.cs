@@ -31,7 +31,15 @@ namespace HMF.Thesis.Player.PlayerStates
         public void Tick()
         {
             _move.Move(_playerStateMachine.MoveDirection);
-            Debug.Log("Move ");
+            
+            if (_playerStateMachine.IsDashing)
+            {
+                _move.Dash();
+                _playerStateMachine.IsDashing = false;
+                //Debug.Log("Dash");
+            }
+            
+            //Debug.Log("Move ");
         }
     }
 }

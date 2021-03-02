@@ -358,8 +358,8 @@ GameObject:
   m_Component:
   - component: {fileID: 600795980}
   - component: {fileID: 600795979}
-  - component: {fileID: 600795977}
   - component: {fileID: 600795981}
+  - component: {fileID: 600795977}
   - component: {fileID: 600795978}
   - component: {fileID: 600795976}
   - component: {fileID: 600795975}
@@ -440,9 +440,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &600795978
 MonoBehaviour:
@@ -494,7 +494,19 @@ MonoBehaviour:
     m_ActionId: c514ae93-9a67-4c5d-93ac-50f2b25d43d7
     m_ActionName: gameplay/NormalAttack[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600795973}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, PlayerAssembly
+        m_MethodName: Dash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ea917ed2-65c0-4731-9ddd-0b5dede6a965
     m_ActionName: gameplay/Dash[/Keyboard/leftAlt]
   m_NeverAutoSwitchControlSchemes: 0
@@ -567,8 +579,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &600795981
-BoxCollider2D:
+--- !u!70 &600795981
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -580,19 +592,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014881611, y: -0.05102259}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6896126, y: 1.8979548}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!1 &1293225617
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace HMF.Thesis.Components
 {
     /// A wrapper for the MoveLogic.
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(CapsuleCollider2D))]
     public class MoveComponent : MonoBehaviour
     {
         [Header("Serialized Fields")]

@@ -8,10 +8,10 @@ namespace HMF.Thesis.Logic
     /// Logic fore the mocement.
     public class MoveLogic : IMove
     {
-        private float GRAVITY;
         private CharacterData _character; ///< The thata of a Character.
         private Rigidbody2D _rigidbody; ///< Used for physics.
         private Vector2 _movementVector;
+        private float _dashDistance = 5f;
 
         /// The Constructor where we set the cahracterData and the characterController.
         /*!
@@ -25,8 +25,6 @@ namespace HMF.Thesis.Logic
             BaseSpeed = _character.baseSpeed;
             Speed = BaseSpeed;
             _movementVector = Vector2.zero;
-
-            GRAVITY = Physics2D.gravity.y;
         }
 
         /// Base speed of the object.
@@ -41,7 +39,9 @@ namespace HMF.Thesis.Logic
         /// Fast movement to a direction.
         public void Dash()
         {
-            throw new System.NotImplementedException();
+            //var dashVelocity = Vector2.Scale(_rigidbody.gameObject.transform.right, _dashDistance * new Vector2((Mathf.Log(1f / (Time.deltaTime * _rigidbody.drag + 1)) / -Time.deltaTime), 0));
+            //_rigidbody.AddForce(dashVelocity, ForceMode2D.Impulse);
+            _rigidbody.MovePosition(_rigidbody.position + _movementVector * _dashDistance);
         }
 
         /// Moves to a specific poin.
@@ -67,7 +67,15 @@ namespace HMF.Thesis.Logic
         {
             _movementVector.x = direction;
 
+            if (direction != 0)
+            {
+                _rigidbody.gameObject.transform.right = _movementVector;
+            }
+
             _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * Speed);
+
+            //_rigidbody.velocity = _movementVector * Speed;
+
         }
 
         /// Makes the object Jump.

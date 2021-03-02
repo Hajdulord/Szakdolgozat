@@ -56,7 +56,10 @@ namespace HMF.Thesis.Player
         */ 
         public void Dash(InputAction.CallbackContext callback)
         {
-
+            if(callback.started)
+            {
+                _stateMachine.IsDashing = true;
+            }
         }
     }
 }

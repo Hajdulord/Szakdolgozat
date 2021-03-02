@@ -21,7 +21,9 @@ namespace HMF.Thesis.Player
         private CharacterComponent _characterComponent;
         private InputController _inputController;
 
-        public int MoveDirection { get; internal set;}
+        public int MoveDirection { get; internal set; } = 0;
+
+        public bool IsDashing {get; internal set; } = false;
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
