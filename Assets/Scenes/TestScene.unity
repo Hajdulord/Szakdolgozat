@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 268983750}
   - component: {fileID: 268983749}
   - component: {fileID: 268983748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -397,6 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8191e84b09fdafb49ad4ac730912de25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _jumpLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &600795975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +489,19 @@ MonoBehaviour:
     m_ActionId: 1eca2775-4343-463a-a6e4-1356fac1a972
     m_ActionName: gameplay/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600795973}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, PlayerAssembly
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 35581d04-cdc4-4a13-b644-f3d115e76bf2
     m_ActionName: gameplay/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -573,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600795972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5673031, y: -0.069033824, z: 0}
+  m_LocalPosition: {x: 0.49, y: -3.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
