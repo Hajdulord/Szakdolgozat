@@ -20,7 +20,7 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            
+            _move.JumpSet();
         }
 
         public void OnExit()
@@ -30,7 +30,19 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void Tick()
         {
+            _move.Jump(_playerStateMachine.MoveDirection);
             
+            if (_playerStateMachine.IsDashing)
+            {
+                _move.Dash();
+                _playerStateMachine.IsDashing = false;
+            }
+
+            if(_playerStateMachine.transform.position.y + 0.05f > _move.JumpMaxHeight)
+            {
+                _move.ResetY();
+            }
+
         }
     }
 }

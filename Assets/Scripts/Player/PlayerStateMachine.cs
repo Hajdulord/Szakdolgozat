@@ -37,6 +37,10 @@ namespace HMF.Thesis.Player
             _characterComponent = GetComponent<CharacterComponent>();
             _inputController = GetComponent<InputController>();
 
+            //! Need to implement this better.
+            _moveComponent.Move.JumpHeight = 5;
+            _moveComponent.Move.JumpSpeed = 2;
+
             var idle = new Idle();
             var move = new Move(_moveComponent.Move, this);
             var jump = new Jump(_moveComponent.Move, this);
