@@ -81,7 +81,13 @@ namespace HMF.Thesis.Logic
         /// Makes the object Jump.
         public void Jump()
         {
-            throw new System.NotImplementedException();
+            _movementVector.y = JumpForce;
+        }
+
+        /// Resets the movementVector y value to 0;
+        public void ResetY()
+        {
+            _movementVector.y = 0;
         }
     }
 }
