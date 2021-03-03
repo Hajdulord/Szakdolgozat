@@ -22,7 +22,10 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-
+            if(callback.started)
+            {
+                _stateMachine.IsJumping = true;
+            }
         }
 
         /// Sets the falg to enter the Move sate.

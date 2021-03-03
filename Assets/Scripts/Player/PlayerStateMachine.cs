@@ -16,32 +16,40 @@ namespace HMF.Thesis.Player
     [RequireComponent(typeof(InputController))]
     public class PlayerStateMachine : MonoBehaviour
     {
+        [SerializeField] private LayerMask _jumpLayerMask;
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private MoveComponent _moveComponent;
         private CharacterComponent _characterComponent;
         private InputController _inputController;
-
+        private float distToGround;
         public int MoveDirection { get; internal set; } = 0;
 
         public bool IsDashing {get; internal set; } = false;
-        public bool IsHumping {get; internal set; } = false;
+        public bool IsJumping {get; internal set; } = false;
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
         {
             _stateMachine = new StateMachine();
+
+            distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<MoveComponent>();
             _characterComponent = GetComponent<CharacterComponent>();
             _inputController = GetComponent<InputController>();
 
             var idle = new Idle();
             var move = new Move(_moveComponent.Move, this);
+            var jump = new Jump(_moveComponent.Move, this);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
 
-            Func<bool> isIdle() => () => MoveDirection == 0;
-            Func<bool> isMoving() => () => MoveDirection != 0;
+            At(idle, jump, isJumping());
+            At(move, jump, isJumping());
+
+            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> isJumping() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             

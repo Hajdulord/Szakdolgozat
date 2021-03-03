@@ -8,6 +8,16 @@ namespace HMF.Thesis.Player.PlayerStates
 {
     public class Jump : IState
     {
+        private IMove _move;
+
+        private PlayerStateMachine _playerStateMachine;
+
+        public Jump(IMove move, PlayerStateMachine playerStateMachine)
+        {
+            _move = move;
+            _playerStateMachine = playerStateMachine;
+        }
+
         public void OnEnter()
         {
             
@@ -20,7 +30,7 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void Tick()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
