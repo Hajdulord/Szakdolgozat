@@ -36,6 +36,8 @@ namespace HMF.Thesis.Logic
         /// The Jumpfore of the object.
         public int JumpForce { get; set;}
 
+        public float JumpMaxHeight = 0;
+
         /// Fast movement to a direction.
         public void Dash()
         {
@@ -81,13 +83,15 @@ namespace HMF.Thesis.Logic
         /// Makes the object Jump.
         public void Jump()
         {
-            _movementVector.y = JumpForce;
+            _movementVector.y = _rigidbody.position.y + JumpForce;
+            JumpMaxHeight = _movementVector.y;
         }
 
         /// Resets the movementVector y value to 0;
         public void ResetY()
         {
             _movementVector.y = 0;
+            JumpMaxHeight = 0;
         }
     }
 }
