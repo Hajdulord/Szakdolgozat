@@ -24,6 +24,7 @@ namespace HMF.Thesis.Player
         public int MoveDirection { get; internal set; } = 0;
 
         public bool IsDashing {get; internal set; } = false;
+        public bool IsHumping {get; internal set; } = false;
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
