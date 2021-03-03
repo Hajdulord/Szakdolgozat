@@ -34,10 +34,10 @@ namespace HMF.Thesis.Logic
         public int Speed {get;set;}
 
         /// The height of the Jump.
-        int JumpHeight {get; set;}
+        public int JumpHeight {get; set;}
 
         /// The speed of the Jump.
-        int JumpSpeed {get; set;}
+        public int JumpSpeed {get; set;}
 
         /// Maximu height of the current jump.
         public float JumpMaxHeight { get; set; } = 0;
