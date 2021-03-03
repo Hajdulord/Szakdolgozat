@@ -33,10 +33,14 @@ namespace HMF.Thesis.Logic
         /// The current speed of the Character;
         public int Speed {get;set;}
 
-        /// The Jumpfore of the object.
-        public int JumpForce { get; set;}
+        /// The height of the Jump.
+        int JumpHeight {get; set;}
 
-        public float JumpMaxHeight = 0;
+        /// The speed of the Jump.
+        int JumpSpeed {get; set;}
+
+        /// Maximu height of the current jump.
+        public float JumpMaxHeight { get; set; } = 0;
 
         /// Fast movement to a direction.
         public void Dash()
@@ -81,10 +85,26 @@ namespace HMF.Thesis.Logic
         }
 
         /// Makes the object Jump.
-        public void Jump()
+        public void JumpSet()
         {
-            _movementVector.y = _rigidbody.position.y + JumpForce;
+            _movementVector.y = _rigidbody.position.y + JumpHeight;
             JumpMaxHeight = _movementVector.y;
+        }
+
+        /// Makes the object Jump.
+        /*!
+          \param direction is the horizontal direction of the movement.
+        */
+        public void Jump(int direction)
+        {
+            _movementVector.x = direction;
+
+            if (direction != 0)
+            {
+                _rigidbody.gameObject.transform.right = new Vector2(_movementVector.x, 0);
+            }
+
+            _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * JumpSpeed);
         }
 
         /// Resets the movementVector y value to 0;

@@ -12,8 +12,12 @@ namespace HMF.Thesis.Interfaces
         int BaseSpeed {get; set;}
         /// The current speed of the Character;
         int Speed {get;set;}
-        /// Jump Force of the object.
-        int JumpForce {get; set;}
+        /// The height of the Jump.
+        int JumpHeight {get; set;}
+        /// The speed of the Jump.
+        int JumpSpeed {get; set;}
+        /// Maximu height of the current jump.
+        float JumpMaxHeight{get; set;}
         /// Basic movement logic.
         /*!
           \param direction is the direction of the movement.
@@ -21,9 +25,16 @@ namespace HMF.Thesis.Interfaces
         void Move(int direction);
         /// Dashing logic.
         void Dash();
-        /// Applying force to push back the object.
+        /// Sets the height of the jump.
+        void JumpSet();
         /// Implementation of a jump.
-        void Jump();
+        /*!
+          \param direction is the horizontal direction of the movement.
+        */
+        void Jump(int direction);
+        /// Resets the movementVector y;
+        void ResetY();
+        /// Applying force to push back the object.
         void PushBack();
         /// Basic movement to a Vector to.
         /*!
