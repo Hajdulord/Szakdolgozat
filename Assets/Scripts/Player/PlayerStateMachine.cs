@@ -39,7 +39,7 @@ namespace HMF.Thesis.Player
 
             //! Need to implement this better.
             _moveComponent.Move.JumpHeight = 5;
-            _moveComponent.Move.JumpSpeed = 2;
+            _moveComponent.Move.JumpSpeed = 400;
 
             var idle = new Idle();
             var move = new Move(_moveComponent.Move, this);
@@ -48,12 +48,15 @@ namespace HMF.Thesis.Player
             At(idle, move, isMoving());
             At(move, idle, isIdle());
 
-            At(idle, jump, isJumping());
-            At(move, jump, isJumping());
+            At(idle, jump, grundedAndReadyToJump());
+            At(move, jump, grundedAndReadyToJump());
 
-            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> isJumping() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.05f, _jumpLayerMask);
+            //At(jump, idle, grunded());
+
+            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             

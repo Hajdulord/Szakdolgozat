@@ -84,61 +84,62 @@ namespace HMF.Thesis.Logic
         /*!
           \param direction is the direction of the movement.
         */
-        public void Move(int direction) => ApplyForce(Speed, direction, _movementVector.y);
+        public void Move(int direction)
+        {
+            _movementVector.x = direction * Speed;
+            _movementVector.y = _rigidbody.velocity.y;
+
+            if (direction != 0)
+            {
+                _rigidbody.gameObject.transform.right = new Vector3(direction, 0, 0);
+            }
+
+            /*if(direction == 0 && _movementVector.y == 0)
+                _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);*/
+
+            //_rigidbody.velocity = new Vector2(direction * Speed, _rigidbody.velocity.y);
+            _rigidbody.velocity = _movementVector;
+            //Debug.Log(_rigidbody.velocity);
+            //_rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * Speed);
+        }
+        
 
         /// Makes the object Jump.
         public void JumpSet()
         {
-            _movementVector.y = _rigidbody.position.y + JumpHeight;
-            JumpMaxHeight = _movementVector.y;
+            //_movementVector.y = _rigidbody.position.y + JumpHeight;
+            //JumpMaxHeight = _movementVector.y;
         }
 
         /// Makes the object Jump.
         /*!
           \param direction is the horizontal direction of the movement.
         */
-        public void Jump(int direction) => ApplyForce(JumpSpeed, direction, _movementVector.y);
+        public void Jump(int direction)
+        {
+            _rigidbody.AddForce(Vector2.up * JumpSpeed);
+        }
 
         /// Resets the movementVector y value to 0;
         public void ResetY()
         {
-            _movementVector.y = 0;
-            JumpMaxHeight = 0;
-            PushBackDistance = Vector2.zero;
+            //_movementVector.y = 0;
+            //JumpMaxHeight = 0;
+            //PushBackDistance = Vector2.zero;
         }
 
         /// Resets the movementVector x value to 0;
         public void ResetX()
         {
-            _movementVector.x = 0;
-            JumpMaxHeight = 0;
-            PushBackDistance = Vector2.zero;
+            //_movementVector.x = 0;
+            //JumpMaxHeight = 0;
+            //PushBackDistance = Vector2.zero;
         }
 
         /// Makes the object fall.
         public void Fall()
         {
             throw new System.NotImplementedException();
-        }
-
-        /// Move towards a point with set speed.
-        /*!
-          \param speed is the speed of the movement.
-          \param directionX is the horizontal direction of the movement.
-          \param directionY is the vertical direction of the movement.
-        */
-        private void ApplyForce(int speed, float directionX, float directionY)
-        {
-            _movementVector.x = directionX;
-
-            _movementVector.y = directionY;
-
-            if (directionX != 0)
-            {
-                _rigidbody.gameObject.transform.right = new Vector2(_movementVector.x, 0);
-            }
-
-            _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * speed);
         }
 
     }

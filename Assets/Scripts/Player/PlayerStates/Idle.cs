@@ -11,7 +11,7 @@ namespace HMF.Thesis.Player.PlayerStates
     {
         public void OnEnter()
         {
-            
+            Debug.Log("Idle");
         }
 
         public void OnExit()
