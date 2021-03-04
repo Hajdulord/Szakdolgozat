@@ -20,29 +20,32 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            _move.JumpSet();
+            //_move.JumpSet();
+            _move.Jump(_playerStateMachine.MoveDirection);
+            Debug.Log("Jump");
+
         }
 
         public void OnExit()
         {
-            
+            _playerStateMachine.IsJumping = false;
         }
 
         public void Tick()
         {
-            _move.Jump(_playerStateMachine.MoveDirection);
-            
+            //_move.Jump(_playerStateMachine.MoveDirection);
+            _move.Move(_playerStateMachine.MoveDirection);
+            //Debug.Log(_playerStateMachine.MoveDirection);
             if (_playerStateMachine.IsDashing)
             {
                 _move.Dash();
                 _playerStateMachine.IsDashing = false;
             }
 
-            if(_playerStateMachine.transform.position.y + 0.05f > _move.JumpMaxHeight)
+            /*if(_playerStateMachine.transform.position.y + 0.05f > _move.JumpMaxHeight)
             {
                 _move.ResetY();
-            }
-
+            }*/
         }
     }
 }

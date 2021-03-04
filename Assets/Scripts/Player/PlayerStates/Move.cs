@@ -20,12 +20,12 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            
+            Debug.Log("Move");
         }
 
         public void OnExit()
         {
-            
+            _move.Move(_playerStateMachine.MoveDirection);
         }
 
         public void Tick()

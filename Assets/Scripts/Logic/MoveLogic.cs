@@ -42,6 +42,15 @@ namespace HMF.Thesis.Logic
         /// Maximu height of the current jump.
         public float JumpMaxHeight { get; set; } = 0;
 
+        /// Maximu distance of the pushback.
+        public Vector2 PushBackDistance { get; set; } = Vector2.zero;
+
+        /// The speed of the pushback.
+        public int PushBackSpeed { get; set; }
+
+        /// The speed of the fall.
+        public int FallSpeed { get; set; }
+
         /// Fast movement to a direction.
         public void Dash()
         {
@@ -59,6 +68,12 @@ namespace HMF.Thesis.Logic
             throw new System.NotImplementedException();
         }
 
+        /// Sets the max distance of the pushback.
+        public void PushBackSet()
+        {
+            throw new System.NotImplementedException();
+        }
+
         /// Object is pushed back.
         public void PushBack()
         {
@@ -71,24 +86,29 @@ namespace HMF.Thesis.Logic
         */
         public void Move(int direction)
         {
-            _movementVector.x = direction;
+            _movementVector.x = direction * Speed;
+            _movementVector.y = _rigidbody.velocity.y;
 
             if (direction != 0)
             {
-                _rigidbody.gameObject.transform.right = _movementVector;
+                _rigidbody.gameObject.transform.right = new Vector3(direction, 0, 0);
             }
 
-            _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * Speed);
+            /*if(direction == 0 && _movementVector.y == 0)
+                _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);*/
 
-            //_rigidbody.velocity = _movementVector * Speed;
-
+            //_rigidbody.velocity = new Vector2(direction * Speed, _rigidbody.velocity.y);
+            _rigidbody.velocity = _movementVector;
+            //Debug.Log(_rigidbody.velocity);
+            //_rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * Speed);
         }
+        
 
         /// Makes the object Jump.
         public void JumpSet()
         {
-            _movementVector.y = _rigidbody.position.y + JumpHeight;
-            JumpMaxHeight = _movementVector.y;
+            //_movementVector.y = _rigidbody.position.y + JumpHeight;
+            //JumpMaxHeight = _movementVector.y;
         }
 
         /// Makes the object Jump.
@@ -97,21 +117,30 @@ namespace HMF.Thesis.Logic
         */
         public void Jump(int direction)
         {
-            _movementVector.x = direction;
-
-            if (direction != 0)
-            {
-                _rigidbody.gameObject.transform.right = new Vector2(_movementVector.x, 0);
-            }
-
-            _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.deltaTime * JumpSpeed);
+            _rigidbody.AddForce(Vector2.up * JumpSpeed);
         }
 
         /// Resets the movementVector y value to 0;
         public void ResetY()
         {
-            _movementVector.y = 0;
-            JumpMaxHeight = 0;
+            //_movementVector.y = 0;
+            //JumpMaxHeight = 0;
+            //PushBackDistance = Vector2.zero;
         }
+
+        /// Resets the movementVector x value to 0;
+        public void ResetX()
+        {
+            //_movementVector.x = 0;
+            //JumpMaxHeight = 0;
+            //PushBackDistance = Vector2.zero;
+        }
+
+        /// Makes the object fall.
+        public void Fall()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }
