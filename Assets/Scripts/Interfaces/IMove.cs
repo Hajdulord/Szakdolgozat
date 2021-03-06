@@ -26,6 +26,9 @@ namespace HMF.Thesis.Interfaces
         /// The speed of the fall.
         int FallSpeed {get; set;}
 
+        /// The Rate that the Character can dash.
+        float DashRate {get; set;}
+
         /// Basic movement logic.
         /*!
           \param direction is the direction of the movement.
