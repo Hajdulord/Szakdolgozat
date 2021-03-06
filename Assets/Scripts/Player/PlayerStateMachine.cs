@@ -21,6 +21,7 @@ namespace HMF.Thesis.Player
         private MoveComponent _moveComponent;
         private CharacterComponent _characterComponent;
         private InputController _inputController;
+        private Rigidbody2D _rigidbody;
         private float distToGround;
         public int MoveDirection { get; internal set; } = 0;
 
@@ -36,14 +37,17 @@ namespace HMF.Thesis.Player
             _moveComponent = GetComponent<MoveComponent>();
             _characterComponent = GetComponent<CharacterComponent>();
             _inputController = GetComponent<InputController>();
+            _rigidbody = GetComponent<Rigidbody2D>();
 
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
             _moveComponent.Move.DashRate = 0.5f;
+            _moveComponent.Move.FallSpeed = 1.5f;
 
             var idle = new Idle();
             var move = new Move(_moveComponent.Move, this);
             var jump = new Jump(_moveComponent.Move, this);
+            var fall = new Fall(_moveComponent.Move, this);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -51,12 +55,17 @@ namespace HMF.Thesis.Player
             At(idle, jump, grundedAndReadyToJump());
             At(move, jump, grundedAndReadyToJump());
 
+            At(jump, fall, falling());
+
+            At(fall, idle, grunded());
+
             //At(jump, idle, grunded());
 
             Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
             Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
-            //Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> falling() => () => _rigidbody.velocity.y < 0f;
+            Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             
