@@ -21,10 +21,10 @@ namespace HMF.Thesis.Interfaces
         Vector2 PushBackDistance{get; set;}
 
         /// The speed of the pushback.
-        int PushBackSpeed {get; set;}
+        float PushBackSpeed {get; set;}
 
         /// The speed of the fall.
-        int FallSpeed {get; set;}
+        float FallSpeed {get; set;}
 
         /// The Rate that the Character can dash.
         float DashRate {get; set;}
