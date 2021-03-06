@@ -75,9 +75,13 @@ namespace HMF.Thesis.Logic
         }
 
         /// Object is pushed back.
-        public void PushBack()
+        /*!
+          \param direction is the Vector2 that the object follows when it is pushed back.
+        */
+        public void PushBack(Vector2 direction)
         {
-            throw new System.NotImplementedException();
+            PushBackDistance = _rigidbody.position + direction * PushBackSpeed /_rigidbody.mass;
+            _rigidbody.AddForce(direction * PushBackSpeed, ForceMode2D.Impulse);
         }
 
         /// Moves to a direction.

@@ -45,7 +45,10 @@ namespace HMF.Thesis.Interfaces
         void Jump(int direction);
 
         /// Applying force to push back the object.
-        void PushBack();
+        /*!
+          \param direction is the Vector2 that the object follows when it is pushed back.
+        */
+        void PushBack(Vector2 direction);
 
         /// Basic movement to a Vector to.
         /*!
