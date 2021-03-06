@@ -31,9 +31,9 @@ namespace HMF.Thesis.Player
 
         public void Tick()
         {
-            if (_rigidbody.position.x >= _move.PushBackDistance.x && _rigidbody.position.y >= _move.PushBackDistance.y)
+            if (_rigidbody.velocity.x == 0)
             {
-                _playerStateMachine.PushBackDir = Vector2.zero;
+                _playerStateMachine.PushBackDir = 0;
             }
         }
     }

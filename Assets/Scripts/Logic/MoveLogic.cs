@@ -38,9 +38,6 @@ namespace HMF.Thesis.Logic
         /// The speed of the Jump.
         public int JumpSpeed {get; set;}
 
-        /// Maximu distance of the pushback.
-        public Vector2 PushBackDistance { get; set; } = Vector2.zero;
-
         /// The speed of the pushback.
         public float PushBackSpeed { get; set; }
 
@@ -53,11 +50,6 @@ namespace HMF.Thesis.Logic
         /// Fast movement to a direction.
         public void Dash()
         {
-            //var dashVelocity = Vector2.Scale(_rigidbody.gameObject.transform.right, _dashDistance * new Vector2((Mathf.Log(1f / (Time.deltaTime * _rigidbody.drag + 1)) / -Time.deltaTime), 0));
-            //_rigidbody.AddForce(dashVelocity, ForceMode2D.Impulse);
-            //Debug.Log(_movementVector);
-            //_rigidbody.MovePosition(_rigidbody.position + new Vector2(_movementVector.x, 0) * _dashDistance);
-            
             if (Time.time >= _nextDashTime)
             {
                 _rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
@@ -76,12 +68,11 @@ namespace HMF.Thesis.Logic
 
         /// Object is pushed back.
         /*!
-          \param direction is the Vector2 that the object follows when it is pushed back.
+          \param direction is the horizontal direction that the object follows when it is pushed back.
         */
-        public void PushBack(Vector2 direction)
+        public void PushBack(float direction)
         {
-            PushBackDistance = _rigidbody.position + direction * PushBackSpeed /_rigidbody.mass;
-            _rigidbody.AddForce(direction * PushBackSpeed, ForceMode2D.Impulse);
+            _rigidbody.velocity = new Vector2(direction * PushBackSpeed, _rigidbody.velocity.y);
         }
 
         /// Moves to a direction.
@@ -98,8 +89,6 @@ namespace HMF.Thesis.Logic
                 _chachedDirection = direction;
                 _rigidbody.gameObject.transform.right = new Vector3(direction, 0, 0);
             }
-            /*if(direction == 0 && _movementVector.y == 0)
-                _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);*/
 
             _rigidbody.velocity = _movementVector;
 
