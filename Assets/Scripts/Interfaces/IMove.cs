@@ -17,9 +17,6 @@ namespace HMF.Thesis.Interfaces
         /// The speed of the Jump.
         int JumpSpeed {get; set;}
 
-        /// Maximu distance of the pushback.
-        Vector2 PushBackDistance{get; set;}
-
         /// The speed of the pushback.
         float PushBackSpeed {get; set;}
 
@@ -45,7 +42,10 @@ namespace HMF.Thesis.Interfaces
         void Jump(int direction);
 
         /// Applying force to push back the object.
-        void PushBack();
+        /*!
+          \param direction is the horizontal direction that the object follows when it is pushed back.
+        */
+        void PushBack(float direction);
 
         /// Basic movement to a Vector to.
         /*!

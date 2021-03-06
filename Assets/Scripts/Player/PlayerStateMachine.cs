@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
 using HMF.Thesis.Components;
 using System;
@@ -22,9 +23,10 @@ namespace HMF.Thesis.Player
         private CharacterComponent _characterComponent;
         private InputController _inputController;
         private Rigidbody2D _rigidbody;
-        private float distToGround;
-        public int MoveDirection { get; internal set; } = 0;
+        private float _distToGround;
 
+        public float PushBackDir { get; set; }
+        public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
 
@@ -33,21 +35,25 @@ namespace HMF.Thesis.Player
         {
             _stateMachine = new StateMachine();
 
-            distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
+            _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<MoveComponent>();
             _characterComponent = GetComponent<CharacterComponent>();
             _inputController = GetComponent<InputController>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
+            PushBackDir = 0f;
+
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
             _moveComponent.Move.DashRate = 0.5f;
             _moveComponent.Move.FallSpeed = 5f;
+            _moveComponent.Move.PushBackSpeed = 5f;
 
             var idle = new Idle(_rigidbody);
             var move = new Move(_moveComponent.Move, this);
             var jump = new Jump(_moveComponent.Move, this);
             var fall = new Fall(_moveComponent.Move, this);
+            var pushBack = new PushBack(_moveComponent.Move, _rigidbody, this);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -59,13 +65,25 @@ namespace HMF.Thesis.Player
 
             At(fall, idle, grunded());
 
+            At(idle, pushBack, isPushedBack());
+            At(move, pushBack, isPushedBack());
+            At(jump, pushBack, isPushedBack());
+            At(fall, pushBack, isPushedBack());
+
+            At(pushBack, idle, notPushedBack());
+            At(pushBack, move, notPushedBack());
+            At(pushBack, jump, notPushedBack());
+            At(pushBack, fall, notPushedBack());
+
             //At(jump, idle, grunded());
 
-            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
-            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
-            Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> falling() => () => _rigidbody.velocity.y < 0f;
-            Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, distToGround + 0.5f, _jumpLayerMask);
+            Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> isPushedBack() => () => PushBackDir != 0f;
+            Func<bool> notPushedBack() => () => PushBackDir == 0f;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             
@@ -75,6 +93,27 @@ namespace HMF.Thesis.Player
         private void Update()
         {
             _stateMachine?.Tick();
+        }
+
+        private void OnCollisionEnter2D(Collision2D other) 
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                PushBack(other.gameObject);
+            }
+        }
+
+        private void OnCollisionStay2D(Collision2D other) 
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                PushBack(other.gameObject);
+            }
+        }
+
+        public void PushBack(GameObject other)
+        {
+            PushBackDir = Mathf.Clamp(HMFutilities.DirectionTo(other.transform.position.x, transform.position.x), -1, 1);
         }
     }
 }
