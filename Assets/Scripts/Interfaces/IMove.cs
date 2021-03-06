@@ -14,14 +14,8 @@ namespace HMF.Thesis.Interfaces
         /// The current speed of the Character;
         int Speed {get;set;}
 
-        /// The height of the Jump.
-        int JumpHeight {get; set;}
-
         /// The speed of the Jump.
         int JumpSpeed {get; set;}
-
-        /// Maximu height of the current jump.
-        float JumpMaxHeight{get; set;}
 
         /// Maximu distance of the pushback.
         Vector2 PushBackDistance{get; set;}
@@ -41,23 +35,11 @@ namespace HMF.Thesis.Interfaces
         /// Dashing logic.
         void Dash();
 
-        /// Sets the height of the jump.
-        void JumpSet();
-
         /// Implementation of a jump.
         /*!
           \param direction is the horizontal direction of the movement.
         */
         void Jump(int direction);
-
-        /// Resets the movementVector y;
-        void ResetY();
-
-        /// Resets the movementVector x value to 0;
-        void ResetX();
-
-        /// Sets the max distance of the pushback.
-        void PushBackSet();
 
         /// Applying force to push back the object.
         void PushBack();

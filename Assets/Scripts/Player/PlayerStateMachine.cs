@@ -38,7 +38,6 @@ namespace HMF.Thesis.Player
             _inputController = GetComponent<InputController>();
 
             //! Need to implement this better.
-            _moveComponent.Move.JumpHeight = 5;
             _moveComponent.Move.JumpSpeed = 400;
 
             var idle = new Idle();
