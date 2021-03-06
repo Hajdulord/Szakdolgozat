@@ -48,7 +48,7 @@ namespace HMF.Thesis.Logic
         public int FallSpeed { get; set; }
 
         /// The Rate that the Character can dash.
-        public int DashRate {get; set;}
+        public float DashRate {get; set;}
 
         /// Fast movement to a direction.
         public void Dash()
