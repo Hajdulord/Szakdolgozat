@@ -13,6 +13,8 @@ namespace HMF.Thesis.Logic
         private Vector2 _movementVector;
         private float _dashDistance = 5f;
 
+        private int _chachedDirection = 1;
+
         /// The Constructor where we set the cahracterData and the characterController.
         /*!
           \param character is a CharacterData where we get the common data of a character.
@@ -56,7 +58,9 @@ namespace HMF.Thesis.Logic
         {
             //var dashVelocity = Vector2.Scale(_rigidbody.gameObject.transform.right, _dashDistance * new Vector2((Mathf.Log(1f / (Time.deltaTime * _rigidbody.drag + 1)) / -Time.deltaTime), 0));
             //_rigidbody.AddForce(dashVelocity, ForceMode2D.Impulse);
-            _rigidbody.MovePosition(_rigidbody.position + _movementVector * _dashDistance);
+            //Debug.Log(_movementVector);
+            //_rigidbody.MovePosition(_rigidbody.position + new Vector2(_movementVector.x, 0) * _dashDistance);
+            _rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
         }
 
         /// Moves to a specific poin.
@@ -91,9 +95,10 @@ namespace HMF.Thesis.Logic
 
             if (direction != 0)
             {
+                _chachedDirection = direction;
                 _rigidbody.gameObject.transform.right = new Vector3(direction, 0, 0);
             }
-
+            //Debug.Log(_chachedDirection);
             /*if(direction == 0 && _movementVector.y == 0)
                 _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);*/
 
