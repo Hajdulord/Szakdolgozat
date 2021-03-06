@@ -12,8 +12,8 @@ namespace HMF.Thesis.Logic
         private Rigidbody2D _rigidbody; ///< Used for physics.
         private Vector2 _movementVector;
         private float _dashDistance = 5f;
-
         private int _chachedDirection = 1;
+        private float _nextDashTime = 0f;
 
         /// The Constructor where we set the cahracterData and the characterController.
         /*!
@@ -47,6 +47,9 @@ namespace HMF.Thesis.Logic
         /// The speed of the fall.
         public int FallSpeed { get; set; }
 
+        /// The Rate that the Character can dash.
+        public int DashRate {get; set;}
+
         /// Fast movement to a direction.
         public void Dash()
         {
@@ -54,7 +57,12 @@ namespace HMF.Thesis.Logic
             //_rigidbody.AddForce(dashVelocity, ForceMode2D.Impulse);
             //Debug.Log(_movementVector);
             //_rigidbody.MovePosition(_rigidbody.position + new Vector2(_movementVector.x, 0) * _dashDistance);
-            _rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
+            
+            if (Time.time >= _nextDashTime)
+            {
+                _rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
+                _nextDashTime = Time.time + 1f / DashRate;
+            }
         }
 
         /// Moves to a specific poin.
