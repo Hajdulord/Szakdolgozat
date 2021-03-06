@@ -42,9 +42,9 @@ namespace HMF.Thesis.Player
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
             _moveComponent.Move.DashRate = 0.5f;
-            _moveComponent.Move.FallSpeed = 1.5f;
+            _moveComponent.Move.FallSpeed = 5f;
 
-            var idle = new Idle();
+            var idle = new Idle(_rigidbody);
             var move = new Move(_moveComponent.Move, this);
             var jump = new Jump(_moveComponent.Move, this);
             var fall = new Fall(_moveComponent.Move, this);

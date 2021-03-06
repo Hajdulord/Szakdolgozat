@@ -113,7 +113,7 @@ namespace HMF.Thesis.Logic
         /// Makes the object fall.
         public void Fall()
         {
-            _rigidbody.AddForce(Vector2.down * FallSpeed);
+            _rigidbody.AddForce(Vector2.down * FallSpeed, ForceMode2D.Impulse);
         }
 
     }
