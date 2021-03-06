@@ -42,10 +42,10 @@ namespace HMF.Thesis.Logic
         public Vector2 PushBackDistance { get; set; } = Vector2.zero;
 
         /// The speed of the pushback.
-        public int PushBackSpeed { get; set; }
+        public float PushBackSpeed { get; set; }
 
         /// The speed of the fall.
-        public int FallSpeed { get; set; }
+        public float FallSpeed { get; set; }
 
         /// The Rate that the Character can dash.
         public float DashRate {get; set;}
@@ -113,7 +113,7 @@ namespace HMF.Thesis.Logic
         /// Makes the object fall.
         public void Fall()
         {
-            throw new System.NotImplementedException();
+            _rigidbody.AddForce(Vector2.down * FallSpeed);
         }
 
     }
