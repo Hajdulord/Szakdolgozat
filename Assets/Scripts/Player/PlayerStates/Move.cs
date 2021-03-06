@@ -36,10 +36,8 @@ namespace HMF.Thesis.Player.PlayerStates
             {
                 _move.Dash();
                 _playerStateMachine.IsDashing = false;
-                //Debug.Log("Dash");
             }
             
-            //Debug.Log("Move ");
         }
     }
 }
