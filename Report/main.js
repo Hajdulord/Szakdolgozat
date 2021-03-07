@@ -233,7 +233,7 @@ var assemblies = [
     "classes": [
       { "name": "HMF.Thesis.Player.Fall", "rp": "PlayerAssembly_Fall.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.InputController", "rp": "PlayerAssembly_InputController.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 68, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 63, "cal": 63, "tl": 119, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "PlayerAssembly_PlayerStateMachine.html", "cl": 0, "ucl": 83, "cal": 83, "tl": 153, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Idle", "rp": "PlayerAssembly_Idle.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Jump", "rp": "PlayerAssembly_Jump.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "PlayerAssembly_Move.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
