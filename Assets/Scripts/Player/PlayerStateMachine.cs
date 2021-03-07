@@ -113,7 +113,17 @@ namespace HMF.Thesis.Player
 
         public void PushBack(GameObject other)
         {
-            PushBackDir = Mathf.Clamp(HMFutilities.DirectionTo(other.transform.position.x, transform.position.x), -1, 1);
+            var dir = HMFutilities.DirectionTo(other.transform.position.x, transform.position.x);
+
+            if (dir >= 0)
+            {
+                dir = 1;
+            }else
+            {
+                dir = -1;
+            }
+
+            PushBackDir = dir;
         }
     }
 }
