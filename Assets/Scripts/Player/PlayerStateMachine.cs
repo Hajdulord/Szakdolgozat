@@ -18,6 +18,7 @@ namespace HMF.Thesis.Player
     public class PlayerStateMachine : MonoBehaviour
     {
         [SerializeField] private LayerMask _jumpLayerMask;
+        [SerializeField] private Transform _groundCheck;
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private MoveComponent _moveComponent;
         private CharacterComponent _characterComponent;
@@ -75,13 +76,19 @@ namespace HMF.Thesis.Player
             At(pushBack, jump, notPushedBack());
             At(pushBack, fall, notPushedBack());
 
-            //At(jump, idle, grunded());
-
-            Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
+            /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> falling() => () => _rigidbody.velocity.y < 0f;
             Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
+            Func<bool> isPushedBack() => () => PushBackDir != 0f;
+            Func<bool> notPushedBack() => () => PushBackDir == 0f;*/
+
+            Func<bool> isIdle() => () => MoveDirection == 0 && GroundCheck();
+            Func<bool> isMoving() => () => MoveDirection != 0 && GroundCheck();
+            Func<bool> grundedAndReadyToJump() => () => IsJumping && GroundCheck();
+            Func<bool> falling() => () => _rigidbody.velocity.y < 0f;
+            Func<bool> grunded() => () => GroundCheck();
             Func<bool> isPushedBack() => () => PushBackDir != 0f;
             Func<bool> notPushedBack() => () => PushBackDir == 0f;
 
@@ -113,7 +120,34 @@ namespace HMF.Thesis.Player
 
         public void PushBack(GameObject other)
         {
-            PushBackDir = Mathf.Clamp(HMFutilities.DirectionTo(other.transform.position.x, transform.position.x), -1, 1);
+            var dir = HMFutilities.DirectionTo(other.transform.position.x, transform.position.x);
+
+            if (dir >= 0)
+            {
+                dir = 1;
+            }else
+            {
+                dir = -1;
+            }
+
+            PushBackDir = dir;
+        }
+
+        private bool GroundCheck()
+        {
+            var output = false;
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
+            for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].gameObject != gameObject)
+			{
+				output = true;
+                return output;
+			}
+		}
+
+            return output;
         }
     }
 }
