@@ -16,25 +16,27 @@ namespace HMF.Thesis.Status
             if(_IsInitialized)
                 return;
 
-            Type objType = typeof(StatusFactory);
-            var statusTypes = objType.Assembly.GetTypes().Where(myType => myType.IsAssignableFrom(typeof(IStatus)));
+            Type objType = typeof(StatusBase);
+            var statusTypes = objType.Assembly.GetTypes().Where(myType => myType.IsClass && myType.IsSubclassOf(typeof(StatusBase)));
 
-            _statusesByName = new();
+            _statusesByName = new Dictionary<string, Type>();
 
             foreach (var type in statusTypes)
             {
-                var tempStatus = Activator.CreateInstance(type) as IStatus;
+                var tempStatus = Activator.CreateInstance(type) as StatusBase;
 
                 _statusesByName.Add(tempStatus.Name, type);
             }
         }
 
-        public static IStatus GetStatus(string statusType)
+        public static StatusBase GetStatus(string statusType)
         {
+            InitializeFactory();
+
             if (_statusesByName.ContainsKey(statusType))
             {
                 Type type = _statusesByName[statusType];
-                var status = Activator.CreateInstance(type) as IStatus;
+                var status = Activator.CreateInstance(type) as StatusBase;
 
                 return status;
             }
