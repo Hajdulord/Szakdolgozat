@@ -5,6 +5,9 @@ var struct_controls_1_1_gameplay_actions =
     [ "Enable", "struct_controls_1_1_gameplay_actions.html#af4e5e35bce9b63febc2abdfc9af2588a", null ],
     [ "Get", "struct_controls_1_1_gameplay_actions.html#a7c84987ad2e2c4b3b1fe0f9beb87cf07", null ],
     [ "SetCallbacks", "struct_controls_1_1_gameplay_actions.html#a26229d4f49774f787a78b74f9d4a79af", null ],
+    [ "Dash", "struct_controls_1_1_gameplay_actions.html#aed71280586744f95ce64b91d51ffd0ae", null ],
     [ "enabled", "struct_controls_1_1_gameplay_actions.html#a6f54ddc016e657056572769a23e0264a", null ],
-    [ "Newaction", "struct_controls_1_1_gameplay_actions.html#afbbc3b9c49f55c2c31b35da5b3165a92", null ]
+    [ "Jump", "struct_controls_1_1_gameplay_actions.html#a6165b0b9245140f6837feea30cd1429a", null ],
+    [ "Move", "struct_controls_1_1_gameplay_actions.html#a358649482ab381f99a5ee3c32b5efa73", null ],
+    [ "NormalAttack", "struct_controls_1_1_gameplay_actions.html#a106e8251bd2f8deab439c2ef3d06895a", null ]
 ];

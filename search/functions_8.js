@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['takedamage_105',['TakeDamage',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_damageable.html#a4a2d313c2d2331606811dbbde3ddeac8',1,'HMF.Thesis.Interfaces.IDamageable.TakeDamage()'],['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_damageable.html#acc7e8e1415d998d5de167d1067145395',1,'HMF.Thesis.Interfaces.IDamageable.TakeDamage(int damage=1)'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html#a4a5ba6291ba1e9330a0f6ec3ceaddcad',1,'HMF.Thesis.Logic.DamageableCharacterLogic.TakeDamage()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html#a386a6901cc8c8f322002c30412ec94cd',1,'HMF.Thesis.Logic.DamageableCharacterLogic.TakeDamage(int damage=1)'],['../class_h_m_f_1_1_thesis_1_1_tests_1_1_damageable_character_logic_test.html#a7e89584403a7f763a841f781f4c36646',1,'HMF.Thesis.Tests.DamageableCharacterLogicTest.TakeDamage()']]],
+  ['takedamagewithinputparameter_106',['TakeDamageWithInputParameter',['../class_h_m_f_1_1_thesis_1_1_tests_1_1_damageable_character_logic_test.html#ac2d3bf43193ec97b19bca002a6e637c5',1,'HMF::Thesis::Tests::DamageableCharacterLogicTest']]]
+];
