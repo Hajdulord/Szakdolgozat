@@ -32,9 +32,10 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ./Library
-          key: Library-${{ matrix.targetPlatform }}
+          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Packages/package-lock.json') }}
           restore-keys: |
-            Library-
+                        Library-${{ matrix.targetPlatform }}-
+                        Library-
       - uses: webbertakken/unity-builder@v2.0-alpha-6
         with:
           versioning: Semantic
