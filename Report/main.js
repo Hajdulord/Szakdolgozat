@@ -239,6 +239,12 @@ var assemblies = [
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "PlayerAssembly_Move.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PushBack", "rp": "PlayerAssembly_PushBack.html", "cl": 0, "ucl": 18, "cal": 18, "tl": 40, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
+  {
+    "name": "StatusAssembly",
+    "classes": [
+      { "name": "HMF.Thesis.Status.StatusFactory", "rp": "StatusAssembly_StatusFactory.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 47, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Status.StatusHandler", "rp": "StatusAssembly_StatusHandler.html", "cl": 0, "ucl": 56, "cal": 56, "tl": 80, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
 ];
 
 var historicCoverageExecutionTimes = [];
