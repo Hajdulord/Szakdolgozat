@@ -7,16 +7,12 @@ namespace HMF.Thesis.Status
     public class StatusHandler
     {
         private Dictionary<string, StatusBase> _cachedStatuses;
-        private Dictionary<string, StatusBase> _activeStatuses;
-        private Dictionary<string, float> _activeStatusesExpirationTime;
-        private Dictionary<string, float> _activeStatusesEffectTime;
+        private Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)> _activeStatuses;
 
         public StatusHandler()
         {
             _cachedStatuses = new Dictionary<string, StatusBase>();
-            _activeStatuses = new Dictionary<string, StatusBase>();
-            _activeStatusesExpirationTime = new Dictionary<string, float>();
-            _activeStatusesEffectTime = new Dictionary<string, float>();
+            _activeStatuses = new Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)>();
         }
 
         public void CalculateStatusEffects()
@@ -24,11 +20,12 @@ namespace HMF.Thesis.Status
             var time = Time.time;
             foreach (var status in _activeStatuses)
             {
-                if (_activeStatusesEffectTime[status.Key] - time <= 0)
+                if (status.Value.EffectTime - time <= 0)
                 {
-                    status.Value.Affect();
+                    status.Value.Status.Affect();
+                    _activeStatuses[status.Key] = (status.Value.Status, status.Value.ExpirationTime,status.Value.Status.EffectInterval + Time.time);
                 }
-                if (_activeStatusesExpirationTime[status.Key] - time <= 0)
+                if (status.Value.ExpirationTime - time <= 0)
                 {
                     RemoveStatus(status.Key);
                 }
@@ -39,17 +36,15 @@ namespace HMF.Thesis.Status
         {
             if(_activeStatuses.ContainsKey(status))
             {
-                _activeStatusesExpirationTime[status] = Time.time + _activeStatuses[status].LifeTime;
-                _activeStatusesEffectTime[status] = Time.time + _activeStatuses[status].EffectInterval;
+
+                _activeStatuses[status] = (_activeStatuses[status].Status, Time.time + _activeStatuses[status].ExpirationTime, _activeStatuses[status].EffectTime);
             }
             else if(_cachedStatuses.ContainsKey(status))
             {
                 var newStatus = StatusFactory.GetStatus(status);
                 if (newStatus != null)
                 {
-                    _activeStatuses.Add(status, newStatus);
-                    _activeStatusesExpirationTime.Add(status, Time.time + newStatus.LifeTime);
-                    _activeStatusesEffectTime.Add(status, Time.time + newStatus.EffectInterval);
+                    _activeStatuses.Add(status, (newStatus, Time.time + newStatus.LifeTime, Time.time + newStatus.EffectInterval));
                 }
             }
             else
@@ -59,9 +54,7 @@ namespace HMF.Thesis.Status
                 {
                     _cachedStatuses.Add(status, newStatus);
 
-                    _activeStatuses.Add(status, newStatus);
-                    _activeStatusesEffectTime.Add(status, Time.time + newStatus.EffectInterval);
-                    _activeStatusesExpirationTime.Add(status, Time.time + newStatus.LifeTime);
+                    _activeStatuses.Add(status, (newStatus, Time.time + newStatus.LifeTime, Time.time + newStatus.EffectInterval));
                 }
             }
         }
@@ -71,8 +64,6 @@ namespace HMF.Thesis.Status
             if (_activeStatuses.ContainsKey(status))
             {
                 _activeStatuses.Remove(status);
-                _activeStatusesExpirationTime.Remove(status);
-                _activeStatusesEffectTime.Remove(status);
             }
         }
 
