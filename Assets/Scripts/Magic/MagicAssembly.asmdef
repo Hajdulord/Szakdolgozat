@@ -1,9 +1,8 @@
 {
-    "name": "ScriptableObjectsAssembly",
-    "rootNamespace": "HMF.Thesis.ScriptableObjects",
+    "name": "MagicAssembly",
+    "rootNamespace": "HMF.Thesis.Magic",
     "references": [
-        "GUID:4e4c1ff0517b97e43880a5ac48269532",
-        "GUID:7d43dfb6f284d3141a14df1c3d1ec52b"
+        "GUID:4e4c1ff0517b97e43880a5ac48269532"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

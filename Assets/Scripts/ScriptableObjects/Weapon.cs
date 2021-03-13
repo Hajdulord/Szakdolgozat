@@ -1,6 +1,6 @@
 using UnityEngine;
 using HMF.Thesis.Interfaces;
-using HMF.Thesis.Status;
+using HMF.Thesis.Components;
 
 namespace HMF.Thesis.ScriptableObjects
 {
@@ -14,12 +14,12 @@ namespace HMF.Thesis.ScriptableObjects
         public override void Use(GameObject gameObject)
         {
             var damageable = gameObject.GetComponent<IDamageable>();
-            var statusHandler = gameObject.GetComponent<StatusHandler>();
+            var statusHandler = gameObject.GetComponent<StatusHandlerComponent>();
 
             damageable?.TakeDamage(damage);
             
             if(status != Status.None)
-                statusHandler?.AddStatus(status.ToString());
+                statusHandler?.StatusHandler.AddStatus(status.ToString());
         }
     }
 }
