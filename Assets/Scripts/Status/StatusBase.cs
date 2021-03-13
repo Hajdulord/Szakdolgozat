@@ -13,6 +13,6 @@ namespace HMF.Thesis.Status
         public abstract float EffectInterval {get;}
 
         /// Affect an object according to the status.
-       public abstract void Affect();
+        public abstract void Affect();
     }
 }
