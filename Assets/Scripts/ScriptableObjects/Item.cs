@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace HMF.Thesis.ScriptableObjects
 {
     public class Item : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public string type;
 
-        // Update is called once per frame
-        void Update()
+        public Sprite sprite;
+
+        public virtual void Use(GameObject gameObject)
         {
-        
+
         }
+    }
+
+    public enum Status
+    {
+        None,
+        Burning,
+        Healing,
+        Frozen,
+        Bleeding,
+        Stunned
     }
 }
