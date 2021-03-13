@@ -4,12 +4,14 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "PlayerAssembly",
-        "InterfacesAssembly",
-        "ScriptableObjectsAssembly",
-        "LogicAssembly"
+        "Interfaces",
+        "Logic",
+        "Status",
+        "ScriptableObjects"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,

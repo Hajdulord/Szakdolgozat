@@ -1,9 +1,8 @@
 {
-    "name": "StatusAssembly",
-    "rootNamespace": "HMF.Thesis.Status",
+    "name": "Interfaces",
+    "rootNamespace": "HMF.Thesis.Interfaces",
     "references": [
-        "GUID:d365c8a574a25714da0f1dc6da745997",
-        "GUID:4e4c1ff0517b97e43880a5ac48269532"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

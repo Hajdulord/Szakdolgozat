@@ -381,10 +381,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 600795972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d074ad5e12b8daa4c9f9d913520541eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 06963e3ca710b384d8dd41b5da370a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachine: {fileID: 600795974}
+  _jumpLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundCheck: {fileID: 1564734241}
 --- !u!114 &600795974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,13 +397,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 600795972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8191e84b09fdafb49ad4ac730912de25, type: 3}
+  m_Script: {fileID: 11500000, guid: 17d9f08da17790b4db429e6822abb524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _groundCheck: {fileID: 1564734241}
+  _stateMachine: {fileID: 600795973}
 --- !u!114 &600795975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,10 +410,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 600795972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0cf96b56acf0c45855dd743a121957, type: 3}
+  m_Script: {fileID: 11500000, guid: bc520a77319ba9d429b7a29850b44c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterData: {fileID: 11400000, guid: 51b688ec087b8624a8894ba9f2d7b5fd, type: 2}
+  _characterData: {fileID: 11400000, guid: 04ca2b89d450b0442a41ffb86eb7147d, type: 2}
 --- !u!114 &600795976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,10 +423,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 600795972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e8a2c4c79361f4eb2a919ac66f47b0, type: 3}
+  m_Script: {fileID: 11500000, guid: e61466a86b1117747a4d96468a9ebfc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 11400000, guid: 51b688ec087b8624a8894ba9f2d7b5fd, type: 2}
+  _character: {fileID: 11400000, guid: 04ca2b89d450b0442a41ffb86eb7147d, type: 2}
 --- !u!50 &600795977
 Rigidbody2D:
   serializedVersion: 4
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 600795973}
-        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, PlayerAssembly
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -491,8 +491,8 @@ MonoBehaviour:
     m_ActionName: gameplay/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 600795973}
-        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, PlayerAssembly
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -506,13 +506,25 @@ MonoBehaviour:
     m_ActionId: 35581d04-cdc4-4a13-b644-f3d115e76bf2
     m_ActionName: gameplay/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: NormalMeleeAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c514ae93-9a67-4c5d-93ac-50f2b25d43d7
     m_ActionName: gameplay/NormalAttack[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 600795973}
-        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, PlayerAssembly
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
         m_MethodName: Dash
         m_Mode: 0
         m_Arguments:

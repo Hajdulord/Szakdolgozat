@@ -1,11 +1,8 @@
 {
-    "name": "LogicAssembly",
-    "rootNamespace": "HMF.Thesis.Logic",
+    "name": "Status",
+    "rootNamespace": "HMF.Thesis.Status",
     "references": [
-        "GUID:d365c8a574a25714da0f1dc6da745997",
-        "GUID:4e4c1ff0517b97e43880a5ac48269532",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:e9a4ad66dd0ead74787ddd92d9415553"
+        "GUID:18a65fb08ce36ca49b4cb10b630ad0c0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

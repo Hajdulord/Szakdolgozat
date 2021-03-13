@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2115e6ce562c244e88adf9f9c83cde7, type: 3}
-  m_Name: TestPlayer
+  m_Script: {fileID: 11500000, guid: 8f3a10d7a2f5d9d46b99d1af839bb5a9, type: 3}
+  m_Name: TestCharacter
   m_EditorClassIdentifier: 
   characterName: TestPlayer
   maxHealth: 5
