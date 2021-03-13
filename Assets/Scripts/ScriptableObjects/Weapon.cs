@@ -17,7 +17,9 @@ namespace HMF.Thesis.ScriptableObjects
             var statusHandler = gameObject.GetComponent<StatusHandler>();
 
             damageable?.TakeDamage(damage);
-            statusHandler.AddStatus(status.ToString());
+            
+            if(status != Status.None)
+                statusHandler?.AddStatus(status.ToString());
         }
     }
 }

@@ -4,7 +4,11 @@ namespace HMF.Thesis.ScriptableObjects
 {
     public class Item : ScriptableObject
     {
+        public string itemName;
+
         public string type;
+
+        public string description;
 
         public Sprite sprite;
 
