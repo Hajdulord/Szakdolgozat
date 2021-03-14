@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Logic;
 
 namespace HMF.Thesis.Components
 {   
     /// A wrapper for DamageableCharacter.
-    public class DamageableCharacterComponent : MonoBehaviour
+    public class DamageableCharacterComponent : MonoBehaviour, IDamageableComponent
     {
         private ICharacter _character = null!; ///< The Character's health comes from here.
         private IDamageable _damageable; ///< The logic behind this class.

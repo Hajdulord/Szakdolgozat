@@ -1,5 +1,6 @@
 using UnityEngine;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Logic;
 using HMF.Thesis.ScriptableObjects;
 
@@ -8,7 +9,7 @@ namespace HMF.Thesis.Components
     /// A wrapper for the MoveLogic.
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(CapsuleCollider2D))]
-    public class MoveComponent : MonoBehaviour
+    public class MoveComponent : MonoBehaviour, IMoveComponent
     {
         [Header("Serialized Fields")]
         [SerializeField] private CharacterData _character = null!; ///< The Character's data.

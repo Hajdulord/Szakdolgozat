@@ -1,13 +1,14 @@
 using UnityEngine;
 using HMF.Thesis.Logic;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
 
 namespace HMF.Thesis.Components
 {
     /// Character Component that wraps the CharacterLogic class.
     [RequireComponent(typeof(SpriteRenderer))]
-    public class CharacterComponent : MonoBehaviour
+    public class CharacterComponent : MonoBehaviour, ICharacterComponent
     {
         [Header("Serialized Fields")]
         [SerializeField] private CharacterData _characterData = null!; ///< The data of the Character.
