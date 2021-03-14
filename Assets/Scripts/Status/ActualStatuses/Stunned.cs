@@ -19,7 +19,25 @@ namespace HMF.Thesis.Status.ActualStatuses
         {
             var damageable = gameObject.GetComponent<IDamageableComponent>();
             damageable?.Damageable.TakeDamage(_damage);
-            // TODO: implement movement lock!
+        }
+
+        public override void PrePhase(GameObject gameObject)
+        {
+            var rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            if (rigidbody != null)
+            {
+                rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+            }
+        }
+
+        public override void CloseUp(GameObject gameObject)
+        {
+            var rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            if (rigidbody != null)
+            {
+                rigidbody.constraints = RigidbodyConstraints2D.None;
+                rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
         }
     }
 }

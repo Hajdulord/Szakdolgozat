@@ -61,12 +61,15 @@ namespace HMF.Thesis.Status
                     _activeStatuses.Add(status, (newStatus, Time.time + newStatus.LifeTime, Time.time + newStatus.EffectInterval));
                 }
             }
+            _activeStatuses[status].Status.PrePhase(_gameObject);
+            _activeStatuses[status].Status.Affect(_gameObject);
         }
 
         public void RemoveStatus(string status)
         {
             if (_activeStatuses.ContainsKey(status))
             {
+                _activeStatuses[status].Status.CloseUp(_gameObject);
                 _activeStatuses.Remove(status);
             }
         }

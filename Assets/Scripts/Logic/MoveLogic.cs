@@ -33,7 +33,7 @@ namespace HMF.Thesis.Logic
         public int BaseSpeed {get; set;}
 
         /// The current speed of the Character;
-        public int Speed {get;set;}
+        public float Speed {get;set;}
 
         /// The speed of the Jump.
         public int JumpSpeed {get; set;}
