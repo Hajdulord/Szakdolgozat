@@ -21,5 +21,16 @@ namespace HMF.Thesis.Status.ActualStatuses
 
             damageable?.Damageable.TakeDamage(_damage);
         }
+
+        public override void PrePhase(GameObject gameObject)
+        {
+            
+        }
+
+        public override void CloseUp(GameObject gameObject)
+        {
+            
+        }
+
     }
 }
