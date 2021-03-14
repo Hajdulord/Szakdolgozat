@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using HMF.Thesis.Interfaces.ComponentInterfaces;
 using UnityEngine;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 
 namespace HMF.Thesis.Status.ActualStatuses
 {
-    public class Frozen : StatusBase
+    public class Stunned : StatusBase
     {
-        public override string Name => "Frozen";
+        public override string Name => "Stunned";
 
-        public override float LifeTime => 60f;
+        public override float LifeTime => 40f;
 
-        public override float EffectInterval => 15f;
+        public override float EffectInterval => 40f;
 
-        private float _damage = 1f;
+        private float _damage = 10f;
 
         public override void Affect(GameObject gameObject)
         {
             var damageable = gameObject.GetComponent<IDamageableComponent>();
             damageable?.Damageable.TakeDamage(_damage);
-            // TODO: implement slowdown!
+            // TODO: implement movement lock!
         }
     }
 }
