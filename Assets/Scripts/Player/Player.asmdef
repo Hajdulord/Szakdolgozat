@@ -2,9 +2,7 @@
     "name": "Player",
     "rootNamespace": "HMF.Thesis.Player",
     "references": [
-        "GUID:17bc5d46e37e8154ba07837463f2fdc8",
         "GUID:18a65fb08ce36ca49b4cb10b630ad0c0",
-        "GUID:726fe1898e6ecd34d8900a32722cd3d4",
         "GUID:75469ad4d38634e559750d17036d5f7c",
         "GUID:d365c8a574a25714da0f1dc6da745997",
         "GUID:c19078d63ad27b04080c9d0f5b26dec8"

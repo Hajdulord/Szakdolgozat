@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using HMF.Thesis.Interfaces;
 
 //!Comments and Tests.
 namespace HMF.Thesis.Status
 {
-    public class StatusHandler
+    public class StatusHandler : IStatusHandler
     {
         private Dictionary<string, StatusBase> _cachedStatuses;
         private Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)> _activeStatuses;

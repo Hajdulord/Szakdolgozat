@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
-using HMF.Thesis.Components;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
+using HMF.Thesis.Interfaces;
 using System;
 
 //! Needs Unit Testing!
@@ -12,17 +11,14 @@ using System;
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 
-    [RequireComponent(typeof(MoveComponent))]
-    [RequireComponent(typeof(CharacterComponent))]
-    [RequireComponent(typeof(InputController))]
     public class PlayerStateMachine : MonoBehaviour
     {
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
-        private MoveComponent _moveComponent;
-        private CharacterComponent _characterComponent;
-        private InputController _inputController;
+        private IMoveComponent _moveComponent;
+        private ICharacterComponent _characterComponent;
+        private IInputController _inputController;
         private Rigidbody2D _rigidbody;
         private float _distToGround;
 
@@ -37,9 +33,9 @@ namespace HMF.Thesis.Player
             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
-            _moveComponent = GetComponent<MoveComponent>();
-            _characterComponent = GetComponent<CharacterComponent>();
-            _inputController = GetComponent<InputController>();
+            _moveComponent = GetComponent<IMoveComponent>();
+            _characterComponent = GetComponent<ICharacterComponent>();
+            _inputController = GetComponent<IInputController>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
             PushBackDir = 0f;
