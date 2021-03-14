@@ -10,10 +10,13 @@ namespace HMF.Thesis.Status
         private Dictionary<string, StatusBase> _cachedStatuses;
         private Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)> _activeStatuses;
 
-        public StatusHandler()
+        private GameObject _gameObject;
+
+        public StatusHandler(GameObject gameObject)
         {
             _cachedStatuses = new Dictionary<string, StatusBase>();
             _activeStatuses = new Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)>();
+            _gameObject = gameObject;
         }
 
         public void CalculateStatusEffects()
@@ -23,7 +26,7 @@ namespace HMF.Thesis.Status
             {
                 if (status.Value.EffectTime - time <= 0)
                 {
-                    status.Value.Status.Affect();
+                    status.Value.Status.Affect(_gameObject);
                     _activeStatuses[status.Key] = (status.Value.Status, status.Value.ExpirationTime,status.Value.Status.EffectInterval + Time.time);
                 }
                 if (status.Value.ExpirationTime - time <= 0)

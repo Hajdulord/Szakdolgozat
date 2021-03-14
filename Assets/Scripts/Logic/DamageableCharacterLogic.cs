@@ -26,7 +26,7 @@ namespace HMF.Thesis.Logic
         /*!
         \param damage is the damage you substract from your health.
         */
-        public void TakeDamage(int damage = 1)
+        public void TakeDamage(float damage = 1)
         {
             _character.Health -= damage;
         }

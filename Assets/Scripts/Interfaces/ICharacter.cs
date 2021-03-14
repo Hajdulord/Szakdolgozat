@@ -8,7 +8,7 @@ namespace HMF.Thesis.Interfaces
     public interface ICharacter
     {
         /// The current health of the Character.
-        int Health {get; set;}
+        float Health {get; set;}
 
         /// The max health of the Character.
         int MaxHealth {get;}
