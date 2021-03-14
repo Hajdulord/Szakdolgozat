@@ -14,7 +14,7 @@ namespace HMF.Thesis.Components
 
         private void Awake() 
         {
-            _statusHandler = new StatusHandler();
+            _statusHandler = new StatusHandler(gameObject);
         }
 
         

@@ -7,7 +7,7 @@ namespace HMF.Thesis.Logic
     /// The Logic class for an Implementation of a Character.
     public class CharacterLogic : ICharacter
     {
-        private int _health; ///< The Current health of the Character.
+        private float _health; ///< The Current health of the Character.
         private CharacterData _characterData = null!; ///< The data of the Character.
 
         /// Basic constructor with CharacterData as data
@@ -21,7 +21,7 @@ namespace HMF.Thesis.Logic
         }
 
         /// Propery for the current health of the Character. It clapms the health between 0 and MaxHealth.
-        public int Health { get => Mathf.Max(0, _health); set => _health = Mathf.Min(Mathf.Max(0, value), MaxHealth); }
+        public float Health { get => Mathf.Max(0, _health); set => _health = Mathf.Min(Mathf.Max(0, value), MaxHealth); }
 
         /// Getter for MaxHealth.
         public int MaxHealth => _characterData.maxHealth;
