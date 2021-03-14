@@ -13,11 +13,22 @@ namespace HMF.Thesis.Status.ActualStatuses
 
         public override float EffectInterval => 10f;
         
-        private float healAmount = 3f;
+        private float _healAmount = 3f;
 
         public override void Affect(GameObject gameObject)
         {
-            // TODO: Create Healable!
+            var healable = gameObject.GetComponent<IHealableComponent>();
+            healable?.Healable.Heal(_healAmount);
+        }
+
+        public override void PrePhase(GameObject gameObject)
+        {
+            
+        }
+
+        public override void CloseUp(GameObject gameObject)
+        {
+            
         }
     }
 }
