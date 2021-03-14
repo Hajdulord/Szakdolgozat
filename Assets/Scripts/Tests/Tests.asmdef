@@ -6,19 +6,17 @@
         "UnityEditor.TestRunner",
         "Interfaces",
         "Logic",
-        "Status",
+        "Player",
         "ScriptableObjects"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
         "nunit.framework.dll",
-        "Moq.dll",
-        "Castle.Core.dll"
+        "Castle.Core.dll",
+        "Moq.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [
