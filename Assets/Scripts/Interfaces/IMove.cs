@@ -39,7 +39,7 @@ namespace HMF.Thesis.Interfaces
         /*!
           \param direction is the horizontal direction of the movement.
         */
-        void Jump(int direction);
+        void Jump();
 
         /// Applying force to push back the object.
         /*!

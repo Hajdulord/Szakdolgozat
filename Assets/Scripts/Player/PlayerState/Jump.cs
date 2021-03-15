@@ -21,7 +21,7 @@ namespace HMF.Thesis.Player.PlayerStates
         public void OnEnter()
         {
             
-            _move.Jump(_playerStateMachine.MoveDirection);
+            _move.Jump();
             Debug.Log("Jump");
 
         }

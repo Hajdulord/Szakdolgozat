@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
 
-namespace HMF.Thesis.Tests
+namespace HMF.Thesis.Tests.Logic
 {
     /// Tests for the Characterlogic class.
     public class CharacterLogicTest
