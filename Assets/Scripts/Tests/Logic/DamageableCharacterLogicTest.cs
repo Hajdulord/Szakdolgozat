@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
-using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
 using HMF.Thesis.Interfaces;
 using Moq;
 
-namespace HMF.Thesis.Tests
+namespace HMF.Thesis.Tests.Logic
 {
     /// Tets for the Damageable class.
     public class DamageableCharacterLogicTest

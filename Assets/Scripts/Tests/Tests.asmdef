@@ -7,7 +7,9 @@
         "Interfaces",
         "Logic",
         "Player",
-        "ScriptableObjects"
+        "ScriptableObjects",
+        "Status",
+        "Components"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

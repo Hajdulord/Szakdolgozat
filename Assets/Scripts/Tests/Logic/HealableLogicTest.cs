@@ -3,7 +3,7 @@ using HMF.Thesis.Interfaces;
 using HMF.Thesis.Logic;
 using Moq;
 
-namespace HMF.Thesis.Tests
+namespace HMF.Thesis.Tests.Logic
 {
     public class HealableLogicTest
     {

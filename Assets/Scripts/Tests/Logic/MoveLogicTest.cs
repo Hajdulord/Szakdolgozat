@@ -1,13 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
-using Moq;
 
-namespace HMF.Thesis.Tests
+namespace HMF.Thesis.Tests.Logic
 {
     public class MoveLogicTest
     {
@@ -27,7 +25,7 @@ namespace HMF.Thesis.Tests
 
             Assert.AreEqual(data.baseSpeed, move.Speed);
         }
-
+        
         [UnityTest]
         public IEnumerator DashInitialTest()
         {
