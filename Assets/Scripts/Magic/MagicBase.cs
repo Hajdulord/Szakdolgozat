@@ -1,3 +1,4 @@
+using HMF.Thesis.ScriptableObjects;
 using UnityEngine;
 
 namespace HMF.Thesis.Magic
@@ -6,7 +7,7 @@ namespace HMF.Thesis.Magic
     {
         public abstract string Name {get;}
 
-        public abstract void Use(GameObject gameObject);
+        public abstract void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, int dir = 0);
         
     }
 }

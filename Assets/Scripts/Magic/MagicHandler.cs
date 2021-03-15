@@ -1,22 +1,20 @@
 using HMF.Thesis.Interfaces;
 using UnityEngine;
 using System.Collections.Generic;
+using HMF.Thesis.ScriptableObjects;
 
 namespace HMF.Thesis.Magic
 {
     public class MagicHandler : IMagicHandler
     {
-        private GameObject _gameObject;
-
-        private Dictionary<string, MagicBase> _magic;
+        private Dictionary<string, (MagicBase magic, MagicFocusData magicFocus)> _magic;
 
         public MagicHandler(GameObject gameObject)
         {
-            _gameObject = gameObject;
-            _magic = new Dictionary<string, MagicBase>();
+            _magic = new Dictionary<string, (MagicBase, MagicFocusData)>();
         }
 
-        public void AddNewMagic(string magic)
+        public void AddNewMagic(string magic, MagicFocusData magicFocus)
         {
             if (_magic.ContainsKey(magic))
                 return;
@@ -25,7 +23,7 @@ namespace HMF.Thesis.Magic
 
             if (newMagic != null)
             {
-                _magic.Add(magic, newMagic);
+                _magic.Add(magic, (newMagic, magicFocus));
             }
         }
 
@@ -37,12 +35,23 @@ namespace HMF.Thesis.Magic
             }
         }
 
-        public void UseMagic(string magic)
+        public void UseMagic(string magic, string[] tagsToIgnore, Vector2 center, int dir = 0)
         {
             if (_magic.ContainsKey(magic))
             {
-                _magic[magic].Use(_gameObject);
+                var magicFocus = _magic[magic].magicFocus;
+                _magic[magic].magic.Use(tagsToIgnore, magicFocus, center, dir);
             }
+        }
+
+        public MagicFocusData GetMagicFocus(string magic)
+        {
+            if (_magic.ContainsKey(magic))
+            {
+                return _magic[magic].magicFocus;
+            }
+
+            return null;
         }
     }
 }
