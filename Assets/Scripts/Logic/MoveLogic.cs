@@ -98,7 +98,7 @@ namespace HMF.Thesis.Logic
 		/*!
 			\param direction is the horizontal direction of the movement.
 		*/
-		public void Jump(int direction)
+		public void Jump()
 		{
 			_rigidbody.AddForce(Vector2.up * JumpSpeed);
 		}
