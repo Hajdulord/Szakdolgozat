@@ -1,21 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using HMF.Thesis.ScriptableObjects;
 using UnityEngine;
 
-namespace HMF.Thesis
+namespace HMF.Thesis.Magic
 {
-    public class MagicBase : MonoBehaviour
+    public abstract class MagicBase
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public abstract string Name {get;}
 
-        // Update is called once per frame
-        void Update()
-        {
+        public abstract void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, int dir = 0);
         
-        }
     }
 }
