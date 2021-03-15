@@ -232,9 +232,10 @@ var assemblies = [
   {
     "name": "Magic",
     "classes": [
-      { "name": "HMF.Thesis.Magic.MagicHandler", "rp": "Magic_MagicHandler.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.MagicBase", "rp": "Magic_MagicBase.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.MagicFactory", "rp": "Magic_MagicFactory.html", "cl": 0, "ucl": 4, "cal": 4, "tl": 21, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Magic.ActualMagic.Burst", "rp": "Magic_Burst.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Magic.ActualMagic.Lance", "rp": "Magic_Lance.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Magic.MagicFactory", "rp": "Magic_MagicFactory.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Magic.MagicHandler", "rp": "Magic_MagicHandler.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 57, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Player",
@@ -246,12 +247,6 @@ var assemblies = [
       { "name": "HMF.Thesis.Player.PlayerStates.Jump", "rp": "Player_Jump.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "Player_Move.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PushBack", "rp": "Player_PushBack.html", "cl": 0, "ucl": 18, "cal": 18, "tl": 40, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
-    "name": "ScriptableObjects",
-    "classes": [
-      { "name": "HMF.Thesis.ScriptableObjects.Item", "rp": "ScriptableObjects_Item.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.ScriptableObjects.Weapon", "rp": "ScriptableObjects_Weapon.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 26, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Status",
