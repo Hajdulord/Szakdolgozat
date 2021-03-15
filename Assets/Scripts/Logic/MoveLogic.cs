@@ -50,10 +50,19 @@ namespace HMF.Thesis.Logic
         /// Fast movement to a direction.
         public void Dash()
         {
-            if (Time.time >= _nextDashTime)
+            DashWithParam(Time.time);
+        }
+
+        /// Dash with a parameter for time that was created to test the logic of dash.
+        /*!
+          \param time is the float that is needed for checking if you can dash again.
+        */
+        public void DashWithParam(float time)
+        {
+            if (time >= _nextDashTime)
             {
                 _rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
-                _nextDashTime = Time.time + 1f / DashRate;
+                _nextDashTime = time + 1f / DashRate;
             }
         }
 
