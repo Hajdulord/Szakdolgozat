@@ -410,7 +410,6 @@ namespace HMF.Thesis.Tests.Logic
             yield return new WaitForFixedUpdate();
 
             //* Testing
-            Debug.Log(rigidbody.position.y);
 
             Assert.Greater(rigidbody.position.y, 0.0f);
             Assert.AreEqual(0.0f, rigidbody.position.x, 0.01f);
@@ -438,8 +437,6 @@ namespace HMF.Thesis.Tests.Logic
             move.Fall();
 
             yield return new WaitForFixedUpdate();
-
-            Debug.Log(rigidbody.position.y);
 
             //* Testing
 
