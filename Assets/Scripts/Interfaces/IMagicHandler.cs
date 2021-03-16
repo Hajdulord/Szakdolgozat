@@ -3,6 +3,6 @@ namespace HMF.Thesis.Interfaces
 {
     public interface IMagicHandler
     {
-        void UseMagic(string magic, string[] tagsToIgnore, Vector2 center, int dir = 0);
+        void UseMagic(string magic, string[] tagsToIgnore, Vector2 center, float dir = 0);
     }
 }
