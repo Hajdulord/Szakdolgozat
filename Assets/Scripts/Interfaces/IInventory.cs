@@ -8,8 +8,10 @@ namespace HMF.Thesis.Interfaces
     {
         void AddItem(IItem item, int quantity);
         void RemoveItem(IItem item, int quantity);
+        void SetUse(IItem item);
+        void RemoveUse(int slotNumber);
         Dictionary<IItem, int> InventoryShelf {get;}
-        List<IItem> InUse {get;}
+        Dictionary<int, IItem> InUse {get;}
         IItem MainWeapon {get; set;}
         IItem CurrentItem {get; set;}
     }
