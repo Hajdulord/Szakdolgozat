@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.ScriptableObjects
 {
@@ -13,6 +12,9 @@ namespace HMF.Thesis.ScriptableObjects
         public float attackRange;
         public float attackRate;
         public string status;
+        public string magicType;
         public Sprite sprite;
+        public TargetType targetType;
+        public bool isUnique;
     }
 }

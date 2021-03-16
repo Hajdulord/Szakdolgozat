@@ -10,28 +10,28 @@ namespace HMF.Thesis.Magic.ActualMagic
 
         public override string Name => "Burst";
 
-        public override void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, int dir = 0)
+        public override void Use(string[] tagsToTarget, MagicFocusData magicFocus, Vector2 center, float dir = 0)
         {
             var colliders = Physics2D.OverlapCircleAll(center, magicFocus.attackRange);
 
             foreach (var item in colliders)
             {
-                var ignore = false;
-                foreach(var tag in tagsToIgnore)
+                var toTarget = false;
+                foreach(var tag in tagsToTarget)
                 {
                     if (item.tag == tag)
                     {
-                        ignore = true;
+                        toTarget = true;
                     }
                 }
 
-                if (!ignore)
+                if (toTarget)
                 {
                     var damageable = item.gameObject.GetComponent<IDamageableComponent>();
                     var statusHandler = item.gameObject.GetComponent<IStatusHandlerComponent>();
 
-                    damageable.Damageable.TakeDamage(magicFocus.damage);
-                    statusHandler.StatusHandler.AddStatus(magicFocus.status);
+                    damageable?.Damageable.TakeDamage(magicFocus.damage);
+                    statusHandler?.StatusHandler.AddStatus(magicFocus.status);
                 }
             }
         }

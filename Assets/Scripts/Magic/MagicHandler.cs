@@ -35,7 +35,7 @@ namespace HMF.Thesis.Magic
             }
         }
 
-        public void UseMagic(string magic, string[] tagsToIgnore, Vector2 center, int dir = 0)
+        public void UseMagic(string magic, string[] tagsToIgnore, Vector2 center, float dir = 0)
         {
             if (_magic.ContainsKey(magic))
             {

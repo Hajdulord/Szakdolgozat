@@ -1,13 +1,11 @@
 {
-    "name": "Components",
-    "rootNamespace": "HMF.Thesis.Components",
+    "name": "Items",
+    "rootNamespace": "HMF.Thesis.Items",
     "references": [
-        "GUID:f25cb74bab09e9141bd289ef5bba8e75",
-        "GUID:c19078d63ad27b04080c9d0f5b26dec8",
-        "GUID:726fe1898e6ecd34d8900a32722cd3d4",
         "GUID:18a65fb08ce36ca49b4cb10b630ad0c0",
+        "GUID:726fe1898e6ecd34d8900a32722cd3d4",
         "GUID:47a2e02addbd08e4fa6eeb6b19b5e25b",
-        "GUID:c7e81a4a39f2ef8468bbd73ea20947db"
+        "GUID:c19078d63ad27b04080c9d0f5b26dec8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
