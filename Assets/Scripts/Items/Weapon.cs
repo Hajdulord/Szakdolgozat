@@ -2,14 +2,12 @@ using UnityEngine;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
-using HMF.Thesis.Status;
 
 namespace HMF.Thesis.Items
 {
     public class Weapon : IItem
     {
         private WeaponData _weaponData;
-        private StatusHandler _statusHandler;
 
         public string Name { get => _weaponData.name; }
         public string Description {get => _weaponData.description; }
@@ -17,10 +15,9 @@ namespace HMF.Thesis.Items
         public Sprite Sprite { get => _weaponData.sprite; }
         public TargetType TargetType { get => _weaponData.targetType; }
 
-        public Weapon(WeaponData weaponData, StatusHandler statusHandler)
+        public Weapon(WeaponData weaponData)
         {
             _weaponData = weaponData;
-            _statusHandler = statusHandler;
         }
 
         public void Use(GameObject origin, string[] tagsToTarget)
