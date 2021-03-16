@@ -222,11 +222,18 @@ for (i = 0, l = charts.length; i < l; i++) {
 
 var assemblies = [
   {
+    "name": "Items",
+    "classes": [
+      { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Items.Weapon", "rp": "Items_Weapon.html", "cl": 0, "ucl": 30, "cal": 30, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
+  {
     "name": "Logic",
     "classes": [
       { "name": "HMF.Thesis.Logic.CharacterLogic", "rp": "Logic_CharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "Logic_DamageableCharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.HealableLogic", "rp": "Logic_HealableLogic.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 20, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.InventoryLogic", "rp": "Logic_InventoryLogic.html", "cl": 0, "ucl": 65, "cal": 65, "tl": 101, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "Logic_MoveLogic.html", "cl": 43, "ucl": 2, "cal": 45, "tl": 113, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
