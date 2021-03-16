@@ -7,7 +7,7 @@ namespace HMF.Thesis.Magic
     {
         public abstract string Name {get;}
 
-        public abstract void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, int dir = 0);
+        public abstract void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, float dir = 0);
         
     }
 }

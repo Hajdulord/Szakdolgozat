@@ -1,3 +1,4 @@
+using HMF.Thesis.Interfaces;
 using UnityEngine;
 
 namespace HMF.Thesis.ScriptableObjects
@@ -12,6 +13,8 @@ namespace HMF.Thesis.ScriptableObjects
         public float attackRate;
         public string status;
         public Sprite sprite;
+        public TargetType targetType;
+        public bool isUnique;
 
     }
 }

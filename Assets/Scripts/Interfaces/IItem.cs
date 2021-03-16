@@ -4,12 +4,13 @@ namespace HMF.Thesis.Interfaces
 {
     public interface IItem
     {
-        string Name {get; set;}
-        bool Unique {get; set;}
-        Sprite Sprite {get; set;}
-        TargetType TargetType {get; set;}
+        string Name {get;}
+        bool Unique {get;}
+        Sprite Sprite {get;}
+        TargetType TargetType {get;}
+        string Description {get;}
 
-        void Use(GameObject target);
+        void Use(GameObject target, string[] tagsToTarget);
     }
 
     public enum TargetType

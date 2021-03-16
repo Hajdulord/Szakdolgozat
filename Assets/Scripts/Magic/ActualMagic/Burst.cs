@@ -10,7 +10,7 @@ namespace HMF.Thesis.Magic.ActualMagic
 
         public override string Name => "Burst";
 
-        public override void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, int dir = 0)
+        public override void Use(string[] tagsToIgnore, MagicFocusData magicFocus, Vector2 center, float dir = 0)
         {
             var colliders = Physics2D.OverlapCircleAll(center, magicFocus.attackRange);
 
