@@ -10,7 +10,7 @@ namespace HMF.Thesis.Interfaces
         TargetType TargetType {get;}
         string Description {get;}
 
-        void Use(GameObject target, string[] tagsToTarget);
+        void Use(GameObject origin, string[] tagsToTarget);
     }
 
     public enum TargetType
