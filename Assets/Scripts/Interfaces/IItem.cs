@@ -9,6 +9,7 @@ namespace HMF.Thesis.Interfaces
         Sprite Sprite {get;}
         TargetType TargetType {get;}
         string Description {get;}
+        float attackTime {get;}
 
         void Use(GameObject origin, string[] tagsToTarget);
     }

@@ -16,5 +16,6 @@ namespace HMF.Thesis.ScriptableObjects
         public Sprite sprite;
         public TargetType targetType;
         public bool isUnique;
+        public float attackTime;
     }
 }

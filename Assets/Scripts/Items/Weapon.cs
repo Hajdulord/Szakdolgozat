@@ -9,11 +9,12 @@ namespace HMF.Thesis.Items
     {
         private WeaponData _weaponData;
 
-        public string Name { get => _weaponData.name; }
-        public string Description {get => _weaponData.description; }
-        public bool Unique { get => _weaponData.isUnique; }
-        public Sprite Sprite { get => _weaponData.sprite; }
-        public TargetType TargetType { get => _weaponData.targetType; }
+        public string Name => _weaponData.name;
+        public string Description => _weaponData.description;
+        public bool Unique => _weaponData.isUnique;
+        public Sprite Sprite => _weaponData.sprite;
+        public TargetType TargetType => _weaponData.targetType;
+        public float attackTime => _weaponData.attackTime;
 
         public Weapon(WeaponData weaponData)
         {
