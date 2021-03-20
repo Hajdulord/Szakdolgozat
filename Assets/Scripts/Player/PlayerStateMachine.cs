@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
@@ -15,10 +16,13 @@ namespace HMF.Thesis.Player
     {
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
+        [SerializeField] private List<string> _tagsToIgnore = new List<string>();
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
         private ICharacterComponent _characterComponent;
+        private IInventoryComponent _inventoryComponent;
         private IInputController _inputController;
+        private IAttackComponent _attackComponent;
         private Rigidbody2D _rigidbody;
         private float _distToGround;
 
@@ -26,6 +30,9 @@ namespace HMF.Thesis.Player
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
+        public IItem CurrentItem {get; internal set; } = null;
+
+        public IInventory Inventory {get => _inventoryComponent.Inventory; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
@@ -35,6 +42,8 @@ namespace HMF.Thesis.Player
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<IMoveComponent>();
             _characterComponent = GetComponent<ICharacterComponent>();
+            _attackComponent = GetComponent<IAttackComponent>();
+            _inventoryComponent = GetComponent<IInventoryComponent>();
             _inputController = GetComponent<IInputController>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
@@ -51,6 +60,7 @@ namespace HMF.Thesis.Player
             var jump = new Jump(_moveComponent.Move, this);
             var fall = new Fall(_moveComponent.Move, this);
             var pushBack = new PushBack(_moveComponent.Move, _rigidbody, this);
+            var attack = new Attack(_attackComponent.Attack, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -72,6 +82,18 @@ namespace HMF.Thesis.Player
             At(pushBack, jump, notPushedBack());
             At(pushBack, fall, notPushedBack());
 
+            At(idle, attack, isAttacking());
+            At(move, attack, isAttacking());
+            At(jump, attack, isAttacking());
+            At(fall, attack, isAttacking());
+            At(pushBack, attack, isAttacking());
+
+            At(attack, idle, notAttacking());
+            At(attack, move, notAttacking());
+            At(attack, jump, notAttacking());
+            At(attack, fall, notAttacking());
+            At(attack, pushBack, notAttacking());
+
             /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
@@ -87,6 +109,8 @@ namespace HMF.Thesis.Player
             Func<bool> grunded() => () => GroundCheck();
             Func<bool> isPushedBack() => () => PushBackDir != 0f;
             Func<bool> notPushedBack() => () => PushBackDir == 0f;
+            Func<bool> isAttacking() => () => CurrentItem != null;
+            Func<bool> notAttacking() => () => CurrentItem == null;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             
