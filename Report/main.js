@@ -224,14 +224,15 @@ var assemblies = [
   {
     "name": "Items",
     "classes": [
-      { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Items.Weapon", "rp": "Items_Weapon.html", "cl": 0, "ucl": 30, "cal": 30, "tl": 49, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Items.Weapon", "rp": "Items_Weapon.html", "cl": 0, "ucl": 31, "cal": 31, "tl": 50, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Logic",
     "classes": [
+      { "name": "HMF.Thesis.Logic.AttackLogic", "rp": "Logic_AttackLogic.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 20, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.CharacterLogic", "rp": "Logic_CharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 35, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "Logic_DamageableCharacterLogic.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "Logic_DamageableCharacterLogic.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 36, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.HealableLogic", "rp": "Logic_HealableLogic.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 20, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.InventoryLogic", "rp": "Logic_InventoryLogic.html", "cl": 0, "ucl": 65, "cal": 65, "tl": 101, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "Logic_MoveLogic.html", "cl": 43, "ucl": 2, "cal": 45, "tl": 113, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -247,9 +248,10 @@ var assemblies = [
   {
     "name": "Player",
     "classes": [
+      { "name": "HMF.Thesis.Player.Attack", "rp": "Player_Attack.html", "cl": 0, "ucl": 28, "cal": 28, "tl": 58, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.Fall", "rp": "Player_Fall.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.InputController", "rp": "Player_InputController.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 68, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 83, "cal": 83, "tl": 149, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.InputController", "rp": "Player_InputController.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 72, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 101, "cal": 101, "tl": 173, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Idle", "rp": "Player_Idle.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Jump", "rp": "Player_Jump.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "Player_Move.html", "cl": 0, "ucl": 19, "cal": 19, "tl": 43, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
