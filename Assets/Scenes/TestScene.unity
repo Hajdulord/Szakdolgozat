@@ -807,6 +807,8 @@ GameObject:
   - component: {fileID: 1772766260}
   - component: {fileID: 1772766259}
   - component: {fileID: 1772766261}
+  - component: {fileID: 1772766263}
+  - component: {fileID: 1772766262}
   m_Layer: 6
   m_Name: Square
   m_TagString: Enemy
@@ -905,3 +907,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1772766262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772766258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc520a77319ba9d429b7a29850b44c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterData: {fileID: 11400000, guid: 56eec541a87ee36419949235c0c1bced, type: 2}
+--- !u!114 &1772766263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772766258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48bba75014837c459a956e82ffd2ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
