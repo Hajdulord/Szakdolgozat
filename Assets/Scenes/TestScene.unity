@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 600795985}
   - component: {fileID: 600795984}
   - component: {fileID: 600795983}
+  - component: {fileID: 600795986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -392,6 +393,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _groundCheck: {fileID: 1564734241}
+  _tagsToIgnore:
+  - Enemy
 --- !u!114 &600795974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +680,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78eb353815d1e9a4b96713ebd934634c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &600795986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600795972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943d0cabf2d3b0648a6f09c0cdb822a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainWeaponData: {fileID: 11400000, guid: e69403d43804a5242890220eabdd850d, type: 2}
+  isUseSize: 4
 --- !u!1 &1293225617
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "Items/Magic Focus")]
+    [CreateAssetMenu(fileName = "Magic Focus", menuName = "Items/Magic Focus")]
     public class MagicFocusData : ScriptableObject
     {
         public string magicName;
