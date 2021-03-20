@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace HMF.Thesis.Components
 {
-    public class AttackComponent : IAttackComponent
+    public class AttackComponent : MonoBehaviour, IAttackComponent
     {
         [Header("Serializable Fields")]
         [SerializeField] private GameObject _origin = null!;
