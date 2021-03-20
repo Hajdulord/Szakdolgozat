@@ -10,11 +10,12 @@ namespace HMF.Thesis.Items
         private MagicFocusData _magicFocusData;
         private MagicHandler _magicHandler;
 
-        public string Name { get => _magicFocusData.name; }
-        public string Description {get => _magicFocusData.description; }
-        public bool Unique { get => _magicFocusData.isUnique; }
-        public Sprite Sprite { get => _magicFocusData.sprite; }
-        public TargetType TargetType { get => _magicFocusData.targetType; }
+        public string Name => _magicFocusData.name;
+        public string Description => _magicFocusData.description;
+        public bool Unique => _magicFocusData.isUnique;
+        public Sprite Sprite => _magicFocusData.sprite;
+        public TargetType TargetType => _magicFocusData.targetType;
+        public float attackTime => _magicFocusData.attackTime;
 
         public MagicFocus(MagicFocusData magicFocusData, MagicHandler magicHandler)
         {

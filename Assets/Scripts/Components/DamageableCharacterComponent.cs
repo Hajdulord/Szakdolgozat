@@ -8,7 +8,6 @@ namespace HMF.Thesis.Components
     /// A wrapper for DamageableCharacter.
     public class DamageableCharacterComponent : MonoBehaviour, IDamageableComponent
     {
-        private ICharacter _character = null!; ///< The Character's health comes from here.
         private IDamageable _damageable; ///< The logic behind this class.
 
         /// Getter for the Damageable logic.
@@ -17,8 +16,8 @@ namespace HMF.Thesis.Components
         /// Gets the Character.
         private void Awake() 
         {
-            _character = GetComponent<ICharacter>();
-            _damageable = new DamageableCharacterLogic(_character);
+            var character = GetComponent<CharacterComponent>().Character;
+            _damageable = new DamageableCharacterLogic(character);
         }
     }
 }

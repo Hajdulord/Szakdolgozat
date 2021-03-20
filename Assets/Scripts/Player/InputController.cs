@@ -50,7 +50,11 @@ namespace HMF.Thesis.Player
         */ 
         public void NormalMeleeAttack(InputAction.CallbackContext callback)
         {
-
+            if(callback.started)
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
+            }
         }
 
         /// Sets the falg to enter the Dash sate.
