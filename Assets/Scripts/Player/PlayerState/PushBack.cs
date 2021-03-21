@@ -27,6 +27,7 @@ namespace HMF.Thesis.Player
 
         public void OnExit()
         {
+            _playerStateMachine.IsJumping = false;
         }
 
         public void Tick()

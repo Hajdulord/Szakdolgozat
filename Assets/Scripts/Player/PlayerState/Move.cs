@@ -26,6 +26,7 @@ namespace HMF.Thesis.Player.PlayerStates
         public void OnExit()
         {
             _move.Move(_playerStateMachine.MoveDirection);
+            _playerStateMachine.IsJumping = false;
         }
 
         public void Tick()
