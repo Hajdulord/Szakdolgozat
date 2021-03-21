@@ -14,7 +14,7 @@ namespace HMF.Thesis.Player
 
         private IMove _move;
 
-        private float _time; 
+        //private float _time; 
 
         public Attack(IAttack attack, string[] tagsToTarget, PlayerStateMachine playerStateMachine, IMove move)
         {
@@ -22,7 +22,7 @@ namespace HMF.Thesis.Player
             _tagsToTarget = tagsToTarget;
             _playerStateMachine = playerStateMachine;
             _move = move;
-            _time = 0;
+            //_time = 0;
         }
 
         public void OnEnter()
@@ -30,7 +30,7 @@ namespace HMF.Thesis.Player
             Debug.Log("Attack");
             //Debug.Log(_attack);
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
-            _time = Time.time + _playerStateMachine.CurrentItem.attackTime;
+            //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
         }
 
         public void OnExit()
@@ -40,18 +40,19 @@ namespace HMF.Thesis.Player
 
         public void Tick()
         {
-            _move.Move(_playerStateMachine.MoveDirection);
+            _playerStateMachine.CurrentItem = null;
+            //_move.Move(_playerStateMachine.MoveDirection);
             
-            if (_playerStateMachine.IsDashing)
-            {
-                _move.Dash();
-                _playerStateMachine.IsDashing = false;
-            }
+            //if (_playerStateMachine.IsDashing)
+            //{
+            //    _move.Dash();
+            //    _playerStateMachine.IsDashing = false;
+            //}
 
-            if (Time.time >= _time)
-            {
-                _playerStateMachine.CurrentItem = null;
-            }
+            //if (Time.time >= _time)
+            //{
+                //_playerStateMachine.CurrentItem = null;
+            //}
 
         }
     }

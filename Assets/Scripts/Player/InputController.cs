@@ -16,6 +16,8 @@ namespace HMF.Thesis.Player
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
 
+        private float _mainWeaponTime = 0;
+
         /// Sets the falg to enter the Jump sate.
         /*!
           \param callback is an InputAction.CallbackContext that is used to get data from the InputAction.
@@ -50,10 +52,11 @@ namespace HMF.Thesis.Player
         */ 
         public void NormalMeleeAttack(InputAction.CallbackContext callback)
         {
-            if(callback.started)
+            if(callback.started && Time.time >= _mainWeaponTime)
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
+                _mainWeaponTime = Time.time + _stateMachine.Inventory.MainWeapon.attackTime;
             }
         }
 
