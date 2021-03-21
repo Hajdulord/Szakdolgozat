@@ -22,17 +22,40 @@ namespace HMF.Thesis.Status
         public void CalculateStatusEffects()
         {
             var time = Time.time;
+            var statuesToChange = new List<string>();
+            var statuesToRemove = new List<string>();
             foreach (var status in _activeStatuses)
             {
                 if (status.Value.EffectTime - time <= 0)
                 {
                     status.Value.Status.Affect(_gameObject);
-                    _activeStatuses[status.Key] = (status.Value.Status, status.Value.ExpirationTime,status.Value.Status.EffectInterval + Time.time);
+                    Debug.Log($"{status.Value.Status.Name} has effected.");
+                    //_activeStatuses[status.Key] = (status.Value.Status, status.Value.ExpirationTime,status.Value.Status.EffectInterval + Time.time);
+                    if(!statuesToChange.Contains(status.Key))
+                    {
+                        statuesToChange.Add(status.Key);
+                    }
                 }
                 if (status.Value.ExpirationTime - time <= 0)
                 {
-                    RemoveStatus(status.Key);
+                    //RemoveStatus(status.Key);
+                    //Debug.Log($"{status.Value.Status.Name} has ended.");
+                    if(!statuesToRemove.Contains(status.Key))
+                    {
+                        statuesToRemove.Add(status.Key);
+                    }
                 }
+            }
+
+            foreach(var status in statuesToChange)
+            {
+                _activeStatuses[status] = ( _activeStatuses[status].Status,  _activeStatuses[status].ExpirationTime,  _activeStatuses[status].Status.EffectInterval + Time.time);
+            }
+
+            foreach (var status in statuesToRemove)
+            {
+                RemoveStatus(status);
+                Debug.Log($"{status} has ended.");
             }
         }
 
@@ -40,7 +63,6 @@ namespace HMF.Thesis.Status
         {
             if(_activeStatuses.ContainsKey(status))
             {
-
                 _activeStatuses[status] = (_activeStatuses[status].Status, Time.time + _activeStatuses[status].ExpirationTime, _activeStatuses[status].EffectTime);
             }
             else if(_cachedStatuses.ContainsKey(status))
@@ -61,8 +83,12 @@ namespace HMF.Thesis.Status
                     _activeStatuses.Add(status, (newStatus, Time.time + newStatus.LifeTime, Time.time + newStatus.EffectInterval));
                 }
             }
-            _activeStatuses[status].Status.PrePhase(_gameObject);
-            _activeStatuses[status].Status.Affect(_gameObject);
+
+            if (_activeStatuses.ContainsKey(status))
+            {
+                _activeStatuses[status].Status.PrePhase(_gameObject);
+                _activeStatuses[status].Status.Affect(_gameObject);
+            }
         }
 
         public void RemoveStatus(string status)

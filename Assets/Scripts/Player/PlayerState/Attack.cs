@@ -28,7 +28,7 @@ namespace HMF.Thesis.Player
         public void OnEnter()
         {
             Debug.Log("Attack");
-            Debug.Log(_attack);
+            //Debug.Log(_attack);
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
             _time = Time.time + _playerStateMachine.CurrentItem.attackTime;
         }
