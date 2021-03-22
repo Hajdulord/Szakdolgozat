@@ -26,7 +26,7 @@ namespace HMF.Thesis.Items
 
         public void Use(GameObject origin, string[] tagsToTarget)
         {
-            _magicHandler.UseMagic(_magicFocusData.magicType, tagsToTarget, origin.transform.position, origin.transform.forward.x);
+            _magicHandler.UseMagic(_magicFocusData.magicType, tagsToTarget, origin.transform.position, origin.transform.right.x);
         }
     }
 }

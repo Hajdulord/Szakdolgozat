@@ -18,7 +18,7 @@ MonoBehaviour:
   attackRange: 10
   attackRate: 0.2
   status: Burning
-  magicType: Burst
+  magicType: Lance
   sprite: {fileID: 21300000, guid: 1d4be6f542056f14187eba225a4294c9, type: 3}
   targetType: 1
   isUnique: 0
