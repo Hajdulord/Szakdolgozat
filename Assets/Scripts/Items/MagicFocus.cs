@@ -1,14 +1,13 @@
 using UnityEngine;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.ScriptableObjects;
-using HMF.Thesis.Magic;
 
 namespace HMF.Thesis.Items
 {
     public class MagicFocus : IItem
     {
         private MagicFocusData _magicFocusData;
-        private MagicHandler _magicHandler;
+        private IMagicHandler _magicHandler;
 
         public string Name => _magicFocusData.name;
         public string Description => _magicFocusData.description;
@@ -17,7 +16,7 @@ namespace HMF.Thesis.Items
         public TargetType TargetType => _magicFocusData.targetType;
         public float attackTime => _magicFocusData.attackTime;
 
-        public MagicFocus(MagicFocusData magicFocusData, MagicHandler magicHandler)
+        public MagicFocus(MagicFocusData magicFocusData, IMagicHandler magicHandler)
         {
             _magicFocusData = magicFocusData;
             _magicHandler = magicHandler;
