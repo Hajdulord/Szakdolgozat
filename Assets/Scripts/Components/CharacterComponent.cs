@@ -21,8 +21,7 @@ namespace HMF.Thesis.Components
         private void Awake() 
         {
             _character = new CharacterLogic(_characterData);
-
-            GetComponent<SpriteRenderer>().sprite = _character.CharacterSprite;
+            GetComponent<SpriteRenderer>().sprite = Character.CharacterSprite;
         }
     }
 }

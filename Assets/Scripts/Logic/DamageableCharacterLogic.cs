@@ -30,7 +30,7 @@ namespace HMF.Thesis.Logic
         public void TakeDamage(float damage = 1)
         {
             _character.Health -= damage;
-            Debug.Log(_character.Health);
+            Debug.Log($"{_character.CharacterName}'s helath is: {_character.Health}");
         }
     }
 }

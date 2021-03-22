@@ -16,7 +16,8 @@ namespace HMF.Thesis.Components
         /// Gets the Character.
         private void Awake() 
         {
-            var character = GetComponent<CharacterComponent>().Character;
+            var character = GetComponent<ICharacterComponent>().Character;
+
             _damageable = new DamageableCharacterLogic(character);
         }
     }

@@ -395,6 +395,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 1564734241}
   _tagsToIgnore:
   - Enemy
+  _testMagicFocusData: {fileID: 11400000, guid: 8b35b602cc8257749b64ca2ec87c3f42, type: 2}
 --- !u!114 &600795974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +545,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ea917ed2-65c0-4731-9ddd-0b5dede6a965
     m_ActionName: gameplay/Dash[/Keyboard/leftAlt]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: InventoryOne
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f4975306-6990-461f-afc2-8c2f4dc203af
+    m_ActionName: gameplay/Item1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: InventoryTwo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 57c7c039-110b-4109-a897-0e59ee6ba632
+    m_ActionName: gameplay/Item2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: InventoryThree
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 57f6761a-9061-4d8e-aa0c-758e32b8ca9f
+    m_ActionName: gameplay/Item3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: InventoryFour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4a0001bc-9858-4610-ac05-c2d13edc7ae6
+    m_ActionName: gameplay/Item4[/Keyboard/4]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: gameplay
@@ -694,6 +759,156 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainWeaponData: {fileID: 11400000, guid: e69403d43804a5242890220eabdd850d, type: 2}
   isUseSize: 4
+--- !u!1 &1065590057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065590063}
+  - component: {fileID: 1065590062}
+  - component: {fileID: 1065590061}
+  - component: {fileID: 1065590060}
+  - component: {fileID: 1065590059}
+  - component: {fileID: 1065590058}
+  m_Layer: 0
+  m_Name: Square (1)
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1065590058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fba94cc72ea91488f90cebb75481a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1065590059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48bba75014837c459a956e82ffd2ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterComponent: {fileID: 1065590060}
+--- !u!114 &1065590060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc520a77319ba9d429b7a29850b44c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterData: {fileID: 11400000, guid: 6c68d26296962144f90ebe423f188e4d, type: 2}
+--- !u!61 &1065590061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1065590062
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1065590063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065590057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.55, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293225617
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,8 +1022,8 @@ GameObject:
   - component: {fileID: 1772766260}
   - component: {fileID: 1772766259}
   - component: {fileID: 1772766261}
-  - component: {fileID: 1772766263}
   - component: {fileID: 1772766262}
+  - component: {fileID: 1772766263}
   - component: {fileID: 1772766264}
   m_Layer: 6
   m_Name: Square
@@ -876,7 +1091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772766258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.54, y: -4, z: 0}
+  m_LocalPosition: {x: -1.6, y: -3.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -933,6 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48bba75014837c459a956e82ffd2ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterComponent: {fileID: 1772766262}
 --- !u!114 &1772766264
 MonoBehaviour:
   m_ObjectHideFlags: 0
