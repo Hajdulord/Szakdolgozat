@@ -224,7 +224,7 @@ var assemblies = [
   {
     "name": "Items",
     "classes": [
-      { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Items.Weapon", "rp": "Items_Weapon.html", "cl": 0, "ucl": 31, "cal": 31, "tl": 50, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
@@ -241,7 +241,7 @@ var assemblies = [
     "name": "Magic",
     "classes": [
       { "name": "HMF.Thesis.Magic.ActualMagic.Burst", "rp": "Magic_Burst.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Magic.ActualMagic.Lance", "rp": "Magic_Lance.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Magic.ActualMagic.Lance", "rp": "Magic_Lance.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Magic.MagicFactory", "rp": "Magic_MagicFactory.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Magic.MagicHandler", "rp": "Magic_MagicHandler.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 57, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
@@ -250,8 +250,8 @@ var assemblies = [
     "classes": [
       { "name": "HMF.Thesis.Player.Attack", "rp": "Player_Attack.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 59, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.Fall", "rp": "Player_Fall.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.InputController", "rp": "Player_InputController.html", "cl": 0, "ucl": 31, "cal": 31, "tl": 75, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 101, "cal": 101, "tl": 173, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.InputController", "rp": "Player_InputController.html", "cl": 0, "ucl": 63, "cal": 63, "tl": 119, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 105, "cal": 105, "tl": 180, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Idle", "rp": "Player_Idle.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Jump", "rp": "Player_Jump.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "Player_Move.html", "cl": 0, "ucl": 20, "cal": 20, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },

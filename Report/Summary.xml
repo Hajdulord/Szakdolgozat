@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>03/21/2021 - 21:20:53</Generatedon>
+    <Generatedon>03/22/2021 - 21:47:10</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>5</Assemblies>
     <Classes>27</Classes>
     <Files>27</Files>
     <Coveredlines>104</Coveredlines>
-    <Uncoveredlines>604</Uncoveredlines>
-    <Coverablelines>708</Coverablelines>
-    <Totallines>1444</Totallines>
-    <Linecoverage>14.6</Linecoverage>
+    <Uncoveredlines>641</Uncoveredlines>
+    <Coverablelines>745</Coverablelines>
+    <Totallines>1497</Totallines>
+    <Linecoverage>13.9</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Items" classes="2" coverage="0" coveredlines="0" coverablelines="45" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Items.MagicFocus" coverage="0" coveredlines="0" coverablelines="14" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Items" classes="2" coverage="0" coveredlines="0" coverablelines="46" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Items.MagicFocus" coverage="0" coveredlines="0" coverablelines="15" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Items.Weapon" coverage="0" coveredlines="0" coverablelines="31" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Logic" classes="6" coverage="48.9" coveredlines="71" coverablelines="145" totallines="325" branchcoverage="" coveredbranches="0" totalbranches="0">
@@ -27,17 +27,17 @@
       <Class name="HMF.Thesis.Logic.InventoryLogic" coverage="0" coveredlines="0" coverablelines="65" totallines="101" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Logic.MoveLogic" coverage="95.5" coveredlines="43" coverablelines="45" totallines="113" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Magic" classes="4" coverage="0" coveredlines="0" coverablelines="99" totallines="179" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Magic" classes="4" coverage="0" coveredlines="0" coverablelines="99" totallines="180" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Magic.ActualMagic.Burst" coverage="0" coveredlines="0" coverablelines="22" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Magic.ActualMagic.Lance" coverage="0" coveredlines="0" coverablelines="23" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Magic.ActualMagic.Lance" coverage="0" coveredlines="0" coverablelines="23" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Magic.MagicFactory" coverage="0" coveredlines="0" coverablelines="22" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Magic.MagicHandler" coverage="0" coveredlines="0" coverablelines="32" totallines="57" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Player" classes="8" coverage="0" coveredlines="0" coverablelines="240" totallines="515" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Player" classes="8" coverage="0" coveredlines="0" coverablelines="276" totallines="566" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Player.Attack" coverage="0" coveredlines="0" coverablelines="17" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.Fall" coverage="0" coveredlines="0" coverablelines="20" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Player.InputController" coverage="0" coveredlines="0" coverablelines="31" totallines="75" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="101" totallines="173" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.InputController" coverage="0" coveredlines="0" coverablelines="63" totallines="119" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="105" totallines="180" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Idle" coverage="0" coveredlines="0" coverablelines="12" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Jump" coverage="0" coveredlines="0" coverablelines="20" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Move" coverage="0" coveredlines="0" coverablelines="20" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
