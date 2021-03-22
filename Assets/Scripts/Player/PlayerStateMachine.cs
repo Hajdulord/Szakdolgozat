@@ -14,9 +14,12 @@ namespace HMF.Thesis.Player
     /// This class is used to manage the player's state. 
     public class PlayerStateMachine : MonoBehaviour
     {
+        [Header("Serialized Fields")]
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
+        [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
+
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
         private ICharacterComponent _characterComponent;
@@ -48,6 +51,10 @@ namespace HMF.Thesis.Player
             _rigidbody = GetComponent<Rigidbody2D>();
 
             PushBackDir = 0f;
+            
+            var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
+            _inventoryComponent.Inventory.AddItem(testMagicItem,2);
+            _inventoryComponent.Inventory.SetUse(testMagicItem);
 
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;

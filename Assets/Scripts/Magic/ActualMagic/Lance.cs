@@ -10,8 +10,9 @@ namespace HMF.Thesis.Magic.ActualMagic
 
         public override void Use(string[] tagsToTarget, MagicFocusData magicFocus, Vector2 center, float dir)
         {
-            var point = new Vector2(center.x + dir * magicFocus.attackRange / 2, center.y);
-            var colliders = Physics2D.OverlapAreaAll(center, new Vector2(center.x + magicFocus.attackRange, magicFocus.attackRange / 2));
+            var point = new Vector2(center.x + dir * magicFocus.attackRange, center.y + magicFocus.attackRange / 2);
+            //var colliders = Physics2D.OverlapAreaAll(center, new Vector2(center.x + magicFocus.attackRange, magicFocus.attackRange / 2));
+            var colliders = Physics2D.OverlapAreaAll(center, point);
 
             foreach (var item in colliders)
             {

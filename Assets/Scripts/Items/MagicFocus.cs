@@ -17,15 +17,16 @@ namespace HMF.Thesis.Items
         public TargetType TargetType => _magicFocusData.targetType;
         public float attackTime => _magicFocusData.attackTime;
 
-        public MagicFocus(MagicFocusData magicFocusData, MagicHandler magicHandler)
+        public MagicFocus(MagicFocusData magicFocusData, IMagicHandler magicHandler)
         {
             _magicFocusData = magicFocusData;
-            _magicHandler = magicHandler;
+            _magicHandler = magicHandler as MagicHandler;
+            _magicHandler.AddNewMagic(_magicFocusData.magicType, _magicFocusData);
         }
 
         public void Use(GameObject origin, string[] tagsToTarget)
         {
-            _magicHandler.UseMagic(_magicFocusData.magicType, tagsToTarget, origin.transform.position, origin.transform.forward.x);
+            _magicHandler.UseMagic(_magicFocusData.magicType, tagsToTarget, origin.transform.position, origin.transform.right.x);
         }
     }
 }
