@@ -17,6 +17,10 @@ namespace HMF.Thesis.Player
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
 
         private float _mainWeaponTime = 0;
+        private float _inventoryOneTime = 0;
+        private float _inventoryTwoTime = 0;
+        private float _inventoryThreeTime = 0;
+        private float _inventoryFourTime = 0;
 
         /// Sets the falg to enter the Jump sate.
         /*!
@@ -57,6 +61,46 @@ namespace HMF.Thesis.Player
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
                 _mainWeaponTime = Time.time + _stateMachine.Inventory.MainWeapon.attackTime;
+            }
+        }
+
+        public void InventoryOne(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryOneTime && _stateMachine.Inventory.InUse.ContainsKey(0))
+            {
+                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[0];
+                //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
+                _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
+            }
+        }
+
+        public void InventoryTwo(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryTwoTime && _stateMachine.Inventory.InUse.ContainsKey(1))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[1];
+                _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
+            }
+        }
+
+        public void InventoryThree(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryThreeTime && _stateMachine.Inventory.InUse.ContainsKey(2))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[2];
+                _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
+            }
+        }
+
+        public void InventoryFour(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryFourTime && _stateMachine.Inventory.InUse.ContainsKey(3))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[3];
+                _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
             }
         }
 

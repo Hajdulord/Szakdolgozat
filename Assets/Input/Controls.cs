@@ -49,6 +49,38 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Item1"",
+                    ""type"": ""Value"",
+                    ""id"": ""f4975306-6990-461f-afc2-8c2f4dc203af"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Item2"",
+                    ""type"": ""Value"",
+                    ""id"": ""57c7c039-110b-4109-a897-0e59ee6ba632"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Item3"",
+                    ""type"": ""Value"",
+                    ""id"": ""57f6761a-9061-4d8e-aa0c-758e32b8ca9f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Item4"",
+                    ""type"": ""Value"",
+                    ""id"": ""4a0001bc-9858-4610-ac05-c2d13edc7ae6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -117,6 +149,50 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49cc069d-ddad-403d-9b0a-f14714cfaa62"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d54ac745-82b5-4c68-ba96-ac62439ce62d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""420d670c-d953-429c-adbf-7f8c29fc3a4c"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""386bc1dd-d93c-46a0-be23-451789e60fde"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -129,6 +205,10 @@ public class @Controls : IInputActionCollection, IDisposable
         m_gameplay_Jump = m_gameplay.FindAction("Jump", throwIfNotFound: true);
         m_gameplay_NormalAttack = m_gameplay.FindAction("NormalAttack", throwIfNotFound: true);
         m_gameplay_Dash = m_gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_gameplay_Item1 = m_gameplay.FindAction("Item1", throwIfNotFound: true);
+        m_gameplay_Item2 = m_gameplay.FindAction("Item2", throwIfNotFound: true);
+        m_gameplay_Item3 = m_gameplay.FindAction("Item3", throwIfNotFound: true);
+        m_gameplay_Item4 = m_gameplay.FindAction("Item4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -182,6 +262,10 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_gameplay_Jump;
     private readonly InputAction m_gameplay_NormalAttack;
     private readonly InputAction m_gameplay_Dash;
+    private readonly InputAction m_gameplay_Item1;
+    private readonly InputAction m_gameplay_Item2;
+    private readonly InputAction m_gameplay_Item3;
+    private readonly InputAction m_gameplay_Item4;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -190,6 +274,10 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_gameplay_Jump;
         public InputAction @NormalAttack => m_Wrapper.m_gameplay_NormalAttack;
         public InputAction @Dash => m_Wrapper.m_gameplay_Dash;
+        public InputAction @Item1 => m_Wrapper.m_gameplay_Item1;
+        public InputAction @Item2 => m_Wrapper.m_gameplay_Item2;
+        public InputAction @Item3 => m_Wrapper.m_gameplay_Item3;
+        public InputAction @Item4 => m_Wrapper.m_gameplay_Item4;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -211,6 +299,18 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDash;
+                @Item1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem1;
+                @Item1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem1;
+                @Item1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem1;
+                @Item2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem2;
+                @Item2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem2;
+                @Item2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem2;
+                @Item3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem3;
+                @Item3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem3;
+                @Item3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem3;
+                @Item4.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem4;
+                @Item4.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem4;
+                @Item4.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItem4;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -227,6 +327,18 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Item1.started += instance.OnItem1;
+                @Item1.performed += instance.OnItem1;
+                @Item1.canceled += instance.OnItem1;
+                @Item2.started += instance.OnItem2;
+                @Item2.performed += instance.OnItem2;
+                @Item2.canceled += instance.OnItem2;
+                @Item3.started += instance.OnItem3;
+                @Item3.performed += instance.OnItem3;
+                @Item3.canceled += instance.OnItem3;
+                @Item4.started += instance.OnItem4;
+                @Item4.performed += instance.OnItem4;
+                @Item4.canceled += instance.OnItem4;
             }
         }
     }
@@ -237,5 +349,9 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnNormalAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnItem1(InputAction.CallbackContext context);
+        void OnItem2(InputAction.CallbackContext context);
+        void OnItem3(InputAction.CallbackContext context);
+        void OnItem4(InputAction.CallbackContext context);
     }
 }
