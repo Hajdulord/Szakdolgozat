@@ -27,6 +27,7 @@ namespace HMF.Thesis.Player
         private IInputController _inputController;
         private IAttackComponent _attackComponent;
         private Rigidbody2D _rigidbody;
+        private Animator _animator;
         private float _distToGround;
 
         public float PushBackDir { get; set; }
@@ -49,11 +50,12 @@ namespace HMF.Thesis.Player
             _inventoryComponent = GetComponent<IInventoryComponent>();
             _inputController = GetComponent<IInputController>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
 
             PushBackDir = 0f;
             
             var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
-            _inventoryComponent.Inventory.AddItem(testMagicItem,2);
+            _inventoryComponent.Inventory.AddItem(testMagicItem, 2);
             _inventoryComponent.Inventory.SetUse(testMagicItem);
 
             //! Need to implement this better.
@@ -62,12 +64,12 @@ namespace HMF.Thesis.Player
             _moveComponent.Move.FallSpeed = 5f;
             _moveComponent.Move.PushBackSpeed = 5f;
 
-            var idle = new Idle(_rigidbody);
-            var move = new Move(_moveComponent.Move, this);
-            var jump = new Jump(_moveComponent.Move, this);
-            var fall = new Fall(_moveComponent.Move, this);
+            var idle = new Idle(_rigidbody, _animator);
+            var move = new Move(_moveComponent.Move, _animator, this);
+            var jump = new Jump(_moveComponent.Move, _animator, this);
+            var fall = new Fall(_moveComponent.Move, _animator, this);
             var pushBack = new PushBack(_moveComponent.Move, _rigidbody, this);
-            var attack = new Attack(_attackComponent.Attack, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
+            var attack = new Attack(_attackComponent.Attack, _animator, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -127,6 +129,7 @@ namespace HMF.Thesis.Player
         private void Update()
         {
             _stateMachine?.Tick();
+            //Debug.Log(MoveDirection != 0 && GroundCheck());
         }
 
         private void OnCollisionEnter2D(Collision2D other) 

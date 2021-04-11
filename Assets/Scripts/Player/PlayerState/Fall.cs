@@ -12,16 +12,20 @@ namespace HMF.Thesis.Player
 
         private PlayerStateMachine _playerStateMachine;
 
-        public Fall(IMove move, PlayerStateMachine playerStateMachine)
+        private Animator _animator;
+
+        public Fall(IMove move, Animator animator, PlayerStateMachine playerStateMachine)
         {
             _move = move;
             _playerStateMachine = playerStateMachine;
+            _animator = animator;
         }
 
         public void OnEnter()
         {
             Debug.Log("Fall");
             _move.Fall();
+            _animator.SetBool("IsFalling", true);
         }
 
         public void OnExit()
