@@ -97,11 +97,10 @@ namespace HMF.Thesis.Player
             At(fall, attack, isAttacking());
             At(pushBack, attack, isAttacking());
 
-            At(attack, idle, notAttacking());
-            At(attack, move, notAttacking());
-            At(attack, jump, notAttacking());
-            At(attack, fall, notAttacking());
-            At(attack, pushBack, notAttacking());
+            At(attack, idle, notAttackingAndIdle());
+            At(attack, jump, notAttackingAndJumping());
+            At(attack, fall, notAttackingAndFalling());
+            At(attack, pushBack, notAttackingAndPushedBack());
 
             /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
@@ -119,7 +118,10 @@ namespace HMF.Thesis.Player
             Func<bool> isPushedBack() => () => PushBackDir != 0f;
             Func<bool> notPushedBack() => () => PushBackDir == 0f;
             Func<bool> isAttacking() => () => CurrentItem != null;
-            Func<bool> notAttacking() => () => CurrentItem == null;
+            Func<bool> notAttackingAndIdle() => () => CurrentItem == null && MoveDirection == 0 && GroundCheck();
+            Func<bool> notAttackingAndFalling() => () => CurrentItem == null && _rigidbody.velocity.y < 0f;
+            Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
+            Func<bool> notAttackingAndPushedBack() => () => CurrentItem == null && PushBackDir != 0f;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             

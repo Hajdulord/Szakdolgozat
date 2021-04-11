@@ -45,8 +45,9 @@ namespace HMF.Thesis.Player
 
         public void Tick()
         {
-            _playerStateMachine.CurrentItem = null;
             //_move.Move(_playerStateMachine.MoveDirection);
+
+            _playerStateMachine.CurrentItem = null;
             
             //if (_playerStateMachine.IsDashing)
             //{
