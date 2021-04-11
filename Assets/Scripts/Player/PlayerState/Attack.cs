@@ -14,14 +14,17 @@ namespace HMF.Thesis.Player
 
         private IMove _move;
 
+        private Animator _animator;
+
         //private float _time; 
 
-        public Attack(IAttack attack, string[] tagsToTarget, PlayerStateMachine playerStateMachine, IMove move)
+        public Attack(IAttack attack, Animator animator, string[] tagsToTarget, PlayerStateMachine playerStateMachine, IMove move)
         {
             _attack = attack;
             _tagsToTarget = tagsToTarget;
             _playerStateMachine = playerStateMachine;
             _move = move;
+            _animator = animator;
             //_time = 0;
         }
 
@@ -31,17 +34,24 @@ namespace HMF.Thesis.Player
             //Debug.Log(_attack);
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
+            if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus)
+                _animator.SetBool("IsMagic", true);
+            else
+                _animator.SetBool("IsAttacking", true);
         }
 
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
+            _animator.SetBool("IsAttacking", false);
+            _animator.SetBool("IsMagic", false);
         }
 
         public void Tick()
         {
-            _playerStateMachine.CurrentItem = null;
             //_move.Move(_playerStateMachine.MoveDirection);
+
+            _playerStateMachine.CurrentItem = null;
             
             //if (_playerStateMachine.IsDashing)
             //{

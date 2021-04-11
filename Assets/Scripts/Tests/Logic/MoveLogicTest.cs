@@ -42,13 +42,14 @@ namespace HMF.Thesis.Tests.Logic
 
             //* Affect
 
-            move.Dash();
+            var successfulDash =  move.Dash();
 
             yield return new WaitForFixedUpdate();
 
             //* Testing
 
             Assert.AreEqual(5.0f, rigidbody.position.x, 0.01f);
+            Assert.IsTrue(successfulDash);
         }
 
         [UnityTest]
@@ -69,19 +70,20 @@ namespace HMF.Thesis.Tests.Logic
 
             //* Affect
 
-            move.Dash();
+            var successfulDash = move.Dash();
 
             yield return new WaitForFixedUpdate();
 
             yield return new WaitForSeconds(1);
             
-            move.Dash();
+            successfulDash = move.Dash();
 
             yield return new WaitForFixedUpdate();
 
             //* Testing
 
             Assert.AreEqual(5.0f, rigidbody.position.x, 0.01f);
+            Assert.IsFalse(successfulDash);
         }
 
         [UnityTest]
@@ -102,19 +104,20 @@ namespace HMF.Thesis.Tests.Logic
 
             //* Affect
 
-            move.Dash();
+            var successfulDash = move.Dash();
 
             yield return new WaitForFixedUpdate();
 
             yield return new WaitForSeconds(4);
             
-            move.Dash();
+            successfulDash = move.Dash();
 
             yield return new WaitForFixedUpdate();
 
             //* Testing
 
             Assert.AreEqual(10.0f, rigidbody.position.x, 0.01f);
+            Assert.IsTrue(successfulDash);
         }
 
         [Test]

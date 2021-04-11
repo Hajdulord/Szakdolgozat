@@ -48,13 +48,16 @@ namespace HMF.Thesis.Logic
 		public float DashRate {get; set;}
 
 		/// Fast movement to a direction.
-		public void Dash()
+		public bool Dash()
 		{
 			if (Time.time >= _nextDashTime)
 			{
 				_rigidbody.MovePosition(_rigidbody.position + new Vector2(_chachedDirection, 0) *  _dashDistance);
 				_nextDashTime = Time.time + 1f / DashRate;
+				return true;
 			}
+
+			return false;
 		}
 
 		/// Moves to a specific poin.

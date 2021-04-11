@@ -17,5 +17,6 @@ namespace HMF.Thesis.ScriptableObjects
         public TargetType targetType;
         public bool isUnique;
         public float attackTime;
+        public GameObject animationToSpawn;
     }
 }

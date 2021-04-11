@@ -12,15 +12,19 @@ namespace HMF.Thesis.Player.PlayerStates
 
         private PlayerStateMachine _playerStateMachine;
 
-        public Move(IMove move, PlayerStateMachine playerStateMachine)
+        private Animator _animator;
+
+        public Move(IMove move, Animator animator, PlayerStateMachine playerStateMachine)
         {
             _move = move;
             _playerStateMachine = playerStateMachine;
+            _animator = animator;
         }
 
         public void OnEnter()
         {
             Debug.Log("Move");
+            _animator.SetFloat("Speed", Mathf.Abs(_playerStateMachine.MoveDirection));
         }
 
         public void OnExit()
@@ -35,7 +39,13 @@ namespace HMF.Thesis.Player.PlayerStates
             
             if (_playerStateMachine.IsDashing)
             {
-                _move.Dash();
+                if(_move.Dash())
+                {
+                    _playerStateMachine.dashDust.transform.forward = -_playerStateMachine.transform.forward;
+                    _playerStateMachine.dashDust.transform.position = _playerStateMachine.transform.position + -_playerStateMachine.MoveDirection * Vector3.right * 2;
+                    //Debug.Log(_playerStateMachine.dashDust.gameObject.transform.position + " " + _playerStateMachine.gameObject.transform.position);
+                    _playerStateMachine.dashDust.SetActive(true);
+                }
                 _playerStateMachine.IsDashing = false;
             }
             

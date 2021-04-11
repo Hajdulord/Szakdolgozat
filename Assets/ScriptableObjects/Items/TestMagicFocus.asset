@@ -23,3 +23,4 @@ MonoBehaviour:
   targetType: 1
   isUnique: 0
   attackTime: 10
+  animationToSpawn: {fileID: 1761195564284797939, guid: 0a010f3511296aa4cad7c64efd578b6f, type: 3}

@@ -12,10 +12,13 @@ namespace HMF.Thesis.Player.PlayerStates
 
         private PlayerStateMachine _playerStateMachine;
 
-        public Jump(IMove move, PlayerStateMachine playerStateMachine)
+        private Animator _animator;
+
+        public Jump(IMove move, Animator animator, PlayerStateMachine playerStateMachine)
         {
             _move = move;
             _playerStateMachine = playerStateMachine;
+            _animator = animator;
         }
 
         public void OnEnter()
@@ -23,12 +26,13 @@ namespace HMF.Thesis.Player.PlayerStates
             
             _move.Jump();
             Debug.Log("Jump");
-
+            _animator.SetBool("IsJumping", true);
         }
 
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
+            _animator.SetBool("IsJumping", false);
         }
 
         public void Tick()
