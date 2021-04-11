@@ -68,7 +68,7 @@ namespace HMF.Thesis.Player
             var move = new Move(_moveComponent.Move, _animator, this);
             var jump = new Jump(_moveComponent.Move, _animator, this);
             var fall = new Fall(_moveComponent.Move, _animator, this);
-            var pushBack = new PushBack(_moveComponent.Move, _rigidbody, this);
+            var pushBack = new PushBack(_moveComponent.Move, _animator, _rigidbody, this);
             var attack = new Attack(_attackComponent.Attack, _animator, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
 
             At(idle, move, isMoving());
