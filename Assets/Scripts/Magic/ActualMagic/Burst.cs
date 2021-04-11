@@ -10,8 +10,10 @@ namespace HMF.Thesis.Magic.ActualMagic
 
         public override string Name => "Burst";
 
-        public override void Use(string[] tagsToTarget, MagicFocusData magicFocus, Vector2 center, float dir = 0)
+        public override void Use(string[] tagsToTarget, MagicFocusData magicFocus, Vector2 center, GameObject animation, float dir = 0)
         {
+            Object.Instantiate(animation, center, Quaternion.identity);
+
             var colliders = Physics2D.OverlapCircleAll(center, magicFocus.attackRange);
 
             foreach (var item in colliders)
