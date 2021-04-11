@@ -34,13 +34,17 @@ namespace HMF.Thesis.Player
             //Debug.Log(_attack);
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
-            _animator.SetBool("IsAttacking", true);
+            if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus)
+                _animator.SetBool("IsMagic", true);
+            else
+                _animator.SetBool("IsAttacking", true);
         }
 
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
             _animator.SetBool("IsAttacking", false);
+            _animator.SetBool("IsMagic", false);
         }
 
         public void Tick()

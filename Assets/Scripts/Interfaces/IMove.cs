@@ -33,7 +33,7 @@ namespace HMF.Thesis.Interfaces
         void Move(int direction);
 
         /// Dashing logic.
-        void Dash();
+        bool Dash();
 
         /// Implementation of a jump.
         /*!

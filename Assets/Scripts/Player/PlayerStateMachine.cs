@@ -30,6 +30,7 @@ namespace HMF.Thesis.Player
         private Animator _animator;
         private float _distToGround;
 
+        [SerializeField] public GameObject dashDust = null!;
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
