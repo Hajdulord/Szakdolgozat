@@ -1,4 +1,5 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Interfaces;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ namespace HMF.Thesis.Enemys.EnemyStates
         public void OnEnter()
         {
             Debug.Log("Enemy MoveTo");
+            _stateMachine.ThisGameObject.transform.right = new Vector3(
+                HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x), 
+                0, 
+                0);
         }
 
         public void OnExit()

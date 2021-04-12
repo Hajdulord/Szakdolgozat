@@ -1,4 +1,5 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Interfaces;
 using UnityEngine;
 
@@ -35,6 +36,11 @@ namespace HMF.Thesis.Enemys
             else
             {
                 targetReached = true;
+
+                _stateMachine.ThisGameObject.transform.right = new Vector3(
+                HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.end.transform.position.x), 
+                0, 
+                0);
             }
             
             if (Vector2.Distance(_stateMachine.transform.position, _stateMachine.end.transform.position) >= 0.5f && targetReached)
@@ -44,6 +50,11 @@ namespace HMF.Thesis.Enemys
             else
             {
                 targetReached = false;
+                
+                _stateMachine.ThisGameObject.transform.right = new Vector3(
+                HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.start.transform.position.x), 
+                0, 
+                0);
             }
 
             

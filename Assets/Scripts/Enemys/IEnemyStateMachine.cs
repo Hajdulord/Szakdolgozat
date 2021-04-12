@@ -8,7 +8,9 @@ namespace HMF.Thesis.Enemys
     {
         GameObject Target {get;}
         IItem Weapon {get;}
+        IItem MagicFocus {get;}
         WeaponData WeaponData { get;}
-        GameObject ThisGameObject {get; }
+        GameObject ThisGameObject {get;}
+        MagicFocusData MagicFocusData {get;}
     }
 }

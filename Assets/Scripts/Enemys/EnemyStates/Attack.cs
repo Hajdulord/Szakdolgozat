@@ -13,6 +13,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
         private IEnemyStateMachine _stateMachine;
 
         private float _time = 0;
+        private float _timeMagic = 0;
 
         public Attack(IAttack attack, string[] tagsToTarget, IEnemyStateMachine stateMachine)
         {
@@ -37,6 +38,12 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
+            }
+
+            if (_stateMachine.MagicFocusData != null && Time.time >= _timeMagic)
+            {
+                _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget);
+                _timeMagic = Time.time + _stateMachine.WeaponData.attackTime;
             }
         }
     }

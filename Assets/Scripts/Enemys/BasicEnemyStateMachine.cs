@@ -15,27 +15,36 @@ namespace HMF.Thesis.Enemys
         [Header("Serialized Private Fields")]
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
         [SerializeField] private WeaponData _weaponData = null!;
+        [SerializeField] private MagicFocusData _magicFocusData = null;
 
         private StateMachine _stateMachine;
         private IMove _move;
         private IAttack _attack;
+        private IMagicHandler _magicHandler;
         private ICharacter _character;
 
         public GameObject Target {get; internal set;} = null;
         public IItem Weapon {get; private set;}
+        public IItem MagicFocus {get; private set;} = null;
         public WeaponData WeaponData => _weaponData;
+        public MagicFocusData MagicFocusData => _magicFocusData;
         public GameObject ThisGameObject => gameObject;
 
         private void Awake()
         {
             _stateMachine = new StateMachine();
 
-            Weapon = new Weapon(_weaponData);
-
             _move = GetComponent<IMoveComponent>().Move;
             _attack = GetComponent<IAttackComponent>().Attack;
+            _magicHandler = GetComponent<IMagicHandlerComponent>()?.MagicHandler;
             _character = GetComponent<ICharacterComponent>().Character;
             
+            Weapon = new Weapon(_weaponData);
+            if (_magicFocusData != null)
+            {
+                MagicFocus = new MagicFocus(_magicFocusData, _magicHandler);   
+            }
+
             var idle = new Idle();
             var moveTo = new MoveTo(_move, this);
             var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this);
