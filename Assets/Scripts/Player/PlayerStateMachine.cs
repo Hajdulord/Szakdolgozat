@@ -6,6 +6,7 @@ using HMF.Thesis.Player.PlayerStates;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Interfaces;
 using System;
+using System.Collections;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -19,6 +20,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
         [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
+        [SerializeField] private GameObject DeathCanvas = null!;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
@@ -26,6 +28,7 @@ namespace HMF.Thesis.Player
         private IInventoryComponent _inventoryComponent;
         private IInputController _inputController;
         private IAttackComponent _attackComponent;
+        private IDamageableComponent _damageableComponent;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _distToGround;
@@ -50,6 +53,7 @@ namespace HMF.Thesis.Player
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<IMoveComponent>();
             _characterComponent = GetComponent<ICharacterComponent>();
+            _damageableComponent = GetComponent<IDamageableComponent>();
             _attackComponent = GetComponent<IAttackComponent>();
             _inventoryComponent = GetComponent<IInventoryComponent>();
             _inputController = GetComponent<IInputController>();
@@ -74,6 +78,7 @@ namespace HMF.Thesis.Player
             var fall = new Fall(_moveComponent.Move, _animator, this);
             var pushBack = new PushBack(_moveComponent.Move, _animator, _rigidbody, this);
             var attack = new Attack(_attackComponent.Attack, _animator, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
+            var death = new Death(_animator);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -106,6 +111,9 @@ namespace HMF.Thesis.Player
             At(attack, fall, notAttackingAndFalling());
             At(attack, pushBack, notAttackingAndPushedBack());
 
+            At(death, idle, isAlive());
+            _stateMachine.AddAnyTransition(death, isDead());
+
             /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
@@ -126,6 +134,8 @@ namespace HMF.Thesis.Player
             Func<bool> notAttackingAndFalling() => () => CurrentItem == null && _rigidbody.velocity.y < 0f;
             Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
             Func<bool> notAttackingAndPushedBack() => () => CurrentItem == null && PushBackDir != 0f;
+            Func<bool> isDead() => () => _characterComponent.Character.Health <= 0;
+            Func<bool> isAlive() => () => _characterComponent.Character.Health > 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             
@@ -167,6 +177,8 @@ namespace HMF.Thesis.Player
             }
 
             PushBackDir = dir;
+
+            _damageableComponent.Damageable.TakeDamage();
         }
 
         private bool GroundCheck()
@@ -186,13 +198,27 @@ namespace HMF.Thesis.Player
             return output;
         }
 
-        public void Respawn()
+        public void Dead()
         {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        public IEnumerator Respawn()
+        {
+            DeathCanvas.SetActive(true);
+
+            yield return new WaitForSeconds(5f);
+
             transform.position = currentSpawnPoint.position;
 
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
-         
-            gameObject.SetActive(true);
+            
+            yield return new WaitForSeconds(10f);
+
+            GetComponent<SpriteRenderer>().enabled = true;
+            
+            DeathCanvas.SetActive(false);
+
         }
     }
 }
