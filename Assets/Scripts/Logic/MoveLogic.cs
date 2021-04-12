@@ -66,7 +66,9 @@ namespace HMF.Thesis.Logic
 		*/
 		public void MoveToPoint(Vector2 to)
 		{
-			throw new System.NotImplementedException();
+			var pos = Vector2.MoveTowards(_rigidbody.position, to, Time.deltaTime * Speed);
+
+			_rigidbody.MovePosition(pos);
 		}
 
 		/// Object is pushed back.
