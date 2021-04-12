@@ -14,7 +14,7 @@ namespace HMF.Thesis.Player
     /// This class is used to manage the player's state. 
     public class PlayerStateMachine : MonoBehaviour
     {
-        [Header("Serialized Fields")]
+        [Header("Serialized Private Fields")]
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
@@ -30,7 +30,10 @@ namespace HMF.Thesis.Player
         private Animator _animator;
         private float _distToGround;
 
+        [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
+        [SerializeField] public Transform currentSpawnPoint = null!; 
+
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
@@ -181,6 +184,15 @@ namespace HMF.Thesis.Player
 		}
 
             return output;
+        }
+
+        public void Respawn()
+        {
+            transform.position = currentSpawnPoint.position;
+
+            _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
+         
+            gameObject.SetActive(true);
         }
     }
 }
