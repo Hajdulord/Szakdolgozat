@@ -222,6 +222,17 @@ for (i = 0, l = charts.length; i < l; i++) {
 
 var assemblies = [
   {
+    "name": "EnemysAssembly",
+    "classes": [
+      { "name": "HMF.Thesis.Enemys.BasicEnemyStateMachine", "rp": "EnemysAssembly_BasicEnemyStateMachine.html", "cl": 0, "ucl": 52, "cal": 52, "tl": 93, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.Dead", "rp": "EnemysAssembly_Dead.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.Attack", "rp": "EnemysAssembly_Attack.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 50, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.Idle", "rp": "EnemysAssembly_Idle.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.MoveTo", "rp": "EnemysAssembly_MoveTo.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.Patrol", "rp": "EnemysAssembly_Patrol.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 63, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.PatrolEnemyStateMachine", "rp": "EnemysAssembly_PatrolEnemyStateMachine.html", "cl": 0, "ucl": 54, "cal": 54, "tl": 97, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+    ]},
+  {
     "name": "Items",
     "classes": [
       { "name": "HMF.Thesis.Items.MagicFocus", "rp": "Items_MagicFocus.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
@@ -235,7 +246,7 @@ var assemblies = [
       { "name": "HMF.Thesis.Logic.DamageableCharacterLogic", "rp": "Logic_DamageableCharacterLogic.html", "cl": 11, "ucl": 0, "cal": 11, "tl": 36, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.HealableLogic", "rp": "Logic_HealableLogic.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 20, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Logic.InventoryLogic", "rp": "Logic_InventoryLogic.html", "cl": 0, "ucl": 65, "cal": 65, "tl": 101, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "Logic_MoveLogic.html", "cl": 44, "ucl": 2, "cal": 46, "tl": 116, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Logic.MoveLogic", "rp": "Logic_MoveLogic.html", "cl": 44, "ucl": 4, "cal": 48, "tl": 118, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Magic",
@@ -253,7 +264,8 @@ var assemblies = [
       { "name": "HMF.Thesis.Player.DustAnimation", "rp": "Player_DustAnimation.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 12, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.Fall", "rp": "Player_Fall.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 48, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.InputController", "rp": "Player_InputController.html", "cl": 0, "ucl": 63, "cal": 63, "tl": 119, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 109, "cal": 109, "tl": 186, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStateMachine", "rp": "Player_PlayerStateMachine.html", "cl": 0, "ucl": 130, "cal": 130, "tl": 224, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Player.PlayerStates.Death", "rp": "Player_Death.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Idle", "rp": "Player_Idle.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Jump", "rp": "Player_Jump.html", "cl": 0, "ucl": 23, "cal": 23, "tl": 50, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Player.PlayerStates.Move", "rp": "Player_Move.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 54, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
