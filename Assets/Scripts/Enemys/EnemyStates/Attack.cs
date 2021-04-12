@@ -1,5 +1,6 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Interfaces;
+using UnityEngine;
 
 namespace HMF.Thesis.Enemys.EnemyStates
 {
@@ -11,6 +12,8 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         private BasicEnemyStateMachine _stateMachine;
 
+        private float _time = 0;
+
         public Attack(IAttack attack, string[] tagsToTarget, BasicEnemyStateMachine stateMachine)
         {
             _attack = attack;
@@ -20,17 +23,21 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnEnter()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Enemy Attack");
         }
 
         public void OnExit()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void Tick()
         {
-            _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
+            if (Time.time >= _time)
+            {
+                _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
+                _time = Time.time + _stateMachine.weaponData.attackTime;
+            }
         }
     }
 }

@@ -14,8 +14,10 @@ namespace HMF.Thesis.Enemys
     public class BasicEnemyStateMachine : MonoBehaviour
     {
         [Header("Serialized Private Fields")]
-        [SerializeField] private WeaponData _weaponData = null!;
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
+
+        [Header("Serialized Public Fields")]
+        [SerializeField] public WeaponData weaponData = null!;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -29,7 +31,7 @@ namespace HMF.Thesis.Enemys
         {
             _stateMachine = new StateMachine();
 
-            Weapon = new Weapon(_weaponData);
+            Weapon = new Weapon(weaponData);
 
             _move = GetComponent<IMoveComponent>().Move;
             _attack = GetComponent<IAttackComponent>().Attack;
@@ -52,8 +54,8 @@ namespace HMF.Thesis.Enemys
 
             Func<bool> targetFound() => () => Target != null;
             Func<bool> targetLost() => () => Target == null;
-            Func<bool> reachedTarget() => () => Vector2.Distance(transform.position, Target.transform.position) <= _weaponData.attackRange - 0.05f;
-            Func<bool> targetOutOfReach() => () => Vector2.Distance(transform.position, Target.transform.position) > _weaponData.attackRange - 0.05f;
+            Func<bool> reachedTarget() => () => Target != null && Vector2.Distance(transform.position, Target.transform.position) <= weaponData.attackRange - 0.05f;
+            Func<bool> targetOutOfReach() => () => Target != null && Vector2.Distance(transform.position, Target.transform.position) > weaponData.attackRange - 0.05f;
             Func<bool> isDead() => () => _character.Health <= 0;
             //Func<bool> isAlive() => () => _character.Health > 0;
 
@@ -64,7 +66,7 @@ namespace HMF.Thesis.Enemys
 
         private void Update() => _stateMachine.Tick();
 
-        private void OnCollisionEnter2D(Collision2D other) 
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.tag == "Player")
             {
@@ -72,7 +74,7 @@ namespace HMF.Thesis.Enemys
             }
         }
 
-        private void OnCollisionExit2D(Collision2D other) 
+        private void OnTriggerExit2D(Collider2D other)
         {
             if (other.gameObject.tag == "Player")
             {

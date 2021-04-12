@@ -1,3 +1,4 @@
+using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 
 namespace HMF.Thesis.Enemys
@@ -14,6 +15,7 @@ namespace HMF.Thesis.Enemys
 
         public void OnEnter()
         {
+            Debug.Log("Enemy Dead");
             _stateMachine.gameObject.SetActive(false);
         }
 

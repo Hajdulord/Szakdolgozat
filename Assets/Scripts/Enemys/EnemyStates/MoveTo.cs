@@ -1,5 +1,6 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Interfaces;
+using UnityEngine;
 
 namespace HMF.Thesis.Enemys.EnemyStates
 {
@@ -16,7 +17,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnEnter()
         {
-            
+            Debug.Log("Enemy MoveTo");
         }
 
         public void OnExit()
