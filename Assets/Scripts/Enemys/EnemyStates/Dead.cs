@@ -5,10 +5,10 @@ namespace HMF.Thesis.Enemys
 {
     public class Dead : IState
     {
-        private BasicEnemyStateMachine _stateMachine;
+        private IEnemyStateMachine _stateMachine;
 
 
-        public Dead(BasicEnemyStateMachine stateMachine)
+        public Dead(IEnemyStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
         }
@@ -16,7 +16,7 @@ namespace HMF.Thesis.Enemys
         public void OnEnter()
         {
             Debug.Log("Enemy Dead");
-            _stateMachine.gameObject.SetActive(false);
+            _stateMachine.ThisGameObject.SetActive(false);
         }
 
         public void OnExit()

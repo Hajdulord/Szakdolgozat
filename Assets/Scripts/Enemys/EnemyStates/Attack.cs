@@ -10,11 +10,11 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         private string[] _tagsToTarget;
 
-        private BasicEnemyStateMachine _stateMachine;
+        private IEnemyStateMachine _stateMachine;
 
         private float _time = 0;
 
-        public Attack(IAttack attack, string[] tagsToTarget, BasicEnemyStateMachine stateMachine)
+        public Attack(IAttack attack, string[] tagsToTarget, IEnemyStateMachine stateMachine)
         {
             _attack = attack;
             _tagsToTarget = tagsToTarget;
@@ -36,7 +36,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
             if (Time.time >= _time)
             {
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
-                _time = Time.time + _stateMachine.weaponData.attackTime;
+                _time = Time.time + _stateMachine.WeaponData.attackTime;
             }
         }
     }

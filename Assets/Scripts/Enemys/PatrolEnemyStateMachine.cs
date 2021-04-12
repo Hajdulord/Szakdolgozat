@@ -10,11 +10,15 @@ using HMF.Thesis.Items;
 
 namespace HMF.Thesis.Enemys
 {
-    public class BasicEnemyStateMachine : MonoBehaviour, IEnemyStateMachine
+    public class PatrolEnemyStateMachine : MonoBehaviour, IEnemyStateMachine
     {
         [Header("Serialized Private Fields")]
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
         [SerializeField] private WeaponData _weaponData = null!;
+
+        [Header("Serialized Public Fields")]
+        [SerializeField] public GameObject start = null!;
+        [SerializeField] public GameObject end = null!;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -36,17 +40,17 @@ namespace HMF.Thesis.Enemys
             _attack = GetComponent<IAttackComponent>().Attack;
             _character = GetComponent<ICharacterComponent>().Character;
             
-            var idle = new Idle();
+            var patrol = new Patrol(_move, this);
             var moveTo = new MoveTo(_move, this);
             var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this);
             var dead = new Dead(this);
 
-            At(idle, moveTo, targetFound());
-            At(moveTo, idle, targetLost());
+            At(patrol, moveTo, targetFound());
+            At(moveTo, patrol, targetLost());
 
-            At(idle, attack, reachedTarget());
+            At(patrol, attack, reachedTarget());
             At(moveTo, attack, reachedTarget());
-            At(attack, idle, targetLost());
+            At(attack, patrol, targetLost());
             At(attack, moveTo, targetOutOfReach());
             
             _stateMachine.AddAnyTransition(dead, isDead());
@@ -60,7 +64,7 @@ namespace HMF.Thesis.Enemys
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
 
-            _stateMachine.SetState(idle);
+            _stateMachine.SetState(patrol);
         }
 
         private void Update() => _stateMachine.Tick();

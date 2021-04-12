@@ -7,9 +7,9 @@ namespace HMF.Thesis.Enemys.EnemyStates
     public class MoveTo : IState
     {
         private IMove _move;
-        private BasicEnemyStateMachine _stateMachine;
+        private IEnemyStateMachine _stateMachine;
 
-        public MoveTo(IMove move, BasicEnemyStateMachine stateMachine)
+        public MoveTo(IMove move, IEnemyStateMachine stateMachine)
         {
             _move = move;
             _stateMachine = stateMachine;
