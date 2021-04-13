@@ -10,16 +10,19 @@ namespace HMF.Thesis.Enemys
         private IMove _move;
         private PatrolEnemyStateMachine _stateMachine;
         private bool targetReached = false;
+        private Animator _animator;
 
-        public Patrol(IMove move, IEnemyStateMachine stateMachine)
+        public Patrol(IMove move, IEnemyStateMachine stateMachine, Animator animator)
         {
             _move = move;
             _stateMachine = stateMachine as PatrolEnemyStateMachine;
+            _animator = animator;
         }
 
         public void OnEnter()
         {
             Debug.Log("Enemy Patrol");
+            _animator.SetFloat("Speed", Mathf.Abs(_stateMachine.ThisGameObject.transform.right.x));
         }
 
         public void OnExit()
