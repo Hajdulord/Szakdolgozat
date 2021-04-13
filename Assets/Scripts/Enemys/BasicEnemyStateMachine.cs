@@ -22,6 +22,7 @@ namespace HMF.Thesis.Enemys
         private IAttack _attack;
         private IMagicHandler _magicHandler;
         private ICharacter _character;
+        private Animator _animator;
 
         public GameObject Target {get; internal set;} = null;
         public IItem Weapon {get; private set;}
@@ -38,6 +39,7 @@ namespace HMF.Thesis.Enemys
             _attack = GetComponent<IAttackComponent>().Attack;
             _magicHandler = GetComponent<IMagicHandlerComponent>()?.MagicHandler;
             _character = GetComponent<ICharacterComponent>().Character;
+            _animator = GetComponent<Animator>();
             
             Weapon = new Weapon(_weaponData);
             if (_magicFocusData != null)
@@ -45,10 +47,10 @@ namespace HMF.Thesis.Enemys
                 MagicFocus = new MagicFocus(_magicFocusData, _magicHandler);   
             }
 
-            var idle = new Idle();
-            var moveTo = new MoveTo(_move, this);
-            var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this);
-            var dead = new Dead(this);
+            var idle = new Idle(_animator);
+            var moveTo = new MoveTo(_move, this, _animator);
+            var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this, _animator);
+            var dead = new Dead(this, _animator);
 
             At(idle, moveTo, targetFound());
             At(moveTo, idle, targetLost());

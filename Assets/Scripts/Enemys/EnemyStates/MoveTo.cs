@@ -9,11 +9,13 @@ namespace HMF.Thesis.Enemys.EnemyStates
     {
         private IMove _move;
         private IEnemyStateMachine _stateMachine;
+        private Animator _animator;
 
-        public MoveTo(IMove move, IEnemyStateMachine stateMachine)
+        public MoveTo(IMove move, IEnemyStateMachine stateMachine, Animator animator)
         {
             _move = move;
             _stateMachine = stateMachine;
+            _animator = animator;
         }
 
         public void OnEnter()
@@ -23,6 +25,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
                 HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x), 
                 0, 
                 0);
+            _animator.SetFloat("Speed", Mathf.Abs(_stateMachine.ThisGameObject.transform.right.x));
         }
 
         public void OnExit()

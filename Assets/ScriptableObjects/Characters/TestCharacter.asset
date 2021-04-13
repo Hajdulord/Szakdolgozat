@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TestCharacter
   m_EditorClassIdentifier: 
   characterName: TestPlayer
-  maxHealth: 5
+  maxHealth: 500
   baseSpeed: 10
   sprite: {fileID: -5032281584210859441, guid: f919844b43183974abeaa3762cb4aa52, type: 3}

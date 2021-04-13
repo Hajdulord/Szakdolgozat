@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee2c571d7de64840a5fe49f79b0d54e, type: 3}
+  m_Name: Ice Lance
+  m_EditorClassIdentifier: 
+  magicName: Ice Lance
+  description: A magic focus that produces an ice lance.
+  damage: 4
+  attackRange: 2
+  attackRate: 0.3
+  status: Frozen
+  magicType: Lance
+  sprite: {fileID: 21300000, guid: 52ac90f816e758f48816e9a32bd48834, type: 3}
+  targetType: 1
+  isUnique: 0
+  attackTime: 8
+  animationToSpawn: {fileID: 1761195564284797939, guid: 0a010f3511296aa4cad7c64efd578b6f, type: 3}
