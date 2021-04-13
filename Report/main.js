@@ -224,13 +224,13 @@ var assemblies = [
   {
     "name": "EnemysAssembly",
     "classes": [
-      { "name": "HMF.Thesis.Enemys.BasicEnemyStateMachine", "rp": "EnemysAssembly_BasicEnemyStateMachine.html", "cl": 0, "ucl": 52, "cal": 52, "tl": 93, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.Dead", "rp": "EnemysAssembly_Dead.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 32, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.EnemyStates.Attack", "rp": "EnemysAssembly_Attack.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 50, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.EnemyStates.Idle", "rp": "EnemysAssembly_Idle.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 23, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.EnemyStates.MoveTo", "rp": "EnemysAssembly_MoveTo.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.Patrol", "rp": "EnemysAssembly_Patrol.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 63, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Enemys.PatrolEnemyStateMachine", "rp": "EnemysAssembly_PatrolEnemyStateMachine.html", "cl": 0, "ucl": 54, "cal": 54, "tl": 97, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.BasicEnemyStateMachine", "rp": "EnemysAssembly_BasicEnemyStateMachine.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 95, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.Dead", "rp": "EnemysAssembly_Dead.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.Attack", "rp": "EnemysAssembly_Attack.html", "cl": 0, "ucl": 35, "cal": 35, "tl": 65, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.Idle", "rp": "EnemysAssembly_Idle.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.EnemyStates.MoveTo", "rp": "EnemysAssembly_MoveTo.html", "cl": 0, "ucl": 16, "cal": 16, "tl": 41, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.Patrol", "rp": "EnemysAssembly_Patrol.html", "cl": 0, "ucl": 31, "cal": 31, "tl": 66, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Enemys.PatrolEnemyStateMachine", "rp": "EnemysAssembly_PatrolEnemyStateMachine.html", "cl": 0, "ucl": 55, "cal": 55, "tl": 99, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
     "name": "Items",

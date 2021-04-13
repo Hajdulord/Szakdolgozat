@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>04/12/2021 - 21:42:27</Generatedon>
+    <Generatedon>04/13/2021 - 22:01:23</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>6</Assemblies>
     <Classes>37</Classes>
     <Files>37</Files>
     <Coveredlines>105</Coveredlines>
-    <Uncoveredlines>908</Uncoveredlines>
-    <Coverablelines>1013</Coverablelines>
-    <Totallines>2044</Totallines>
-    <Linecoverage>10.3</Linecoverage>
+    <Uncoveredlines>930</Uncoveredlines>
+    <Coverablelines>1035</Coverablelines>
+    <Totallines>2079</Totallines>
+    <Linecoverage>10.1</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="EnemysAssembly" classes="7" coverage="0" coveredlines="0" coverablelines="193" totallines="396" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Enemys.BasicEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="52" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.Dead" coverage="0" coveredlines="0" coverablelines="12" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.EnemyStates.Attack" coverage="0" coveredlines="0" coverablelines="25" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.EnemyStates.Idle" coverage="0" coveredlines="0" coverablelines="7" totallines="23" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.EnemyStates.MoveTo" coverage="0" coveredlines="0" coverablelines="14" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.Patrol" coverage="0" coveredlines="0" coverablelines="29" totallines="63" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.PatrolEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="54" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="EnemysAssembly" classes="7" coverage="0" coveredlines="0" coverablelines="215" totallines="431" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Enemys.BasicEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="53" totallines="95" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.Dead" coverage="0" coveredlines="0" coverablelines="13" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.EnemyStates.Attack" coverage="0" coveredlines="0" coverablelines="35" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.EnemyStates.Idle" coverage="0" coveredlines="0" coverablelines="12" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.EnemyStates.MoveTo" coverage="0" coveredlines="0" coverablelines="16" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.Patrol" coverage="0" coveredlines="0" coverablelines="31" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.PatrolEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="55" totallines="99" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Items" classes="2" coverage="0" coveredlines="0" coverablelines="46" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Items.MagicFocus" coverage="0" coveredlines="0" coverablelines="15" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
