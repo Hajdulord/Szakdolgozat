@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: TestEnemy2
   maxHealth: 20
   baseSpeed: 4
-  sprite: {fileID: 21300000, guid: f2cfe795d1212874da53aa4bf46037d9, type: 3}
+  sprite: {fileID: -5032281584210859441, guid: f919844b43183974abeaa3762cb4aa52, type: 3}

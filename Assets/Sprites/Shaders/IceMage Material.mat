@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: IceMage Material
   m_Shader: {fileID: -6465566751694194690, guid: 9dbd34bf81659534ea5b4d478867e676, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -37,6 +37,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_10b5a518d88e46e8a5ecfd4f42e1e75d: {r: 0.8679245, g: 0.861904, b: 0.7655749, a: 0}
-    - Color_d131394070d24d8e9c75b9fbb4c37220: {r: 0.8784314, g: 0, b: 0.02955035, a: 0}
+    - Color_10b5a518d88e46e8a5ecfd4f42e1e75d: {r: 1, g: 1, b: 1, a: 0}
+    - Color_d131394070d24d8e9c75b9fbb4c37220: {r: 0, g: 0.56553537, b: 0.8490566, a: 0}
   m_BuildTextureStacks: []
