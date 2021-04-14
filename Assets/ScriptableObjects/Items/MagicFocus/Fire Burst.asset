@@ -19,7 +19,7 @@ MonoBehaviour:
   attackRate: 2
   status: Burning
   magicType: Burst
-  sprite: {fileID: 0}
+  sprite: {fileID: -5548035536037470566, guid: c63f7c6491610b24d80fb8ee72d2c962, type: 3}
   targetType: 1
   isUnique: 1
   attackTime: 20

@@ -19,7 +19,7 @@ MonoBehaviour:
   attackRate: 0.3
   status: Frozen
   magicType: Lance
-  sprite: {fileID: 21300000, guid: 52ac90f816e758f48816e9a32bd48834, type: 3}
+  sprite: {fileID: -2381943402078938117, guid: c4ec3a0e8afd7be45ab9a14567dc6270, type: 3}
   targetType: 1
   isUnique: 0
   attackTime: 8
