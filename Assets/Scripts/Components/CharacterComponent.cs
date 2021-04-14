@@ -3,6 +3,7 @@ using HMF.Thesis.Logic;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
+using HMF.Thesis.Misc;
 
 namespace HMF.Thesis.Components
 {
@@ -12,6 +13,7 @@ namespace HMF.Thesis.Components
     {
         [Header("Serialized Fields")]
         [SerializeField] private CharacterData _characterData = null!; ///< The data of the Character.
+        [SerializeField] private HealthBar _healthBar = null;
         private ICharacter _character; ///< The Logic that this class wraps Character.
 
         /// Getter for the Character logic.
@@ -20,7 +22,7 @@ namespace HMF.Thesis.Components
         /// Sets basic values.        
         private void Awake() 
         {
-            _character = new CharacterLogic(_characterData);
+            _character = new CharacterLogic(_characterData, _healthBar);
             GetComponent<SpriteRenderer>().sprite = Character.CharacterSprite;
         }
     }
