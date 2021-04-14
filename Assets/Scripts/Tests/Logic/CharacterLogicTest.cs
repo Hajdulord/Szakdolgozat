@@ -2,7 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
+using Moq;
 
+//! Test out the HealthBar!!
 namespace HMF.Thesis.Tests.Logic
 {
     /// Tests for the Characterlogic class.
@@ -18,7 +20,9 @@ namespace HMF.Thesis.Tests.Logic
             var data = ScriptableObject.CreateInstance<CharacterData>();
             data.maxHealth = 5;
 
-            var character = new CharacterLogic(data);
+
+
+            var character = new CharacterLogic(data, null);
 
             //* Tests
             Assert.AreEqual(5, character.MaxHealth);
@@ -33,7 +37,7 @@ namespace HMF.Thesis.Tests.Logic
             var data = ScriptableObject.CreateInstance<CharacterData>();
             data.maxHealth = 5;
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Tests
             Assert.AreEqual(5, character.Health);
@@ -47,7 +51,7 @@ namespace HMF.Thesis.Tests.Logic
             var data = ScriptableObject.CreateInstance<CharacterData>();
             data.maxHealth = 5;
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Affect
             character.Health = 3;
@@ -64,7 +68,7 @@ namespace HMF.Thesis.Tests.Logic
             var data = ScriptableObject.CreateInstance<CharacterData>();
             data.maxHealth = 5;
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Affect
             character.Health = -1;
@@ -81,7 +85,7 @@ namespace HMF.Thesis.Tests.Logic
             var data = ScriptableObject.CreateInstance<CharacterData>();
             data.maxHealth = 5;
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Affect
             character.Health = 6;
@@ -99,7 +103,7 @@ namespace HMF.Thesis.Tests.Logic
             data.maxHealth = 5;
             data.characterName = "Bob";
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Tests
             Assert.AreEqual("Bob", character.CharacterName);
@@ -118,7 +122,7 @@ namespace HMF.Thesis.Tests.Logic
 
             data.sprite = sprite;
 
-            var character = new CharacterLogic(data);
+            var character = new CharacterLogic(data, null);
 
             //* Tests
             Assert.AreEqual(sprite, character.CharacterSprite);

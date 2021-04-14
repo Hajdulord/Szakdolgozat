@@ -9,19 +9,30 @@ namespace HMF.Thesis.Logic
     {
         private float _health; ///< The Current health of the Character.
         private CharacterData _characterData = null!; ///< The data of the Character.
+        private IHealthBar _healthBar;
 
         /// Basic constructor with CharacterData as data
         /*!
         \param character is a CharacterData that is Scriptable object.
         */
-        public CharacterLogic(CharacterData character)
+        public CharacterLogic(CharacterData character, IHealthBar healthBar)
         {
             _characterData = character;
             _health = _characterData.maxHealth;
+            _healthBar = healthBar;
+            _healthBar?.SetMaxHealth(_characterData.maxHealth);
         }
 
         /// Propery for the current health of the Character. It clapms the health between 0 and MaxHealth.
-        public float Health { get => Mathf.Max(0, _health); set => _health = Mathf.Min(Mathf.Max(0, value), MaxHealth); }
+        public float Health 
+        { 
+            get => Mathf.Max(0, _health); 
+            set 
+            { 
+                _health = Mathf.Min(Mathf.Max(0, value), MaxHealth);
+                _healthBar?.SetHealth((int)_health);
+            } 
+        }
 
         /// Getter for MaxHealth.
         public int MaxHealth => _characterData.maxHealth;
