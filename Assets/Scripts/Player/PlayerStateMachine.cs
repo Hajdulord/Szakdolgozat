@@ -20,6 +20,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToIgnore = new List<string>();
         [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
+        [SerializeField] private HMF.Thesis.ScriptableObjects.ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
@@ -63,8 +64,11 @@ namespace HMF.Thesis.Player
             PushBackDir = 0f;
             
             var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
+            var consumableItem = new HMF.Thesis.Items.HealthPotion(_consumableData);
             _inventoryComponent.Inventory.AddItem(testMagicItem, 2);
+            _inventoryComponent.Inventory.AddItem(consumableItem, 2);
             _inventoryComponent.Inventory.SetUse(testMagicItem);
+            _inventoryComponent.Inventory.SetUse(consumableItem);
 
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;

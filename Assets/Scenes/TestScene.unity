@@ -1725,6 +1725,7 @@ MonoBehaviour:
   _tagsToIgnore:
   - Enemy
   _testMagicFocusData: {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
+  _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
   DeathCanvas: {fileID: 1115804477}
   dashDust: {fileID: 1928777164}
   currentSpawnPoint: {fileID: 549006380}
