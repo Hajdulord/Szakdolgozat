@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
@@ -59,8 +57,8 @@ namespace HMF.Thesis.Player
             if(callback.started && Time.time >= _mainWeaponTime)
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
-                _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
                 _mainWeaponTime = Time.time + _stateMachine.Inventory.MainWeapon.attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
             }
         }
 
@@ -68,9 +66,11 @@ namespace HMF.Thesis.Player
         {
             if(callback.started && Time.time >= _inventoryOneTime && _stateMachine.Inventory.InUse.ContainsKey(0))
             {
-                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[0];
-                //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
                 _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(0);
+                //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
+
+                _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
 
@@ -79,8 +79,9 @@ namespace HMF.Thesis.Player
             if(callback.started && Time.time >= _inventoryTwoTime && _stateMachine.Inventory.InUse.ContainsKey(1))
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
-                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[1];
                 _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(1);
+                _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
 
@@ -89,8 +90,9 @@ namespace HMF.Thesis.Player
             if(callback.started && Time.time >= _inventoryThreeTime && _stateMachine.Inventory.InUse.ContainsKey(2))
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
-                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[2];
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(2);
+                _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
 
@@ -99,8 +101,9 @@ namespace HMF.Thesis.Player
             if(callback.started && Time.time >= _inventoryFourTime && _stateMachine.Inventory.InUse.ContainsKey(3))
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
-                _stateMachine.CurrentItem = _stateMachine.Inventory.InUse[3];
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
+                _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
 

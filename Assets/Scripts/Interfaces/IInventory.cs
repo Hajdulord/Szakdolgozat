@@ -10,6 +10,7 @@ namespace HMF.Thesis.Interfaces
         void RemoveItem(IItem item, int quantity);
         void SetUse(IItem item);
         void RemoveUse(int slotNumber);
+        IItem GetItem(int slotNumber);
         Dictionary<IItem, int> InventoryShelf {get;}
         Dictionary<int, IItem> InUse {get;}
         IItem MainWeapon {get; set;}

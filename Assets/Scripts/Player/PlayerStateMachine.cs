@@ -5,6 +5,7 @@ using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Misc;
 using System;
 using System.Collections;
 
@@ -37,6 +38,7 @@ namespace HMF.Thesis.Player
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
         [SerializeField] public Transform currentSpawnPoint = null!; 
+        [SerializeField] public UseInventory inventoryUI = null!;
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
@@ -65,7 +67,7 @@ namespace HMF.Thesis.Player
             
             var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
             var consumableItem = new HMF.Thesis.Items.HealthPotion(_consumableData);
-            _inventoryComponent.Inventory.AddItem(testMagicItem, 2);
+            _inventoryComponent.Inventory.AddItem(testMagicItem, 1);
             _inventoryComponent.Inventory.AddItem(consumableItem, 2);
             _inventoryComponent.Inventory.SetUse(testMagicItem);
             _inventoryComponent.Inventory.SetUse(consumableItem);
