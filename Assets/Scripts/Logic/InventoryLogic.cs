@@ -97,5 +97,23 @@ namespace HMF.Thesis.Logic
                 InUse.Remove(slotNumber);
             }
         }
+
+        public IItem GetItem(int slotNumber)
+        {
+            IItem item = null;
+
+            if (InUse.ContainsKey(slotNumber))
+            {
+                item = InUse[slotNumber];
+                
+                RemoveItem(InUse[slotNumber], 1);
+                if (!InventoryShelf.ContainsKey(InUse[slotNumber]))
+                {
+                    RemoveUse(slotNumber);
+                }
+            }
+
+            return item;
+        }
     }
 }

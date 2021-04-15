@@ -12,7 +12,7 @@ namespace HMF.Thesis.Components
 
         private void Awake() 
         {
-            var character = GetComponent<ICharacter>();
+            var character = GetComponent<ICharacterComponent>()?.Character;
             _helable = new HealableLogic(character);
         }
     }

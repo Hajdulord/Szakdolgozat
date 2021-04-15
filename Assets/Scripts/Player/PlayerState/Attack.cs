@@ -34,7 +34,7 @@ namespace HMF.Thesis.Player
             //Debug.Log(_attack);
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
-            if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus)
+            if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus || _playerStateMachine.CurrentItem is HMF.Thesis.Items.HealthPotion)
                 _animator.SetBool("IsMagic", true);
             else
                 _animator.SetBool("IsAttacking", true);
