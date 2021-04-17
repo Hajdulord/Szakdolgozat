@@ -1642,9 +1642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e84c3567ae6b3f4eb4cc7a33c9b30f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tagsToIgnore:
+  _tagsToTarget:
   - Player
-  _magicFocusData: {fileID: 11400000, guid: 8b35b602cc8257749b64ca2ec87c3f42, type: 2}
+  _magicFocusData: {fileID: 11400000, guid: 8926b05facec6ea4994ffa59aba510a8, type: 2}
   _weaponData: {fileID: 11400000, guid: e69403d43804a5242890220eabdd850d, type: 2}
   start: {fileID: 3626129}
   end: {fileID: 179550568}
@@ -2013,7 +2013,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _groundCheck: {fileID: 1564734241}
-  _tagsToIgnore:
+  _tagsToTarget:
   - Enemy
   _testMagicFocusData: {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
   _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
@@ -2722,7 +2722,7 @@ Transform:
   m_Children:
   - {fileID: 91654220}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994507454
 GameObject:
@@ -2963,7 +2963,7 @@ Transform:
   - {fileID: 732781925}
   - {fileID: 1796978225}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115804477
 GameObject:
@@ -3047,7 +3047,7 @@ Transform:
   - {fileID: 520028179}
   - {fileID: 692327619}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165475953
 GameObject:
@@ -3710,7 +3710,7 @@ Transform:
   - {fileID: 600795980}
   - {fileID: 549006380}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464973050
 GameObject:
@@ -4370,7 +4370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c308eae605e6092458ff4994c9c3d36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tagsToIgnore:
+  _tagsToTarget:
   - Player
   _weaponData: {fileID: 11400000, guid: e69403d43804a5242890220eabdd850d, type: 2}
   _magicFocusData: {fileID: 11400000, guid: 8b35b602cc8257749b64ca2ec87c3f42, type: 2}
@@ -4468,6 +4468,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1786580825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786580826}
+  m_Layer: 0
+  m_Name: -----------------Music-----------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786580826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786580825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3715631, y: -1.9297621, z: -105.912224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796978224
 GameObject:
   m_ObjectHideFlags: 0

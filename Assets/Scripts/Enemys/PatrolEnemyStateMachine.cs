@@ -13,7 +13,7 @@ namespace HMF.Thesis.Enemys
     public class PatrolEnemyStateMachine : MonoBehaviour, IEnemyStateMachine
     {
         [Header("Serialized Private Fields")]
-        [SerializeField] private List<string> _tagsToIgnore = new List<string>();
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();
         [SerializeField] private MagicFocusData _magicFocusData = null;
         [SerializeField] private WeaponData _weaponData = null!;
 
@@ -53,7 +53,7 @@ namespace HMF.Thesis.Enemys
 
             var patrol = new Patrol(_move, this, _animator);
             var moveTo = new MoveTo(_move, this, _animator);
-            var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this, _animator);
+            var attack = new Attack(_attack, _tagsToTarget.ToArray(), this, _animator);
             var dead = new Dead(this, _animator);
 
             At(patrol, moveTo, targetFound());

@@ -1,5 +1,7 @@
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HMF.Thesis.Enemys
 {
@@ -19,6 +21,22 @@ namespace HMF.Thesis.Enemys
             Debug.Log("Enemy Dead");
             //_stateMachine.ThisGameObject.SetActive(false);
             _animator.SetBool("IsDead", true);
+            
+            var colliders = new List<Collider2D>();
+
+            _stateMachine.ThisGameObject.GetComponent<Rigidbody2D>()?.GetAttachedColliders(colliders);
+
+            if (colliders.Any())
+            {
+                foreach (var collider in colliders)
+                {
+                    if (!collider.isTrigger)
+                    {
+                        collider.attachedRigidbody.gravityScale = 0;
+                        collider.enabled = false;
+                    }   
+                }
+            }
         }
 
         public void OnExit()
