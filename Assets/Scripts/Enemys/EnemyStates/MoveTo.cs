@@ -21,10 +21,20 @@ namespace HMF.Thesis.Enemys.EnemyStates
         public void OnEnter()
         {
             //Debug.Log("Enemy MoveTo");
-            _stateMachine.ThisGameObject.transform.right = new Vector3(
-                HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x), 
-                0, 
-                0);
+
+            var dir = HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x);
+
+            if (dir >= 0)
+            {
+                dir = 1f;
+            }
+            else
+            {
+                dir = -1f;
+            }
+
+            _stateMachine.ThisGameObject.transform.right = new Vector3(dir,  0,  0);
+
             _animator.SetFloat("Speed", Mathf.Abs(_stateMachine.ThisGameObject.transform.right.x));
         }
 
@@ -35,7 +45,20 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void Tick()
         {
-            _move.MoveToPoint(_stateMachine.Target.transform.position);
+            var dir = HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x);
+
+            if (dir >= 0)
+            {
+                dir = 1f;
+            }
+            else
+            {
+                dir = -1f;
+            }
+
+            _stateMachine.ThisGameObject.transform.right = new Vector3(dir,  0,  0);
+
+            _move.MoveToPoint(new Vector2(_stateMachine.Target.transform.position.x, _stateMachine.ThisGameObject.transform.position.y));
         }
     }
 }
