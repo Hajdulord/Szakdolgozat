@@ -62,9 +62,11 @@ namespace HMF.Thesis.Status
 
         public void AddStatus(string status)
         {
+            var alreadyActive = false;
             if(_activeStatuses.ContainsKey(status))
             {
                 _activeStatuses[status] = (_activeStatuses[status].Status, Time.time + _activeStatuses[status].ExpirationTime, _activeStatuses[status].EffectTime);
+                alreadyActive = true;
             }
             else if(_cachedStatuses.ContainsKey(status))
             {
@@ -85,7 +87,7 @@ namespace HMF.Thesis.Status
                 }
             }
 
-            if (_activeStatuses.ContainsKey(status))
+            if (_activeStatuses.ContainsKey(status) && !alreadyActive)
             {
                 _activeStatuses[status].Status.PrePhase(_gameObject);
                 _activeStatuses[status].Status.Affect(_gameObject);
