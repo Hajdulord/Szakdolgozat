@@ -14,7 +14,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnEnter()
         {
-            Debug.Log("Enemy Idle");
+            //Debug.Log("Enemy Idle");
             _animator.SetFloat("Speed", 0);
         }
 

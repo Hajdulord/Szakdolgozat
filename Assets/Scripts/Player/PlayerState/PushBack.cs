@@ -23,7 +23,7 @@ namespace HMF.Thesis.Player
 
         public void OnEnter()
         {
-            Debug.Log("PushBack");
+            //Debug.Log("PushBack");
             _move.PushBack(_playerStateMachine.PushBackDir);
             _animator.SetBool("IsHurt", true);
         }

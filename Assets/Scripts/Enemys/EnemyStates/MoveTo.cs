@@ -20,7 +20,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnEnter()
         {
-            Debug.Log("Enemy MoveTo");
+            //Debug.Log("Enemy MoveTo");
             _stateMachine.ThisGameObject.transform.right = new Vector3(
                 HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x), 
                 0, 

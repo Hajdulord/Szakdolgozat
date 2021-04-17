@@ -18,7 +18,7 @@ namespace HMF.Thesis.Enemys
 
         public void OnEnter()
         {
-            Debug.Log("Enemy Dead");
+            //Debug.Log("Enemy Dead");
             //_stateMachine.ThisGameObject.SetActive(false);
             _animator.SetBool("IsDead", true);
             

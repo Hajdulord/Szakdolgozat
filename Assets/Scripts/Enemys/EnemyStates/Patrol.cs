@@ -21,7 +21,7 @@ namespace HMF.Thesis.Enemys
 
         public void OnEnter()
         {
-            Debug.Log("Enemy Patrol");
+            //Debug.Log("Enemy Patrol");
             _animator.SetFloat("Speed", Mathf.Abs(_stateMachine.ThisGameObject.transform.right.x));
         }
 

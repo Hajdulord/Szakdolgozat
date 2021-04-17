@@ -26,7 +26,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnEnter()
         {
-            Debug.Log("Enemy Attack");
+            //Debug.Log("Enemy Attack");
             _animator.SetFloat("Speed", 0);
         }
 

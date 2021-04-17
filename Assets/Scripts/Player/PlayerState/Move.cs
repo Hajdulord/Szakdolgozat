@@ -23,7 +23,7 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            Debug.Log("Move");
+            //Debug.Log("Move");
             _animator.SetFloat("Speed", Mathf.Abs(_playerStateMachine.MoveDirection));
         }
 

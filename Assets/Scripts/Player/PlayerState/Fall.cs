@@ -23,7 +23,7 @@ namespace HMF.Thesis.Player
 
         public void OnEnter()
         {
-            Debug.Log("Fall");
+            //Debug.Log("Fall");
             _move.Fall();
             _animator.SetBool("IsFalling", true);
         }

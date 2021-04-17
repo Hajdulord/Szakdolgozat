@@ -15,19 +15,19 @@ namespace HMF.Thesis.Status.ActualStatuses
 
         private float _damage = 1f;
 
-        private float _slow = 2.5f;
+        private float _slow = 5f;
 
         public override void Affect(GameObject gameObject)
         {
             var damageable = gameObject.GetComponent<IDamageableComponent>();
             damageable?.Damageable.TakeDamage(_damage);
-            // TODO: implement slowdown!
         }
 
         public override void PrePhase(GameObject gameObject)
         {
             var moveComponent = gameObject.GetComponent<IMoveComponent>();
             var move = moveComponent?.Move;
+
             if (move != null)
             {
                 move.Speed -= _slow;

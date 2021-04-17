@@ -14,7 +14,7 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            Debug.Log("Dead");
+            //Debug.Log("Dead");
             _animator.SetBool("IsDead", true);
             //_playerStateMachine.Respawn();
         }

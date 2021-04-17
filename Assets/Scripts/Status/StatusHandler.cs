@@ -24,6 +24,7 @@ namespace HMF.Thesis.Status
             var time = Time.time;
             var statuesToChange = new List<string>();
             var statuesToRemove = new List<string>();
+
             foreach (var status in _activeStatuses)
             {
                 if (status.Value.EffectTime - time <= 0)
@@ -88,6 +89,7 @@ namespace HMF.Thesis.Status
             {
                 _activeStatuses[status].Status.PrePhase(_gameObject);
                 _activeStatuses[status].Status.Affect(_gameObject);
+                Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
             }
         }
 
