@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumpspeed_115',['JumpSpeed',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a295bc98ec6b728aa8f7d3f85b3a2ed95',1,'HMF.Thesis.Interfaces.IMove.JumpSpeed()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#ad91aa474b26b3f8d2c6bf2f257249d73',1,'HMF.Thesis.Logic.MoveLogic.JumpSpeed()']]]
+  ['health_250',['Health',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_character.html#acfbe38e7ed863bedd7aadb01d39d0cd3',1,'HMF.Thesis.Interfaces.ICharacter.Health()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_character_logic.html#a1fa1819871cf02e180e1c8bf4dde3d15',1,'HMF.Thesis.Logic.CharacterLogic.Health()']]]
 ];

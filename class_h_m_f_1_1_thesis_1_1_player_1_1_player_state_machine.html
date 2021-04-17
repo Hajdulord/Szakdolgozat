@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('class_h_m_f_1_1_thesis_1_1_player_1_1_
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -107,8 +108,9 @@ Collaboration diagram for HMF.Thesis.Player.PlayerStateMachine:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine__coll__graph.png" border="0" usemap="#a_h_m_f_8_thesis_8_player_8_player_state_machine_coll__map" alt="Collaboration graph"/></div>
 <map name="a_h_m_f_8_thesis_8_player_8_player_state_machine_coll__map" id="a_h_m_f_8_thesis_8_player_8_player_state_machine_coll__map">
-<area shape="rect" title="This class is used to manage the player&#39;s state." alt="" coords="5,80,176,121"/>
-<area shape="rect" title=" " alt="" coords="35,5,147,32"/>
+<area shape="rect" title="This class is used to manage the player&#39;s state." alt="" coords="5,171,176,212"/>
+<area shape="rect" title=" " alt="" coords="29,5,141,32"/>
+<area shape="rect" href="class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="107,81,311,108"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,6 +119,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72c7bcc00dbfa75af4f7ff2d5edff029"><td class="memItemLeft" align="right" valign="top"><a id="a72c7bcc00dbfa75af4f7ff2d5edff029"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PushBack</b> (GameObject other)</td></tr>
 <tr class="separator:a72c7bcc00dbfa75af4f7ff2d5edff029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b890bb4af543815e2de6cc3f852b79"><td class="memItemLeft" align="right" valign="top"><a id="a81b890bb4af543815e2de6cc3f852b79"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Dead</b> ()</td></tr>
+<tr class="separator:a81b890bb4af543815e2de6cc3f852b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48207cec7acce67c32ccccfc8b99a33c"><td class="memItemLeft" align="right" valign="top"><a id="a48207cec7acce67c32ccccfc8b99a33c"></a>
+IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><b>Respawn</b> ()</td></tr>
+<tr class="separator:a48207cec7acce67c32ccccfc8b99a33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a6117c9d490bba81bb39f84502b7b5437"><td class="memItemLeft" align="right" valign="top"><a id="a6117c9d490bba81bb39f84502b7b5437"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>dashDust</b> = null!</td></tr>
+<tr class="separator:a6117c9d490bba81bb39f84502b7b5437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7344b62104183e68b8946b9aaf7f3a4"><td class="memItemLeft" align="right" valign="top"><a id="ad7344b62104183e68b8946b9aaf7f3a4"></a>
+Transform&#160;</td><td class="memItemRight" valign="bottom"><b>currentSpawnPoint</b> = null!</td></tr>
+<tr class="separator:ad7344b62104183e68b8946b9aaf7f3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e09647c49d8f8444dbc8e1144065528"><td class="memItemLeft" align="right" valign="top"><a id="a3e09647c49d8f8444dbc8e1144065528"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>swordPoint</b> = null!</td></tr>
+<tr class="separator:a3e09647c49d8f8444dbc8e1144065528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09622f19011a530e2777ac139dda57bf"><td class="memItemLeft" align="right" valign="top"><a id="a09622f19011a530e2777ac139dda57bf"></a>
+<a class="el" href="class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html">UseInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inventoryUI</b> = null!</td></tr>
+<tr class="separator:a09622f19011a530e2777ac139dda57bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -132,6 +155,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDashing</b> = false
 <tr class="memitem:a3dec1b0eff183b8d658d03fd462bcac6"><td class="memItemLeft" align="right" valign="top"><a id="a3dec1b0eff183b8d658d03fd462bcac6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsJumping</b> = false<code> [get, set]</code></td></tr>
 <tr class="separator:a3dec1b0eff183b8d658d03fd462bcac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e482c964d4bf9fd02079f5fb66a0f8b"><td class="memItemLeft" align="right" valign="top"><a id="a3e482c964d4bf9fd02079f5fb66a0f8b"></a>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentItem</b> = null<code> [get, set]</code></td></tr>
+<tr class="separator:a3e482c964d4bf9fd02079f5fb66a0f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68d06ebed10762b63345e366002b410"><td class="memItemLeft" align="right" valign="top"><a id="ae68d06ebed10762b63345e366002b410"></a>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html">IInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Inventory</b><code> [get]</code></td></tr>
+<tr class="separator:ae68d06ebed10762b63345e366002b410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is used to manage the player's state. </p>
@@ -145,7 +174,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsJumping</b> = false
 			<ul>
 				<li class="navelem"><a class="el" href="namespace_h_m_f.html">HMF</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis.html">Thesis</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis_1_1_player.html">Player</a></li><li class="navelem"><a class="el" href="class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html">PlayerStateMachine</a></li>
 				<li class="footer">
-					Generated on Wed Mar 10 2021 19:39:42 for Thesis by <a href="http://www.doxygen.org/index.html">
+					Generated on Sat Apr 17 2021 17:51:59 for Thesis by <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"
                      onerror="this.onerror=null;this.src='doxygen.svg';"/></a> 1.9.1.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.

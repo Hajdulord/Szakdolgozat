@@ -1,8 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,129,63,156"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_fall.html" title=" " alt="" coords="130,5,286,32"/>
-<area shape="rect" id="node3" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_idle.html" title=" " alt="" coords="123,57,293,98"/>
-<area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_jump.html" title=" " alt="" coords="123,122,293,163"/>
-<area shape="rect" id="node5" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_move.html" title=" " alt="" coords="123,187,293,229"/>
-<area shape="rect" id="node6" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_push_back.html" title=" " alt="" coords="111,253,305,280"/>
+<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_healable.html" title=" " alt="" coords="5,13,217,39"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_logic_1_1_healable_logic.html" title=" " alt="" coords="265,5,448,47"/>
 </map>

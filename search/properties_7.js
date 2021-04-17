@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pushbackspeed_118',['PushBackSpeed',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#aa795900711c3d7f8c413d4450e849833',1,'HMF.Thesis.Interfaces.IMove.PushBackSpeed()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#a2261701e67e067e81c1425c28a60f88a',1,'HMF.Thesis.Logic.MoveLogic.PushBackSpeed()']]]
+  ['lifetime_252',['LifeTime',['../class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html#ac322c43756756da89afe0e7b75a035f3',1,'HMF::Thesis::Status::StatusBase']]]
 ];

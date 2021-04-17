@@ -1,0 +1,4 @@
+var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component =
+[
+    [ "MagicHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component.html#aff6ac8118895718f926e3689dffe905c", null ]
+];

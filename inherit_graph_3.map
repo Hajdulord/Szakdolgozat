@@ -1,3 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_attack.html" title=" " alt="" coords="5,5,204,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,316,63,343"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead.html" title=" " alt="" coords="147,5,321,32"/>
+<area shape="rect" id="node3" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_enemy_states_1_1_attack.html" title=" " alt="" coords="121,57,347,98"/>
+<area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_enemy_states_1_1_idle.html" title=" " alt="" coords="111,123,357,149"/>
+<area shape="rect" id="node5" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_enemy_states_1_1_move_to.html" title=" " alt="" coords="121,174,347,215"/>
+<area shape="rect" id="node6" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol.html" title=" " alt="" coords="145,240,323,267"/>
+<area shape="rect" id="node7" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_attack.html" title=" " alt="" coords="147,291,321,317"/>
+<area shape="rect" id="node8" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_fall.html" title=" " alt="" coords="156,341,312,368"/>
+<area shape="rect" id="node9" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html" title=" " alt="" coords="149,393,319,434"/>
+<area shape="rect" id="node10" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_idle.html" title=" " alt="" coords="149,458,319,499"/>
+<area shape="rect" id="node11" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_jump.html" title=" " alt="" coords="149,523,319,565"/>
+<area shape="rect" id="node12" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_move.html" title=" " alt="" coords="149,589,319,630"/>
+<area shape="rect" id="node13" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_push_back.html" title=" " alt="" coords="137,655,331,681"/>
 </map>

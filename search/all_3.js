@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['fall_15',['Fall',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#afdbc4b6764dba36af89e0934eb3a7cbe',1,'HMF.Thesis.Interfaces.IMove.Fall()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#a517b78d3aa9291b780554f6da600a5d2',1,'HMF.Thesis.Logic.MoveLogic.Fall()'],['../class_h_m_f_1_1_thesis_1_1_player_1_1_fall.html',1,'HMF.Thesis.Player.Fall']]],
-  ['fallspeed_16',['FallSpeed',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a8cf30f067c6a475f22a47bf3cde83b2c',1,'HMF.Thesis.Interfaces.IMove.FallSpeed()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#ac20a8123da82e3b0746e41c91ed3faff',1,'HMF.Thesis.Logic.MoveLogic.FallSpeed()']]]
+  ['damageable_19',['Damageable',['../class_h_m_f_1_1_thesis_1_1_components_1_1_damageable_character_component.html#ab58e4f8f476c3efb24e4db3a1f28b008',1,'HMF::Thesis::Components::DamageableCharacterComponent']]],
+  ['damageablecharactercomponent_20',['DamageableCharacterComponent',['../class_h_m_f_1_1_thesis_1_1_components_1_1_damageable_character_component.html',1,'HMF::Thesis::Components']]],
+  ['damageablecharacterlogic_21',['DamageableCharacterLogic',['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html#ab556b66ea731eb9ea9a1db67b8c6d82b',1,'HMF.Thesis.Logic.DamageableCharacterLogic.DamageableCharacterLogic()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html',1,'HMF.Thesis.Logic.DamageableCharacterLogic']]],
+  ['damageablecharacterlogictest_22',['DamageableCharacterLogicTest',['../class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_damageable_character_logic_test.html',1,'HMF::Thesis::Tests::Logic']]],
+  ['dash_23',['Dash',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a2c7f941b525e3e694f3d3987715facf2',1,'HMF.Thesis.Interfaces.IMove.Dash()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#a7e757e9fa4f0c79af18c8798079eeb36',1,'HMF.Thesis.Logic.MoveLogic.Dash()'],['../class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#a4295cde4333b8f4b7b82ff152875a43e',1,'HMF.Thesis.Player.InputController.Dash()']]],
+  ['dashrate_24',['DashRate',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a4cc20b80b83e2489e2580fdbd35e7909',1,'HMF.Thesis.Interfaces.IMove.DashRate()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#adcf7f3643cf2ed49cc2214c49d195d4f',1,'HMF.Thesis.Logic.MoveLogic.DashRate()']]],
+  ['dead_25',['Dead',['../class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead.html',1,'HMF::Thesis::Enemys']]],
+  ['death_26',['Death',['../class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html',1,'HMF::Thesis::Player::PlayerStates']]],
+  ['destroyafteranimationends_27',['DestroyAfterAnimationEnds',['../class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html',1,'HMF::Thesis::Magic']]],
+  ['dustanimation_28',['DustAnimation',['../class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html',1,'HMF::Thesis::Player']]]
 ];

@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['components_79',['Components',['../namespace_h_m_f_1_1_thesis_1_1_components.html',1,'HMF::Thesis']]],
-  ['hmf_80',['HMF',['../namespace_h_m_f.html',1,'']]],
-  ['interfaces_81',['Interfaces',['../namespace_h_m_f_1_1_thesis_1_1_interfaces.html',1,'HMF::Thesis']]],
-  ['logic_82',['Logic',['../namespace_h_m_f_1_1_thesis_1_1_logic.html',1,'HMF::Thesis']]],
-  ['player_83',['Player',['../namespace_h_m_f_1_1_thesis_1_1_player.html',1,'HMF::Thesis']]],
-  ['playerstates_84',['PlayerStates',['../namespace_h_m_f_1_1_thesis_1_1_player_1_1_player_states.html',1,'HMF::Thesis::Player']]],
-  ['scriptableobjects_85',['ScriptableObjects',['../namespace_h_m_f_1_1_thesis_1_1_scriptable_objects.html',1,'HMF::Thesis']]],
-  ['tests_86',['Tests',['../namespace_h_m_f_1_1_thesis_1_1_tests.html',1,'HMF::Thesis']]],
-  ['thesis_87',['Thesis',['../namespace_h_m_f_1_1_thesis.html',1,'HMF']]]
+  ['actualmagic_202',['ActualMagic',['../namespace_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic.html',1,'HMF::Thesis::Magic']]],
+  ['actualstatuses_203',['ActualStatuses',['../namespace_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses.html',1,'HMF::Thesis::Status']]],
+  ['componentinterfaces_204',['ComponentInterfaces',['../namespace_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces.html',1,'HMF::Thesis::Interfaces']]],
+  ['components_205',['Components',['../namespace_h_m_f_1_1_thesis_1_1_components.html',1,'HMF::Thesis']]],
+  ['enemys_206',['Enemys',['../namespace_h_m_f_1_1_thesis_1_1_enemys.html',1,'HMF::Thesis']]],
+  ['enemystates_207',['EnemyStates',['../namespace_h_m_f_1_1_thesis_1_1_enemys_1_1_enemy_states.html',1,'HMF::Thesis::Enemys']]],
+  ['hmf_208',['HMF',['../namespace_h_m_f.html',1,'']]],
+  ['interfaces_209',['Interfaces',['../namespace_h_m_f_1_1_thesis_1_1_interfaces.html',1,'HMF::Thesis']]],
+  ['items_210',['Items',['../namespace_h_m_f_1_1_thesis_1_1_items.html',1,'HMF::Thesis']]],
+  ['logic_211',['Logic',['../namespace_h_m_f_1_1_thesis_1_1_logic.html',1,'HMF.Thesis.Logic'],['../namespace_h_m_f_1_1_thesis_1_1_tests_1_1_logic.html',1,'HMF.Thesis.Tests.Logic']]],
+  ['magic_212',['Magic',['../namespace_h_m_f_1_1_thesis_1_1_magic.html',1,'HMF::Thesis']]],
+  ['misc_213',['Misc',['../namespace_h_m_f_1_1_thesis_1_1_misc.html',1,'HMF::Thesis']]],
+  ['player_214',['Player',['../namespace_h_m_f_1_1_thesis_1_1_player.html',1,'HMF::Thesis']]],
+  ['playerstates_215',['PlayerStates',['../namespace_h_m_f_1_1_thesis_1_1_player_1_1_player_states.html',1,'HMF::Thesis::Player']]],
+  ['scriptableobjects_216',['ScriptableObjects',['../namespace_h_m_f_1_1_thesis_1_1_scriptable_objects.html',1,'HMF::Thesis']]],
+  ['status_217',['Status',['../namespace_h_m_f_1_1_thesis_1_1_status.html',1,'HMF::Thesis']]],
+  ['tests_218',['Tests',['../namespace_h_m_f_1_1_thesis_1_1_tests.html',1,'HMF::Thesis']]],
+  ['thesis_219',['Thesis',['../namespace_h_m_f_1_1_thesis.html',1,'HMF']]]
 ];

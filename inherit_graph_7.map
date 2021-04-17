@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html" title="Interface for Movement." alt="" coords="5,5,199,32"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html" title="Logic fore the mocement." alt="" coords="247,5,441,32"/>
+<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_damageable.html" title="Interface for objects that are damageable." alt="" coords="5,13,239,39"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html" title="A class for objects that are damageable." alt="" coords="287,5,489,47"/>
 </map>
