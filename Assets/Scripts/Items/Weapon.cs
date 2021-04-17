@@ -42,7 +42,7 @@ namespace HMF.Thesis.Items
                     var statusHandler = item.gameObject.GetComponent<IStatusHandlerComponent>();
 
                     damageable?.Damageable.TakeDamage(_weaponData.damage);
-                    statusHandler?.StatusHandler.AddStatus(_weaponData.status);
+                    statusHandler?.StatusHandler.AddStatus(_weaponData.status.ToString());
                 }
             }
         }

@@ -17,7 +17,7 @@ MonoBehaviour:
   damage: 1
   attackRange: 1
   attackRate: 0.5
-  status: 
+  status: 4
   sprite: {fileID: 21300000, guid: 6037481d7fb38ca43834474b9a437f52, type: 3}
   targetType: 1
   isUnique: 1

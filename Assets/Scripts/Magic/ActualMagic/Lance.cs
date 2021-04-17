@@ -34,7 +34,7 @@ namespace HMF.Thesis.Magic.ActualMagic
                     var statusHandler = item.gameObject.GetComponent<IStatusHandlerComponent>();
 
                     damageable?.Damageable.TakeDamage(magicFocus.damage);
-                    statusHandler?.StatusHandler.AddStatus(magicFocus.status);
+                    statusHandler?.StatusHandler.AddStatus(magicFocus.status.ToString());
                 }
             }
         }

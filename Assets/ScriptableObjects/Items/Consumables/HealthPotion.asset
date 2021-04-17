@@ -17,8 +17,8 @@ MonoBehaviour:
   affectAmount: 20
   affectRange: 0
   affectRate: 0.4
-  status: Healing
-  magicType: 
+  status: 3
+  magicType: 2
   sprite: {fileID: 21300000, guid: 166bbfe7c2d23ad47b81bd6341480e91, type: 3}
   targetType: 0
   isUnique: 0

@@ -21,12 +21,12 @@ namespace HMF.Thesis.Items
         {
             _magicFocusData = magicFocusData;
             _magicHandler = magicHandler as MagicHandler;
-            _magicHandler.AddNewMagic(_magicFocusData.magicType, _magicFocusData);
+            _magicHandler.AddNewMagic(_magicFocusData.magicType.ToString(), _magicFocusData);
         }
 
         public void Use(GameObject origin, string[] tagsToTarget)
         {
-            _magicHandler.UseMagic(_magicFocusData.magicType, tagsToTarget, origin.transform.position, _magicFocusData.animationToSpawn, origin.transform.right.x);
+            _magicHandler.UseMagic(_magicFocusData.magicType.ToString(), tagsToTarget, origin.transform.position, _magicFocusData.animationToSpawn, origin.transform.right.x);
         }
     }
 }
