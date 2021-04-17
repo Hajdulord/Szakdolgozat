@@ -2047,7 +2047,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 1564734241}
   _tagsToTarget:
   - Enemy
-  _testMagicFocusData: {fileID: 11400000, guid: 8926b05facec6ea4994ffa59aba510a8, type: 2}
+  _testMagicFocusData: {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
   _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
   DeathCanvas: {fileID: 1115804477}
   dashDust: {fileID: 1928777164}
@@ -4438,7 +4438,7 @@ MonoBehaviour:
   _tagsToTarget:
   - Player
   _weaponData: {fileID: 11400000, guid: e69403d43804a5242890220eabdd850d, type: 2}
-  _magicFocusData: {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
+  _magicFocusData: {fileID: 11400000, guid: 8926b05facec6ea4994ffa59aba510a8, type: 2}
   _swordPoint: {fileID: 2142821372}
 --- !u!114 &1772766266
 MonoBehaviour:
