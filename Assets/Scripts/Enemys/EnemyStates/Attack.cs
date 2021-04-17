@@ -1,4 +1,5 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Interfaces;
 using UnityEngine;
 
@@ -37,10 +38,25 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void Tick()
         {
+            var dir = HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x);
+
+            if (dir >= 0)
+            {
+                dir = 1f;
+            }
+            else
+            {
+                dir = -1f;
+            }
+
+            _stateMachine.ThisGameObject.transform.right = new Vector3(dir,0,0);
+            
             if (Time.time >= _time)
             {
                 _animator.SetBool("IsAttacking", true);
 
+
+                _attack.Origin = _stateMachine.SwordPoint;
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
             }
@@ -53,6 +69,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _animator.SetBool("IsMagic", true);
 
+                _attack.Origin = _stateMachine.ThisGameObject;
                 _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget);
                 _timeMagic = Time.time + _stateMachine.WeaponData.attackTime;
             }

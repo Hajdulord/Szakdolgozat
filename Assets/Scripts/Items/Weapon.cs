@@ -30,7 +30,7 @@ namespace HMF.Thesis.Items
                 var toTarget = false;
                 foreach(var tag in tagsToTarget)
                 {
-                    if (item.tag == tag)
+                    if (!item.isTrigger && item.tag == tag)
                     {
                         toTarget = true;
                     }

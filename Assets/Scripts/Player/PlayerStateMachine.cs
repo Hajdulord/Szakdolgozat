@@ -38,6 +38,7 @@ namespace HMF.Thesis.Player
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
         [SerializeField] public Transform currentSpawnPoint = null!; 
+        [SerializeField] public GameObject swordPoint = null!;
         [SerializeField] public UseInventory inventoryUI = null!;
 
         public float PushBackDir { get; set; }

@@ -5,16 +5,16 @@ namespace HMF.Thesis.Logic
 {
     public class AttackLogic : IAttack
     {
-        private GameObject _origin;
+        public GameObject Origin {get; set;}
 
         public AttackLogic(GameObject origin)
         {
-            _origin = origin;
+            Origin = origin;
         }
 
         public void Attack(IItem item, string[] tagsToTarget)
         {
-            item.Use(_origin, tagsToTarget);
+            item.Use(Origin, tagsToTarget);
         }
     }
 }
