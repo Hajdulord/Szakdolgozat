@@ -105,12 +105,15 @@ namespace HMF.Thesis.Logic
             if (InUse.ContainsKey(slotNumber))
             {
                 item = InUse[slotNumber];
-                
-                RemoveItem(InUse[slotNumber], 1);
-                if (!InventoryShelf.ContainsKey(InUse[slotNumber]))
+
+                if(!item.Unique)
                 {
-                    RemoveUse(slotNumber);
-                }
+                    RemoveItem(InUse[slotNumber], 1);
+                    if (!InventoryShelf.ContainsKey(InUse[slotNumber]))
+                    {
+                        RemoveUse(slotNumber);
+                    }
+                }   
             }
 
             return item;
