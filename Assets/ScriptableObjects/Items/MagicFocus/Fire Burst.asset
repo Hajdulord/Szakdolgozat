@@ -15,10 +15,10 @@ MonoBehaviour:
   magicName: Fire Burst
   description: A magic focus that casts a powerful fire ring.
   damage: 20
-  attackRange: 10
+  attackRange: 3
   attackRate: 2
-  status: Burning
-  magicType: Burst
+  status: 2
+  magicType: 1
   sprite: {fileID: -5548035536037470566, guid: c63f7c6491610b24d80fb8ee72d2c962, type: 3}
   targetType: 1
   isUnique: 1

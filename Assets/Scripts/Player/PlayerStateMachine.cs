@@ -19,7 +19,7 @@ namespace HMF.Thesis.Player
         [Header("Serialized Private Fields")]
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
-        [SerializeField] private List<string> _tagsToIgnore = new List<string>();
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();
         [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
         [SerializeField] private HMF.Thesis.ScriptableObjects.ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
@@ -38,6 +38,7 @@ namespace HMF.Thesis.Player
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
         [SerializeField] public Transform currentSpawnPoint = null!; 
+        [SerializeField] public GameObject swordPoint = null!;
         [SerializeField] public UseInventory inventoryUI = null!;
 
         public float PushBackDir { get; set; }
@@ -51,7 +52,7 @@ namespace HMF.Thesis.Player
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
         {
-            _stateMachine = new StateMachine();
+             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<IMoveComponent>();
@@ -83,7 +84,7 @@ namespace HMF.Thesis.Player
             var jump = new Jump(_moveComponent.Move, _animator, this);
             var fall = new Fall(_moveComponent.Move, _animator, this);
             var pushBack = new PushBack(_moveComponent.Move, _animator, _rigidbody, this);
-            var attack = new Attack(_attackComponent.Attack, _animator, _tagsToIgnore.ToArray(), this, _moveComponent.Move);
+            var attack = new Attack(_attackComponent.Attack, _animator, _tagsToTarget.ToArray(), this, _moveComponent.Move);
             var death = new Death(_animator);
 
             At(idle, move, isMoving());

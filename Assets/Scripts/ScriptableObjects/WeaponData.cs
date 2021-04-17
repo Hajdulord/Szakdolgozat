@@ -11,7 +11,7 @@ namespace HMF.Thesis.ScriptableObjects
         public int damage;
         public float attackRange;
         public float attackRate;
-        public string status;
+        public Enums.Statuses status;
         public Sprite sprite;
         public TargetType targetType;
         public bool isUnique;

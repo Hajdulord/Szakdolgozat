@@ -15,10 +15,10 @@ MonoBehaviour:
   weaponName: Katana
   description: A normal katana.
   damage: 2
-  attackRange: 1.5
+  attackRange: 1
   attackRate: 0.4
-  status: 
+  status: 0
   sprite: {fileID: 21300000, guid: e2053d3cf4cf8704fb5a0be86c79ddf0, type: 3}
-  targetType: 0
+  targetType: 1
   isUnique: 1
   attackTime: 4

@@ -12,5 +12,6 @@ namespace HMF.Thesis.Enemys
         WeaponData WeaponData { get;}
         GameObject ThisGameObject {get;}
         MagicFocusData MagicFocusData {get;}
+        GameObject SwordPoint { get; set; }
     }
 }

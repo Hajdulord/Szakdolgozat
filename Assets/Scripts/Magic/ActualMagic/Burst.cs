@@ -21,7 +21,7 @@ namespace HMF.Thesis.Magic.ActualMagic
                 var toTarget = false;
                 foreach(var tag in tagsToTarget)
                 {
-                    if (item.tag == tag)
+                    if (!item.isTrigger && item.tag == tag)
                     {
                         toTarget = true;
                     }
@@ -33,7 +33,7 @@ namespace HMF.Thesis.Magic.ActualMagic
                     var statusHandler = item.gameObject.GetComponent<IStatusHandlerComponent>();
 
                     damageable?.Damageable.TakeDamage(magicFocus.damage);
-                    statusHandler?.StatusHandler.AddStatus(magicFocus.status);
+                    statusHandler?.StatusHandler.AddStatus(magicFocus.status.ToString());
                 }
             }
         }

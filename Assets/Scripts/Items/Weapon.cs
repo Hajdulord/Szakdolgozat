@@ -30,7 +30,7 @@ namespace HMF.Thesis.Items
                 var toTarget = false;
                 foreach(var tag in tagsToTarget)
                 {
-                    if (item.tag == tag)
+                    if (!item.isTrigger && item.tag == tag)
                     {
                         toTarget = true;
                     }
@@ -42,7 +42,7 @@ namespace HMF.Thesis.Items
                     var statusHandler = item.gameObject.GetComponent<IStatusHandlerComponent>();
 
                     damageable?.Damageable.TakeDamage(_weaponData.damage);
-                    statusHandler?.StatusHandler.AddStatus(_weaponData.status);
+                    statusHandler?.StatusHandler.AddStatus(_weaponData.status.ToString());
                 }
             }
         }

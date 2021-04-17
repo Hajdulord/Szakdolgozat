@@ -15,12 +15,12 @@ MonoBehaviour:
   magicName: Ice Lance
   description: A magic focus that produces an ice lance.
   damage: 4
-  attackRange: 2
+  attackRange: 4
   attackRate: 0.3
-  status: Frozen
-  magicType: Lance
+  status: 3
+  magicType: 2
   sprite: {fileID: -2381943402078938117, guid: c4ec3a0e8afd7be45ab9a14567dc6270, type: 3}
   targetType: 1
-  isUnique: 0
+  isUnique: 1
   attackTime: 8
   animationToSpawn: {fileID: 1761195564284797939, guid: 0a010f3511296aa4cad7c64efd578b6f, type: 3}

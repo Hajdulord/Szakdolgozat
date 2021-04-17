@@ -25,7 +25,7 @@ namespace HMF.Thesis.Player.PlayerStates
         {
             
             _move.Jump();
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
             _animator.SetBool("IsJumping", true);
         }
 

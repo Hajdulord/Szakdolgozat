@@ -13,9 +13,10 @@ namespace HMF.Thesis.Enemys
     public class BasicEnemyStateMachine : MonoBehaviour, IEnemyStateMachine
     {
         [Header("Serialized Private Fields")]
-        [SerializeField] private List<string> _tagsToIgnore = new List<string>();
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();
         [SerializeField] private WeaponData _weaponData = null!;
         [SerializeField] private MagicFocusData _magicFocusData = null;
+        [SerializeField] private GameObject _swordPoint = null!;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -27,6 +28,7 @@ namespace HMF.Thesis.Enemys
         public GameObject Target {get; internal set;} = null;
         public IItem Weapon {get; private set;}
         public IItem MagicFocus {get; private set;} = null;
+        public GameObject SwordPoint {get => _swordPoint; set => _swordPoint = value;}
         public WeaponData WeaponData => _weaponData;
         public MagicFocusData MagicFocusData => _magicFocusData;
         public GameObject ThisGameObject => gameObject;
@@ -49,7 +51,7 @@ namespace HMF.Thesis.Enemys
 
             var idle = new Idle(_animator);
             var moveTo = new MoveTo(_move, this, _animator);
-            var attack = new Attack(_attack, _tagsToIgnore.ToArray(), this, _animator);
+            var attack = new Attack(_attack, _tagsToTarget.ToArray(), this, _animator);
             var dead = new Dead(this, _animator);
 
             At(idle, moveTo, targetFound());
@@ -64,8 +66,8 @@ namespace HMF.Thesis.Enemys
 
             Func<bool> targetFound() => () => Target != null;
             Func<bool> targetLost() => () => Target == null;
-            Func<bool> reachedTarget() => () => Target != null && Vector2.Distance(transform.position, Target.transform.position) <= _weaponData.attackRange - 0.05f;
-            Func<bool> targetOutOfReach() => () => Target != null && Vector2.Distance(transform.position, Target.transform.position) > _weaponData.attackRange - 0.05f;
+            Func<bool> reachedTarget() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) <= _weaponData.attackRange - 0.05f;
+            Func<bool> targetOutOfReach() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) > _weaponData.attackRange - 0.05f;
             Func<bool> isDead() => () => _character.Health <= 0;
             //Func<bool> isAlive() => () => _character.Health > 0;
 
