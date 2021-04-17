@@ -1,0 +1,16 @@
+{
+    "name": "Misc",
+    "rootNamespace": "HMF.Thesis.Misc",
+    "references": [
+        "GUID:18a65fb08ce36ca49b4cb10b630ad0c0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

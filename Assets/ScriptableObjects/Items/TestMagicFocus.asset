@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee2c571d7de64840a5fe49f79b0d54e, type: 3}
+  m_Name: TestMagicFocus
+  m_EditorClassIdentifier: 
+  magicName: TestMagicFocus
+  description: TestMagicFocus
+  damage: 2
+  attackRange: 10
+  attackRate: 0.2
+  status: 1
+  magicType: 1
+  sprite: {fileID: 21300000, guid: 1d4be6f542056f14187eba225a4294c9, type: 3}
+  targetType: 1
+  isUnique: 0
+  attackTime: 10
+  animationToSpawn: {fileID: 1761195564284797939, guid: 0a010f3511296aa4cad7c64efd578b6f, type: 3}

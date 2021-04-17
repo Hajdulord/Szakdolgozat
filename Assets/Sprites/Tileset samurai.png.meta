@@ -1,0 +1,1236 @@
+fileFormatVersion: 2
+guid: f919844b43183974abeaa3762cb4aa52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2098085582541448710
+    second: Tileset samurai_0
+  - first:
+      213: -6969099861929439287
+    second: Tileset samurai_1
+  - first:
+      213: -6060285942178002636
+    second: Tileset samurai_2
+  - first:
+      213: 37739508772700072
+    second: Tileset samurai_3
+  - first:
+      213: -7660958987704902480
+    second: Tileset samurai_4
+  - first:
+      213: -3236083589634361546
+    second: Tileset samurai_5
+  - first:
+      213: 4926924008532540830
+    second: Tileset samurai_6
+  - first:
+      213: 1022496076375078158
+    second: Tileset samurai_7
+  - first:
+      213: 4654453529239154783
+    second: Tileset samurai_8
+  - first:
+      213: 8141965667243293253
+    second: Tileset samurai_9
+  - first:
+      213: -318817404728276975
+    second: Tileset samurai_10
+  - first:
+      213: -7607614639525537901
+    second: Tileset samurai_11
+  - first:
+      213: 3402541704945530424
+    second: Tileset samurai_12
+  - first:
+      213: 7386267592283570826
+    second: Tileset samurai_13
+  - first:
+      213: -5032281584210859441
+    second: Tileset samurai_14
+  - first:
+      213: -3829268605238021001
+    second: Tileset samurai_15
+  - first:
+      213: -3784400075692192584
+    second: Tileset samurai_16
+  - first:
+      213: -3165704503459589196
+    second: Tileset samurai_17
+  - first:
+      213: -3544740912793822697
+    second: Tileset samurai_18
+  - first:
+      213: 2065128651147415013
+    second: Tileset samurai_19
+  - first:
+      213: -2562895532879736918
+    second: Tileset samurai_20
+  - first:
+      213: 2823963296567076666
+    second: Tileset samurai_21
+  - first:
+      213: 5774012256720608231
+    second: Tileset samurai_22
+  - first:
+      213: -184840584335334085
+    second: Tileset samurai_23
+  - first:
+      213: -6015913752163875403
+    second: Tileset samurai_24
+  - first:
+      213: -2475105540212707124
+    second: Tileset samurai_25
+  - first:
+      213: 4060667364595440708
+    second: Tileset samurai_26
+  - first:
+      213: 8310863064400713217
+    second: Tileset samurai_27
+  - first:
+      213: -1953828401865918095
+    second: Tileset samurai_28
+  - first:
+      213: 7864506398828254586
+    second: Tileset samurai_29
+  - first:
+      213: -1313063456555493497
+    second: Tileset samurai_30
+  - first:
+      213: -7083228795005983593
+    second: Tileset samurai_31
+  - first:
+      213: 2804117909695590736
+    second: Tileset samurai_32
+  - first:
+      213: -2550911203974190917
+    second: Tileset samurai_33
+  - first:
+      213: -1111319386300303435
+    second: Tileset samurai_34
+  - first:
+      213: -3422841324979245084
+    second: Tileset samurai_35
+  - first:
+      213: -4343473182199126684
+    second: Tileset samurai_36
+  - first:
+      213: -5064773552724202002
+    second: Tileset samurai_37
+  - first:
+      213: -4736011782592644046
+    second: Tileset samurai_38
+  - first:
+      213: -2009071056615296288
+    second: Tileset samurai_39
+  - first:
+      213: -7328725668580129294
+    second: Tileset samurai_40
+  - first:
+      213: -6018527822048490927
+    second: Tileset samurai_41
+  - first:
+      213: -3578410320110299212
+    second: Tileset samurai_42
+  - first:
+      213: -5705242556730752640
+    second: Tileset samurai_43
+  - first:
+      213: -4646447024703310311
+    second: Tileset samurai_44
+  - first:
+      213: -4123827647021483563
+    second: Tileset samurai_45
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset samurai_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 615
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60660cf98b5ed1d10800000000000000
+      internalID: 2098085582541448710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_1
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 615
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfc8757998c84f90800000000000000
+      internalID: -6969099861929439287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 615
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439cf2b5b0a85eba0800000000000000
+      internalID: -6060285942178002636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 615
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aff46e12e3168000800000000000000
+      internalID: 37739508772700072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 615
+        width: 35
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc5303e36ecea590800000000000000
+      internalID: -7660958987704902480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_5
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 615
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6377f58ee1f1713d0800000000000000
+      internalID: -3236083589634361546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_6
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 615
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9dfce32843ff5440800000000000000
+      internalID: 4926924008532540830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_7
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 615
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05319893c2a03e00800000000000000
+      internalID: 1022496076375078158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 517
+        width: 23
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50fcd113d0f79040800000000000000
+      internalID: 4654453529239154783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_9
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 517
+        width: 23
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a7679e2a21ef070800000000000000
+      internalID: 8141965667243293253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_10
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 517
+        width: 21
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11885f27245539bf0800000000000000
+      internalID: -318817404728276975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 517
+        width: 21
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397d40fcac25c6690800000000000000
+      internalID: -7607614639525537901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_12
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 525
+        width: 29
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836fab837a1483f20800000000000000
+      internalID: 3402541704945530424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_13
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 524
+        width: 27
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82ca06bd3b418660800000000000000
+      internalID: 7386267592283570826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_14
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 517
+        width: 23
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a2f53bf8eb92ab0800000000000000
+      internalID: -5032281584210859441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 517
+        width: 23
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7747b3bed74bbdac0800000000000000
+      internalID: -3829268605238021001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 418
+        width: 29
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcc7688e2c1b7bc0800000000000000
+      internalID: -3784400075692192584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_17
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 418
+        width: 29
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3df67d6882114d0800000000000000
+      internalID: -3165704503459589196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_18
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 418
+        width: 29
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a5120bbec8ecec0800000000000000
+      internalID: -3544740912793822697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_19
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 418
+        width: 29
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed8f13119fc8ac10800000000000000
+      internalID: 2065128651147415013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_20
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 417
+        width: 30
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf84467714ce6cd0800000000000000
+      internalID: -2562895532879736918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_21
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 417
+        width: 30
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a372f9ef7abb03720800000000000000
+      internalID: 2823963296567076666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_22
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 417
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb55923e89612050800000000000000
+      internalID: 5774012256720608231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_23
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 415
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35ed96c7705f6df0800000000000000
+      internalID: -184840584335334085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_24
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 418
+        width: 33
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b582eae05e238ca0800000000000000
+      internalID: -6015913752163875403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_25
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 319
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc03506ff98a6add0800000000000000
+      internalID: -2475105540212707124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_26
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 319
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c9bb924736a5830800000000000000
+      internalID: 4060667364595440708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_27
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 319
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106d48a9ced165370800000000000000
+      internalID: 8310863064400713217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_28
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 319
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17976ba9b6b92e4e0800000000000000
+      internalID: -1953828401865918095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 319
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75d1fbd6e6542d60800000000000000
+      internalID: 7864506398828254586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_30
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 319
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78796704ebf07cde0800000000000000
+      internalID: -1313063456555493497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_31
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 319
+        width: 52
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794a9d280f053bd90800000000000000
+      internalID: -7083228795005983593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_32
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 221
+        width: 43
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05177bbc16a3ae620800000000000000
+      internalID: 2804117909695590736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_33
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 221
+        width: 37
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8ed8976c7599cd0800000000000000
+      internalID: -2550911203974190917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_34
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 221
+        width: 33
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7b09bf7ecc390f0800000000000000
+      internalID: -1111319386300303435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_35
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 221
+        width: 33
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efa51e23ff9f70d0800000000000000
+      internalID: -3422841324979245084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_36
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 221
+        width: 78
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465e59b4722e8b3c0800000000000000
+      internalID: -4343473182199126684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_37
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 221
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeda412c94f46b9b0800000000000000
+      internalID: -5064773552724202002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_38
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 121
+        width: 23
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c308e406e464eb0800000000000000
+      internalID: -4736011782592644046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_39
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 121
+        width: 23
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e23dedb4885e14e0800000000000000
+      internalID: -2009071056615296288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_40
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 121
+        width: 21
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f58efb65d22b4a90800000000000000
+      internalID: -7328725668580129294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_41
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 121
+        width: 21
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a8ef755d4e97ca0800000000000000
+      internalID: -6018527822048490927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_42
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 23
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7db39e5cee65ec0800000000000000
+      internalID: -3578410320110299212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 23
+        width: 150
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0814f905f18e2d0b0800000000000000
+      internalID: -5705242556730752640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_44
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 23
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91673e88c01848fb0800000000000000
+      internalID: -4646447024703310311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset samurai_45
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 23
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d97950aa9835c6c0800000000000000
+      internalID: -4123827647021483563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

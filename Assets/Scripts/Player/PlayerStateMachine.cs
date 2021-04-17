@@ -1,48 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
-using HMF.Thesis.Components;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
+using HMF.Thesis.Interfaces;
+using HMF.Thesis.Misc;
 using System;
+using System.Collections;
 
 //! Needs Unit Testing!
 //! Needs Comments!
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 
-    [RequireComponent(typeof(MoveComponent))]
-    [RequireComponent(typeof(CharacterComponent))]
-    [RequireComponent(typeof(InputController))]
     public class PlayerStateMachine : MonoBehaviour
     {
+        [Header("Serialized Private Fields")]
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();
+        [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
+        [SerializeField] private HMF.Thesis.ScriptableObjects.ConsumableData _consumableData = null!;
+        [SerializeField] private GameObject DeathCanvas = null!;
+
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
-        private MoveComponent _moveComponent;
-        private CharacterComponent _characterComponent;
-        private InputController _inputController;
+        private IMoveComponent _moveComponent;
+        private ICharacterComponent _characterComponent;
+        private IInventoryComponent _inventoryComponent;
+        private IInputController _inputController;
+        private IAttackComponent _attackComponent;
+        private IDamageableComponent _damageableComponent;
         private Rigidbody2D _rigidbody;
+        private Animator _animator;
         private float _distToGround;
+
+        [Header("Serialized Public Fields")]
+        [SerializeField] public GameObject dashDust = null!;
+        [SerializeField] public Transform currentSpawnPoint = null!; 
+        [SerializeField] public GameObject swordPoint = null!;
+        [SerializeField] public UseInventory inventoryUI = null!;
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
+        public IItem CurrentItem {get; internal set; } = null;
+
+        public IInventory Inventory {get => _inventoryComponent.Inventory; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start() 
         {
-            _stateMachine = new StateMachine();
+             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
-            _moveComponent = GetComponent<MoveComponent>();
-            _characterComponent = GetComponent<CharacterComponent>();
-            _inputController = GetComponent<InputController>();
+            _moveComponent = GetComponent<IMoveComponent>();
+            _characterComponent = GetComponent<ICharacterComponent>();
+            _damageableComponent = GetComponent<IDamageableComponent>();
+            _attackComponent = GetComponent<IAttackComponent>();
+            _inventoryComponent = GetComponent<IInventoryComponent>();
+            _inputController = GetComponent<IInputController>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
 
             PushBackDir = 0f;
+            
+            var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
+            var consumableItem = new HMF.Thesis.Items.HealthPotion(_consumableData);
+            _inventoryComponent.Inventory.AddItem(testMagicItem, 1);
+            _inventoryComponent.Inventory.AddItem(consumableItem, 2);
+            _inventoryComponent.Inventory.SetUse(testMagicItem);
+            _inventoryComponent.Inventory.SetUse(consumableItem);
 
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
@@ -50,11 +79,13 @@ namespace HMF.Thesis.Player
             _moveComponent.Move.FallSpeed = 5f;
             _moveComponent.Move.PushBackSpeed = 5f;
 
-            var idle = new Idle(_rigidbody);
-            var move = new Move(_moveComponent.Move, this);
-            var jump = new Jump(_moveComponent.Move, this);
-            var fall = new Fall(_moveComponent.Move, this);
-            var pushBack = new PushBack(_moveComponent.Move, _rigidbody, this);
+            var idle = new Idle(_rigidbody, _animator);
+            var move = new Move(_moveComponent.Move, _animator, this);
+            var jump = new Jump(_moveComponent.Move, _animator, this);
+            var fall = new Fall(_moveComponent.Move, _animator, this);
+            var pushBack = new PushBack(_moveComponent.Move, _animator, _rigidbody, this);
+            var attack = new Attack(_attackComponent.Attack, _animator, _tagsToTarget.ToArray(), this, _moveComponent.Move);
+            var death = new Death(_animator);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());
@@ -76,6 +107,20 @@ namespace HMF.Thesis.Player
             At(pushBack, jump, notPushedBack());
             At(pushBack, fall, notPushedBack());
 
+            At(idle, attack, isAttacking());
+            At(move, attack, isAttacking());
+            At(jump, attack, isAttacking());
+            At(fall, attack, isAttacking());
+            At(pushBack, attack, isAttacking());
+
+            At(attack, idle, notAttackingAndIdle());
+            At(attack, jump, notAttackingAndJumping());
+            At(attack, fall, notAttackingAndFalling());
+            At(attack, pushBack, notAttackingAndPushedBack());
+
+            At(death, idle, isAlive());
+            _stateMachine.AddAnyTransition(death, isDead());
+
             /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
             Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
@@ -91,6 +136,13 @@ namespace HMF.Thesis.Player
             Func<bool> grunded() => () => GroundCheck();
             Func<bool> isPushedBack() => () => PushBackDir != 0f;
             Func<bool> notPushedBack() => () => PushBackDir == 0f;
+            Func<bool> isAttacking() => () => CurrentItem != null;
+            Func<bool> notAttackingAndIdle() => () => CurrentItem == null && MoveDirection == 0 && GroundCheck();
+            Func<bool> notAttackingAndFalling() => () => CurrentItem == null && _rigidbody.velocity.y < 0f;
+            Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
+            Func<bool> notAttackingAndPushedBack() => () => CurrentItem == null && PushBackDir != 0f;
+            Func<bool> isDead() => () => _characterComponent.Character.Health <= 0;
+            Func<bool> isAlive() => () => _characterComponent.Character.Health > 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
             
@@ -100,6 +152,7 @@ namespace HMF.Thesis.Player
         private void Update()
         {
             _stateMachine?.Tick();
+            //Debug.Log(MoveDirection != 0 && GroundCheck());
         }
 
         private void OnCollisionEnter2D(Collision2D other) 
@@ -131,6 +184,8 @@ namespace HMF.Thesis.Player
             }
 
             PushBackDir = dir;
+
+            _damageableComponent.Damageable.TakeDamage();
         }
 
         private bool GroundCheck()
@@ -148,6 +203,29 @@ namespace HMF.Thesis.Player
 		}
 
             return output;
+        }
+
+        public void Dead()
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        public IEnumerator Respawn()
+        {
+            DeathCanvas.SetActive(true);
+
+            yield return new WaitForSeconds(5f);
+
+            transform.position = currentSpawnPoint.position;
+
+            _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
+            
+            yield return new WaitForSeconds(10f);
+
+            GetComponent<SpriteRenderer>().enabled = true;
+            
+            DeathCanvas.SetActive(false);
+
         }
     }
 }

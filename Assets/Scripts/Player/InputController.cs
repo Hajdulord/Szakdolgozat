@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
@@ -15,6 +13,12 @@ namespace HMF.Thesis.Player
 
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
+
+        private float _mainWeaponTime = 0;
+        private float _inventoryOneTime = 0;
+        private float _inventoryTwoTime = 0;
+        private float _inventoryThreeTime = 0;
+        private float _inventoryFourTime = 0;
 
         /// Sets the falg to enter the Jump sate.
         /*!
@@ -50,7 +54,57 @@ namespace HMF.Thesis.Player
         */ 
         public void NormalMeleeAttack(InputAction.CallbackContext callback)
         {
+            if(callback.started && Time.time >= _mainWeaponTime)
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _mainWeaponTime = Time.time + _stateMachine.Inventory.MainWeapon.attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.MainWeapon;
+            }
+        }
 
+        public void InventoryOne(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryOneTime && _stateMachine.Inventory.InUse.ContainsKey(0))
+            {
+                _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(0);
+                //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
+
+                _stateMachine.inventoryUI.UpdateDisplay();
+            }
+        }
+
+        public void InventoryTwo(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryTwoTime && _stateMachine.Inventory.InUse.ContainsKey(1))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(1);
+                _stateMachine.inventoryUI.UpdateDisplay();
+            }
+        }
+
+        public void InventoryThree(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryThreeTime && _stateMachine.Inventory.InUse.ContainsKey(2))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(2);
+                _stateMachine.inventoryUI.UpdateDisplay();
+            }
+        }
+
+        public void InventoryFour(InputAction.CallbackContext callback)
+        {
+            if(callback.started && Time.time >= _inventoryFourTime && _stateMachine.Inventory.InUse.ContainsKey(3))
+            {
+                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+                _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
+                _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
+                _stateMachine.inventoryUI.UpdateDisplay();
+            }
         }
 
         /// Sets the falg to enter the Dash sate.

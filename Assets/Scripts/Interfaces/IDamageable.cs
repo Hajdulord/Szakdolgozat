@@ -10,6 +10,6 @@ namespace HMF.Thesis.Interfaces
         /*!
             \param damage is the damage you substract from your health.
         */
-        void TakeDamage(int damage = 1);
+        void TakeDamage(float damage = 1);
     }
 }

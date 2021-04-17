@@ -4,10 +4,12 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "PlayerAssembly",
-        "InterfacesAssembly",
-        "ScriptableObjectsAssembly",
-        "LogicAssembly"
+        "Interfaces",
+        "Logic",
+        "Player",
+        "ScriptableObjects",
+        "Status",
+        "Components"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -15,8 +17,8 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "nunit.framework.dll",
-        "Moq.dll",
-        "Castle.Core.dll"
+        "Castle.Core.dll",
+        "Moq.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [

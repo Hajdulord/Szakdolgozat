@@ -12,7 +12,7 @@ namespace HMF.Thesis.Interfaces
         int BaseSpeed {get; set;}
 
         /// The current speed of the Character;
-        int Speed {get;set;}
+        float Speed {get;set;}
 
         /// The speed of the Jump.
         int JumpSpeed {get; set;}
@@ -33,13 +33,13 @@ namespace HMF.Thesis.Interfaces
         void Move(int direction);
 
         /// Dashing logic.
-        void Dash();
+        bool Dash();
 
         /// Implementation of a jump.
         /*!
           \param direction is the horizontal direction of the movement.
         */
-        void Jump(int direction);
+        void Jump();
 
         /// Applying force to push back the object.
         /*!
