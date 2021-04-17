@@ -17,7 +17,7 @@ MonoBehaviour:
   damage: 1
   attackRange: 1.5
   attackRate: 0.4
-  status: Bleeding
+  status: 1
   sprite: {fileID: 21300000, guid: 40f73a2acb939c249b99cb7474c48f1f, type: 3}
   targetType: 1
   isUnique: 1

@@ -4,19 +4,19 @@ namespace HMF.Thesis.ScriptableObjects
     {
         public enum Statuses
         {
+            None,
             Bleeding,
             Burning,
             Frozen,
             Healing,
-            Sunned,
-            None
+            Stunned
         }
 
         public enum Magics
         {
+            None,
             Burst,
-            Lance,
-            None
+            Lance
         }
     }
 }

@@ -26,7 +26,7 @@ namespace HMF.Thesis.Status.ActualStatuses
             var rigidbody = gameObject.GetComponent<Rigidbody2D>();
             if (rigidbody != null)
             {
-                rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+                rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
 
