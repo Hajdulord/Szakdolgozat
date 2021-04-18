@@ -69,5 +69,7 @@ namespace HMF.Thesis.Misc
 
             }
         }
+
+        private void OnEnable() => UpdateDisplay();
     }
 }
