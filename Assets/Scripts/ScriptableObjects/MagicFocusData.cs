@@ -18,5 +18,7 @@ namespace HMF.Thesis.ScriptableObjects
         public bool isUnique;
         public float attackTime;
         public GameObject animationToSpawn;
+
+        public AudioClip clip;
     }
 }

@@ -16,6 +16,7 @@ namespace HMF.Thesis.Items
         public Sprite Sprite => _magicFocusData.sprite;
         public TargetType TargetType => _magicFocusData.targetType;
         public float attackTime => _magicFocusData.attackTime;
+        public AudioClip Clip => _magicFocusData.clip;
 
         public MagicFocus(MagicFocusData magicFocusData, IMagicHandler magicHandler)
         {

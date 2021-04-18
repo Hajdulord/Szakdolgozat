@@ -4,6 +4,7 @@ using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Player.PlayerStates;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
+using HMF.Thesis.Music;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Misc;
 using System;
@@ -40,12 +41,16 @@ namespace HMF.Thesis.Player
         [SerializeField] public Transform currentSpawnPoint = null!; 
         [SerializeField] public GameObject swordPoint = null!;
         [SerializeField] public UseInventory inventoryUI = null!;
+        [SerializeField] public AudioSource audioSource = null;
+        [SerializeField] public AudioSource audioSource2 = null;
+        [SerializeField] public MusicHandler musicHandler = null;
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
         public IItem CurrentItem {get; internal set; } = null;
+
 
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
 
@@ -85,7 +90,7 @@ namespace HMF.Thesis.Player
             var fall = new Fall(_moveComponent.Move, _animator, this);
             var pushBack = new PushBack(_moveComponent.Move, _animator, _rigidbody, this);
             var attack = new Attack(_attackComponent.Attack, _animator, _tagsToTarget.ToArray(), this, _moveComponent.Move);
-            var death = new Death(_animator);
+            var death = new Death(_animator, this);
 
             At(idle, move, isMoving());
             At(move, idle, isIdle());

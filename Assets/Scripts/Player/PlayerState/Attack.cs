@@ -1,5 +1,6 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using UnityEngine;
+using System.Collections;
 using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.Player
@@ -33,19 +34,28 @@ namespace HMF.Thesis.Player
             Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
             //Debug.Log(_attack);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
+            _playerStateMachine.audioSource2.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Attacks);
+            _playerStateMachine.audioSource2.Play();
+
             if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus || _playerStateMachine.CurrentItem is HMF.Thesis.Items.HealthPotion)
             {
                 _animator.SetBool("IsMagic", true);
                 _attack.Origin = _playerStateMachine.gameObject;
+
+                _playerStateMachine.audioSource.clip = (_playerStateMachine.CurrentItem as HMF.Thesis.Items.MagicFocus).Clip;
+                _playerStateMachine.audioSource.Play();
             }
             else
             {
                 _animator.SetBool("IsAttacking", true);
                 _attack.Origin = _playerStateMachine.swordPoint;
+
+                _playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Swords);
+                _playerStateMachine.audioSource.Play();
             }
             
+            
             _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
-
         }
 
         public void OnExit()
