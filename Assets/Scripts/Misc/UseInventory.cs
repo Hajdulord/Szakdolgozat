@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
+using TMPro;
 
 namespace HMF.Thesis.Misc
 {
@@ -9,6 +10,7 @@ namespace HMF.Thesis.Misc
     {
         [SerializeField] private GameObject _player = null!;
         [SerializeField] private List<Image> _images = null!;
+        [SerializeField] private List<TMP_Text> _itemCounter = null!;
         [SerializeField] private Sprite _emptySlot = null;
         private void Start() 
         {
@@ -18,11 +20,23 @@ namespace HMF.Thesis.Misc
             {
                 if (inventory.InUse.ContainsKey(i))
                 {
-                    _images[i].sprite = inventory.InUse[i].Sprite;
+                    var item = inventory.InUse[i];
+
+                    _images[i].sprite = item.Sprite;
+
+                    if (item.Unique)
+                    {
+                        _itemCounter[i].text = string.Empty;
+                    }
+                    else
+                    {
+                        _itemCounter[i].text = inventory.InventoryShelf[item].ToString();
+                    }
                 }
                 else
                 {
                     _images[i].sprite = _emptySlot;
+                    _itemCounter[i].text = string.Empty;
                 }
             }
         }
@@ -34,11 +48,23 @@ namespace HMF.Thesis.Misc
             {
                 if (inventory.InUse.ContainsKey(i))
                 {
-                    _images[i].sprite = inventory.InUse[i].Sprite;
+                    var item = inventory.InUse[i];
+
+                    _images[i].sprite = item.Sprite;
+                    
+                    if (item.Unique)
+                    {
+                        _itemCounter[i].text = string.Empty;
+                    }
+                    else
+                    {
+                        _itemCounter[i].text = inventory.InventoryShelf[item].ToString();
+                    }
                 }
                 else
                 {
                     _images[i].sprite = _emptySlot;
+                    _itemCounter[i].text = string.Empty;
                 }
 
             }
