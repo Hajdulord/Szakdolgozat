@@ -4,6 +4,7 @@ using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using System;
 using HMF.Thesis.Enemys.EnemyStates;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Music;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
@@ -17,6 +18,10 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private WeaponData _weaponData = null!;
         [SerializeField] private MagicFocusData _magicFocusData = null;
         [SerializeField] private GameObject _swordPoint = null!;
+        [SerializeField] public AudioSource _audioSource = null;
+        [SerializeField] public AudioSource _audioSourceAttack = null;
+        [SerializeField] public AudioSource _audioSourceAttack2 = null;
+        [SerializeField] public MusicHandler _musicHandler = null;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -32,6 +37,11 @@ namespace HMF.Thesis.Enemys
         public WeaponData WeaponData => _weaponData;
         public MagicFocusData MagicFocusData => _magicFocusData;
         public GameObject ThisGameObject => gameObject;
+
+        public AudioSource AudioSource { get => _audioSource;}
+        public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
+        public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
+        public MusicHandler MusicHandler { get => _musicHandler;}
 
         private void Awake()
         {
@@ -92,6 +102,12 @@ namespace HMF.Thesis.Enemys
             {
                 Target = null;
             }
+        }
+
+        public void Step()
+        {
+            _audioSource.clip = _musicHandler.enemyStep;
+            _audioSource.Play();
         }
 
     }

@@ -31,6 +31,8 @@ namespace HMF.Thesis.Player
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
+            _playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.jumpLand;
+            _playerStateMachine.audioSource.Play();
         }
 
         public void Tick()

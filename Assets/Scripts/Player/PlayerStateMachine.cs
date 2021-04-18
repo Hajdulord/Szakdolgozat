@@ -42,7 +42,8 @@ namespace HMF.Thesis.Player
         [SerializeField] public GameObject swordPoint = null!;
         [SerializeField] public UseInventory inventoryUI = null!;
         [SerializeField] public AudioSource audioSource = null;
-        [SerializeField] public AudioSource audioSource2 = null;
+        [SerializeField] public AudioSource audioSourceAttack = null;
+        [SerializeField] public AudioSource audioSourceAttack2 = null;
         [SerializeField] public MusicHandler musicHandler = null;
 
         public float PushBackDir { get; set; }
@@ -213,6 +214,12 @@ namespace HMF.Thesis.Player
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        public void Step()
+        {
+            audioSource.clip = musicHandler.playerStep;
+            audioSource.Play();
         }
 
         public IEnumerator Respawn()

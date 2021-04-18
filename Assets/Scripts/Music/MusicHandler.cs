@@ -15,6 +15,9 @@ namespace HMF.Thesis.Music
         [SerializeField] private List<AudioClip> _deaths = null!;
         [SerializeField] private List<AudioClip> _swords = null!;
         [SerializeField] private List<AudioClip> _attacks = null!;
+        [SerializeField] public AudioClip jumpLand = null!;
+        [SerializeField] public AudioClip playerStep = null!;
+        [SerializeField] public AudioClip enemyStep = null!;
 
         public AudioClip Serve(Category category)
         {
