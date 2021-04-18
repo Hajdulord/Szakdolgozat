@@ -13,6 +13,7 @@ namespace HMF.Thesis.Player
 
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
+        [SerializeField] private GameObject _pauseMenu = null!;
 
         private float _mainWeaponTime = 0;
         private float _inventoryOneTime = 0;
@@ -117,6 +118,20 @@ namespace HMF.Thesis.Player
             {
                 _stateMachine.IsDashing = true;
             }
+        }
+
+        public void Pause(InputAction.CallbackContext callback)
+        {
+            if(callback.started)
+            {
+                _pauseMenu.SetActive(true);
+                GetComponent<PlayerInput>().enabled = false;
+            }
+        }
+
+        public void UnPause()
+        {
+            GetComponent<PlayerInput>().enabled = true;
         }
     }
 }

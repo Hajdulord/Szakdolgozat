@@ -13,5 +13,7 @@ namespace HMF.Thesis.Interfaces
         void InventoryTwo(InputAction.CallbackContext callback);
         void InventoryThree(InputAction.CallbackContext callback);
         void InventoryFour(InputAction.CallbackContext callback);
+        void Pause(InputAction.CallbackContext callback);
+        void UnPause();
     }
 }
