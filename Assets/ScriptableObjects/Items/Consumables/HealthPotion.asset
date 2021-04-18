@@ -1,26 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9835c4344eda94d804a66ed2d1f23f, type: 3}
-  m_Name: HealthPotion
-  m_EditorClassIdentifier: 
-  consumableName: Health Potion
-  description: It heals you.
-  affectAmount: 20
-  affectRange: 0
-  affectRate: 0.4
-  status: 4
-  magicType: 2
-  sprite: {fileID: 21300000, guid: 166bbfe7c2d23ad47b81bd6341480e91, type: 3}
-  targetType: 0
-  isUnique: 0
-  attackTime: 20
-  animationToSpawn: {fileID: 0}
+version https://git-lfs.github.com/spec/v1
+oid sha256:36d9776850157025828b6e06cd24e61ca3190f685cd54f47a2621811a421c2a6
+size 726
