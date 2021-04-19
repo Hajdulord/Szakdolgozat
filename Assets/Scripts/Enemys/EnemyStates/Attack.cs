@@ -79,7 +79,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
                 _attack.Origin = _stateMachine.ThisGameObject;
                 _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget);
-                _timeMagic = Time.time + _stateMachine.WeaponData.attackTime;
+                _timeMagic = Time.time + _stateMachine.MagicFocus.attackTime;
 
                 _stateMachine.AudioSourceAttack.clip = (_stateMachine.MagicFocus as HMF.Thesis.Items.MagicFocus).Clip;
                 _stateMachine.AudioSourceAttack.Play();
