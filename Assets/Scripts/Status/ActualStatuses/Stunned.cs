@@ -9,9 +9,9 @@ namespace HMF.Thesis.Status.ActualStatuses
     {
         public override string Name => "Stunned";
 
-        public override float LifeTime => 40f;
+        public override float LifeTime => 10f;
 
-        public override float EffectInterval => 40f;
+        public override float EffectInterval => 10f;
 
         private float _damage = 10f;
 

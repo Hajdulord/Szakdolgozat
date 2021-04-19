@@ -17,10 +17,5 @@ namespace HMF.Thesis.Components
             _statusHandler = new StatusHandler(gameObject);
         }
 
-        
-        private void Update()
-        {
-            _statusHandler.CalculateStatusEffects();
-        }
     }
 }

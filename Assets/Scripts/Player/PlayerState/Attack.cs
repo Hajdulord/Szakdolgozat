@@ -31,7 +31,7 @@ namespace HMF.Thesis.Player
 
         public void OnEnter()
         {
-            Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
+            //Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
             //Debug.Log(_attack);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
             _playerStateMachine.audioSourceAttack2.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Attacks);
@@ -42,8 +42,12 @@ namespace HMF.Thesis.Player
                 _animator.SetBool("IsMagic", true);
                 _attack.Origin = _playerStateMachine.gameObject;
 
-                _playerStateMachine.audioSourceAttack.clip = (_playerStateMachine.CurrentItem as HMF.Thesis.Items.MagicFocus).Clip;
-                _playerStateMachine.audioSourceAttack.Play();
+                if (_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus)
+                {
+                    _playerStateMachine.audioSourceAttack.clip = (_playerStateMachine.CurrentItem as HMF.Thesis.Items.MagicFocus).Clip;
+                    _playerStateMachine.audioSourceAttack.Play();
+                }
+                
             }
             else
             {
