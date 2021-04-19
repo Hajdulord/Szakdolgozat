@@ -162,11 +162,41 @@ namespace HMF.Thesis.Player
 
             _inventoryComponent.Inventory.AddItem(magicItem, 1);
             _inventoryComponent.Inventory.AddItem(magicItem2, 10);
-            _inventoryComponent.Inventory.AddItem(consumableItem, 2);
+            _inventoryComponent.Inventory.AddItem(consumableItem, 4);
 
             _inventoryComponent.Inventory.SetUse(magicItem);
             _inventoryComponent.Inventory.SetUse(magicItem2);
             _inventoryComponent.Inventory.SetUse(consumableItem);
+        }
+
+        private void RefillInventory()
+        {
+            var magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
+
+            var consumableItem = new HealthPotion(_consumableData);
+
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(magicItem2))
+            {
+                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[magicItem2];
+                _inventoryComponent.Inventory.AddItem(magicItem2, num);
+            }
+            else
+            {  
+                _inventoryComponent.Inventory.AddItem(magicItem2, 10);
+                _inventoryComponent.Inventory.SetUse(magicItem2);
+            }
+            
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(consumableItem))
+            {
+                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[consumableItem];
+                _inventoryComponent.Inventory.AddItem(consumableItem, num);
+            }
+            else
+            {  
+                _inventoryComponent.Inventory.AddItem(consumableItem, 4);
+                _inventoryComponent.Inventory.SetUse(consumableItem);
+            }
+            
         }
 
         private void Update() => _stateMachine?.Tick();
@@ -201,7 +231,7 @@ namespace HMF.Thesis.Player
 
             PushBackDir = dir;
 
-            _damageableComponent.Damageable.TakeDamage();
+            //_damageableComponent.Damageable.TakeDamage();
         }
 
         private bool GroundCheck()
@@ -224,6 +254,8 @@ namespace HMF.Thesis.Player
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            RefillInventory();
+            inventoryUI.UpdateDisplay();
             //GetComponent<StatusHandlerComponent>().enabled = true;
             //gameObject.AddComponent<StatusHandlerComponent>();
         }

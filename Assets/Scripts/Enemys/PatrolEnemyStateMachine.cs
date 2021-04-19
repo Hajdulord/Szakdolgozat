@@ -113,5 +113,12 @@ namespace HMF.Thesis.Enemys
             _audioSource.clip = _musicHandler.enemyStep;
             _audioSource.Play();
         }
+        private void OnDisable() 
+        {
+            if (_character.Health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
