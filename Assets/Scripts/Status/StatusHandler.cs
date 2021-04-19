@@ -12,6 +12,8 @@ namespace HMF.Thesis.Status
 
         private GameObject _gameObject;
 
+        private bool _reset = false;
+
         public StatusHandler(GameObject gameObject)
         {
             _cachedStatuses = new Dictionary<string, StatusBase>();
@@ -24,6 +26,13 @@ namespace HMF.Thesis.Status
             var time = Time.time;
             var statuesToChange = new List<string>();
             var statuesToRemove = new List<string>();
+
+            if (_reset)
+            {
+                //Debug.Log(_activeStatuses.Count);
+                _activeStatuses.Clear();
+                return;
+            }
 
             foreach (var status in _activeStatuses)
             {
@@ -47,7 +56,7 @@ namespace HMF.Thesis.Status
                     }
                 }
             }
-
+            
             foreach(var status in statuesToChange)
             {
                 _activeStatuses[status] = ( _activeStatuses[status].Status,  _activeStatuses[status].ExpirationTime,  _activeStatuses[status].Status.EffectInterval + Time.time);
@@ -62,6 +71,7 @@ namespace HMF.Thesis.Status
 
         public void AddStatus(string status)
         {
+            _reset = false;
             var alreadyActive = false;
             if(_activeStatuses.ContainsKey(status))
             {
@@ -93,6 +103,18 @@ namespace HMF.Thesis.Status
                 _activeStatuses[status].Status.Affect(_gameObject);
                 Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
             }
+        }
+
+        public void RemoveAllStatuses()
+        {
+            _reset = true;
+
+            foreach (var status in _activeStatuses)
+            {
+                status.Value.Status.CloseUp(_gameObject);
+            }
+
+            _activeStatuses.Clear();
         }
 
         public void RemoveStatus(string status)

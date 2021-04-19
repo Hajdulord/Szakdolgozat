@@ -24,6 +24,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToTarget = new List<string>();
         [SerializeField] private List<MagicFocusData> _magicFocusData = null!;
+        [SerializeField] private GameObject _enemys = null!;
         [SerializeField] private ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
 
@@ -223,6 +224,8 @@ namespace HMF.Thesis.Player
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            //GetComponent<StatusHandlerComponent>().enabled = true;
+            //gameObject.AddComponent<StatusHandlerComponent>();
         }
 
         public void Step()
@@ -235,6 +238,8 @@ namespace HMF.Thesis.Player
         {
             DeathCanvas.SetActive(true);
 
+            _enemys.SetActive(false);
+
             yield return new WaitForSeconds(5f);
 
             transform.position = currentSpawnPoint.position;
@@ -242,6 +247,8 @@ namespace HMF.Thesis.Player
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
             
             yield return new WaitForSeconds(2f);
+
+            _enemys.SetActive(true);
 
             GetComponent<SpriteRenderer>().enabled = true;
             

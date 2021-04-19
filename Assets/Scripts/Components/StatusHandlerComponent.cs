@@ -22,5 +22,6 @@ namespace HMF.Thesis.Components
         {
             _statusHandler.CalculateStatusEffects();
         }
+
     }
 }
