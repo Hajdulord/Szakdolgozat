@@ -39,6 +39,7 @@ namespace HMF.Thesis.Player
             if (_rigidbody.velocity.x == 0)
             {
                 _playerStateMachine.PushBackDir = 0;
+                _playerStateMachine.pushBackInmunity = Time.time + 4f;
             }
         }
     }

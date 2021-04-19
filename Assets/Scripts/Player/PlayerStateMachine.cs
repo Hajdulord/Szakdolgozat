@@ -38,7 +38,6 @@ namespace HMF.Thesis.Player
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private float _distToGround;
-
         private MagicFocus _magicItem;
         private MagicFocus _magicItem2;
         private HealthPotion _consumableItem;
@@ -58,7 +57,7 @@ namespace HMF.Thesis.Player
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
         public IItem CurrentItem {get; internal set; } = null;
-
+        public float pushBackInmunity = 0;
 
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
 
@@ -222,18 +221,20 @@ namespace HMF.Thesis.Player
 
         public void PushBack(GameObject other)
         {
-            var dir = HMFutilities.DirectionTo(other.transform.position.x, transform.position.x);
+            if (Time.time >= pushBackInmunity)
+            {
+                var dir = HMFutilities.DirectionTo(other.transform.position.x, transform.position.x);
 
-            if (dir >= 0)
-            {
-                dir = 1;
-            }else
-            {
-                dir = -1;
+                if (dir >= 0)
+                {
+                    dir = 1;
+                }else
+                {
+                    dir = -1;
+                }
+
+                PushBackDir = dir;
             }
-
-            PushBackDir = dir;
-
             //_damageableComponent.Damageable.TakeDamage();
         }
 
