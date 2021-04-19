@@ -9,6 +9,8 @@ using HMF.Thesis.Interfaces;
 using HMF.Thesis.Misc;
 using System;
 using System.Collections;
+using HMF.Thesis.ScriptableObjects;
+using HMF.Thesis.Items;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -21,8 +23,8 @@ namespace HMF.Thesis.Player
         [SerializeField] private LayerMask _jumpLayerMask;
         [SerializeField] private Transform _groundCheck;
         [SerializeField] private List<string> _tagsToTarget = new List<string>();
-        [SerializeField] private HMF.Thesis.ScriptableObjects.MagicFocusData _testMagicFocusData = null!;
-        [SerializeField] private HMF.Thesis.ScriptableObjects.ConsumableData _consumableData = null!;
+        [SerializeField] private List<MagicFocusData> _magicFocusData = null!;
+        [SerializeField] private ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
@@ -56,9 +58,9 @@ namespace HMF.Thesis.Player
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
-        private void Start() 
+        private void Start()
         {
-             _stateMachine = new StateMachine();
+            _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
             _moveComponent = GetComponent<IMoveComponent>();
@@ -71,13 +73,8 @@ namespace HMF.Thesis.Player
             _animator = GetComponent<Animator>();
 
             PushBackDir = 0f;
-            
-            var testMagicItem = new HMF.Thesis.Items.MagicFocus(_testMagicFocusData, GetComponent<IMagicHandlerComponent>().MagicHandler);
-            var consumableItem = new HMF.Thesis.Items.HealthPotion(_consumableData);
-            _inventoryComponent.Inventory.AddItem(testMagicItem, 1);
-            _inventoryComponent.Inventory.AddItem(consumableItem, 2);
-            _inventoryComponent.Inventory.SetUse(testMagicItem);
-            _inventoryComponent.Inventory.SetUse(consumableItem);
+
+            SetupInventory();
 
             //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
@@ -151,15 +148,27 @@ namespace HMF.Thesis.Player
             Func<bool> isAlive() => () => _characterComponent.Character.Health > 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
-            
+
             _stateMachine.SetState(idle);
         }
 
-        private void Update()
+        private void SetupInventory()
         {
-            _stateMachine?.Tick();
-            //Debug.Log(MoveDirection != 0 && GroundCheck());
+            var magicItem = new MagicFocus(_magicFocusData[0], GetComponent<IMagicHandlerComponent>().MagicHandler);
+            var magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
+
+            var consumableItem = new HealthPotion(_consumableData);
+
+            _inventoryComponent.Inventory.AddItem(magicItem, 1);
+            _inventoryComponent.Inventory.AddItem(magicItem2, 10);
+            _inventoryComponent.Inventory.AddItem(consumableItem, 2);
+
+            _inventoryComponent.Inventory.SetUse(magicItem);
+            _inventoryComponent.Inventory.SetUse(magicItem2);
+            _inventoryComponent.Inventory.SetUse(consumableItem);
         }
+
+        private void Update() => _stateMachine?.Tick();
 
         private void OnCollisionEnter2D(Collision2D other) 
         {
@@ -232,7 +241,7 @@ namespace HMF.Thesis.Player
 
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
             
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(2f);
 
             GetComponent<SpriteRenderer>().enabled = true;
             
