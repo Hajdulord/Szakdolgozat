@@ -115,7 +115,7 @@ namespace HMF.Thesis.Status
             var time = 0f;
             status.PrePhase(_gameObject);
 
-            Debug.Log($"{status} started.");
+            //Debug.Log($"{status} started.");
 
             while (time <= expirationTime)
             {
@@ -123,14 +123,14 @@ namespace HMF.Thesis.Status
                 
                 status.Affect(_gameObject);
 
-                Debug.Log($"{status.Name} has effected.");
+                //Debug.Log($"{status.Name} has effected.");
 
                 yield return new WaitForSecondsRealtime(effectTime);
             }
 
             status.CloseUp(_gameObject);
 
-            Debug.Log($"{status} has ended.");
+            //Debug.Log($"{status} has ended.");
 
             RemoveStatus(status.Name);
         }

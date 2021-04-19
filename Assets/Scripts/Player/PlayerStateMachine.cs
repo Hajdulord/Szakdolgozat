@@ -39,6 +39,10 @@ namespace HMF.Thesis.Player
         private Animator _animator;
         private float _distToGround;
 
+        private MagicFocus _magicItem;
+        private MagicFocus _magicItem2;
+        private HealthPotion _consumableItem;
+
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
         [SerializeField] public Transform currentSpawnPoint = null!; 
@@ -155,46 +159,45 @@ namespace HMF.Thesis.Player
 
         private void SetupInventory()
         {
-            var magicItem = new MagicFocus(_magicFocusData[0], GetComponent<IMagicHandlerComponent>().MagicHandler);
-            var magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
+            _magicItem = new MagicFocus(_magicFocusData[0], GetComponent<IMagicHandlerComponent>().MagicHandler);
+            _magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
+            _consumableItem = new HealthPotion(_consumableData);
 
-            var consumableItem = new HealthPotion(_consumableData);
+            _inventoryComponent.Inventory.AddItem(_magicItem, 1);
+            _inventoryComponent.Inventory.AddItem(_magicItem2, 10);
+            _inventoryComponent.Inventory.AddItem(_consumableItem, 4);
 
-            _inventoryComponent.Inventory.AddItem(magicItem, 1);
-            _inventoryComponent.Inventory.AddItem(magicItem2, 10);
-            _inventoryComponent.Inventory.AddItem(consumableItem, 4);
-
-            _inventoryComponent.Inventory.SetUse(magicItem);
-            _inventoryComponent.Inventory.SetUse(magicItem2);
-            _inventoryComponent.Inventory.SetUse(consumableItem);
+            _inventoryComponent.Inventory.SetUse(_magicItem);
+            _inventoryComponent.Inventory.SetUse(_magicItem2);
+            _inventoryComponent.Inventory.SetUse(_consumableItem);
         }
 
         private void RefillInventory()
         {
-            var magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
 
-            var consumableItem = new HealthPotion(_consumableData);
-
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(magicItem2))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_magicItem2))
             {
-                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[magicItem2];
-                _inventoryComponent.Inventory.AddItem(magicItem2, num);
+                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2];
+                _inventoryComponent.Inventory.AddItem(_magicItem2, num);
+                //Debug.Log("A");
             }
             else
             {  
-                _inventoryComponent.Inventory.AddItem(magicItem2, 10);
-                _inventoryComponent.Inventory.SetUse(magicItem2);
+                //Debug.Log(_inventoryComponent.Inventory.InventoryShelf[_magicItem2]);
+                _inventoryComponent.Inventory.AddItem(_magicItem2, 10);
+                _inventoryComponent.Inventory.SetUse(_magicItem2);
+                //Debug.Log("B");
             }
             
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(consumableItem))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem))
             {
-                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[consumableItem];
-                _inventoryComponent.Inventory.AddItem(consumableItem, num);
+                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[_consumableItem];
+                _inventoryComponent.Inventory.AddItem(_consumableItem, num);
             }
             else
             {  
-                _inventoryComponent.Inventory.AddItem(consumableItem, 4);
-                _inventoryComponent.Inventory.SetUse(consumableItem);
+                _inventoryComponent.Inventory.AddItem(_consumableItem, 4);
+                _inventoryComponent.Inventory.SetUse(_consumableItem);
             }
             
         }
