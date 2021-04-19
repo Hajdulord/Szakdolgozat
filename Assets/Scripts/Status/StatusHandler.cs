@@ -117,7 +117,7 @@ namespace HMF.Thesis.Status
 
             //Debug.Log($"{status} started.");
 
-            while (time <= expirationTime)
+            while (time < expirationTime)
             {
                 time += effectTime;
                 
