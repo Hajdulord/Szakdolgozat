@@ -17,7 +17,7 @@ using HMF.Thesis.Items;
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 
-    public class PlayerStateMachine : MonoBehaviour
+    public class PlayerStateMachine : MonoBehaviour, IPlayerSateMachine
     {
         [Header("Serialized Private Fields")]
         [SerializeField] private LayerMask _jumpLayerMask;
@@ -27,6 +27,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private GameObject _enemys = null!;
         [SerializeField] private ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
+        [SerializeField] private Transform _currentSpawnPoint = null!;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
@@ -44,7 +45,6 @@ namespace HMF.Thesis.Player
 
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
-        [SerializeField] public Transform currentSpawnPoint = null!; 
         [SerializeField] public GameObject swordPoint = null!;
         [SerializeField] public UseInventory inventoryUI = null!;
         [SerializeField] public AudioSource audioSource = null;
@@ -60,6 +60,7 @@ namespace HMF.Thesis.Player
         public float pushBackInmunity = 0;
 
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
+        public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
@@ -242,7 +243,7 @@ namespace HMF.Thesis.Player
         {
             var output = false;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .4f, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -278,13 +279,16 @@ namespace HMF.Thesis.Player
 
             yield return new WaitForSeconds(5f);
 
-            transform.position = currentSpawnPoint.position;
+            transform.position = _currentSpawnPoint.position;
 
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
             
             yield return new WaitForSeconds(2f);
 
             _enemys.SetActive(true);
+
+            _rigidbody.constraints = RigidbodyConstraints2D.None;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             GetComponent<SpriteRenderer>().enabled = true;
             
