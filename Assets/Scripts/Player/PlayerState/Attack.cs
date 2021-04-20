@@ -1,6 +1,6 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using UnityEngine;
-using System.Collections;
+using HMF.Thesis.Music;
 using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.Player
@@ -34,7 +34,8 @@ namespace HMF.Thesis.Player
             //Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
             //Debug.Log(_attack);
             //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
-            _playerStateMachine.audioSourceAttack2.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Attacks);
+            //_playerStateMachine.audioSourceAttack2.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Attacks);
+            _playerStateMachine.audioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
             _playerStateMachine.audioSourceAttack2.Play();
 
             if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus || _playerStateMachine.CurrentItem is HMF.Thesis.Items.HealthPotion)
@@ -54,7 +55,8 @@ namespace HMF.Thesis.Player
                 _animator.SetBool("IsAttacking", true);
                 _attack.Origin = _playerStateMachine.swordPoint;
 
-                _playerStateMachine.audioSourceAttack.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Swords);
+                //_playerStateMachine.audioSourceAttack.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Swords);
+                _playerStateMachine.audioSourceAttack.clip = MusicHandler.Instance.Serve(Category.Swords);
                 _playerStateMachine.audioSourceAttack.Play();
             }
             
