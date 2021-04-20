@@ -7,5 +7,7 @@ var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller =
     [ "InventoryTwo", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a40e3d1f2d3c3f62653825ff39cf17dc2", null ],
     [ "Jump", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a1488ec7bac655c2fdc46ae4b241f341d", null ],
     [ "Move", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a4014b4f832d2d58decfac5abc02b8da9", null ],
-    [ "NormalMeleeAttack", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ad0e3f5b0cc01af2047c02dca7ab24260", null ]
+    [ "NormalMeleeAttack", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ad0e3f5b0cc01af2047c02dca7ab24260", null ],
+    [ "Pause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#aa0060cac7b44db6b42810bee19a27779", null ],
+    [ "UnPause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a0119c50fa51082e99a05c174b070a39a", null ]
 ];

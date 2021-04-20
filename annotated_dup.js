@@ -22,7 +22,9 @@ var annotated_dup =
           [ "Dead", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead.html", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead" ],
           [ "Patrol", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol.html", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol" ],
           [ "IEnemyStateMachine", "interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine.html", "interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine" ],
-          [ "PatrolEnemyStateMachine", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine" ]
+          [ "InRange", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range" ],
+          [ "PatrolEnemyStateMachine", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine" ],
+          [ "TargetSetter", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html", null ]
         ] ],
         [ "Interfaces", "namespace_h_m_f_1_1_thesis_1_1_interfaces.html", [
           [ "ComponentInterfaces", "namespace_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces.html", [
@@ -45,6 +47,7 @@ var annotated_dup =
           [ "IItem", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item" ],
           [ "IMagicHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler" ],
           [ "IMove", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move" ],
+          [ "IPlayerSateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine" ],
           [ "IStatusHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler" ]
         ] ],
         [ "Items", "namespace_h_m_f_1_1_thesis_1_1_items.html", [
@@ -69,9 +72,25 @@ var annotated_dup =
           [ "MagicBase", "class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_base.html", "class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_base" ],
           [ "MagicHandler", "class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_handler.html", "class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_handler" ]
         ] ],
+        [ "Menu", "namespace_h_m_f_1_1_thesis_1_1_menu.html", [
+          [ "Menu", "class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html", "class_h_m_f_1_1_thesis_1_1_menu_1_1_menu" ]
+        ] ],
         [ "Misc", "namespace_h_m_f_1_1_thesis_1_1_misc.html", [
+          [ "End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
           [ "HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar" ],
+          [ "PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
+          [ "RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener" ],
+          [ "SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
+          [ "StartParticle", "class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html", null ],
           [ "UseInventory", "class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory" ]
+        ] ],
+        [ "Music", "namespace_h_m_f_1_1_thesis_1_1_music.html", [
+          [ "MusicHandler", "class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html", "class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler" ]
+        ] ],
+        [ "Parallax", "namespace_h_m_f_1_1_thesis_1_1_parallax.html", [
+          [ "ParallaxBackground", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_background.html", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_background" ],
+          [ "ParallaxCamera", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_camera.html", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_camera" ],
+          [ "ParallaxLayer", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_layer.html", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_layer" ]
         ] ],
         [ "Player", "namespace_h_m_f_1_1_thesis_1_1_player.html", [
           [ "PlayerStates", "namespace_h_m_f_1_1_thesis_1_1_player_1_1_player_states.html", [
@@ -101,6 +120,7 @@ var annotated_dup =
             [ "Healing", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_healing.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_healing" ],
             [ "Stunned", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_stunned.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_stunned" ]
           ] ],
+          [ "Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ],
           [ "StatusBase", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_base" ],
           [ "StatusHandler", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler" ]
         ] ],

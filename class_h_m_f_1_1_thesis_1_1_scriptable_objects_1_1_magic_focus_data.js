@@ -4,6 +4,7 @@ var class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data =
     [ "attackRange", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#a9ab2a3b9ab066eb8fd0a163c23e55d58", null ],
     [ "attackRate", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#a9576a8a29cf47d3fa8a585b5bdd996de", null ],
     [ "attackTime", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#a157f2e7a05ddedc5d84d810d34591a69", null ],
+    [ "clip", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#aa21be555d2175ef19e6d7303835b793b", null ],
     [ "damage", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#a59ada9da6137c6870eb52918d6b2fa6b", null ],
     [ "description", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#acb263c9d98ee371733bf25d703e638e4", null ],
     [ "isUnique", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_magic_focus_data.html#a4aebd5e2c90fe155da2d4d7d04e8874e", null ],

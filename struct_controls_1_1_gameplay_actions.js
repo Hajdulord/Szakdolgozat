@@ -13,5 +13,6 @@ var struct_controls_1_1_gameplay_actions =
     [ "Item4", "struct_controls_1_1_gameplay_actions.html#a52c7da6297993179a869b29d2e428141", null ],
     [ "Jump", "struct_controls_1_1_gameplay_actions.html#a6165b0b9245140f6837feea30cd1429a", null ],
     [ "Move", "struct_controls_1_1_gameplay_actions.html#a358649482ab381f99a5ee3c32b5efa73", null ],
-    [ "NormalAttack", "struct_controls_1_1_gameplay_actions.html#a106e8251bd2f8deab439c2ef3d06895a", null ]
+    [ "NormalAttack", "struct_controls_1_1_gameplay_actions.html#a106e8251bd2f8deab439c2ef3d06895a", null ],
+    [ "Pause", "struct_controls_1_1_gameplay_actions.html#a6ec0e6be87b406112b2533d5cf72fa5d", null ]
 ];

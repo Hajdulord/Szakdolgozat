@@ -1,5 +1,6 @@
 <map id="HMF.Thesis.Enemys.BasicEnemyStateMachine" name="HMF.Thesis.Enemys.BasicEnemyStateMachine">
-<area shape="rect" id="node1" title=" " alt="" coords="29,80,246,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="82,171,299,212"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine.html" title=" " alt="" coords="142,5,287,32"/>
+<area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html" title=" " alt="" coords="83,81,298,108"/>
+<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine.html" title=" " alt="" coords="322,81,467,108"/>
 </map>

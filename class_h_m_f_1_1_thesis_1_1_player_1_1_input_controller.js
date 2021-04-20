@@ -7,5 +7,7 @@ var class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller =
     [ "InventoryTwo", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#ac933f32449559e73189e45e752dc0c2c", null ],
     [ "Jump", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#abb69893551a8c8848ef02f3cb4cfc459", null ],
     [ "Move", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#a3d6fd9bb48114150427009ebdafd241d", null ],
-    [ "NormalMeleeAttack", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#ae3985556923edd2208452e45a7854933", null ]
+    [ "NormalMeleeAttack", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#ae3985556923edd2208452e45a7854933", null ],
+    [ "Pause", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#afd123ebab419b7d10cf5164ed8bc1612", null ],
+    [ "UnPause", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html#a7d67ef1d637b195d36c0fe81fa88154e", null ]
 ];

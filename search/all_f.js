@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['takedamage_119',['TakeDamage',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_damageable.html#a4a2d313c2d2331606811dbbde3ddeac8',1,'HMF.Thesis.Interfaces.IDamageable.TakeDamage()'],['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_damageable.html#a2e4fda6b65464386ee77b5a0ef0f162f',1,'HMF.Thesis.Interfaces.IDamageable.TakeDamage(float damage=1)'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html#a4a5ba6291ba1e9330a0f6ec3ceaddcad',1,'HMF.Thesis.Logic.DamageableCharacterLogic.TakeDamage()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_damageable_character_logic.html#a980132d5c4b1bf91df929b3d05d5bfe8',1,'HMF.Thesis.Logic.DamageableCharacterLogic.TakeDamage(float damage=1)'],['../class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_damageable_character_logic_test.html#ac9ff718a8c0b2758130083b38c0e308b',1,'HMF.Thesis.Tests.Logic.DamageableCharacterLogicTest.TakeDamage()']]],
-  ['takedamagewithinputparameter_120',['TakeDamageWithInputParameter',['../class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_damageable_character_logic_test.html#a3fa18dcf0a948a4959cc5dc34d009823',1,'HMF::Thesis::Tests::Logic::DamageableCharacterLogicTest']]]
+  ['spawnpointset_127',['SpawnPointSet',['../class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html',1,'HMF::Thesis::Misc']]],
+  ['speed_128',['Speed',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#abd28c95b32d7f103937ccfb8f8c1f443',1,'HMF.Thesis.Interfaces.IMove.Speed()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#a5fbd0f1e93dd115c6ef57bbed427dd0f',1,'HMF.Thesis.Logic.MoveLogic.Speed()']]],
+  ['startparticle_129',['StartParticle',['../class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html',1,'HMF::Thesis::Misc']]],
+  ['statusbase_130',['StatusBase',['../class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html',1,'HMF::Thesis::Status']]],
+  ['statusfactorytest_131',['StatusFactoryTest',['../class_h_m_f_1_1_thesis_1_1_tests_1_1_status_factory_test.html',1,'HMF::Thesis::Tests']]],
+  ['statushandler_132',['StatusHandler',['../class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler.html',1,'HMF::Thesis::Status']]],
+  ['statushandlercomponent_133',['StatusHandlerComponent',['../class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html',1,'HMF::Thesis::Components']]],
+  ['stunned_134',['Stunned',['../class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_stunned.html',1,'HMF::Thesis::Status::ActualStatuses']]]
 ];

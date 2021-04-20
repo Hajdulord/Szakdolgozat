@@ -9,5 +9,6 @@ var searchData=
   ['dead_25',['Dead',['../class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead.html',1,'HMF::Thesis::Enemys']]],
   ['death_26',['Death',['../class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html',1,'HMF::Thesis::Player::PlayerStates']]],
   ['destroyafteranimationends_27',['DestroyAfterAnimationEnds',['../class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html',1,'HMF::Thesis::Magic']]],
-  ['dustanimation_28',['DustAnimation',['../class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html',1,'HMF::Thesis::Player']]]
+  ['dummy_28',['Dummy',['../class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html',1,'HMF::Thesis::Status']]],
+  ['dustanimation_29',['DustAnimation',['../class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html',1,'HMF::Thesis::Player']]]
 ];

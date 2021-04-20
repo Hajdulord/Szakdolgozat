@@ -68,6 +68,9 @@ var hierarchy =
     [ "HMF.Thesis.Interfaces.ComponentInterfaces.IMoveComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html", [
       [ "HMF.Thesis.Components.MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", null ]
     ] ],
+    [ "HMF.Thesis.Interfaces.IPlayerSateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html", [
+      [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ]
+    ] ],
     [ "IState", null, [
       [ "HMF.Thesis.Enemys.Dead", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_dead.html", null ],
       [ "HMF.Thesis.Enemys.EnemyStates.Attack", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_enemy_states_1_1_attack.html", null ],
@@ -102,13 +105,26 @@ var hierarchy =
       [ "HMF.Thesis.Components.MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", null ],
       [ "HMF.Thesis.Components.StatusHandlerComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html", null ],
       [ "HMF.Thesis.Enemys.BasicEnemyStateMachine", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_basic_enemy_state_machine.html", null ],
+      [ "HMF.Thesis.Enemys.InRange", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html", null ],
       [ "HMF.Thesis.Enemys.PatrolEnemyStateMachine", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html", null ],
+      [ "HMF.Thesis.Enemys.TargetSetter", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html", null ],
       [ "HMF.Thesis.Magic.DestroyAfterAnimationEnds", "class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html", null ],
+      [ "HMF.Thesis.Menu.Menu", "class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html", null ],
+      [ "HMF.Thesis.Misc.End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
+      [ "HMF.Thesis.Misc.PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
+      [ "HMF.Thesis.Misc.RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", null ],
+      [ "HMF.Thesis.Misc.SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
+      [ "HMF.Thesis.Misc.StartParticle", "class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html", null ],
       [ "HMF.Thesis.Misc.UseInventory", "class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html", null ],
+      [ "HMF.Thesis.Music.MusicHandler", "class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html", null ],
+      [ "HMF.Thesis.Parallax.ParallaxBackground", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_background.html", null ],
+      [ "HMF.Thesis.Parallax.ParallaxCamera", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_camera.html", null ],
+      [ "HMF.Thesis.Parallax.ParallaxLayer", "class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_layer.html", null ],
       [ "HMF.Thesis.Player.DustAnimation", "class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html", null ],
       [ "HMF.Thesis.Player.InputController", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html", null ],
-      [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ]
+      [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ],
+      [ "HMF.Thesis.Status.Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ]
     ] ],
     [ "HMF.Thesis.Tests.Logic.MoveLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html", null ],
     [ "ScriptableObject", null, [
