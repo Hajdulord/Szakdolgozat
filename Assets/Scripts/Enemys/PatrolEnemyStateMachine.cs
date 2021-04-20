@@ -21,7 +21,7 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private AudioSource _audioSource = null;
         [SerializeField] private AudioSource _audioSourceAttack = null;
         [SerializeField] private AudioSource _audioSourceAttack2 = null;
-        [SerializeField] private MusicHandler _musicHandler = null;
+        //[SerializeField] private MusicHandler _musicHandler = null;
         [SerializeField] private InRange _inRange = null!;
 
 
@@ -47,7 +47,7 @@ namespace HMF.Thesis.Enemys
         public AudioSource AudioSource { get => _audioSource;}
         public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
         public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
-        public MusicHandler MusicHandler { get => _musicHandler;}
+        //public MusicHandler MusicHandler { get => _musicHandler;}
 
         private void Awake()
         {
@@ -96,7 +96,8 @@ namespace HMF.Thesis.Enemys
 
         public void Step()
         {
-            _audioSource.clip = _musicHandler.enemyStep;
+            //_audioSource.clip = _musicHandler.enemyStep;
+            _audioSource.clip = MusicHandler.Instance.enemyStep;
             _audioSource.Play();
         }
         

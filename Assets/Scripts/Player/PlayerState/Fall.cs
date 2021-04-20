@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Music;
 
 namespace HMF.Thesis.Player
 {
@@ -31,7 +30,8 @@ namespace HMF.Thesis.Player
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
-            _playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.jumpLand;
+            //_playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.jumpLand;
+            _playerStateMachine.audioSource.clip = MusicHandler.Instance.jumpLand;
             _playerStateMachine.audioSource.Play();
         }
 

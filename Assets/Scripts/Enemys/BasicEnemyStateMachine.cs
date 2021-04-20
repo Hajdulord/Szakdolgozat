@@ -19,10 +19,10 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private MagicFocusData _magicFocusData = null;
         [SerializeField] private GameObject _swordPoint = null!;
         [SerializeField] private InRange _inRange = null!;
-        [SerializeField] public AudioSource _audioSource = null;
-        [SerializeField] public AudioSource _audioSourceAttack = null;
-        [SerializeField] public AudioSource _audioSourceAttack2 = null;
-        [SerializeField] public MusicHandler _musicHandler = null;
+        [SerializeField] private AudioSource _audioSource = null;
+        [SerializeField] private AudioSource _audioSourceAttack = null;
+        [SerializeField] private AudioSource _audioSourceAttack2 = null;
+        //[SerializeField] public MusicHandler _musicHandler = null;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -42,7 +42,7 @@ namespace HMF.Thesis.Enemys
         public AudioSource AudioSource { get => _audioSource;}
         public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
         public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
-        public MusicHandler MusicHandler { get => _musicHandler;}
+        //public MusicHandler MusicHandler { get => _musicHandler;}
 
         private void Awake()
         {
@@ -91,7 +91,8 @@ namespace HMF.Thesis.Enemys
 
         public void Step()
         {
-            _audioSource.clip = _musicHandler.enemyStep;
+            //_audioSource.clip = _musicHandler.enemyStep;
+            _audioSource.clip = MusicHandler.Instance.enemyStep;
             _audioSource.Play();
         }
 
