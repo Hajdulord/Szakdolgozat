@@ -19,12 +19,10 @@ namespace HMF.Thesis.Status.ActualStatuses
         {
             var damageable = gameObject.GetComponent<IDamageableComponent>();
             damageable?.Damageable.TakeDamage(_damage);
-            Debug.Log("Affect");
         }
 
         public override void PrePhase(GameObject gameObject)
         {
-            Debug.Log("Enter");
             var rigidbody = gameObject.GetComponent<Rigidbody2D>();
             if (rigidbody != null)
             {
@@ -34,7 +32,6 @@ namespace HMF.Thesis.Status.ActualStatuses
 
         public override void CloseUp(GameObject gameObject)
         {
-            Debug.Log("Exit");
             var rigidbody = gameObject.GetComponent<Rigidbody2D>();
             if (rigidbody != null)
             {

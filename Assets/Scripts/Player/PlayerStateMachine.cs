@@ -42,6 +42,7 @@ namespace HMF.Thesis.Player
         private MagicFocus _magicItem;
         private MagicFocus _magicItem2;
         private HealthPotion _consumableItem;
+        private float _pushBackInmunity = 0;
 
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject dashDust = null!;
@@ -57,7 +58,6 @@ namespace HMF.Thesis.Player
         public bool IsDashing {get; internal set; } = false;
         public bool IsJumping {get; internal set; } = false;
         public IItem CurrentItem {get; internal set; } = null;
-        public float pushBackInmunity = 0;
 
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
@@ -222,7 +222,7 @@ namespace HMF.Thesis.Player
 
         public void PushBack(GameObject other)
         {
-            if (Time.time >= pushBackInmunity)
+            if (Time.time >= _pushBackInmunity)
             {
                 var dir = HMFutilities.DirectionTo(other.transform.position.x, transform.position.x);
 
@@ -235,6 +235,8 @@ namespace HMF.Thesis.Player
                 }
 
                 PushBackDir = dir;
+
+                _pushBackInmunity = Time.time + 4f;
             }
             //_damageableComponent.Damageable.TakeDamage();
         }

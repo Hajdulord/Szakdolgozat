@@ -22,6 +22,8 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private AudioSource _audioSourceAttack = null;
         [SerializeField] private AudioSource _audioSourceAttack2 = null;
         [SerializeField] private MusicHandler _musicHandler = null;
+        [SerializeField] private InRange _inRange = null!;
+
 
         [Header("Serialized Public Fields")]
         [SerializeField] public GameObject start = null!;
@@ -34,7 +36,7 @@ namespace HMF.Thesis.Enemys
         private IMagicHandler _magicHandler;
         private Animator _animator;
 
-        public GameObject Target {get; internal set;} = null;
+        public GameObject Target {get; set;} = null;
         public IItem Weapon {get; private set;}
         public IItem MagicFocus {get; private set;}
         public GameObject SwordPoint {get => _swordPoint; set => _swordPoint = value;}
@@ -80,8 +82,8 @@ namespace HMF.Thesis.Enemys
 
             Func<bool> targetFound() => () => Target != null;
             Func<bool> targetLost() => () => Target == null;
-            Func<bool> reachedTarget() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) <= _weaponData.attackRange - 0.05f;
-            Func<bool> targetOutOfReach() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) > _weaponData.attackRange - 0.05f;
+            Func<bool> reachedTarget() => () => Target != null && _inRange.inRange;
+            Func<bool> targetOutOfReach() => () => Target != null && !_inRange.inRange;
             Func<bool> isDead() => () => _character.Health <= 0;
             //Func<bool> isAlive() => () => _character.Health > 0;
 
@@ -92,27 +94,12 @@ namespace HMF.Thesis.Enemys
 
         private void Update() => _stateMachine.Tick();
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                Target = other.gameObject;
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                Target = null;
-            }
-        }
-
         public void Step()
         {
             _audioSource.clip = _musicHandler.enemyStep;
             _audioSource.Play();
         }
+        
         private void OnDisable() 
         {
             if (_character.Health <= 0)

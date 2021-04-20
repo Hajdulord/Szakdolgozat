@@ -7,7 +7,7 @@ namespace HMF.Thesis.Enemys
 {
     public interface IEnemyStateMachine
     {
-        GameObject Target {get;}
+        GameObject Target {get; set;}
         IItem Weapon {get;}
         IItem MagicFocus {get;}
         WeaponData WeaponData { get;}
