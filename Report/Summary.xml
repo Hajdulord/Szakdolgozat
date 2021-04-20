@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>04/20/2021 - 10:31:55</Generatedon>
+    <Generatedon>04/20/2021 - 18:16:44</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>10</Assemblies>
     <Classes>52</Classes>
     <Files>52</Files>
     <Coveredlines>110</Coveredlines>
-    <Uncoveredlines>1338</Uncoveredlines>
-    <Coverablelines>1448</Coverablelines>
-    <Totallines>2879</Totallines>
+    <Uncoveredlines>1342</Uncoveredlines>
+    <Coverablelines>1452</Coverablelines>
+    <Totallines>2903</Totallines>
     <Linecoverage>7.5</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Enemy" classes="9" coverage="0" coveredlines="0" coverablelines="314" totallines="616" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Enemys.BasicEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="62" totallines="106" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.Dead" coverage="0" coveredlines="0" coverablelines="27" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.EnemyStates.Attack" coverage="0" coveredlines="0" coverablelines="53" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Enemy" classes="9" coverage="0" coveredlines="0" coverablelines="312" totallines="626" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Enemys.BasicEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="60" totallines="107" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.Dead" coverage="0" coveredlines="0" coverablelines="29" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.EnemyStates.Attack" coverage="0" coveredlines="0" coverablelines="53" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Enemys.EnemyStates.Idle" coverage="0" coveredlines="0" coverablelines="11" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Enemys.EnemyStates.MoveTo" coverage="0" coveredlines="0" coverablelines="32" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Enemys.InRange" coverage="0" coveredlines="0" coverablelines="19" totallines="61" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Enemys.Patrol" coverage="0" coveredlines="0" coverablelines="30" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Enemys.PatrolEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="64" totallines="111" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Enemys.PatrolEnemyStateMachine" coverage="0" coveredlines="0" coverablelines="62" totallines="112" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Enemys.TargetSetter" coverage="0" coveredlines="0" coverablelines="16" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Items" classes="3" coverage="0" coveredlines="0" coverablelines="61" totallines="120" branchcoverage="" coveredbranches="0" totalbranches="0">
@@ -58,21 +58,21 @@
       <Class name="HMF.Thesis.Misc.StartParticle" coverage="0" coveredlines="0" coverablelines="9" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Misc.UseInventory" coverage="0" coveredlines="0" coverablelines="49" totallines="75" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Music" classes="1" coverage="0" coveredlines="0" coverablelines="16" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Music.MusicHandler" coverage="0" coveredlines="0" coverablelines="16" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Music" classes="1" coverage="0" coveredlines="0" coverablelines="23" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Music.MusicHandler" coverage="0" coveredlines="0" coverablelines="23" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Parallax" classes="3" coverage="0" coveredlines="0" coverablelines="45" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Parallax.ParallaxBackground" coverage="0" coveredlines="0" coverablelines="26" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Parallax.ParallaxCamera" coverage="0" coveredlines="0" coverablelines="14" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Parallax.ParallaxLayer" coverage="0" coveredlines="0" coverablelines="5" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Player" classes="10" coverage="0" coveredlines="0" coverablelines="420" totallines="819" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Player.Attack" coverage="0" coveredlines="0" coverablelines="37" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Player" classes="10" coverage="0" coveredlines="0" coverablelines="419" totallines="823" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Player.Attack" coverage="0" coveredlines="0" coverablelines="37" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.DustAnimation" coverage="0" coveredlines="0" coverablelines="3" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.Fall" coverage="0" coveredlines="0" coverablelines="23" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.InputController" coverage="0" coveredlines="0" coverablelines="78" totallines="137" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="180" totallines="301" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Player.PlayerStates.Death" coverage="0" coveredlines="0" coverablelines="16" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.PlayerStateMachine" coverage="0" coveredlines="0" coverablelines="179" totallines="301" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Player.PlayerStates.Death" coverage="0" coveredlines="0" coverablelines="16" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Idle" coverage="0" coveredlines="0" coverablelines="14" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Jump" coverage="0" coveredlines="0" coverablelines="22" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Player.PlayerStates.Move" coverage="0" coveredlines="0" coverablelines="26" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
