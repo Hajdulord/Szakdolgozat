@@ -106,26 +106,27 @@ namespace HMF.Thesis.Status
                 //_activeStatuses[status].Status.PrePhase(_gameObject);
                 //_activeStatuses[status].Status.Affect(_gameObject);
                 //Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
-                _gameObject.GetComponent<Dummy>().StartCoroutine(Use(_activeStatuses[status].Status, _activeStatuses[status].ExpirationTime, _activeStatuses[status].EffectTime));
+                _gameObject.GetComponent<Dummy>().StartCoroutine(Use(_activeStatuses[status].Status));
             }
         }
 
-        private IEnumerator Use(StatusBase status, float expirationTime, float effectTime)
+        private IEnumerator Use(StatusBase status)
         {
             var time = 0f;
             status.PrePhase(_gameObject);
 
+            
             //Debug.Log($"{status} started.");
 
-            while (time < expirationTime)
+            while (time < status.LifeTime)
             {
-                time += effectTime;
+                time += status.EffectInterval;
                 
                 status.Affect(_gameObject);
 
                 //Debug.Log($"{status.Name} has effected.");
 
-                yield return new WaitForSecondsRealtime(effectTime);
+                yield return new WaitForSeconds(status.EffectInterval);
             }
 
             status.CloseUp(_gameObject);

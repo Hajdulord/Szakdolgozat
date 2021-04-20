@@ -19672,7 +19672,7 @@ GameObject:
   - component: {fileID: 600795991}
   - component: {fileID: 600795992}
   - component: {fileID: 600795993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -39386,7 +39386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564734241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40850,7 +40850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702327520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SwordPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43434,7 +43434,7 @@ GameObject:
   - component: {fileID: 1928777168}
   - component: {fileID: 1928777167}
   - component: {fileID: 1928777166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DashDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
