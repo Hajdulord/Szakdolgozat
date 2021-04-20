@@ -51,7 +51,6 @@ namespace HMF.Thesis.Player
         [SerializeField] public AudioSource audioSource = null;
         [SerializeField] public AudioSource audioSourceAttack = null;
         [SerializeField] public AudioSource audioSourceAttack2 = null;
-        [SerializeField] public MusicHandler musicHandler = null;
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
@@ -245,7 +244,7 @@ namespace HMF.Thesis.Player
         {
             var output = false;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .4f, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -269,7 +268,8 @@ namespace HMF.Thesis.Player
 
         public void Step()
         {
-            audioSource.clip = musicHandler.playerStep;
+            //audioSource.clip = musicHandler.playerStep;
+            audioSource.clip = MusicHandler.Instance.playerStep;
             audioSource.Play();
         }
 

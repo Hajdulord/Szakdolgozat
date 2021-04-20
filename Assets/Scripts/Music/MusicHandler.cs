@@ -19,6 +19,16 @@ namespace HMF.Thesis.Music
         [SerializeField] public AudioClip playerStep = null!;
         [SerializeField] public AudioClip enemyStep = null!;
 
+        public static MusicHandler Instance {get; private set;} = null;
+
+        private void Awake() 
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+        }
+
         public AudioClip Serve(Category category)
         {
             int index;

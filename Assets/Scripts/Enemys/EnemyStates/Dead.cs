@@ -1,5 +1,6 @@
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
+using HMF.Thesis.Music;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,10 +25,12 @@ namespace HMF.Thesis.Enemys
             
             var colliders = new List<Collider2D>();
 
-            _stateMachine.AudioSource.clip = _stateMachine.MusicHandler.Serve(Music.Category.Deaths);
+            //_stateMachine.AudioSource.clip = _stateMachine.MusicHandler.Serve(Music.Category.Deaths);
+            _stateMachine.AudioSource.clip = MusicHandler.Instance.Serve(Category.Deaths);
             _stateMachine.AudioSource.Play();
 
-            _stateMachine.ThisGameObject.GetComponent<Rigidbody2D>()?.GetAttachedColliders(colliders);
+            var rb = _stateMachine.ThisGameObject.GetComponent<Rigidbody2D>();
+            rb?.GetAttachedColliders(colliders);
 
             if (colliders.Any())
             {
@@ -40,6 +43,7 @@ namespace HMF.Thesis.Enemys
                     }   
                 }
             }
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
         public void OnExit()

@@ -1,6 +1,7 @@
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
+using HMF.Thesis.Music;
 
 namespace HMF.Thesis.Player.PlayerStates
 {
@@ -19,7 +20,8 @@ namespace HMF.Thesis.Player.PlayerStates
         {
             //Debug.Log("Dead");
             _animator.SetBool("IsDead", true);
-            _stateMachine.audioSource.clip = _stateMachine.musicHandler.Serve(Music.Category.Deaths);
+            //_stateMachine.audioSource.clip = _stateMachine.musicHandler.Serve(Music.Category.Deaths);
+            _stateMachine.audioSource.clip = MusicHandler.Instance.Serve(Category.Deaths);
             _stateMachine.audioSource.Play();
             _stateMachine.gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
             //_stateMachine.gameObject.GetComponent<IStatusHandlerComponent>().DestroyThis();

@@ -1,5 +1,4 @@
 using HMF.Thesis.Interfaces;
-using HMF.Thesis.Music;
 using HMF.Thesis.ScriptableObjects;
 using UnityEngine;
 
@@ -17,6 +16,5 @@ namespace HMF.Thesis.Enemys
         AudioSource AudioSource { get; }
         AudioSource AudioSourceAttack { get; }
         AudioSource AudioSourceAttack2 { get; }
-        MusicHandler MusicHandler { get; }
     }
 }

@@ -1,6 +1,7 @@
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.HMFUtilities.Utilities;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Music;
 using UnityEngine;
 
 namespace HMF.Thesis.Enemys.EnemyStates
@@ -55,14 +56,16 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _animator.SetBool("IsAttacking", true);
 
-                _stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                //_stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                _stateMachine.AudioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
                 _stateMachine.AudioSourceAttack2.Play();
 
                 _attack.Origin = _stateMachine.SwordPoint;
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
 
-                _stateMachine.AudioSourceAttack.clip = _stateMachine.MusicHandler.Serve(Music.Category.Swords);
+                //_stateMachine.AudioSourceAttack.clip = _stateMachine.MusicHandler.Serve(Music.Category.Swords);
+                _stateMachine.AudioSourceAttack.clip = MusicHandler.Instance.Serve(Category.Swords);
                 _stateMachine.AudioSourceAttack.Play();
             }
             else
@@ -74,7 +77,8 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _animator.SetBool("IsMagic", true);
 
-                _stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                //_stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                _stateMachine.AudioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
                 _stateMachine.AudioSourceAttack2.Play();
 
                 _attack.Origin = _stateMachine.ThisGameObject;
