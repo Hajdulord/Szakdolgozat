@@ -1,7 +1,6 @@
 <map id="HMF.Thesis.Player.PlayerStateMachine" name="HMF.Thesis.Player.PlayerStateMachine">
-<area shape="rect" id="node1" title="This class is used to manage the player&#39;s state." alt="" coords="513,44,684,86"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,29,117,56"/>
-<area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="172,29,376,56"/>
-<area shape="rect" id="node5" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html" title=" " alt="" coords="167,80,381,106"/>
-<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="205,130,343,157"/>
+<area shape="rect" id="node1" title="This class is used to manage the player&#39;s state." alt="" coords="100,171,271,212"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="83,81,287,108"/>
+<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="312,81,451,108"/>
 </map>

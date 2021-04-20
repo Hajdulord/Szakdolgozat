@@ -9,7 +9,6 @@ var class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine =
     [ "audioSourceAttack2", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a32114907ebd4a39b83668b512ac5a82e", null ],
     [ "dashDust", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a6117c9d490bba81bb39f84502b7b5437", null ],
     [ "inventoryUI", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a09622f19011a530e2777ac139dda57bf", null ],
-    [ "musicHandler", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ab70d7d80dc406da34066aef76eaa88b4", null ],
     [ "swordPoint", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a3e09647c49d8f8444dbc8e1144065528", null ],
     [ "CurrentItem", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a3e482c964d4bf9fd02079f5fb66a0f8b", null ],
     [ "CurrentSpawnPoint", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a469265454885c1db3271857396580a00", null ],
