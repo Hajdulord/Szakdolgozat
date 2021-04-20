@@ -1,5 +1,4 @@
 using HMF.Thesis.Interfaces;
-using UnityEngine;
 
 namespace HMF.Thesis.Logic
 {
@@ -30,7 +29,6 @@ namespace HMF.Thesis.Logic
         public void TakeDamage(float damage = 1)
         {
             _character.Health -= damage;
-            Debug.Log($"{_character.CharacterName}'s helath is: {_character.Health}");
         }
     }
 }

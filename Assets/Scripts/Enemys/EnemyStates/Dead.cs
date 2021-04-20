@@ -24,6 +24,9 @@ namespace HMF.Thesis.Enemys
             
             var colliders = new List<Collider2D>();
 
+            _stateMachine.AudioSource.clip = _stateMachine.MusicHandler.Serve(Music.Category.Deaths);
+            _stateMachine.AudioSource.Play();
+
             _stateMachine.ThisGameObject.GetComponent<Rigidbody2D>()?.GetAttachedColliders(colliders);
 
             if (colliders.Any())

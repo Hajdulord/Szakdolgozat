@@ -4,6 +4,7 @@ using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using System;
 using HMF.Thesis.Enemys.EnemyStates;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Music;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
@@ -17,6 +18,11 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private WeaponData _weaponData = null!;
         [SerializeField] private MagicFocusData _magicFocusData = null;
         [SerializeField] private GameObject _swordPoint = null!;
+        [SerializeField] private InRange _inRange = null!;
+        [SerializeField] public AudioSource _audioSource = null;
+        [SerializeField] public AudioSource _audioSourceAttack = null;
+        [SerializeField] public AudioSource _audioSourceAttack2 = null;
+        [SerializeField] public MusicHandler _musicHandler = null;
 
         private StateMachine _stateMachine;
         private IMove _move;
@@ -25,13 +31,18 @@ namespace HMF.Thesis.Enemys
         private ICharacter _character;
         private Animator _animator;
 
-        public GameObject Target {get; internal set;} = null;
+        public GameObject Target {get; set;} = null;
         public IItem Weapon {get; private set;}
         public IItem MagicFocus {get; private set;} = null;
         public GameObject SwordPoint {get => _swordPoint; set => _swordPoint = value;}
         public WeaponData WeaponData => _weaponData;
         public MagicFocusData MagicFocusData => _magicFocusData;
         public GameObject ThisGameObject => gameObject;
+
+        public AudioSource AudioSource { get => _audioSource;}
+        public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
+        public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
+        public MusicHandler MusicHandler { get => _musicHandler;}
 
         private void Awake()
         {
@@ -66,8 +77,8 @@ namespace HMF.Thesis.Enemys
 
             Func<bool> targetFound() => () => Target != null;
             Func<bool> targetLost() => () => Target == null;
-            Func<bool> reachedTarget() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) <= _weaponData.attackRange - 0.05f;
-            Func<bool> targetOutOfReach() => () => Target != null && Vector2.Distance(SwordPoint.transform.position, Target.transform.position) > _weaponData.attackRange - 0.05f;
+            Func<bool> reachedTarget() => () => Target != null && _inRange.inRange;
+            Func<bool> targetOutOfReach() => () => Target != null && !_inRange.inRange;
             Func<bool> isDead() => () => _character.Health <= 0;
             //Func<bool> isAlive() => () => _character.Health > 0;
 
@@ -78,21 +89,18 @@ namespace HMF.Thesis.Enemys
 
         private void Update() => _stateMachine.Tick();
 
-        private void OnTriggerEnter2D(Collider2D other)
+        public void Step()
         {
-            if (other.gameObject.tag == "Player")
-            {
-                Target = other.gameObject;
-            }
+            _audioSource.clip = _musicHandler.enemyStep;
+            _audioSource.Play();
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void OnDisable() 
         {
-            if (other.gameObject.tag == "Player")
+            if (_character.Health <= 0)
             {
-                Target = null;
+                Destroy(gameObject);
             }
         }
-
     }
 }

@@ -13,7 +13,7 @@ namespace HMF.Thesis.Status.ActualStatuses
 
         public override float EffectInterval => 20;
 
-        private float _damage = 2f;
+        private float _damage = 1f;
 
         public override void Affect(GameObject gameObject)
         {

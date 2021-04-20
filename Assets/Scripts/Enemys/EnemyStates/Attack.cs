@@ -55,10 +55,15 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _animator.SetBool("IsAttacking", true);
 
+                _stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                _stateMachine.AudioSourceAttack2.Play();
 
                 _attack.Origin = _stateMachine.SwordPoint;
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
+
+                _stateMachine.AudioSourceAttack.clip = _stateMachine.MusicHandler.Serve(Music.Category.Swords);
+                _stateMachine.AudioSourceAttack.Play();
             }
             else
             {
@@ -69,9 +74,15 @@ namespace HMF.Thesis.Enemys.EnemyStates
             {
                 _animator.SetBool("IsMagic", true);
 
+                _stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
+                _stateMachine.AudioSourceAttack2.Play();
+
                 _attack.Origin = _stateMachine.ThisGameObject;
                 _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget);
-                _timeMagic = Time.time + _stateMachine.WeaponData.attackTime;
+                _timeMagic = Time.time + _stateMachine.MagicFocus.attackTime;
+
+                _stateMachine.AudioSourceAttack.clip = (_stateMachine.MagicFocus as HMF.Thesis.Items.MagicFocus).Clip;
+                _stateMachine.AudioSourceAttack.Play();
             }
             else
             {

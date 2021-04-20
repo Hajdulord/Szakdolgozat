@@ -1,11 +1,12 @@
 {
-    "name": "EnemysAssembly",
+    "name": "Enemy",
     "rootNamespace": "HMF.Thesis.Enemys",
     "references": [
         "GUID:d365c8a574a25714da0f1dc6da745997",
         "GUID:18a65fb08ce36ca49b4cb10b630ad0c0",
         "GUID:c19078d63ad27b04080c9d0f5b26dec8",
-        "GUID:c7e81a4a39f2ef8468bbd73ea20947db"
+        "GUID:c7e81a4a39f2ef8468bbd73ea20947db",
+        "GUID:c8132385704f2fb4896cd961a72ebfa2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

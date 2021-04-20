@@ -59,8 +59,6 @@ namespace HMF.Thesis.Enemys
                 0, 
                 0);
             }
-
-            
         }
     }
 }
