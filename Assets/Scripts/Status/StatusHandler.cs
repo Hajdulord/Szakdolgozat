@@ -65,7 +65,7 @@ namespace HMF.Thesis.Status
             status.PrePhase(_gameObject);
 
             
-            Debug.Log($"{status.Name} started.");
+            //Debug.Log($"{status.Name} started.");
 
             while (time < status.LifeTime)
             {
