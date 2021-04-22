@@ -241,22 +241,30 @@ namespace HMF.Thesis.Player
             //_damageableComponent.Damageable.TakeDamage();
         }
 
-        private bool GroundCheck()
+        internal bool GroundCheck()
         {
             var output = false;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
+            //Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.25f, .05f), 0, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				output = true;
-                return output;
-			}
-		}
+            {
+                if (colliders[i].gameObject != gameObject)
+                {
+                    output = true;
+                    return output;
+                }
+            }
 
             return output;
         }
+
+        /*void OnDrawGizmosSelected()
+        {
+            // Display the explosion radius when selected
+            Gizmos.color = new Color(1, 1, 0, 0.75F);
+            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.25f, .05f));
+        }*/
 
         public void Dead()
         {

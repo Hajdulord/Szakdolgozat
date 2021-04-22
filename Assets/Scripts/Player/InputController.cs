@@ -34,7 +34,9 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-            if(callback.started && _rigidbody?.constraints != (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation))
+            if(callback.started && 
+                _rigidbody?.constraints != (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation) && 
+                _stateMachine.GroundCheck())
             {
                 _stateMachine.IsJumping = true;
             }
