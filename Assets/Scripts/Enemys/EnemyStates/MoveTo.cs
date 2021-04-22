@@ -35,7 +35,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
             _stateMachine.ThisGameObject.transform.right = new Vector3(dir,  0,  0);
 
-            _animator.SetFloat("Speed", Mathf.Abs(_stateMachine.ThisGameObject.transform.right.x));
+            _animator.SetFloat("Speed", Mathf.Abs(dir));
         }
 
         public void OnExit()
