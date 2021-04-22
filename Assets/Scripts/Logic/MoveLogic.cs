@@ -1,6 +1,7 @@
 using UnityEngine;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.ScriptableObjects;
+using HMF.HMFUtilities.Utilities;
 
 //! Implementation needed.
 namespace HMF.Thesis.Logic
@@ -66,9 +67,18 @@ namespace HMF.Thesis.Logic
 		*/
 		public void MoveToPoint(Vector2 to)
 		{
-			var pos = Vector2.MoveTowards(_rigidbody.position, to, Time.deltaTime * Speed);
-
-			_rigidbody.MovePosition(pos);
+			//var pos = Vector2.MoveTowards(_rigidbody.position, to, Time.deltaTime * Speed);
+			var dir = 0;
+			if (HMFutilities.DirectionTo(_rigidbody.transform.position.x, to.x) >= 0)
+			{
+				dir = 1;
+			}
+			else
+			{
+				dir = -1;
+			}
+			//_rigidbody.MovePosition(pos);
+			_rigidbody.velocity = new Vector2(dir * Speed, _rigidbody.velocity.y );
 		}
 
 		/// Object is pushed back.

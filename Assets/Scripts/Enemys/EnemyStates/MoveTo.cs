@@ -40,7 +40,8 @@ namespace HMF.Thesis.Enemys.EnemyStates
 
         public void OnExit()
         {
-            
+            var rigidbody = _stateMachine.ThisGameObject.GetComponent<Rigidbody2D>();
+            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
         }
 
         public void Tick()
