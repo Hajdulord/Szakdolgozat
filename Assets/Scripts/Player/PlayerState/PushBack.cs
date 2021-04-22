@@ -13,6 +13,8 @@ namespace HMF.Thesis.Player
         private PlayerStateMachine _playerStateMachine;
         private Animator _animator;
 
+        private float time = 0f;
+
         public PushBack(IMove move, Animator animator, Rigidbody2D rigidbody, PlayerStateMachine playerStateMachine)
         {
             _move = move;
@@ -26,6 +28,7 @@ namespace HMF.Thesis.Player
             //Debug.Log("PushBack");
             _move.PushBack(_playerStateMachine.PushBackDir);
             _animator.SetBool("IsHurt", true);
+            time = Time.time + _playerStateMachine.PushBackTime;
         }
 
         public void OnExit()
@@ -36,7 +39,7 @@ namespace HMF.Thesis.Player
 
         public void Tick()
         {
-            if (_rigidbody.velocity.x == 0)
+            if (Time.time >= time || _rigidbody.velocity.x == 0)
             {
                 _playerStateMachine.PushBackDir = 0;
             }

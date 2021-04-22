@@ -28,6 +28,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
         [SerializeField] private Transform _currentSpawnPoint = null!;
+        [SerializeField] private float _pushBackTime = 2f;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
@@ -60,6 +61,7 @@ namespace HMF.Thesis.Player
 
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
+        public float PushBackTime { get => _pushBackTime;}
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
