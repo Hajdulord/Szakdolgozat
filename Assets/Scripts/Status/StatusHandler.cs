@@ -14,63 +14,11 @@ namespace HMF.Thesis.Status
 
         private GameObject _gameObject;
 
-        [Obsolete]
-        private bool _reset = false;
-
         public StatusHandler(GameObject gameObject)
         {
             _cachedStatuses = new Dictionary<string, StatusBase>();
             _activeStatuses = new Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)>();
             _gameObject = gameObject;
-        }
-        
-        [Obsolete]
-        public void CalculateStatusEffects()
-        {
-            var time = Time.time;
-            var statuesToChange = new List<string>();
-            var statuesToRemove = new List<string>();
-
-            if (_reset)
-            {
-                //Debug.Log(_activeStatuses.Count);
-                _activeStatuses.Clear();
-                return;
-            }
-
-            foreach (var status in _activeStatuses)
-            {
-                if (status.Value.EffectTime - time <= 0)
-                {
-                    status.Value.Status.Affect(_gameObject);
-                    Debug.Log($"{status.Value.Status.Name} has effected.");
-                    //_activeStatuses[status.Key] = (status.Value.Status, status.Value.ExpirationTime,status.Value.Status.EffectInterval + Time.time);
-                    if(!statuesToChange.Contains(status.Key))
-                    {
-                        statuesToChange.Add(status.Key);
-                    }
-                }
-                if (status.Value.ExpirationTime - time <= 0)
-                {
-                    //RemoveStatus(status.Key);
-                    //Debug.Log($"{status.Value.Status.Name} has ended.");
-                    if(!statuesToRemove.Contains(status.Key))
-                    {
-                        statuesToRemove.Add(status.Key);
-                    }
-                }
-            }
-            
-            foreach(var status in statuesToChange)
-            {
-                _activeStatuses[status] = ( _activeStatuses[status].Status,  _activeStatuses[status].ExpirationTime,  _activeStatuses[status].Status.EffectInterval + Time.time);
-            }
-
-            foreach (var status in statuesToRemove)
-            {
-                RemoveStatus(status);
-                Debug.Log($"{status} has ended.");
-            }
         }
 
         public void AddStatus(string status)
@@ -106,6 +54,7 @@ namespace HMF.Thesis.Status
                 //_activeStatuses[status].Status.PrePhase(_gameObject);
                 //_activeStatuses[status].Status.Affect(_gameObject);
                 //Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
+                ActiveStatusVizualizer.Instance.Add(status);
                 _gameObject.GetComponent<Dummy>().StartCoroutine(Use(_activeStatuses[status].Status));
             }
         }
@@ -116,7 +65,7 @@ namespace HMF.Thesis.Status
             status.PrePhase(_gameObject);
 
             
-            //Debug.Log($"{status.Name} started.");
+            Debug.Log($"{status.Name} started.");
 
             while (time < status.LifeTime)
             {
@@ -132,6 +81,8 @@ namespace HMF.Thesis.Status
             status.CloseUp(_gameObject);
 
             //Debug.Log($"{status.Name} has ended.");
+
+            ActiveStatusVizualizer.Instance.Remove(status.Name);
 
             RemoveStatus(status.Name);
         }

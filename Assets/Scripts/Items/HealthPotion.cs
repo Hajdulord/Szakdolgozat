@@ -32,6 +32,10 @@ namespace HMF.Thesis.Items
             var healable = origin.GetComponent<IHealableComponent>()?.Healable;
 
             healable.Heal(_consumableData.affectAmount);
+
+            var status = origin.GetComponent<IStatusHandlerComponent>()?.StatusHandler;
+
+            status.AddStatus(_consumableData.status.ToString());
         }
     }
 }
