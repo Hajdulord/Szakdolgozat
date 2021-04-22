@@ -17,6 +17,7 @@ namespace HMF.Thesis.Enemys
             if (other.gameObject.tag == "Player")
             {
                 _stateMachine.Target = other.gameObject;
+                //Physics2D.IgnoreCollision(other, GetComponentInParent<CapsuleCollider2D>());
             }
         }
 

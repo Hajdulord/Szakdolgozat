@@ -12877,7 +12877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5819661992474143432, guid: 1692f1d4db235124d919df0c95b2902e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.31
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 5819661992474143432, guid: 1692f1d4db235124d919df0c95b2902e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41674,6 +41674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endMenu: {fileID: 118872304}
+  _enemys: {fileID: 1821164652}
 --- !u!1 &1259548464
 GameObject:
   m_ObjectHideFlags: 0
