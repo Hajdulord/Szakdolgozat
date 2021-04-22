@@ -9,9 +9,9 @@ namespace HMF.Thesis.Status.ActualStatuses
     {
         public override string Name => "Stunned";
 
-        public override float LifeTime => 10f;
+        public override float LifeTime => 5f;
 
-        public override float EffectInterval => 10f;
+        public override float EffectInterval => 4f;
 
         private float _damage = 10f;
 
@@ -24,9 +24,11 @@ namespace HMF.Thesis.Status.ActualStatuses
         public override void PrePhase(GameObject gameObject)
         {
             var rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            //Debug.Log(rigidbody);
             if (rigidbody != null)
             {
-                rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX |RigidbodyConstraints2D.FreezeRotation;
+                //Debug.Log("lock");
             }
         }
 

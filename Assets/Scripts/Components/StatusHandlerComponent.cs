@@ -6,6 +6,7 @@ using HMF.Thesis.Interfaces.ComponentInterfaces;
 //! Needs Comments!
 namespace HMF.Thesis.Components
 {
+    [RequireComponent(typeof(Dummy))]
     public class StatusHandlerComponent : MonoBehaviour, IStatusHandlerComponent
     {
         private IStatusHandler _statusHandler;

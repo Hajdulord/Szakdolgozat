@@ -116,7 +116,7 @@ namespace HMF.Thesis.Status
             status.PrePhase(_gameObject);
 
             
-            //Debug.Log($"{status} started.");
+            //Debug.Log($"{status.Name} started.");
 
             while (time < status.LifeTime)
             {
@@ -131,7 +131,7 @@ namespace HMF.Thesis.Status
 
             status.CloseUp(_gameObject);
 
-            //Debug.Log($"{status} has ended.");
+            //Debug.Log($"{status.Name} has ended.");
 
             RemoveStatus(status.Name);
         }
