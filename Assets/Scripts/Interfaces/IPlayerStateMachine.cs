@@ -12,5 +12,6 @@ namespace HMF.Thesis.Interfaces
         bool IsDashing { get; }
         int MoveDirection { get; }
         float PushBackDir { get; set; }
+        float PushBackTime { get; }
     }
 }

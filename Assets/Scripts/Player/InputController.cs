@@ -15,11 +15,18 @@ namespace HMF.Thesis.Player
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
         [SerializeField] private GameObject _pauseMenu = null!;
 
+        private Rigidbody2D _rigidbody = null;
+
         private float _mainWeaponTime = 0;
         private float _inventoryOneTime = 0;
         private float _inventoryTwoTime = 0;
         private float _inventoryThreeTime = 0;
         private float _inventoryFourTime = 0;
+
+        private void Awake() 
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
 
         /// Sets the falg to enter the Jump sate.
         /*!
@@ -27,7 +34,9 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-            if(callback.started)
+            if(callback.started && 
+                _rigidbody?.constraints != (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation) && 
+                _stateMachine.GroundCheck())
             {
                 _stateMachine.IsJumping = true;
             }

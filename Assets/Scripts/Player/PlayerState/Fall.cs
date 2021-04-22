@@ -23,8 +23,10 @@ namespace HMF.Thesis.Player
         public void OnEnter()
         {
             //Debug.Log("Fall");
+            //_animator.SetBool("IsFalling", true);
+            _animator.SetInteger("YDir", -1);
+
             _move.Fall();
-            _animator.SetBool("IsFalling", true);
         }
 
         public void OnExit()
@@ -33,6 +35,8 @@ namespace HMF.Thesis.Player
             //_playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.jumpLand;
             _playerStateMachine.audioSource.clip = MusicHandler.Instance.jumpLand;
             _playerStateMachine.audioSource.Play();
+            _animator.SetInteger("YDir", 0);
+            //_animator.SetBool("IsFalling", false);
         }
 
         public void Tick()

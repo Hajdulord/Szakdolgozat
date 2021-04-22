@@ -372,7 +372,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -477,7 +477,6 @@ MonoBehaviour:
   _audioSource: {fileID: 4412591056972295171}
   _audioSourceAttack: {fileID: 4412591056972295173}
   _audioSourceAttack2: {fileID: 4412591056972295170}
-  _musicHandler: {fileID: 0}
   _inRange: {fileID: 6649283642676820503}
   start: {fileID: 4412591055591218802}
   end: {fileID: 4412591056723330354}
