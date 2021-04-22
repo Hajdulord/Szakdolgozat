@@ -246,7 +246,7 @@ namespace HMF.Thesis.Player
             var output = false;
 
             //Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.25f, .05f), 0, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .08f), 0, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -259,12 +259,12 @@ namespace HMF.Thesis.Player
             return output;
         }
 
-        /*void OnDrawGizmosSelected()
+        void OnDrawGizmosSelected()
         {
             // Display the explosion radius when selected
             Gizmos.color = new Color(1, 1, 0, 0.75F);
-            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.25f, .05f));
-        }*/
+            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .08f));
+        }
 
         public void Dead()
         {

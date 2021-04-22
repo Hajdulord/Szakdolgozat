@@ -25,8 +25,8 @@ namespace HMF.Thesis.Player.PlayerStates
         {
             //_animator.SetBool("IsJumping", true);
             _animator.SetInteger("YDir", 1);
-            //_move.Jump();
-            Debug.Log("Jump");
+            _move.Jump();
+            //Debug.Log("Jump");
         }
 
         public void OnExit()

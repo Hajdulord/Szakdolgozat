@@ -115,6 +115,7 @@ namespace HMF.Thesis.Logic
 		*/
 		public void Jump()
 		{
+			_rigidbody.velocity = Vector2.zero;
 			_rigidbody.AddForce(Vector2.up * JumpSpeed);
 		}
 
