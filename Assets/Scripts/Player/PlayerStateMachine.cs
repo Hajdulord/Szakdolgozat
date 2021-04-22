@@ -62,6 +62,7 @@ namespace HMF.Thesis.Player
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
         public float PushBackTime { get => _pushBackTime;}
+        public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
@@ -236,8 +237,6 @@ namespace HMF.Thesis.Player
                 }
 
                 PushBackDir = dir;
-
-                _pushBackInmunity = Time.time + 4f;
             }
             //_damageableComponent.Damageable.TakeDamage();
         }

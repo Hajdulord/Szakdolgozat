@@ -13,7 +13,9 @@ namespace HMF.Thesis.Player
         private PlayerStateMachine _playerStateMachine;
         private Animator _animator;
 
-        private float time = 0f;
+        private float _time = 0f;
+
+        private RigidbodyConstraints2D _constrains;
 
         public PushBack(IMove move, Animator animator, Rigidbody2D rigidbody, PlayerStateMachine playerStateMachine)
         {
@@ -28,18 +30,25 @@ namespace HMF.Thesis.Player
             //Debug.Log("PushBack");
             _move.PushBack(_playerStateMachine.PushBackDir);
             _animator.SetBool("IsHurt", true);
-            time = Time.time + _playerStateMachine.PushBackTime;
+            _time = Time.time + _playerStateMachine.PushBackTime;
+
+            _constrains = _rigidbody.constraints;
+
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
             _animator.SetBool("IsHurt", false);
+            _rigidbody.constraints = _constrains;
+            _playerStateMachine.PushBackInmunity = Time.time + 2f;
+
         }
 
         public void Tick()
         {
-            if (Time.time >= time || _rigidbody.velocity.x == 0)
+            if (Time.time >= _time || _rigidbody.velocity.x == 0)
             {
                 _playerStateMachine.PushBackDir = 0;
             }

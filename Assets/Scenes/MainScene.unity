@@ -20185,6 +20185,7 @@ MonoBehaviour:
   _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
   DeathCanvas: {fileID: 420494069}
   _currentSpawnPoint: {fileID: 0}
+  _pushBackTime: 3
   dashDust: {fileID: 1928777164}
   swordPoint: {fileID: 1702327519}
   inventoryUI: {fileID: 380593710}
@@ -46388,7 +46389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1564734241}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47995,7 +47996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702327520}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SwordPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
