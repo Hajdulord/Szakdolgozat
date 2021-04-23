@@ -249,7 +249,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -342,8 +342,10 @@ MonoBehaviour:
   _audioSource: {fileID: 1923322178040338849}
   _audioSourceAttack: {fileID: 1923322178040338854}
   _audioSourceAttack2: {fileID: 1923322178040338848}
-  _musicHandler: {fileID: 0}
   _inRange: {fileID: 7831826899249685249}
+  _layersToTarget:
+    serializedVersion: 2
+    m_Bits: 256
   start: {fileID: 1923322179256490710}
   end: {fileID: 1923322177772895299}
 --- !u!95 &1923322178040338855

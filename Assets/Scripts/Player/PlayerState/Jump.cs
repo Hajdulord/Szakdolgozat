@@ -23,16 +23,16 @@ namespace HMF.Thesis.Player.PlayerStates
 
         public void OnEnter()
         {
-            
+            //_animator.SetBool("IsJumping", true);
+            _animator.SetInteger("YDir", 1);
             _move.Jump();
             //Debug.Log("Jump");
-            _animator.SetBool("IsJumping", true);
         }
 
         public void OnExit()
         {
-            _playerStateMachine.IsJumping = false;
-            _animator.SetBool("IsJumping", false);
+            //_playerStateMachine.IsJumping = false;
+            //_animator.SetBool("IsJumping", false);
         }
 
         public void Tick()

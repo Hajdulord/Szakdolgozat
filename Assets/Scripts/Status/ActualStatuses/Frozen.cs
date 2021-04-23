@@ -30,7 +30,7 @@ namespace HMF.Thesis.Status.ActualStatuses
 
             if (move != null)
             {
-                move.Speed -= _slow;
+                move.Speed =  Mathf.Max(1, move.Speed - _slow);
             }
         }
 

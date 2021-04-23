@@ -23,6 +23,7 @@ namespace HMF.Thesis.Enemys
         [SerializeField] private AudioSource _audioSourceAttack2 = null;
         //[SerializeField] private MusicHandler _musicHandler = null;
         [SerializeField] private InRange _inRange = null!;
+        [SerializeField] private LayerMask _layersToTarget;
 
 
         [Header("Serialized Public Fields")]
@@ -47,6 +48,8 @@ namespace HMF.Thesis.Enemys
         public AudioSource AudioSource { get => _audioSource;}
         public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
         public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
+        public LayerMask LayersToTarget { get => _layersToTarget; }
+
         //public MusicHandler MusicHandler { get => _musicHandler;}
 
         private void Awake()

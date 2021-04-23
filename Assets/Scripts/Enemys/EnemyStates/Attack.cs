@@ -61,7 +61,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
                 _stateMachine.AudioSourceAttack2.Play();
 
                 _attack.Origin = _stateMachine.SwordPoint;
-                _attack.Attack(_stateMachine.Weapon, _tagsToTarget);
+                _attack.Attack(_stateMachine.Weapon, _tagsToTarget, _stateMachine.LayersToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
 
                 //_stateMachine.AudioSourceAttack.clip = _stateMachine.MusicHandler.Serve(Music.Category.Swords);
@@ -82,7 +82,7 @@ namespace HMF.Thesis.Enemys.EnemyStates
                 _stateMachine.AudioSourceAttack2.Play();
 
                 _attack.Origin = _stateMachine.ThisGameObject;
-                _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget);
+                _attack.Attack(_stateMachine.MagicFocus, _tagsToTarget, _stateMachine.LayersToTarget);
                 _timeMagic = Time.time + _stateMachine.MagicFocus.attackTime;
 
                 _stateMachine.AudioSourceAttack.clip = (_stateMachine.MagicFocus as HMF.Thesis.Items.MagicFocus).Clip;

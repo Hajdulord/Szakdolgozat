@@ -12,9 +12,9 @@ namespace HMF.Thesis.Logic
             Origin = origin;
         }
 
-        public void Attack(IItem item, string[] tagsToTarget)
+        public void Attack(IItem item, string[] tagsToTarget, LayerMask layersToTarget)
         {
-            item.Use(Origin, tagsToTarget);
+            item.Use(Origin, tagsToTarget, layersToTarget);
         }
     }
 }

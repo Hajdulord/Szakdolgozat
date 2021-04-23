@@ -27,11 +27,15 @@ namespace HMF.Thesis.Items
             _consumableData = consumable;
         }
 
-        public void Use(GameObject origin, string[] tagsToTarget)
+        public void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
         {
             var healable = origin.GetComponent<IHealableComponent>()?.Healable;
 
             healable.Heal(_consumableData.affectAmount);
+
+            var status = origin.GetComponent<IStatusHandlerComponent>()?.StatusHandler;
+
+            status.AddStatus(_consumableData.status.ToString());
         }
     }
 }

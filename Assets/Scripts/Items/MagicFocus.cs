@@ -25,9 +25,14 @@ namespace HMF.Thesis.Items
             _magicHandler.AddNewMagic(_magicFocusData.magicType.ToString(), _magicFocusData);
         }
 
-        public void Use(GameObject origin, string[] tagsToTarget)
+        public void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
         {
-            _magicHandler.UseMagic(_magicFocusData.magicType.ToString(), tagsToTarget, origin.transform.position, _magicFocusData.animationToSpawn, origin.transform.right.x);
+            _magicHandler.UseMagic(
+                _magicFocusData.magicType.ToString(), 
+                tagsToTarget, origin.transform.position, 
+                layersToTarget, 
+                _magicFocusData.animationToSpawn, 
+                origin.transform.right.x);
         }
     }
 }

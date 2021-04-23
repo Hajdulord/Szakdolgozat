@@ -15,7 +15,7 @@ namespace HMF.Thesis.Enemys
         private void Awake() 
         {
             _stateMachine = GetComponentInParent<IEnemyStateMachine>();
-            _collider.radius = _stateMachine.WeaponData.attackRange / 2;
+            _collider.radius = _stateMachine.WeaponData.attackRange / 4;
         }
 
         private void OnTriggerEnter2D(Collider2D other) 
