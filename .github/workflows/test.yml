@@ -42,7 +42,7 @@ jobs:
       - uses: webbertakken/unity-test-runner@v2.0-alpha-2
         id: tests
         with:
-          customParameters: -nographics -debugCodeOptimization -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;generateHtmlReport;generateBadgeReport;assemblyFilters:-Components,-Misc,-Music,-Menu,-Player,-Enemy,-Paralex;pathFilters:-*/Assets/Input/*,-*/Assets/Scripts/Tests/* #nographics needed for proper run - known bug 
+          customParameters: -nographics -debugCodeOptimization -enableCodeCoverage -coverageOptions enableCyclomaticComplexity;generateHtmlReport;generateBadgeReport;assemblyFilters:-Components,-Misc,-Music,-Menu,-Player,-Enemy,-Parallax;pathFilters:-*/Assets/Input/*,-*/Assets/Scripts/Tests/* #nographics needed for proper run - known bug 
           unityVersion: ${{ matrix.unityVersion }}
           projectPath: ${{ matrix.projectPath }}
           testMode: ${{ matrix.testMode }}
