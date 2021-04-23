@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameplayactions_35',['GameplayActions',['../struct_controls_1_1_gameplay_actions.html',1,'Controls']]]
+  ['gameplayactions_36',['GameplayActions',['../struct_controls_1_1_gameplay_actions.html',1,'Controls']]]
 ];

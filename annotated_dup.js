@@ -78,6 +78,7 @@ var annotated_dup =
         [ "Misc", "namespace_h_m_f_1_1_thesis_1_1_misc.html", [
           [ "End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
           [ "HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar" ],
+          [ "ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer" ],
           [ "PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
           [ "RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener" ],
           [ "SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
@@ -120,6 +121,7 @@ var annotated_dup =
             [ "Healing", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_healing.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_healing" ],
             [ "Stunned", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_stunned.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_actual_statuses_1_1_stunned" ]
           ] ],
+          [ "ActiveStatusVizualizer", "class_h_m_f_1_1_thesis_1_1_status_1_1_active_status_vizualizer.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_active_status_vizualizer" ],
           [ "Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ],
           [ "StatusBase", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_base" ],
           [ "StatusHandler", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler.html", "class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler" ]

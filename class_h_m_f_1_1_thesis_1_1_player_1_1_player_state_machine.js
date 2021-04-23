@@ -15,6 +15,9 @@ var class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine =
     [ "Inventory", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ae68d06ebed10762b63345e366002b410", null ],
     [ "IsDashing", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a5c18b4e15ce8152fc9a946d5e14cfb41", null ],
     [ "IsJumping", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a3dec1b0eff183b8d658d03fd462bcac6", null ],
+    [ "LayersToTarget", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a6246bfffe55a2f91b5ea0af8af719985", null ],
     [ "MoveDirection", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#aa2b10fa456dfae3f3de50304cbc6e936", null ],
-    [ "PushBackDir", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a703ca81e7103d6b758a0aedce16f9388", null ]
+    [ "PushBackDir", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a703ca81e7103d6b758a0aedce16f9388", null ],
+    [ "PushBackInmunity", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a0b6dee294c5b0dd79729f98969b5071c", null ],
+    [ "PushBackTime", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a684f3c12124a57a43e65928b91fb3e48", null ]
 ];

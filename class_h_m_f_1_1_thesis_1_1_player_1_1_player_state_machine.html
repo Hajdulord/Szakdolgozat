@@ -175,6 +175,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsJumping</b> = false
 <tr class="memitem:a469265454885c1db3271857396580a00"><td class="memItemLeft" align="right" valign="top"><a id="a469265454885c1db3271857396580a00"></a>
 Transform&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentSpawnPoint</b><code> [get, set]</code></td></tr>
 <tr class="separator:a469265454885c1db3271857396580a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684f3c12124a57a43e65928b91fb3e48"><td class="memItemLeft" align="right" valign="top"><a id="a684f3c12124a57a43e65928b91fb3e48"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackTime</b><code> [get]</code></td></tr>
+<tr class="separator:a684f3c12124a57a43e65928b91fb3e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b6dee294c5b0dd79729f98969b5071c"><td class="memItemLeft" align="right" valign="top"><a id="a0b6dee294c5b0dd79729f98969b5071c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackInmunity</b><code> [get, set]</code></td></tr>
+<tr class="separator:a0b6dee294c5b0dd79729f98969b5071c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6246bfffe55a2f91b5ea0af8af719985"><td class="memItemLeft" align="right" valign="top"><a id="a6246bfffe55a2f91b5ea0af8af719985"></a>
+LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>LayersToTarget</b><code> [get, set]</code></td></tr>
+<tr class="separator:a6246bfffe55a2f91b5ea0af8af719985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html">HMF.Thesis.Interfaces.IPlayerSateMachine</a></td></tr>
 <tr class="memitem:aa94c1729c26df1f08cd85c575e3748be inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="aa94c1729c26df1f08cd85c575e3748be"></a>
 Transform&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentSpawnPoint</b><code> [get, set]</code></td></tr>
@@ -197,6 +206,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>MoveDirection</b><code
 <tr class="memitem:af0be4d3ee7c305430f3d94fb73100d3f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="af0be4d3ee7c305430f3d94fb73100d3f"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackDir</b><code> [get, set]</code></td></tr>
 <tr class="separator:af0be4d3ee7c305430f3d94fb73100d3f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8125f8c4290660afbe49ffe4432876f4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a8125f8c4290660afbe49ffe4432876f4"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackTime</b><code> [get]</code></td></tr>
+<tr class="separator:a8125f8c4290660afbe49ffe4432876f4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726ce1189638f3a69d377c540c3bfe3b inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a726ce1189638f3a69d377c540c3bfe3b"></a>
+LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>LayersToTarget</b><code> [get, set]</code></td></tr>
+<tr class="separator:a726ce1189638f3a69d377c540c3bfe3b inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is used to manage the player's state. </p>
@@ -210,7 +225,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackDir</b><code
 			<ul>
 				<li class="navelem"><a class="el" href="namespace_h_m_f.html">HMF</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis.html">Thesis</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis_1_1_player.html">Player</a></li><li class="navelem"><a class="el" href="class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html">PlayerStateMachine</a></li>
 				<li class="footer">
-					Generated on Tue Apr 20 2021 18:43:27 for Thesis by <a href="http://www.doxygen.org/index.html">
+					Generated on Fri Apr 23 2021 16:19:10 for Thesis by <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"
                      onerror="this.onerror=null;this.src='doxygen.svg';"/></a> 1.9.1.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.

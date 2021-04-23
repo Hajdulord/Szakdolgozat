@@ -1,7 +1,7 @@
 var class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus =
 [
     [ "MagicFocus", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#a690c224842121707f87e5d1f78167ecc", null ],
-    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#ae155d421be51996baf3a343fe02cc8c4", null ],
+    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#a66b199a3c3540082abe8d1e616439298", null ],
     [ "attackTime", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#a4be1653ddf1082ddfece9102a128857f", null ],
     [ "Clip", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#a5fd59a3093990cff6932012627062ea3", null ],
     [ "Description", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html#aba5d47e6b99c653bca19e4d11d166049", null ],

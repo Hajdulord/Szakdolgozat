@@ -112,6 +112,7 @@ var hierarchy =
       [ "HMF.Thesis.Menu.Menu", "class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html", null ],
       [ "HMF.Thesis.Misc.End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
+      [ "HMF.Thesis.Misc.ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", null ],
       [ "HMF.Thesis.Misc.PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
       [ "HMF.Thesis.Misc.RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", null ],
       [ "HMF.Thesis.Misc.SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
@@ -124,6 +125,7 @@ var hierarchy =
       [ "HMF.Thesis.Player.DustAnimation", "class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html", null ],
       [ "HMF.Thesis.Player.InputController", "class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html", null ],
       [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ],
+      [ "HMF.Thesis.Status.ActiveStatusVizualizer", "class_h_m_f_1_1_thesis_1_1_status_1_1_active_status_vizualizer.html", null ],
       [ "HMF.Thesis.Status.Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ]
     ] ],
     [ "HMF.Thesis.Tests.Logic.MoveLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html", null ],

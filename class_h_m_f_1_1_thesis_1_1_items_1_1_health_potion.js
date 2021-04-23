@@ -1,7 +1,7 @@
 var class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion =
 [
     [ "HealthPotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a50e8038de5e6e920ad6f648892ae6919", null ],
-    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a0081ab5490efdf2e4f933041318ad975", null ],
+    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a1d6a9a7cab01af45f13a7b910bea8459", null ],
     [ "attackTime", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#af83c01e53f15272de74500fd42334035", null ],
     [ "Description", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#ae82da315b4d9cdfa9f5b8e7ff7026f15", null ],
     [ "Name", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a9b6617619f395a5f8a052d4083b81918", null ],
