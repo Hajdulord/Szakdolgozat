@@ -106,6 +106,7 @@ namespace HMF.Thesis.Player
             At(move, jump, grundedAndReadyToJump());
 
             At(jump, fall, falling());
+            At(jump, idle, grunded());
 
             At(fall, idle, grunded());
 
@@ -116,7 +117,7 @@ namespace HMF.Thesis.Player
 
             At(pushBack, idle, notPushedBack());
             At(pushBack, move, notPushedBack());
-            At(pushBack, jump, notPushedBack());
+            //At(pushBack, jump, notPushedBack());
             At(pushBack, fall, notPushedBack());
 
             At(idle, attack, isAttacking());
@@ -126,7 +127,7 @@ namespace HMF.Thesis.Player
             At(pushBack, attack, isAttacking());
 
             At(attack, idle, notAttackingAndIdle());
-            At(attack, jump, notAttackingAndJumping());
+            //At(attack, jump, notAttackingAndJumping());
             At(attack, fall, notAttackingAndFalling());
             At(attack, pushBack, notAttackingAndPushedBack());
 
@@ -151,7 +152,7 @@ namespace HMF.Thesis.Player
             Func<bool> isAttacking() => () => CurrentItem != null;
             Func<bool> notAttackingAndIdle() => () => CurrentItem == null && MoveDirection == 0 && GroundCheck();
             Func<bool> notAttackingAndFalling() => () => CurrentItem == null && _rigidbody.velocity.y < 0f;
-            Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
+            //Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
             Func<bool> notAttackingAndPushedBack() => () => CurrentItem == null && PushBackDir != 0f;
             Func<bool> isDead() => () => _characterComponent.Character.Health <= 0;
             Func<bool> isAlive() => () => _characterComponent.Character.Health > 0;
@@ -248,7 +249,7 @@ namespace HMF.Thesis.Player
             var output = false;
 
             //Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .08f), 0, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .1f), 0, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -265,7 +266,7 @@ namespace HMF.Thesis.Player
         {
             // Display the explosion radius when selected
             Gizmos.color = new Color(1, 1, 0, 0.75F);
-            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .08f));
+            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .1f));
         }
 
         public void Dead()
