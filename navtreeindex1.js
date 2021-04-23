@@ -1,5 +1,15 @@
 var NAVTREEINDEX1 =
 {
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a703ca81e7103d6b758a0aedce16f9388":[1,0,0,0,10,6,17],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a72c7bcc00dbfa75af4f7ff2d5edff029":[1,0,0,0,10,6,1],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a81b890bb4af543815e2de6cc3f852b79":[1,0,0,0,10,6,0],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#aa2b10fa456dfae3f3de50304cbc6e936":[1,0,0,0,10,6,16],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ac23a2278fbaa4b19f15c3d18fc45edda":[1,0,0,0,10,6,5],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ade8812fbf2ead4e886742bd2703290f5":[1,0,0,0,10,6,3],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ae68d06ebed10762b63345e366002b410":[1,0,0,0,10,6,12],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html":[1,0,0,0,10,0,0],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html#a2e31b24f1ea66893cea7eed303a4f6e6":[1,0,0,0,10,0,0,1],
+"class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html#a4223dfc85220f9df3ca272ef7d5f3f7b":[1,0,0,0,10,0,0,0],
 "class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html#ac95e518dced960256786dd9861f8894b":[1,0,0,0,10,0,0,2],
 "class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_death.html#add10dee2d54eea71e7ab6562aad01f1f":[1,0,0,0,10,0,0,3],
 "class_h_m_f_1_1_thesis_1_1_player_1_1_player_states_1_1_idle.html":[1,0,0,0,10,0,1],
@@ -239,15 +249,5 @@ var NAVTREEINDEX1 =
 "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html#a89c9eca391922f933bda0ef6f4b6a6b2":[1,0,0,0,2,8,2],
 "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html#ab1c22d40f0cf52e25c8899839bfae62c":[1,0,0,0,2,8,6],
 "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html#af592abb72e9021a3980f41bd5491cd72":[1,0,0,0,2,8,4],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html#afa8e4440cbace31ec97e4a67a16d4f6d":[1,0,0,0,2,8,1],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html":[1,0,0,0,2,9],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html#ab38a5949b019663146742355dc9ec75a":[1,0,0,0,2,9,0],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html":[1,0,0,0,2,10],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a012b297c35acd14de422d1d2bc22e942":[1,0,0,0,2,10,3],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a295bc98ec6b728aa8f7d3f85b3a2ed95":[1,0,0,0,2,10,9],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a2c7f941b525e3e694f3d3987715facf2":[1,0,0,0,2,10,0],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a464d9a2163c017ee9e5079643655dd33":[1,0,0,0,2,10,5],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a4cc20b80b83e2489e2580fdbd35e7909":[1,0,0,0,2,10,7],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a51cf61c08828cfe33e59d70def774a28":[1,0,0,0,2,10,6],
-"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a5cc5c60fe6144a065a750eec7300d04a":[1,0,0,0,2,10,4]
+"interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html#afa8e4440cbace31ec97e4a67a16d4f6d":[1,0,0,0,2,8,1]
 };
