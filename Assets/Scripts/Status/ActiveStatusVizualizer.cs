@@ -17,7 +17,10 @@ namespace HMF.Thesis.Status
 
         private void Awake() 
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
             _activeStatuses = new HashSet<string>();
         }
 

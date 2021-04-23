@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Misc;
 
 namespace HMF.Thesis.Player
 {
@@ -76,6 +77,7 @@ namespace HMF.Thesis.Player
         {
             if(callback.started && Time.time >= _inventoryOneTime && _stateMachine.Inventory.InUse.ContainsKey(0))
             {
+                ItemCooldownVisualizer.Instance.StartCooldown(0, (int) _stateMachine.Inventory.InUse[0].attackTime);
                 _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(0);
                 //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
@@ -88,6 +90,7 @@ namespace HMF.Thesis.Player
         {
             if(callback.started && Time.time >= _inventoryTwoTime && _stateMachine.Inventory.InUse.ContainsKey(1))
             {
+                ItemCooldownVisualizer.Instance.StartCooldown(1, (int) _stateMachine.Inventory.InUse[1].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(1);
@@ -99,6 +102,7 @@ namespace HMF.Thesis.Player
         {
             if(callback.started && Time.time >= _inventoryThreeTime && _stateMachine.Inventory.InUse.ContainsKey(2))
             {
+                ItemCooldownVisualizer.Instance.StartCooldown(2, (int) _stateMachine.Inventory.InUse[2].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(2);
@@ -110,6 +114,7 @@ namespace HMF.Thesis.Player
         {
             if(callback.started && Time.time >= _inventoryFourTime && _stateMachine.Inventory.InUse.ContainsKey(3))
             {
+                ItemCooldownVisualizer.Instance.StartCooldown(3, (int) _stateMachine.Inventory.InUse[3].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
