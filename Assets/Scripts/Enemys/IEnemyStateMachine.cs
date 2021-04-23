@@ -16,5 +16,6 @@ namespace HMF.Thesis.Enemys
         AudioSource AudioSource { get; }
         AudioSource AudioSourceAttack { get; }
         AudioSource AudioSourceAttack2 { get; }
+        LayerMask LayersToTarget { get; }
     }
 }

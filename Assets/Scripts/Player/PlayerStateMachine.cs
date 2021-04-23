@@ -28,6 +28,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private ConsumableData _consumableData = null!;
         [SerializeField] private GameObject DeathCanvas = null!;
         [SerializeField] private Transform _currentSpawnPoint = null!;
+        [SerializeField] private LayerMask _layersToTarget;
         [SerializeField] private float _pushBackTime = 2f;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
@@ -63,6 +64,7 @@ namespace HMF.Thesis.Player
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
         public float PushBackTime { get => _pushBackTime;}
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
+        public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()

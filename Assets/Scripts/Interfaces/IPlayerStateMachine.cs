@@ -13,5 +13,6 @@ namespace HMF.Thesis.Interfaces
         int MoveDirection { get; }
         float PushBackDir { get; set; }
         float PushBackTime { get; }
+        LayerMask LayersToTarget { get; set; }
     }
 }

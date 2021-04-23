@@ -11,7 +11,7 @@ namespace HMF.Thesis.Interfaces
         string Description {get;}
         float attackTime {get;}
 
-        void Use(GameObject origin, string[] tagsToTarget);
+        void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget);
     }
 
     public enum TargetType

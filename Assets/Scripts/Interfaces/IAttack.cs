@@ -1,4 +1,3 @@
-//! Needs Implementation!
 using UnityEngine;
 
 namespace HMF.Thesis.Interfaces
@@ -7,6 +6,6 @@ namespace HMF.Thesis.Interfaces
     {
         GameObject Origin { get; set; }
 
-        void Attack(IItem item, string[] tagsToTarget);
+        void Attack(IItem item, string[] tagsToTarget, LayerMask layersToTarget);
     }
 }

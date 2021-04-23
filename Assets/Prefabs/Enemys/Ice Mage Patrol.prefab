@@ -356,6 +356,9 @@ MonoBehaviour:
   _audioSourceAttack: {fileID: 3730984765197237302}
   _audioSourceAttack2: {fileID: 3730984765197237303}
   _inRange: {fileID: 3715696557685373340}
+  _layersToTarget:
+    serializedVersion: 2
+    m_Bits: 256
   start: {fileID: 3730984763984171947}
   end: {fileID: 3730984764108082352}
 --- !u!95 &3730984765197237301

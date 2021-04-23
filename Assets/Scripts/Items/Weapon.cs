@@ -21,9 +21,9 @@ namespace HMF.Thesis.Items
             _weaponData = weaponData;
         }
 
-        public void Use(GameObject origin, string[] tagsToTarget)
+        public void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
         {
-            var colliders = Physics2D.OverlapCircleAll(origin.transform.position, _weaponData.attackRange);
+            var colliders = Physics2D.OverlapCircleAll(origin.transform.position, _weaponData.attackRange, layersToTarget);
 
             foreach (var item in colliders)
             {

@@ -61,7 +61,7 @@ namespace HMF.Thesis.Player
             }
             
             
-            _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget);
+            _attack.Attack(_playerStateMachine.CurrentItem, _tagsToTarget, _playerStateMachine.LayersToTarget);
         }
 
         public void OnExit()

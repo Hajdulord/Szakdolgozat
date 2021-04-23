@@ -54,7 +54,6 @@ namespace HMF.Thesis.Status
                 //_activeStatuses[status].Status.PrePhase(_gameObject);
                 //_activeStatuses[status].Status.Affect(_gameObject);
                 //Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
-                ActiveStatusVizualizer.Instance.Add(status);
                 _gameObject.GetComponent<Dummy>().StartCoroutine(Use(_activeStatuses[status].Status));
             }
         }
@@ -63,6 +62,11 @@ namespace HMF.Thesis.Status
         {
             var time = 0f;
             status.PrePhase(_gameObject);
+
+            if (_gameObject.tag == "Player")
+            {
+                ActiveStatusVizualizer.Instance.Add(status.Name);
+            }
 
             
             //Debug.Log($"{status.Name} started.");
@@ -82,7 +86,10 @@ namespace HMF.Thesis.Status
 
             //Debug.Log($"{status.Name} has ended.");
 
-            ActiveStatusVizualizer.Instance.Remove(status.Name);
+            if (_gameObject.tag == "Player")
+            {
+                ActiveStatusVizualizer.Instance.Remove(status.Name);
+            }
 
             RemoveStatus(status.Name);
         }
