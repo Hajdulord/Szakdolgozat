@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>04/23/2021 - 09:11:48</Generatedon>
+    <Generatedon>04/23/2021 - 09:23:13</Generatedon>
     <Parser>OpenCoverParser</Parser>
-    <Assemblies>5</Assemblies>
-    <Classes>25</Classes>
-    <Files>25</Files>
+    <Assemblies>4</Assemblies>
+    <Classes>22</Classes>
+    <Files>22</Files>
     <Coveredlines>111</Coveredlines>
-    <Uncoveredlines>487</Uncoveredlines>
-    <Coverablelines>598</Coverablelines>
-    <Totallines>1209</Totallines>
-    <Linecoverage>18.5</Linecoverage>
+    <Uncoveredlines>442</Uncoveredlines>
+    <Coverablelines>553</Coverablelines>
+    <Totallines>1117</Totallines>
+    <Linecoverage>20</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
@@ -34,11 +34,6 @@
       <Class name="HMF.Thesis.Magic.DestroyAfterAnimationEnds" coverage="0" coveredlines="0" coverablelines="4" totallines="15" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Magic.MagicFactory" coverage="0" coveredlines="0" coverablelines="22" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Magic.MagicHandler" coverage="0" coveredlines="0" coverablelines="32" totallines="57" branchcoverage="" coveredbranches="0" totalbranches="0" />
-    </Assembly>
-    <Assembly name="Parallax" classes="3" coverage="0" coveredlines="0" coverablelines="45" totallines="92" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Parallax.ParallaxBackground" coverage="0" coveredlines="0" coverablelines="26" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Parallax.ParallaxCamera" coverage="0" coveredlines="0" coverablelines="14" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Parallax.ParallaxLayer" coverage="0" coveredlines="0" coverablelines="5" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Status" classes="8" coverage="16" coveredlines="33" coverablelines="206" totallines="422" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Status.ActiveStatusVizualizer" coverage="0" coveredlines="0" coverablelines="37" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" />

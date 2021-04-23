@@ -248,13 +248,6 @@ var assemblies = [
       { "name": "HMF.Thesis.Magic.MagicHandler", "rp": "Magic_MagicHandler.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 57, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
   {
-    "name": "Parallax",
-    "classes": [
-      { "name": "HMF.Thesis.Parallax.ParallaxBackground", "rp": "Parallax_ParallaxBackground.html", "cl": 0, "ucl": 26, "cal": 26, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Parallax.ParallaxCamera", "rp": "Parallax_ParallaxCamera.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Parallax.ParallaxLayer", "rp": "Parallax_ParallaxLayer.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 18, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-    ]},
-  {
     "name": "Status",
     "classes": [
       { "name": "HMF.Thesis.Status.ActiveStatusVizualizer", "rp": "Status_ActiveStatusVizualizer.html", "cl": 0, "ucl": 37, "cal": 37, "tl": 66, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
