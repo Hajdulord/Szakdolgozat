@@ -255,7 +255,7 @@ var assemblies = [
       { "name": "HMF.Thesis.Status.ActualStatuses.Burning", "rp": "Status_Burning.html", "cl": 2, "ucl": 10, "cal": 12, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.ActualStatuses.Frozen", "rp": "Status_Frozen.html", "cl": 3, "ucl": 22, "cal": 25, "tl": 47, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.ActualStatuses.Healing", "rp": "Status_Healing.html", "cl": 2, "ucl": 10, "cal": 12, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HMF.Thesis.Status.ActualStatuses.Stunned", "rp": "Status_Stunned.html", "cl": 2, "ucl": 21, "cal": 23, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Status.ActualStatuses.Stunned", "rp": "Status_Stunned.html", "cl": 2, "ucl": 31, "cal": 33, "tl": 58, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.StatusFactory", "rp": "Status_StatusFactory.html", "cl": 22, "ucl": 0, "cal": 22, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.StatusHandler", "rp": "Status_StatusHandler.html", "cl": 0, "ucl": 69, "cal": 69, "tl": 121, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
     ]},
