@@ -13,10 +13,16 @@ namespace HMF.Thesis.Misc
             Time.timeScale = 1f;
 
             gameIsPaused = false;
+
+            Score.Instance.StartTimer();
         }
 
         public static void PauseGame()
         {
+            Score.Instance.StopTimer();
+
+            Debug.Log($"Name: {Score.Instance.Name}\nTime: {Score.Instance.ElapsedTime}\nKills: {Score.Instance.Kills}\nDeaths: {Score.Instance.Deaths}\nScore: {Score.Instance.CalculatedScore()}");
+
             Time.timeScale = 0f;
 
             gameIsPaused = true;
