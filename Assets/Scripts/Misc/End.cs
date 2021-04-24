@@ -13,6 +13,9 @@ namespace HMF.Thesis.Misc
         {
             if (other.gameObject.tag == "Player")
             {
+                Score.Instance.StopTimer();
+                Debug.Log($"Name: {Score.Instance.Name}\nTime: {Score.Instance.ElapsedTime}\nKills: {Score.Instance.Kills}\nDeaths: {Score.Instance.Deaths}\nScore: {Score.Instance.CalculatedScore()}");
+
                 other.gameObject.GetComponent<PlayerInput>().enabled = false;
                 var dummy = other.gameObject.GetComponent<Dummy>();
 

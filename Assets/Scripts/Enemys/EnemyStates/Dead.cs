@@ -3,6 +3,7 @@ using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Music;
 using System.Collections.Generic;
 using System.Linq;
+using HMF.Thesis.Misc;
 
 namespace HMF.Thesis.Enemys
 {
@@ -19,6 +20,8 @@ namespace HMF.Thesis.Enemys
 
         public void OnEnter()
         {
+            Score.Instance.IncreaseKills();
+
             //Debug.Log("Enemy Dead");
             //_stateMachine.ThisGameObject.SetActive(false);
             _animator.SetBool("IsDead", true);

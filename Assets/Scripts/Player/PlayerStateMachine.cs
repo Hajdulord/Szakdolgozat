@@ -70,6 +70,7 @@ namespace HMF.Thesis.Player
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
         {
+            Score.Instance.StartTimer();
             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
@@ -291,6 +292,9 @@ namespace HMF.Thesis.Player
         {
             DeathCanvas.SetActive(true);
 
+            Score.Instance.StopTimer();
+            Score.Instance.IncreaseDeaths();
+
             _enemys.SetActive(false);
 
             yield return new WaitForSeconds(5f);
@@ -310,6 +314,7 @@ namespace HMF.Thesis.Player
             
             DeathCanvas.SetActive(false);
 
+            Score.Instance.StartTimer();
         }
     }
 }
