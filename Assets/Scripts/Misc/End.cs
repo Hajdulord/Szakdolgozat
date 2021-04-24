@@ -22,8 +22,9 @@ namespace HMF.Thesis.Misc
                 foreach(var item in Score.Instance.GetScoreBoard(SceneManager.GetActiveScene().buildIndex))
                 {
                     Debug.Log($"{item.Name} {item.Score}");
-
                 }
+
+                SaveSystem.SaveScore();
 
                 Score.Instance.ResetData();
                 //Debug.Log(Score.Instance.ScoreBoard.OrderBy(s => s.Score).Take(10));

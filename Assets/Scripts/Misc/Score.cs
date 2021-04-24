@@ -28,6 +28,27 @@ namespace HMF.Thesis.Misc
             {
                 Instance = this;
             }
+
+            var data = SaveSystem.LoadScore();
+            
+            if (data != null)
+            {
+              for (int i = 0; i < data.easyNames.Length; i++)
+                {
+                    _scoreBoardEasy.Add((data.easyNames[i], data.easyScores[i]));
+                }
+
+                for (int i = 0; i < data.mediumNames.Length; i++)
+                {
+                    _scoreBoardMedium.Add((data.mediumNames[i], data.mediumScores[i]));
+                }
+
+                for (int i = 0; i < data.hardNames.Length; i++)
+                {
+                    _scoreBoardHard.Add((data.hardNames[i], data.hardScores[i]));
+                }  
+            }
+            
         }
 
         private void Update()
