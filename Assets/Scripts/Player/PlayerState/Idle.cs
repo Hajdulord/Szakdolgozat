@@ -22,6 +22,7 @@ namespace HMF.Thesis.Player.PlayerStates
             //Debug.Log("Idle");
             _rigidbody.velocity = Vector2.zero;
             _animator.SetFloat("Speed", 0);
+            _animator.SetInteger("YDir", 0);
             //_animator.SetBool("IsFalling", false);
 
         }

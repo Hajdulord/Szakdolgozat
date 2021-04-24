@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
+using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.Status.ActualStatuses
 {
@@ -27,8 +26,15 @@ namespace HMF.Thesis.Status.ActualStatuses
             //Debug.Log(rigidbody);
             if (rigidbody != null)
             {
-                rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX |RigidbodyConstraints2D.FreezeRotation;
+                rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
                 //Debug.Log("lock");
+            }
+
+            var player = gameObject.GetComponent<IPlayerSateMachine>();
+
+            if (player != null)
+            {
+                player.IsStunned = true;
             }
         }
 
@@ -39,6 +45,13 @@ namespace HMF.Thesis.Status.ActualStatuses
             {
                 rigidbody.constraints = RigidbodyConstraints2D.None;
                 rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
+            var player = gameObject.GetComponent<IPlayerSateMachine>();
+
+            if (player != null)
+            {
+                player.IsStunned = false;
             }
         }
     }
