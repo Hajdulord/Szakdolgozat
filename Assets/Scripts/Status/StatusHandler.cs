@@ -91,7 +91,7 @@ namespace HMF.Thesis.Status
                 ActiveStatusVizualizer.Instance.Remove(status.Name);
             }
 
-            RemoveStatus(status.Name);
+            _activeStatuses.Remove(status.Name);
         }
 
         public void RemoveAllStatuses()
@@ -101,20 +101,16 @@ namespace HMF.Thesis.Status
             foreach (var status in _activeStatuses)
             {
                 status.Value.Status.CloseUp(_gameObject);
+
+                if (_gameObject.tag == "Player")
+                {
+                    ActiveStatusVizualizer.Instance.Remove(status.Value.Status.Name);
+                }
             }
             
             _activeStatuses.Clear();
 
             _gameObject.GetComponent<Dummy>().StopAllCoroutines();
-        }
-
-        public void RemoveStatus(string status)
-        {
-            if (_activeStatuses.ContainsKey(status))
-            {
-                _activeStatuses[status].Status.CloseUp(_gameObject);
-                _activeStatuses.Remove(status);
-            }
         }
 
     }

@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
+using HMF.Thesis.Status;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -277,6 +278,9 @@ namespace HMF.Thesis.Player
             GetComponent<SpriteRenderer>().enabled = false;
             RefillInventory();
             inventoryUI.UpdateDisplay();
+            GetComponent<InputController>().ResetTimes();
+            Misc.ItemCooldownVisualizer.Instance.ResetAll();
+            //ActiveStatusVizualizer.Instance.
             //GetComponent<StatusHandlerComponent>().enabled = true;
             //gameObject.AddComponent<StatusHandlerComponent>();
         }

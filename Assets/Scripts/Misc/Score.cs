@@ -66,7 +66,7 @@ namespace HMF.Thesis.Misc
                     }
                     else
                     {  
-                        score = Mathf.FloorToInt(_kills / _deaths) * Mathf.RoundToInt(_elapsedTime) / 60 + 1000;
+                        score = Mathf.FloorToInt(_kills / _deaths) * Mathf.RoundToInt(_elapsedTime) / 60;
                     }
                 }
                 else
@@ -80,11 +80,11 @@ namespace HMF.Thesis.Misc
                 {
                     if ((Mathf.RoundToInt(_elapsedTime) / 60) == 0)
                     {
-                        score = _kills + 1000;
+                        score = _kills + 10;
                     }
                     else
                     {  
-                        score = _kills * Mathf.RoundToInt(_elapsedTime) / 60 + 1000;
+                        score = _kills * Mathf.RoundToInt(_elapsedTime) / 60 + 10;
                     }
                 }
                 else

@@ -165,6 +165,15 @@ namespace HMF.Thesis.Player
             }
         }
 
+        public void ResetTimes()
+        {
+            _mainWeaponTime = 0;
+            _inventoryOneTime = 0;
+            _inventoryTwoTime = 0;
+            _inventoryThreeTime = 0;
+            _inventoryFourTime = 0;
+        }
+
         public void Pause()
         {
             //Debug.Log("Pause");
