@@ -15,6 +15,7 @@ namespace HMF.Thesis.Misc
         public int Kills { get => _kills;}
         public float ElapsedTime { get => _elapsedTime;}
         public string Name { get; set;} = "Anonymus";
+        public List<(string Name, int Score)> ScoreBoard {get;} = new List<(string Name, int Score)>();
 
         public static Score Instance {get; private set;}
 
@@ -90,6 +91,11 @@ namespace HMF.Thesis.Misc
             }
 
             return score;
+        }
+
+        public void CalculateScoreBoard()
+        {
+            ScoreBoard.Add((Name, CalculatedScore()));
         }
     }
 }
