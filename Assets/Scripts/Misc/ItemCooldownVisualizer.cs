@@ -43,5 +43,14 @@ namespace HMF.Thesis.Misc
             _holder[index].SetActive(false);
         }
 
+        public void ResetAll()
+        {
+            StopAllCoroutines();
+            foreach(var item in _holder)
+            {
+                item.SetActive(false);
+            }
+        }
+
     }
 }
