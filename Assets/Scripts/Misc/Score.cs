@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace HMF.Thesis.Misc
@@ -15,7 +16,9 @@ namespace HMF.Thesis.Misc
         public int Kills { get => _kills;}
         public float ElapsedTime { get => _elapsedTime;}
         public string Name { get; set;} = "Anonymus";
-        public List<(string Name, int Score)> ScoreBoard {get;} = new List<(string Name, int Score)>();
+        private List<(string Name, int Score)> _scoreBoardEasy  = new List<(string Name, int Score)>();
+        private List<(string Name, int Score)> _scoreBoardMedium  = new List<(string Name, int Score)>();
+        private List<(string Name, int Score)> _scoreBoardHard  = new List<(string Name, int Score)>();
 
         public static Score Instance {get; private set;}
 
@@ -93,9 +96,41 @@ namespace HMF.Thesis.Misc
             return score;
         }
 
-        public void CalculateScoreBoard()
+        public List<(string Name, int Score)> GetScoreBoard(int level)
         {
-            ScoreBoard.Add((Name, CalculatedScore()));
+            switch (level)
+            {
+                case 0:
+                    return _scoreBoardEasy.OrderBy(s => s.Score).Take(10).ToList();
+                case 1:
+                    return _scoreBoardMedium.OrderBy(s => s.Score).Take(10).ToList();
+                case 2:
+                    return _scoreBoardHard.OrderBy(s => s.Score).Take(10).ToList();
+                
+                default:
+                    return null;
+            }
+            
+        }
+
+        public void AddToScoreBoard(int level)
+        {
+            switch (level)
+            {
+                case 0:
+                    _scoreBoardEasy.Add((Name, CalculatedScore()));
+                    break;
+                case 1:
+                    _scoreBoardMedium.Add((Name, CalculatedScore()));
+                    break;
+                case 2:
+                    _scoreBoardHard.Add((Name, CalculatedScore()));
+                    break;
+                
+                default:
+                    break;
+            }
+            
         }
     }
 }
