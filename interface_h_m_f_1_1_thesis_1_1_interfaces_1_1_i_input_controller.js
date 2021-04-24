@@ -8,6 +8,7 @@ var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller =
     [ "Jump", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a1488ec7bac655c2fdc46ae4b241f341d", null ],
     [ "Move", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a4014b4f832d2d58decfac5abc02b8da9", null ],
     [ "NormalMeleeAttack", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ad0e3f5b0cc01af2047c02dca7ab24260", null ],
-    [ "Pause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#aa0060cac7b44db6b42810bee19a27779", null ],
+    [ "Pause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ab0b005c80102ca608dc301067f22582b", null ],
+    [ "PauseCall", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ae1ef0e275bcbfe66380f6155bd98368d", null ],
     [ "UnPause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a0119c50fa51082e99a05c174b070a39a", null ]
 ];

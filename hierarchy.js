@@ -115,6 +115,7 @@ var hierarchy =
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
       [ "HMF.Thesis.Misc.ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", null ],
       [ "HMF.Thesis.Misc.OptionSaver", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html", null ],
+      [ "HMF.Thesis.Misc.Pause", "class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html", null ],
       [ "HMF.Thesis.Misc.PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
       [ "HMF.Thesis.Misc.RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", null ],
       [ "HMF.Thesis.Misc.SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
