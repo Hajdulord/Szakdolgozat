@@ -2417,6 +2417,7 @@ GameObject:
   - component: {fileID: 91654226}
   - component: {fileID: 91654228}
   - component: {fileID: 91654229}
+  - component: {fileID: 91654230}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2676,6 +2677,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: c2993f98893a7b941b1f35166f354a22, type: 2}
+--- !u!114 &91654230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91654219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcc4d9f81652444ea129fdfb36cc7e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &92182816
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,18 +14866,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 148721224}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 600795974}
         m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
         m_MethodName: UnPause
@@ -22624,6 +22625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateMachine: {fileID: 600795973}
   _pauseMenu: {fileID: 148721224}
+  _input: {fileID: 600795978}
 --- !u!114 &600795975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22829,7 +22831,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 600795974}
         m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
-        m_MethodName: Pause
+        m_MethodName: PauseCall
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22841,6 +22843,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 747528fc-70e2-4313-b1a6-0a6b6c41a6fb
     m_ActionName: gameplay/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 600795974}
+        m_TargetAssemblyTypeName: HMF.Thesis.Player.InputController, Player
+        m_MethodName: UnPauseCall
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 55ac3de1-db16-4716-bc81-40ecb9f87c2b
+    m_ActionName: PauseMenu/Unpause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: gameplay
@@ -57543,7 +57561,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2f3c5afa017e1774996092d935229555, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

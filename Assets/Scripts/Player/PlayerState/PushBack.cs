@@ -41,7 +41,14 @@ namespace HMF.Thesis.Player
         {
             _playerStateMachine.IsJumping = false;
             _animator.SetBool("IsHurt", false);
-            _rigidbody.constraints = _constrains;
+            if (_playerStateMachine.IsStunned)
+            {
+                _rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            }
+            else
+            {
+                _rigidbody.constraints = _constrains;
+            }
             _playerStateMachine.PushBackInmunity = Time.time + 2f;
 
         }

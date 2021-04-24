@@ -63,6 +63,7 @@ namespace HMF.Thesis.Player
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
         public float PushBackTime { get => _pushBackTime;}
+        public bool IsStunned { get; set;} = false;
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
 
@@ -106,7 +107,7 @@ namespace HMF.Thesis.Player
             At(move, jump, grundedAndReadyToJump());
 
             At(jump, fall, falling());
-            At(jump, idle, grunded());
+            //At(jump, idle, grunded());
 
             At(fall, idle, grunded());
 
@@ -248,8 +249,8 @@ namespace HMF.Thesis.Player
         {
             var output = false;
 
-            //Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .1f), 0, _jumpLayerMask);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
+            //Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .1f), 0, _jumpLayerMask);
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -266,7 +267,8 @@ namespace HMF.Thesis.Player
         {
             // Display the explosion radius when selected
             Gizmos.color = new Color(1, 1, 0, 0.75F);
-            Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .1f));
+            //Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .1f));
+            Gizmos.DrawSphere(_groundCheck.position, .2f);
         }
 
         public void Dead()

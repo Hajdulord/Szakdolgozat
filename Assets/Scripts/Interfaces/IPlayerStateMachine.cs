@@ -14,5 +14,6 @@ namespace HMF.Thesis.Interfaces
         float PushBackDir { get; set; }
         float PushBackTime { get; }
         LayerMask LayersToTarget { get; set; }
+        bool IsStunned { get; set; }
     }
 }

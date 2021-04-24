@@ -35,9 +35,10 @@ namespace HMF.Thesis.Player
         */    
         public void Jump(InputAction.CallbackContext callback)
         {
-            if(callback.started && 
-                _rigidbody?.constraints != (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation) && 
-                _stateMachine.GroundCheck())
+            if(callback.started &&  
+                !_stateMachine.IsStunned && 
+                _stateMachine.GroundCheck() && 
+                !Misc.Pause.gameIsPaused)
             {
                 _stateMachine.IsJumping = true;
             }
@@ -49,7 +50,7 @@ namespace HMF.Thesis.Player
         */ 
         public void Move(InputAction.CallbackContext callback)
         {
-            if(callback.started)
+            if(callback.started && !Misc.Pause.gameIsPaused)
             {
                 _stateMachine.MoveDirection = (int)callback.ReadValue<float>();
             }
@@ -65,7 +66,7 @@ namespace HMF.Thesis.Player
         */ 
         public void NormalMeleeAttack(InputAction.CallbackContext callback)
         {
-            if(callback.started && Time.time >= _mainWeaponTime)
+            if(callback.started && Time.time >= _mainWeaponTime && !Misc.Pause.gameIsPaused)
             {
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _mainWeaponTime = Time.time + _stateMachine.Inventory.MainWeapon.attackTime;
@@ -75,7 +76,10 @@ namespace HMF.Thesis.Player
 
         public void InventoryOne(InputAction.CallbackContext callback)
         {
-            if(callback.started && Time.time >= _inventoryOneTime && _stateMachine.Inventory.InUse.ContainsKey(0))
+            if(callback.started && 
+                Time.time >= _inventoryOneTime && 
+                _stateMachine.Inventory.InUse.ContainsKey(0) && 
+                !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(0, (int) _stateMachine.Inventory.InUse[0].attackTime);
                 _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
@@ -88,7 +92,10 @@ namespace HMF.Thesis.Player
 
         public void InventoryTwo(InputAction.CallbackContext callback)
         {
-            if(callback.started && Time.time >= _inventoryTwoTime && _stateMachine.Inventory.InUse.ContainsKey(1))
+            if(callback.started && 
+                Time.time >= _inventoryTwoTime && 
+                _stateMachine.Inventory.InUse.ContainsKey(1) && 
+                !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(1, (int) _stateMachine.Inventory.InUse[1].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
@@ -100,7 +107,10 @@ namespace HMF.Thesis.Player
 
         public void InventoryThree(InputAction.CallbackContext callback)
         {
-            if(callback.started && Time.time >= _inventoryThreeTime && _stateMachine.Inventory.InUse.ContainsKey(2))
+            if(callback.started && 
+                Time.time >= _inventoryThreeTime && 
+                _stateMachine.Inventory.InUse.ContainsKey(2) && 
+                !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(2, (int) _stateMachine.Inventory.InUse[2].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
@@ -112,7 +122,10 @@ namespace HMF.Thesis.Player
 
         public void InventoryFour(InputAction.CallbackContext callback)
         {
-            if(callback.started && Time.time >= _inventoryFourTime && _stateMachine.Inventory.InUse.ContainsKey(3))
+            if(callback.started && 
+                Time.time >= _inventoryFourTime && 
+                _stateMachine.Inventory.InUse.ContainsKey(3) && 
+                !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(3, (int) _stateMachine.Inventory.InUse[3].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
@@ -128,24 +141,46 @@ namespace HMF.Thesis.Player
         */ 
         public void Dash(InputAction.CallbackContext callback)
         {
-            if(callback.started)
+            if(callback.started && !Misc.Pause.gameIsPaused)
             {
                 _stateMachine.IsDashing = true;
             }
         }
 
-        public void Pause(InputAction.CallbackContext callback)
+        public void PauseCall(InputAction.CallbackContext callback)
         {
             if(callback.started)
             {
-                _pauseMenu.SetActive(true);
-                GetComponent<PlayerInput>().enabled = false;
+                //Debug.Log("PauseCall");
+
+                if (Misc.Pause.gameIsPaused)
+                {
+                    UnPause();
+                }
+                else
+                {
+                    Pause();
+                }
+
             }
+        }
+
+        public void Pause()
+        {
+            //Debug.Log("Pause");
+
+            Misc.Pause.PauseGame();
+            //GetComponent<PlayerInput>().enabled = true;
+            _pauseMenu.SetActive(true);
         }
 
         public void UnPause()
         {
-            GetComponent<PlayerInput>().enabled = true;
+            //Debug.Log("UnPause");
+
+            Misc.Pause.Resume();
+            //GetComponent<PlayerInput>().enabled = true;
+            _pauseMenu.SetActive(false);
         }
     }
 }
