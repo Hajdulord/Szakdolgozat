@@ -6,8 +6,8 @@
 <area shape="rect" id="node5" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_damageable_component.html" title=" " alt="" coords="11,136,236,177"/>
 <area shape="rect" id="node6" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_damageable_character_component.html" title="A wrapper for DamageableCharacter." alt="" coords="289,136,533,177"/>
 <area shape="rect" id="node7" href="$interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine.html" title=" " alt="" coords="29,229,217,271"/>
-<area shape="rect" id="node8" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_basic_enemy_state_machine.html" title=" " alt="" coords="303,201,520,243"/>
-<area shape="rect" id="node9" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html" title=" " alt="" coords="322,267,501,308"/>
+<area shape="rect" id="node8" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_basic_enemy_state_machine.html" title=" " alt="" coords="303,267,520,308"/>
+<area shape="rect" id="node9" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html" title=" " alt="" coords="322,201,501,243"/>
 <area shape="rect" id="node10" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_healable_component.html" title=" " alt="" coords="12,321,235,363"/>
 <area shape="rect" id="node11" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_healable_component.html" title=" " alt="" coords="300,332,523,373"/>
 <area shape="rect" id="node12" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_health_bar.html" title=" " alt="" coords="14,387,233,414"/>
@@ -20,34 +20,36 @@
 <area shape="rect" id="node19" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_magic_handler_component.html" title=" " alt="" coords="308,565,515,607"/>
 <area shape="rect" id="node20" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html" title=" " alt="" coords="12,635,235,676"/>
 <area shape="rect" id="node21" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html" title="A wrapper for the MoveLogic." alt="" coords="309,631,513,672"/>
-<area shape="rect" id="node22" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="25,2103,222,2144"/>
-<area shape="rect" id="node23" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html" title="This class is used to manage the player&#39;s state." alt="" coords="326,2103,497,2144"/>
-<area shape="rect" id="node24" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html" title=" " alt="" coords="5,2168,241,2209"/>
-<area shape="rect" id="node25" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html" title=" " alt="" coords="306,2168,517,2209"/>
-<area shape="rect" id="node26" title=" " alt="" coords="67,1095,179,1122"/>
-<area shape="rect" id="node27" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html" title=" " alt="" coords="315,1482,508,1509"/>
-<area shape="rect" id="node28" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html" title=" " alt="" coords="320,1533,503,1575"/>
-<area shape="rect" id="node29" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html" title=" " alt="" coords="322,1599,501,1640"/>
-<area shape="rect" id="node30" href="$class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html" title=" " alt="" coords="330,1665,493,1691"/>
-<area shape="rect" id="node31" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_drop_down_setters.html" title=" " alt="" coords="318,1716,505,1757"/>
-<area shape="rect" id="node32" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html" title=" " alt="" coords="337,1782,486,1809"/>
-<area shape="rect" id="node33" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html" title=" " alt="" coords="306,1833,517,1875"/>
-<area shape="rect" id="node34" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html" title=" " alt="" coords="330,1899,493,1926"/>
-<area shape="rect" id="node35" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html" title=" " alt="" coords="312,1950,511,1977"/>
-<area shape="rect" id="node36" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html" title=" " alt="" coords="329,2001,493,2027"/>
-<area shape="rect" id="node37" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html" title=" " alt="" coords="318,2051,505,2078"/>
-<area shape="rect" id="node38" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html" title=" " alt="" coords="307,696,515,737"/>
-<area shape="rect" id="node39" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html" title=" " alt="" coords="331,762,492,789"/>
-<area shape="rect" id="node40" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_score_board.html" title=" " alt="" coords="314,813,509,839"/>
-<area shape="rect" id="node41" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html" title=" " alt="" coords="303,863,520,890"/>
-<area shape="rect" id="node42" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html" title=" " alt="" coords="312,914,511,941"/>
-<area shape="rect" id="node43" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="309,965,513,991"/>
-<area shape="rect" id="node44" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html" title=" " alt="" coords="304,1015,519,1042"/>
-<area shape="rect" id="node45" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_volume_slider.html" title=" " alt="" coords="306,1066,517,1093"/>
-<area shape="rect" id="node46" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_background.html" title=" " alt="" coords="316,1117,507,1159"/>
-<area shape="rect" id="node47" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_camera.html" title=" " alt="" coords="316,1183,507,1224"/>
-<area shape="rect" id="node48" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_layer.html" title=" " alt="" coords="316,1248,507,1289"/>
-<area shape="rect" id="node49" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html" title=" " alt="" coords="301,1314,521,1341"/>
-<area shape="rect" id="node50" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_active_status_vizualizer.html" title=" " alt="" coords="324,1365,499,1407"/>
-<area shape="rect" id="node51" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html" title=" " alt="" coords="321,1431,502,1458"/>
+<area shape="rect" id="node22" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html" title=" " alt="" coords="12,2104,235,2145"/>
+<area shape="rect" id="node23" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html" title=" " alt="" coords="312,2104,511,2145"/>
+<area shape="rect" id="node24" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="25,2169,222,2211"/>
+<area shape="rect" id="node25" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html" title="This class is used to manage the player&#39;s state." alt="" coords="326,2169,497,2211"/>
+<area shape="rect" id="node26" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html" title=" " alt="" coords="5,2235,241,2276"/>
+<area shape="rect" id="node27" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html" title=" " alt="" coords="306,2235,517,2276"/>
+<area shape="rect" id="node28" title=" " alt="" coords="67,1118,179,1145"/>
+<area shape="rect" id="node29" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html" title=" " alt="" coords="315,1635,508,1662"/>
+<area shape="rect" id="node30" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html" title=" " alt="" coords="320,1687,503,1728"/>
+<area shape="rect" id="node31" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html" title=" " alt="" coords="322,1752,501,1793"/>
+<area shape="rect" id="node32" href="$class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html" title=" " alt="" coords="330,1818,493,1845"/>
+<area shape="rect" id="node33" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_drop_down_setters.html" title=" " alt="" coords="318,1869,505,1911"/>
+<area shape="rect" id="node34" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html" title=" " alt="" coords="337,1935,486,1962"/>
+<area shape="rect" id="node35" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html" title=" " alt="" coords="306,1987,517,2028"/>
+<area shape="rect" id="node36" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html" title=" " alt="" coords="330,2053,493,2079"/>
+<area shape="rect" id="node37" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html" title=" " alt="" coords="312,697,511,723"/>
+<area shape="rect" id="node38" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html" title=" " alt="" coords="329,747,493,774"/>
+<area shape="rect" id="node39" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html" title=" " alt="" coords="318,798,505,825"/>
+<area shape="rect" id="node40" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html" title=" " alt="" coords="307,849,515,891"/>
+<area shape="rect" id="node41" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html" title=" " alt="" coords="331,915,492,942"/>
+<area shape="rect" id="node42" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_score_board.html" title=" " alt="" coords="314,966,509,993"/>
+<area shape="rect" id="node43" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html" title=" " alt="" coords="303,1017,520,1043"/>
+<area shape="rect" id="node44" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html" title=" " alt="" coords="312,1067,511,1094"/>
+<area shape="rect" id="node45" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="309,1118,513,1145"/>
+<area shape="rect" id="node46" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_music_handler.html" title=" " alt="" coords="304,1169,519,1195"/>
+<area shape="rect" id="node47" href="$class_h_m_f_1_1_thesis_1_1_music_1_1_volume_slider.html" title=" " alt="" coords="306,1219,517,1246"/>
+<area shape="rect" id="node48" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_background.html" title=" " alt="" coords="316,1271,507,1312"/>
+<area shape="rect" id="node49" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_camera.html" title=" " alt="" coords="316,1336,507,1377"/>
+<area shape="rect" id="node50" href="$class_h_m_f_1_1_thesis_1_1_parallax_1_1_parallax_layer.html" title=" " alt="" coords="316,1401,507,1443"/>
+<area shape="rect" id="node51" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_dust_animation.html" title=" " alt="" coords="301,1467,521,1494"/>
+<area shape="rect" id="node52" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_active_status_vizualizer.html" title=" " alt="" coords="324,1519,499,1560"/>
+<area shape="rect" id="node53" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html" title=" " alt="" coords="321,1585,502,1611"/>
 </map>

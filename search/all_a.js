@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lance_100',['Lance',['../class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_lance.html',1,'HMF::Thesis::Magic::ActualMagic']]],
-  ['lifetime_101',['LifeTime',['../class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html#ac322c43756756da89afe0e7b75a035f3',1,'HMF::Thesis::Status::StatusBase']]]
+  ['lance_103',['Lance',['../class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_lance.html',1,'HMF::Thesis::Magic::ActualMagic']]],
+  ['lifetime_104',['LifeTime',['../class_h_m_f_1_1_thesis_1_1_status_1_1_status_base.html#ac322c43756756da89afe0e7b75a035f3',1,'HMF::Thesis::Status::StatusBase']]]
 ];

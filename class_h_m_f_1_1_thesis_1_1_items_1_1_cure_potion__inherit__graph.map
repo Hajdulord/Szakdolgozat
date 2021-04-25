@@ -1,0 +1,5 @@
+<map id="HMF.Thesis.Items.CurePotion" name="HMF.Thesis.Items.CurePotion">
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,201,181"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_items_1_1_consumable.html" title=" " alt="" coords="56,80,151,107"/>
+<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html" title=" " alt="" coords="77,5,129,32"/>
+</map>

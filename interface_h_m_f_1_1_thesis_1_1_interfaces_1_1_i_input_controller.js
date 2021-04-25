@@ -10,5 +10,6 @@ var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller =
     [ "NormalMeleeAttack", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ad0e3f5b0cc01af2047c02dca7ab24260", null ],
     [ "Pause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ab0b005c80102ca608dc301067f22582b", null ],
     [ "PauseCall", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#ae1ef0e275bcbfe66380f6155bd98368d", null ],
+    [ "PickUp", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a4cf5de88d1cdce427f905026711a7c06", null ],
     [ "UnPause", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html#a0119c50fa51082e99a05c174b070a39a", null ]
 ];

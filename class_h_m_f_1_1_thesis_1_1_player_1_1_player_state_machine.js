@@ -18,6 +18,7 @@ var class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine =
     [ "IsStunned", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a1de9ab76189b5005cc8604c8c34af071", null ],
     [ "LayersToTarget", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a6246bfffe55a2f91b5ea0af8af719985", null ],
     [ "MoveDirection", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#aa2b10fa456dfae3f3de50304cbc6e936", null ],
+    [ "PickUpLayers", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a9c515daf2329ce0de9a9203968976cf3", null ],
     [ "PushBackDir", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a703ca81e7103d6b758a0aedce16f9388", null ],
     [ "PushBackInmunity", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a0b6dee294c5b0dd79729f98969b5071c", null ],
     [ "PushBackTime", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a684f3c12124a57a43e65928b91fb3e48", null ]

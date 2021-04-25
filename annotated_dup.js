@@ -10,6 +10,7 @@ var annotated_dup =
           [ "InventoryComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component.html", "class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component" ],
           [ "MagicHandlerComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_magic_handler_component.html", "class_h_m_f_1_1_thesis_1_1_components_1_1_magic_handler_component" ],
           [ "MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component" ],
+          [ "PickUpableComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component" ],
           [ "StatusHandlerComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html", "class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component" ]
         ] ],
         [ "Enemys", "namespace_h_m_f_1_1_thesis_1_1_enemys.html", [
@@ -35,6 +36,7 @@ var annotated_dup =
             [ "IInventoryComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component" ],
             [ "IMagicHandlerComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component" ],
             [ "IMoveComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component" ],
+            [ "IPickUpableComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component" ],
             [ "IStatusHandlerComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component" ]
           ] ],
           [ "IAttack", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_attack.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_attack" ],
@@ -51,6 +53,8 @@ var annotated_dup =
           [ "IStatusHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler" ]
         ] ],
         [ "Items", "namespace_h_m_f_1_1_thesis_1_1_items.html", [
+          [ "Consumable", "class_h_m_f_1_1_thesis_1_1_items_1_1_consumable.html", "class_h_m_f_1_1_thesis_1_1_items_1_1_consumable" ],
+          [ "CurePotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_cure_potion.html", "class_h_m_f_1_1_thesis_1_1_items_1_1_cure_potion" ],
           [ "HealthPotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion" ],
           [ "MagicFocus", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus" ],
           [ "Weapon", "class_h_m_f_1_1_thesis_1_1_items_1_1_weapon.html", "class_h_m_f_1_1_thesis_1_1_items_1_1_weapon" ]

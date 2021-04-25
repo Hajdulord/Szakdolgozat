@@ -52,7 +52,10 @@ var hierarchy =
       [ "HMF.Thesis.Components.InventoryComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component.html", null ]
     ] ],
     [ "HMF.Thesis.Interfaces.IItem", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html", [
-      [ "HMF.Thesis.Items.HealthPotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html", null ],
+      [ "HMF.Thesis.Items.Consumable", "class_h_m_f_1_1_thesis_1_1_items_1_1_consumable.html", [
+        [ "HMF.Thesis.Items.CurePotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_cure_potion.html", null ],
+        [ "HMF.Thesis.Items.HealthPotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html", null ]
+      ] ],
       [ "HMF.Thesis.Items.MagicFocus", "class_h_m_f_1_1_thesis_1_1_items_1_1_magic_focus.html", null ],
       [ "HMF.Thesis.Items.Weapon", "class_h_m_f_1_1_thesis_1_1_items_1_1_weapon.html", null ]
     ] ],
@@ -67,6 +70,9 @@ var hierarchy =
     ] ],
     [ "HMF.Thesis.Interfaces.ComponentInterfaces.IMoveComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html", [
       [ "HMF.Thesis.Components.MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", null ]
+    ] ],
+    [ "HMF.Thesis.Interfaces.ComponentInterfaces.IPickUpableComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html", [
+      [ "HMF.Thesis.Components.PickUpableComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html", null ]
     ] ],
     [ "HMF.Thesis.Interfaces.IPlayerSateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html", [
       [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ]
@@ -103,6 +109,7 @@ var hierarchy =
       [ "HMF.Thesis.Components.InventoryComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component.html", null ],
       [ "HMF.Thesis.Components.MagicHandlerComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_magic_handler_component.html", null ],
       [ "HMF.Thesis.Components.MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", null ],
+      [ "HMF.Thesis.Components.PickUpableComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html", null ],
       [ "HMF.Thesis.Components.StatusHandlerComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html", null ],
       [ "HMF.Thesis.Enemys.BasicEnemyStateMachine", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_basic_enemy_state_machine.html", null ],
       [ "HMF.Thesis.Enemys.InRange", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html", null ],

@@ -1,11 +1,11 @@
 var class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion =
 [
     [ "HealthPotion", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a50e8038de5e6e920ad6f648892ae6919", null ],
-    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a1d6a9a7cab01af45f13a7b910bea8459", null ],
-    [ "attackTime", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#af83c01e53f15272de74500fd42334035", null ],
-    [ "Description", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#ae82da315b4d9cdfa9f5b8e7ff7026f15", null ],
-    [ "Name", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a9b6617619f395a5f8a052d4083b81918", null ],
-    [ "Sprite", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a633f737bc9179cb3291d230ea3c07189", null ],
-    [ "TargetType", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a0d77b19c2723f63f2207c23bc0185bcb", null ],
-    [ "Unique", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a514c4b6fffec945e2503ca397ca66a0e", null ]
+    [ "Use", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a50c47dceb883ff2de1153749a8d415ce", null ],
+    [ "attackTime", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#ac46843df4b89a10f2bb80fb0adc18910", null ],
+    [ "Description", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#aa71464b69b98aff6599e1c7d91ce6af8", null ],
+    [ "Name", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a1c0f93b85f1cfdeee13988dec2e36d10", null ],
+    [ "Sprite", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#abfaefc8bc05597f255b3d4cc8308af22", null ],
+    [ "TargetType", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a98028d8a586565c74123fad8848a3fcd", null ],
+    [ "Unique", "class_h_m_f_1_1_thesis_1_1_items_1_1_health_potion.html#a0496fc826c3205dd769f702c3fbe03ba", null ]
 ];
