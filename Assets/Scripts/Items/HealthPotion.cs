@@ -6,28 +6,28 @@ using HMF.Thesis.ScriptableObjects;
 namespace HMF.Thesis.Items
 {
 
-    public class HealthPotion : IItem
+    public class HealthPotion : Consumable
     {
         private ConsumableData _consumableData;
 
-        public string Name => _consumableData.consumableName;
+        public override string Name => _consumableData.consumableName;
 
-        public bool Unique => _consumableData.isUnique;
+        public override bool Unique => _consumableData.isUnique;
 
-        public Sprite Sprite => _consumableData.sprite;
+        public override Sprite Sprite => _consumableData.sprite;
 
-        public TargetType TargetType => _consumableData.targetType;
+        public override TargetType TargetType => _consumableData.targetType;
 
-        public string Description => _consumableData.description;
+        public override string Description => _consumableData.description;
 
-        public float attackTime => _consumableData.attackTime;
+        public override float attackTime => _consumableData.attackTime;
 
         public HealthPotion(ConsumableData consumable)
         {
             _consumableData = consumable;
         }
 
-        public void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
+        public override void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
         {
             var healable = origin.GetComponent<IHealableComponent>()?.Healable;
 

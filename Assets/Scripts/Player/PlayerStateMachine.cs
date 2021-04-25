@@ -12,6 +12,7 @@ using System.Collections;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
 using HMF.Thesis.Status;
+using UnityEngine.InputSystem;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -30,6 +31,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private GameObject DeathCanvas = null!;
         [SerializeField] private Transform _currentSpawnPoint = null!;
         [SerializeField] private LayerMask _layersToTarget;
+        [SerializeField] private LayerMask _pickUpLayers;
         [SerializeField] private float _pushBackTime = 2f;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
@@ -67,6 +69,7 @@ namespace HMF.Thesis.Player
         public bool IsStunned { get; set;} = false;
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
+        public LayerMask PickUpLayers { get => _pickUpLayers; set => _pickUpLayers = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
@@ -172,8 +175,8 @@ namespace HMF.Thesis.Player
             _consumableItem = new HealthPotion(_consumableData);
 
             _inventoryComponent.Inventory.AddItem(_magicItem, 1);
-            _inventoryComponent.Inventory.AddItem(_magicItem2, 10);
-            _inventoryComponent.Inventory.AddItem(_consumableItem, 4);
+            _inventoryComponent.Inventory.AddItem(_magicItem2, 1);
+            _inventoryComponent.Inventory.AddItem(_consumableItem, 1);
 
             _inventoryComponent.Inventory.SetUse(_magicItem);
             _inventoryComponent.Inventory.SetUse(_magicItem2);
@@ -183,9 +186,9 @@ namespace HMF.Thesis.Player
         private void RefillInventory()
         {
 
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_magicItem2))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_magicItem2.Name))
             {
-                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2];
+                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2.Name].Quantity;
                 _inventoryComponent.Inventory.AddItem(_magicItem2, num);
                 //Debug.Log("A");
             }
@@ -197,9 +200,9 @@ namespace HMF.Thesis.Player
                 //Debug.Log("B");
             }
             
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem.Name))
             {
-                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[_consumableItem];
+                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[_consumableItem.Name].Quantity;
                 _inventoryComponent.Inventory.AddItem(_consumableItem, num);
             }
             else
@@ -276,6 +279,7 @@ namespace HMF.Thesis.Player
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<PlayerInput>().enabled = false;
             RefillInventory();
             inventoryUI.UpdateDisplay();
             GetComponent<InputController>().ResetTimes();
@@ -317,6 +321,7 @@ namespace HMF.Thesis.Player
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<PlayerInput>().enabled = true;
             
             DeathCanvas.SetActive(false);
 

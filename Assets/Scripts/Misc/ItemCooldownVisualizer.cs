@@ -10,6 +10,8 @@ namespace HMF.Thesis.Misc
         [SerializeField] private List<TMP_Text> _texts = null!;
         [SerializeField] private List<GameObject> _holder = null!;
 
+        private Dictionary<int, Coroutine> _coroutines = new Dictionary<int, Coroutine>();
+
         public static ItemCooldownVisualizer Instance {get; private set; }
 
         private void Awake() 
@@ -22,7 +24,7 @@ namespace HMF.Thesis.Misc
 
         public void StartCooldown(int index, int time)
         {
-            StartCoroutine(CooldownCorutine(index, time));
+            _coroutines.Add(index ,StartCoroutine(CooldownCorutine(index, time)));
         }
 
         private IEnumerator CooldownCorutine(int index, int time)
@@ -40,6 +42,8 @@ namespace HMF.Thesis.Misc
                 --currentTime;
             }
 
+            _coroutines.Remove(index);
+
             _holder[index].SetActive(false);
         }
 
@@ -49,6 +53,17 @@ namespace HMF.Thesis.Misc
             foreach(var item in _holder)
             {
                 item.SetActive(false);
+            }
+            _coroutines.Clear();
+        }
+
+        public void StopCountdown(int index)
+        {
+            if(_coroutines.TryGetValue(index, out Coroutine coroutine))
+            {
+                StopCoroutine(coroutine);
+                _holder[index].SetActive(false);
+                _coroutines.Remove(index);
             }
         }
 

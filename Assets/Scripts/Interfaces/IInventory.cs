@@ -11,9 +11,10 @@ namespace HMF.Thesis.Interfaces
         void SetUse(IItem item);
         void RemoveUse(int slotNumber);
         IItem GetItem(int slotNumber);
-        Dictionary<IItem, int> InventoryShelf {get;}
+        Dictionary<string, (IItem Item, int Quantity)> InventoryShelf {get;}
         Dictionary<int, IItem> InUse {get;}
         IItem MainWeapon {get; set;}
         IItem CurrentItem {get; set;}
+        int InUseSize { get; }
     }
 }
