@@ -175,8 +175,8 @@ namespace HMF.Thesis.Player
             _consumableItem = new HealthPotion(_consumableData);
 
             _inventoryComponent.Inventory.AddItem(_magicItem, 1);
-            _inventoryComponent.Inventory.AddItem(_magicItem2, 10);
-            _inventoryComponent.Inventory.AddItem(_consumableItem, 4);
+            _inventoryComponent.Inventory.AddItem(_magicItem2, 1);
+            _inventoryComponent.Inventory.AddItem(_consumableItem, 1);
 
             _inventoryComponent.Inventory.SetUse(_magicItem);
             _inventoryComponent.Inventory.SetUse(_magicItem2);

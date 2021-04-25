@@ -214,6 +214,7 @@ namespace HMF.Thesis.Player
                             if (item is Weapon)
                             {
                                 _stateMachine.Inventory.MainWeapon = item;
+                                _mainWeaponTime = 0;
                             }
                             else if(_stateMachine.Inventory.InventoryShelf.ContainsKey(item.Name))
                             {
@@ -240,11 +241,11 @@ namespace HMF.Thesis.Player
             switch (data.Scriptable)
             {
                 case MyScriptableObjects.WeaponData:
-                    Debug.Log("Weapon");
+                    //Debug.Log("Weapon");
                     return new Weapon(data.ScriptableData as WeaponData);
 
                 case MyScriptableObjects.MagicFocusData:
-                    Debug.Log("MagicFocus");
+                    //Debug.Log("MagicFocus");
                     return new MagicFocus(data.ScriptableData as MagicFocusData, 
                         _stateMachine.gameObject.GetComponent<IMagicHandlerComponent>().MagicHandler);
 
@@ -252,11 +253,11 @@ namespace HMF.Thesis.Player
                     switch (data.Consumable)
                     {
                         case MyConsumables.HealthPotion:
-                            Debug.Log("HealthPotion");
+                            //Debug.Log("HealthPotion");
                             return new HealthPotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.CurePotion:
-                            Debug.Log("CurePotion");
+                            //Debug.Log("CurePotion");
                             return new CurePotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.None:

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HMF.Thesis.Interfaces;
+using UnityEngine;
 
 namespace HMF.Thesis.Logic
 {
@@ -10,8 +11,6 @@ namespace HMF.Thesis.Logic
         private List<IItem> _inUse;
         
         private int _inUseNextIndex;
-        private int _inUsePrevIndex;
-
         private int _inUseSize;
 
         public IItem MainWeapon { get; set; }
@@ -43,8 +42,6 @@ namespace HMF.Thesis.Logic
             }
 
             _inUseSize = inUseSize;
-
-            _inUsePrevIndex = _inUseSize;
             
             CurrentItem = currentItem;
 
@@ -85,7 +82,6 @@ namespace HMF.Thesis.Logic
                 _inUseNextIndex = InUse.Count;
             }
 
-
             if (InventoryShelf.ContainsKey(item.Name) && _inUseSize > _inUseNextIndex && !InUse.ContainsKey(_inUseNextIndex))
             {
                 InUse.Add(_inUseNextIndex, item);
@@ -97,17 +93,9 @@ namespace HMF.Thesis.Logic
         {
             if (InUse.ContainsKey(slotNumber))
             {
-                if (_inUsePrevIndex < slotNumber)
-                {
-                    _inUseNextIndex = _inUsePrevIndex;
-                }
-                else
-                {
-                    _inUsePrevIndex = _inUseNextIndex;
-                    _inUseNextIndex = slotNumber;
-                }
-                
-                InUse.Remove(_inUseNextIndex);
+                _inUseNextIndex = Mathf.Min(slotNumber, _inUseNextIndex);
+
+                InUse.Remove(slotNumber);
             }
         }
 
