@@ -141,7 +141,7 @@ namespace HMF.Thesis.Player
         */ 
         public void Dash(InputAction.CallbackContext callback)
         {
-            if(callback.started && !Misc.Pause.gameIsPaused)
+            if(callback.started && !Misc.Pause.gameIsPaused && !_stateMachine.IsStunned)
             {
                 _stateMachine.IsDashing = true;
             }
