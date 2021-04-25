@@ -186,9 +186,9 @@ namespace HMF.Thesis.Player
         private void RefillInventory()
         {
 
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_magicItem2))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_magicItem2.Name))
             {
-                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2];
+                var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2.Name].Quantity;
                 _inventoryComponent.Inventory.AddItem(_magicItem2, num);
                 //Debug.Log("A");
             }
@@ -200,9 +200,9 @@ namespace HMF.Thesis.Player
                 //Debug.Log("B");
             }
             
-            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem))
+            if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem.Name))
             {
-                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[_consumableItem];
+                var num = 4 - _inventoryComponent.Inventory.InventoryShelf[_consumableItem.Name].Quantity;
                 _inventoryComponent.Inventory.AddItem(_consumableItem, num);
             }
             else

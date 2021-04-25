@@ -86,6 +86,12 @@ namespace HMF.Thesis.Player
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(0, (int) _stateMachine.Inventory.InUse[0].attackTime);
                 _inventoryOneTime = Time.time + _stateMachine.Inventory.InUse[0].attackTime;
+
+                if (!_stateMachine.Inventory.InUse.ContainsKey(0))
+                {
+                    _inventoryOneTime = 0;
+                }
+
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(0);
                 //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
 
@@ -104,6 +110,12 @@ namespace HMF.Thesis.Player
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(1);
+
+                if (!_stateMachine.Inventory.InUse.ContainsKey(1))
+                {
+                    _inventoryTwoTime = 0;
+                }
+
                 _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
@@ -119,6 +131,12 @@ namespace HMF.Thesis.Player
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(2);
+
+                if (!_stateMachine.Inventory.InUse.ContainsKey(2))
+                {
+                    _inventoryThreeTime = 0;
+                }
+
                 _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
@@ -134,6 +152,12 @@ namespace HMF.Thesis.Player
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
                 _inventoryFourTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
+
+                if (!_stateMachine.Inventory.InUse.ContainsKey(3))
+                {
+                    _inventoryFourTime = 0;
+                }
+
                 _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
@@ -179,7 +203,7 @@ namespace HMF.Thesis.Player
                     Debug.Log("Found collider");
                     var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
 
-                    if (pickUp != null && _stateMachine.Inventory.InUseSize > _stateMachine.Inventory.InUse.Count)
+                    if (pickUp != null)
                     {
                         var data = pickUp.PickUp();
 
@@ -191,7 +215,11 @@ namespace HMF.Thesis.Player
                             {
                                 _stateMachine.Inventory.MainWeapon = item;
                             }
-                            else
+                            else if(_stateMachine.Inventory.InventoryShelf.ContainsKey(item.Name))
+                            {
+                                _stateMachine.Inventory.AddItem(item, data.Quantity);
+                            }
+                            else if(_stateMachine.Inventory.InUseSize > _stateMachine.Inventory.InUse.Count)
                             {
                                 _stateMachine.Inventory.AddItem(item, data.Quantity);
                                 _stateMachine.Inventory.SetUse(item);

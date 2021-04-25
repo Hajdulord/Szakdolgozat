@@ -5,7 +5,7 @@ namespace HMF.Thesis.Logic
 {
     public class InventoryLogic : IInventory
     {
-        public Dictionary<IItem, int> InventoryShelf { get; private set;}
+        public Dictionary<string, (IItem Item, int Quantity)> InventoryShelf { get; private set;}
 
         private List<IItem> _inUse;
         
@@ -20,7 +20,7 @@ namespace HMF.Thesis.Logic
         public Dictionary<int, IItem> InUse {get; private set;}
         public int InUseSize { get => _inUseSize;}
 
-        public InventoryLogic(int inUseSize, IItem mainWeapon, Dictionary<IItem, int> inventory = null, Dictionary<int, IItem> inUse = null, IItem currentItem = null)
+        public InventoryLogic(int inUseSize, IItem mainWeapon, Dictionary<string, (IItem Item, int Quantity)> inventory = null, Dictionary<int, IItem> inUse = null, IItem currentItem = null)
         {
             if (inventory != null)
             {
@@ -28,7 +28,7 @@ namespace HMF.Thesis.Logic
             }
             else
             {
-                InventoryShelf = new Dictionary<IItem, int>();    
+                InventoryShelf = new Dictionary<string, (IItem Item, int Quantity)>();    
             }
 
             if (inUse != null)
@@ -53,27 +53,27 @@ namespace HMF.Thesis.Logic
 
         public void AddItem(IItem item, int quantity)
         {
-            if (InventoryShelf.ContainsKey(item))
+            if (InventoryShelf.ContainsKey(item.Name))
             {
-                InventoryShelf[item] += quantity;
+                InventoryShelf[item.Name] = (InventoryShelf[item.Name].Item, InventoryShelf[item.Name].Quantity + quantity);
             }
             else
             {
-                InventoryShelf.Add(item, quantity);
+                InventoryShelf.Add(item.Name, (item ,quantity));
             }
         }
 
         public void RemoveItem(IItem item, int quantity)
         {
-            if (InventoryShelf.ContainsKey(item))
+            if (InventoryShelf.ContainsKey(item.Name))
             {
-                if (InventoryShelf[item] - quantity > 0)
+                if (InventoryShelf[item.Name].Quantity - quantity > 0)
                 {
-                    InventoryShelf[item] -= quantity;
+                    InventoryShelf[item.Name] = (InventoryShelf[item.Name].Item, InventoryShelf[item.Name].Quantity - quantity);
                 }
                 else
                 {
-                    InventoryShelf.Remove(item);
+                    InventoryShelf.Remove(item.Name);
                 }
             }
         }
@@ -86,7 +86,7 @@ namespace HMF.Thesis.Logic
             }
 
 
-            if (InventoryShelf.ContainsKey(item) && _inUseSize > _inUseNextIndex && !InUse.ContainsKey(_inUseNextIndex))
+            if (InventoryShelf.ContainsKey(item.Name) && _inUseSize > _inUseNextIndex && !InUse.ContainsKey(_inUseNextIndex))
             {
                 InUse.Add(_inUseNextIndex, item);
                 ++_inUseNextIndex;
@@ -122,7 +122,7 @@ namespace HMF.Thesis.Logic
                 if(!item.Unique)
                 {
                     RemoveItem(InUse[slotNumber], 1);
-                    if (!InventoryShelf.ContainsKey(InUse[slotNumber]))
+                    if (!InventoryShelf.ContainsKey(InUse[slotNumber].Name))
                     {
                         RemoveUse(slotNumber);
                     }

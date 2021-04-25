@@ -30,7 +30,7 @@ namespace HMF.Thesis.Player
 
         public void OnEnter()
         {
-            //Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
+            Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
 
             _playerStateMachine.audioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
             _playerStateMachine.audioSourceAttack2.Play();

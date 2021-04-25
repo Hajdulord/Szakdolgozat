@@ -30,7 +30,7 @@ namespace HMF.Thesis.Misc
                     }
                     else
                     {
-                        _itemCounter[i].text = inventory.InventoryShelf[item].ToString();
+                        _itemCounter[i].text = inventory.InventoryShelf[item.Name].Quantity.ToString();
                     }
                 }
                 else
@@ -58,7 +58,7 @@ namespace HMF.Thesis.Misc
                     }
                     else
                     {
-                        _itemCounter[i].text = inventory.InventoryShelf[item].ToString();
+                        _itemCounter[i].text = inventory.InventoryShelf[item.Name].Quantity.ToString();
                     }
                 }
                 else
