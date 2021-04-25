@@ -187,9 +187,17 @@ namespace HMF.Thesis.Player
 
                         if (item != null)
                         {
-                            _stateMachine.Inventory.AddItem(item, data.Quantity);
-                            _stateMachine.Inventory.SetUse(item);
-                            Debug.Log("Added Item");
+                            if (item is Weapon)
+                            {
+                                _stateMachine.Inventory.MainWeapon = item;
+                            }
+                            else
+                            {
+                                _stateMachine.Inventory.AddItem(item, data.Quantity);
+                                _stateMachine.Inventory.SetUse(item);
+                            }
+                            
+                            //Debug.Log("Added Item");
                             _stateMachine.inventoryUI.UpdateDisplay();
                         }
 
