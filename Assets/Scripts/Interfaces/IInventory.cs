@@ -15,5 +15,6 @@ namespace HMF.Thesis.Interfaces
         Dictionary<int, IItem> InUse {get;}
         IItem MainWeapon {get; set;}
         IItem CurrentItem {get; set;}
+        int InUseSize { get; }
     }
 }

@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Misc;
+using HMF.Thesis.Items;
+using HMF.Thesis.ScriptableObjects;
 
 namespace HMF.Thesis.Player
 {
@@ -162,6 +165,71 @@ namespace HMF.Thesis.Player
                     Pause();
                 }
 
+            }
+        }
+
+        public void PickUp(InputAction.CallbackContext callback)
+        {
+            if(callback.started)
+            {
+                var colliders = Physics2D.OverlapCircleAll(_rigidbody.position, 2f);
+
+
+                foreach(var collider in colliders)
+                {
+                    if (collider.gameObject.layer == _stateMachine.PickUpLayers)
+                    {
+                        var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
+
+                        if (pickUp != null && _stateMachine.Inventory.InUseSize != _stateMachine.Inventory.InUse.Count)
+                        {
+                            var data = pickUp.PickUp();
+
+                            var item = ParseData(data);
+
+                            if (item != null)
+                            {
+                                _stateMachine.Inventory.AddItem(item, data.Quantity);
+                                _stateMachine.Inventory.SetUse(item);
+                            }
+
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        private IItem ParseData((ScriptableObject ScriptableData, int Quantity, MyScriptableObjects Scriptable, MyConsumables Consumable) data)
+        {
+            switch (data.Scriptable)
+            {
+                case MyScriptableObjects.WeaponData:
+                    return new Weapon(data.ScriptableData as WeaponData);
+
+                case MyScriptableObjects.MagicFocusData:
+                    return new MagicFocus(data.ScriptableData as MagicFocusData, 
+                        _stateMachine.gameObject.GetComponent<IMagicHandlerComponent>().MagicHandler);
+
+                case MyScriptableObjects.ConsumableData:
+                    switch (data.Consumable)
+                    {
+                        case MyConsumables.HealthPotion:
+                            return new HealthPotion(data.ScriptableData as ConsumableData);
+
+                        case MyConsumables.CurePotion:
+                            return new CurePotion(data.ScriptableData as ConsumableData);
+
+                        case MyConsumables.None:
+                        default:
+                            Debug.LogError(" MysConsumable is none or default.");
+                            return null;
+                    }
+
+                case MyScriptableObjects.None:
+                default:
+                    Debug.LogError(" MyScriptableObject is none or default.");
+                    return null;
             }
         }
 

@@ -30,6 +30,7 @@ namespace HMF.Thesis.Player
         [SerializeField] private GameObject DeathCanvas = null!;
         [SerializeField] private Transform _currentSpawnPoint = null!;
         [SerializeField] private LayerMask _layersToTarget;
+        [SerializeField] private LayerMask _pickUpLayers;
         [SerializeField] private float _pushBackTime = 2f;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
@@ -67,6 +68,7 @@ namespace HMF.Thesis.Player
         public bool IsStunned { get; set;} = false;
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
+        public LayerMask PickUpLayers { get => _pickUpLayers; set => _pickUpLayers = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()

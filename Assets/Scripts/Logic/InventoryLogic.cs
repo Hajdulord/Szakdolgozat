@@ -10,6 +10,7 @@ namespace HMF.Thesis.Logic
         private List<IItem> _inUse;
         
         private int _inUseNextIndex;
+        private int _inUsePrevIndex;
 
         private int _inUseSize;
 
@@ -17,6 +18,7 @@ namespace HMF.Thesis.Logic
         public IItem CurrentItem { get; set; }
 
         public Dictionary<int, IItem> InUse {get; private set;}
+        public int InUseSize { get => _inUseSize;}
 
         public InventoryLogic(int inUseSize, IItem mainWeapon, Dictionary<IItem, int> inventory = null, Dictionary<int, IItem> inUse = null, IItem currentItem = null)
         {
@@ -41,6 +43,8 @@ namespace HMF.Thesis.Logic
             }
 
             _inUseSize = inUseSize;
+
+            _inUsePrevIndex = _inUseSize;
             
             CurrentItem = currentItem;
 
@@ -93,8 +97,17 @@ namespace HMF.Thesis.Logic
         {
             if (InUse.ContainsKey(slotNumber))
             {
-                _inUseNextIndex = slotNumber;
-                InUse.Remove(slotNumber);
+                if (_inUsePrevIndex > slotNumber)
+                {
+                    _inUseNextIndex = _inUsePrevIndex;
+                }
+                else
+                {
+                    _inUsePrevIndex = _inUseNextIndex;
+                    _inUseNextIndex = slotNumber;
+                }
+                
+                InUse.Remove(_inUseNextIndex);
             }
         }
 
