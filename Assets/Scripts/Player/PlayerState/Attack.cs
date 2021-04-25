@@ -2,6 +2,7 @@ using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using UnityEngine;
 using HMF.Thesis.Music;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Items;
 
 namespace HMF.Thesis.Player
 {
@@ -17,8 +18,6 @@ namespace HMF.Thesis.Player
 
         private Animator _animator;
 
-        //private float _time; 
-
         public Attack(IAttack attack, Animator animator, string[] tagsToTarget, PlayerStateMachine playerStateMachine, IMove move)
         {
             _attack = attack;
@@ -32,20 +31,18 @@ namespace HMF.Thesis.Player
         public void OnEnter()
         {
             //Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
-            //Debug.Log(_attack);
-            //_time = Time.time + _playerStateMachine.CurrentItem.attackTime;
-            //_playerStateMachine.audioSourceAttack2.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Attacks);
+
             _playerStateMachine.audioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
             _playerStateMachine.audioSourceAttack2.Play();
 
-            if(_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus || _playerStateMachine.CurrentItem is HMF.Thesis.Items.HealthPotion)
+            if(_playerStateMachine.CurrentItem is MagicFocus || _playerStateMachine.CurrentItem is Consumable)
             {
                 _animator.SetBool("IsMagic", true);
                 _attack.Origin = _playerStateMachine.gameObject;
 
-                if (_playerStateMachine.CurrentItem is HMF.Thesis.Items.MagicFocus)
+                if (_playerStateMachine.CurrentItem is MagicFocus)
                 {
-                    _playerStateMachine.audioSourceAttack.clip = (_playerStateMachine.CurrentItem as HMF.Thesis.Items.MagicFocus).Clip;
+                    _playerStateMachine.audioSourceAttack.clip = (_playerStateMachine.CurrentItem as MagicFocus).Clip;
                     _playerStateMachine.audioSourceAttack.Play();
                 }
                 
@@ -71,23 +68,6 @@ namespace HMF.Thesis.Player
             _animator.SetBool("IsMagic", false);
         }
 
-        public void Tick()
-        {
-            //_move.Move(_playerStateMachine.MoveDirection);
-
-            _playerStateMachine.CurrentItem = null;
-            
-            //if (_playerStateMachine.IsDashing)
-            //{
-            //    _move.Dash();
-            //    _playerStateMachine.IsDashing = false;
-            //}
-
-            //if (Time.time >= _time)
-            //{
-                //_playerStateMachine.CurrentItem = null;
-            //}
-
-        }
+        public void Tick() => _playerStateMachine.CurrentItem = null;
     }
 }

@@ -16,5 +16,6 @@ namespace HMF.Thesis.Interfaces
         void Pause();
         void UnPause();
         void PauseCall(InputAction.CallbackContext callback);
+        void PickUp(InputAction.CallbackContext callback);
     }
 }
