@@ -23,7 +23,6 @@ namespace HMF.Thesis.Player.PlayerStates
             //_stateMachine.audioSource.clip = _stateMachine.musicHandler.Serve(Music.Category.Deaths);
             _stateMachine.audioSource.clip = MusicHandler.Instance.Serve(Category.Deaths);
             _stateMachine.audioSource.Play();
-            _stateMachine.gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
             //_stateMachine.gameObject.GetComponent<IStatusHandlerComponent>().DestroyThis();
             //_stateMachine.g
             //_playerStateMachine.Respawn();

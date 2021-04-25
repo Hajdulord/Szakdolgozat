@@ -306,6 +306,8 @@ namespace HMF.Thesis.Player
             transform.position = _currentSpawnPoint.position;
 
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
+
+            gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
             
             yield return new WaitForSeconds(2f);
 

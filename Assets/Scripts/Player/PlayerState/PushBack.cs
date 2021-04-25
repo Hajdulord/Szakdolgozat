@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using HMF.HMFUtilities.DesignPatterns.StatePattern;
 using HMF.Thesis.Interfaces;
@@ -49,15 +47,22 @@ namespace HMF.Thesis.Player
             {
                 _rigidbody.constraints = _constrains;
             }
+
             _playerStateMachine.PushBackInmunity = Time.time + 2f;
 
         }
 
         public void Tick()
         {
-            if (Time.time >= _time || _rigidbody.velocity.x == 0)
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            if ((Time.time >= _time || _rigidbody.velocity.x == 0) && _playerStateMachine.GroundCheck())
             {
                 _playerStateMachine.PushBackDir = 0;
+            }
+            else if(Time.time < _time && !_playerStateMachine.GroundCheck())
+            {
+                _move.PushBack(_playerStateMachine.PushBackDir);
             }
         }
     }
