@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
+using HMF.Thesis.Status;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -70,6 +71,7 @@ namespace HMF.Thesis.Player
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
         {
+            Score.Instance.StartTimer();
             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
@@ -276,6 +278,9 @@ namespace HMF.Thesis.Player
             GetComponent<SpriteRenderer>().enabled = false;
             RefillInventory();
             inventoryUI.UpdateDisplay();
+            GetComponent<InputController>().ResetTimes();
+            Misc.ItemCooldownVisualizer.Instance.ResetAll();
+            //ActiveStatusVizualizer.Instance.
             //GetComponent<StatusHandlerComponent>().enabled = true;
             //gameObject.AddComponent<StatusHandlerComponent>();
         }
@@ -290,6 +295,9 @@ namespace HMF.Thesis.Player
         public IEnumerator Respawn()
         {
             DeathCanvas.SetActive(true);
+
+            Score.Instance.StopTimer();
+            Score.Instance.IncreaseDeaths();
 
             _enemys.SetActive(false);
 
@@ -310,6 +318,7 @@ namespace HMF.Thesis.Player
             
             DeathCanvas.SetActive(false);
 
+            Score.Instance.StartTimer();
         }
     }
 }
