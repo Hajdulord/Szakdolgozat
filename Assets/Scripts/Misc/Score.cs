@@ -83,16 +83,16 @@ namespace HMF.Thesis.Misc
                 {
                     if ((Mathf.RoundToInt(_elapsedTime) / 60) == 0)
                     {
-                        score = Mathf.FloorToInt(_kills / _deaths);
+                        score = Mathf.FloorToInt(10 *_kills / (_deaths + 1)) + 100;
                     }
                     else
                     {  
-                        score = Mathf.FloorToInt(_kills / _deaths) * Mathf.RoundToInt(_elapsedTime) / 60;
+                        score = Mathf.FloorToInt(10 * _kills / (_deaths + 1)) * ((Mathf.RoundToInt(_elapsedTime) / 60) + 1);
                     }
                 }
                 else
                 {
-                    score = 100000000;
+                    score = 0;
                 }
             }
             else
@@ -101,16 +101,16 @@ namespace HMF.Thesis.Misc
                 {
                     if ((Mathf.RoundToInt(_elapsedTime) / 60) == 0)
                     {
-                        score = _kills + 10;
+                        score = 10 *_kills + 200;
                     }
                     else
                     {  
-                        score = _kills * Mathf.RoundToInt(_elapsedTime) / 60 + 10;
+                        score = 10 * _kills * ((Mathf.RoundToInt(_elapsedTime) / 60 ) + 1) + 10;
                     }
                 }
                 else
                 {
-                    score = 100000000;
+                    score = 0;
                 }
             }
 
@@ -122,11 +122,11 @@ namespace HMF.Thesis.Misc
             switch (level)
             {
                 case 0:
-                    return _scoreBoardEasy.OrderBy(s => s.Score).Take(10).ToList();
+                    return _scoreBoardEasy.OrderByDescending(s => s.Score).Take(10).ToList();
                 case 1:
-                    return _scoreBoardMedium.OrderBy(s => s.Score).Take(10).ToList();
+                    return _scoreBoardMedium.OrderByDescending(s => s.Score).Take(10).ToList();
                 case 2:
-                    return _scoreBoardHard.OrderBy(s => s.Score).Take(10).ToList();
+                    return _scoreBoardHard.OrderByDescending(s => s.Score).Take(10).ToList();
                 
                 default:
                     return null;
