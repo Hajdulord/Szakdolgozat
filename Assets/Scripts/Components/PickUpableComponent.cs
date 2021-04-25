@@ -11,7 +11,10 @@ namespace HMF.Thesis.Components
         [SerializeField] private ScriptableObject _data = null!;
         [SerializeField] private int _quantity = 1;
 
-        public (ScriptableObject ScriptableData, int Quantity, MyScriptableObjects Scriptable, MyConsumables Consumable) PickUp() =>
-            (_data, _quantity, _scriptable, _consumables);
+        public (ScriptableObject ScriptableData, int Quantity, MyScriptableObjects Scriptable, MyConsumables Consumable) PickUp()
+        {
+            gameObject.SetActive(false);
+            return (_data, _quantity, _scriptable, _consumables);
+        }
     }
 }

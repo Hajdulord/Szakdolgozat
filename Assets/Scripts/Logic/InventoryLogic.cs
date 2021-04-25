@@ -97,7 +97,7 @@ namespace HMF.Thesis.Logic
         {
             if (InUse.ContainsKey(slotNumber))
             {
-                if (_inUsePrevIndex > slotNumber)
+                if (_inUsePrevIndex < slotNumber)
                 {
                     _inUseNextIndex = _inUsePrevIndex;
                 }

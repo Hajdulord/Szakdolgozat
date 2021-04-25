@@ -65,6 +65,7 @@ namespace HMF.Thesis.Misc
                 {
                     _images[i].sprite = _emptySlot;
                     _itemCounter[i].text = string.Empty;
+                    ItemCooldownVisualizer.Instance.StopCountdown(i);
                 }
 
             }

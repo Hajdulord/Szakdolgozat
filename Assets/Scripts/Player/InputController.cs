@@ -132,7 +132,7 @@ namespace HMF.Thesis.Player
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(3, (int) _stateMachine.Inventory.InUse[3].attackTime);
                 //Debug.Log(_stateMachine.Inventory.MainWeapon);
-                _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
+                _inventoryFourTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
                 _stateMachine.inventoryUI.UpdateDisplay();
             }
@@ -172,29 +172,28 @@ namespace HMF.Thesis.Player
         {
             if(callback.started)
             {
-                var colliders = Physics2D.OverlapCircleAll(_rigidbody.position, 2f);
-
+                var colliders = Physics2D.OverlapCircleAll(_rigidbody.position, 2f, _stateMachine.PickUpLayers);
 
                 foreach(var collider in colliders)
                 {
-                    if (collider.gameObject.layer == _stateMachine.PickUpLayers)
+                    Debug.Log("Found collider");
+                    var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
+
+                    if (pickUp != null && _stateMachine.Inventory.InUseSize > _stateMachine.Inventory.InUse.Count)
                     {
-                        var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
+                        var data = pickUp.PickUp();
 
-                        if (pickUp != null && _stateMachine.Inventory.InUseSize != _stateMachine.Inventory.InUse.Count)
+                        var item = ParseData(data);
+
+                        if (item != null)
                         {
-                            var data = pickUp.PickUp();
-
-                            var item = ParseData(data);
-
-                            if (item != null)
-                            {
-                                _stateMachine.Inventory.AddItem(item, data.Quantity);
-                                _stateMachine.Inventory.SetUse(item);
-                            }
-
-                            return;
+                            _stateMachine.Inventory.AddItem(item, data.Quantity);
+                            _stateMachine.Inventory.SetUse(item);
+                            Debug.Log("Added Item");
+                            _stateMachine.inventoryUI.UpdateDisplay();
                         }
+
+                        return;
                     }
                 }
             }
@@ -205,9 +204,11 @@ namespace HMF.Thesis.Player
             switch (data.Scriptable)
             {
                 case MyScriptableObjects.WeaponData:
+                    Debug.Log("Weapon");
                     return new Weapon(data.ScriptableData as WeaponData);
 
                 case MyScriptableObjects.MagicFocusData:
+                    Debug.Log("MagicFocus");
                     return new MagicFocus(data.ScriptableData as MagicFocusData, 
                         _stateMachine.gameObject.GetComponent<IMagicHandlerComponent>().MagicHandler);
 
@@ -215,9 +216,11 @@ namespace HMF.Thesis.Player
                     switch (data.Consumable)
                     {
                         case MyConsumables.HealthPotion:
+                            Debug.Log("HealthPotion");
                             return new HealthPotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.CurePotion:
+                            Debug.Log("CurePotion");
                             return new CurePotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.None:

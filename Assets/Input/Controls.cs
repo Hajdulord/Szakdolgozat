@@ -89,6 +89,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Value"",
+                    ""id"": ""f084f4ad-848f-4ce5-b1e0-ee592d30e40b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -212,6 +220,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a202688-0d49-41d5-b2f9-bf07b11cae85"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +248,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_gameplay_Item3 = m_gameplay.FindAction("Item3", throwIfNotFound: true);
         m_gameplay_Item4 = m_gameplay.FindAction("Item4", throwIfNotFound: true);
         m_gameplay_Pause = m_gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_gameplay_PickUp = m_gameplay.FindAction("PickUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -287,6 +307,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_gameplay_Item3;
     private readonly InputAction m_gameplay_Item4;
     private readonly InputAction m_gameplay_Pause;
+    private readonly InputAction m_gameplay_PickUp;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -300,6 +321,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Item3 => m_Wrapper.m_gameplay_Item3;
         public InputAction @Item4 => m_Wrapper.m_gameplay_Item4;
         public InputAction @Pause => m_Wrapper.m_gameplay_Pause;
+        public InputAction @PickUp => m_Wrapper.m_gameplay_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +358,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @PickUp.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickUp;
+                @PickUp.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickUp;
+                @PickUp.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickUp;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -367,6 +392,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @PickUp.started += instance.OnPickUp;
+                @PickUp.performed += instance.OnPickUp;
+                @PickUp.canceled += instance.OnPickUp;
             }
         }
     }
@@ -382,5 +410,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnItem3(InputAction.CallbackContext context);
         void OnItem4(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
     }
 }

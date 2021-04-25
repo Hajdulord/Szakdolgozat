@@ -12,6 +12,7 @@ using System.Collections;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Items;
 using HMF.Thesis.Status;
+using UnityEngine.InputSystem;
 
 //! Needs Unit Testing!
 //! Needs Comments!
@@ -278,6 +279,7 @@ namespace HMF.Thesis.Player
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<PlayerInput>().enabled = false;
             RefillInventory();
             inventoryUI.UpdateDisplay();
             GetComponent<InputController>().ResetTimes();
@@ -319,6 +321,7 @@ namespace HMF.Thesis.Player
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<PlayerInput>().enabled = true;
             
             DeathCanvas.SetActive(false);
 
