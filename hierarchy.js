@@ -114,10 +114,13 @@ var hierarchy =
       [ "HMF.Thesis.Misc.End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
       [ "HMF.Thesis.Misc.ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", null ],
+      [ "HMF.Thesis.Misc.Name", "class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html", null ],
       [ "HMF.Thesis.Misc.OptionSaver", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html", null ],
       [ "HMF.Thesis.Misc.Pause", "class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html", null ],
       [ "HMF.Thesis.Misc.PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
       [ "HMF.Thesis.Misc.RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", null ],
+      [ "HMF.Thesis.Misc.Score", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html", null ],
+      [ "HMF.Thesis.Misc.ScoreBoard", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score_board.html", null ],
       [ "HMF.Thesis.Misc.SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
       [ "HMF.Thesis.Misc.StartParticle", "class_h_m_f_1_1_thesis_1_1_misc_1_1_start_particle.html", null ],
       [ "HMF.Thesis.Misc.UseInventory", "class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html", null ],
@@ -133,6 +136,7 @@ var hierarchy =
       [ "HMF.Thesis.Status.Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ]
     ] ],
     [ "HMF.Thesis.Tests.Logic.MoveLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html", null ],
+    [ "HMF.Thesis.Misc.ScoreData", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score_data.html", null ],
     [ "ScriptableObject", null, [
       [ "HMF.Thesis.ScriptableObjects.CharacterData", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_character_data.html", null ],
       [ "HMF.Thesis.ScriptableObjects.ConsumableData", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_consumable_data.html", null ],
