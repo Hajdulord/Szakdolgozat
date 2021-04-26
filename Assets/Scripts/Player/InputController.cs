@@ -246,8 +246,7 @@ namespace HMF.Thesis.Player
 
                 case MyScriptableObjects.MagicFocusData:
                     //Debug.Log("MagicFocus");
-                    return new MagicFocus(data.ScriptableData as MagicFocusData, 
-                        _stateMachine.gameObject.GetComponent<IMagicHandlerComponent>().MagicHandler);
+                    return new MagicFocus(data.ScriptableData as MagicFocusData);
 
                 case MyScriptableObjects.ConsumableData:
                     switch (data.Consumable)
