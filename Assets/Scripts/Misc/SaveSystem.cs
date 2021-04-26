@@ -69,11 +69,20 @@ namespace HMF.Thesis.Misc
 
                 var stream = new FileStream(path, FileMode.Open);
 
-                var data = formatter.Deserialize(stream) as SaveData;
-                
-                stream.Close();
+                if (stream.Length > 0)
+                {
+                    var data = formatter.Deserialize(stream) as SaveData;
 
-                return data;
+                    stream.Close();
+                    
+                    return data;
+                }
+                else
+                {
+                    stream.Close();
+
+                    return null;
+                }
             }
             else
             {

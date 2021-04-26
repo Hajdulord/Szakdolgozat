@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Interfaces;
@@ -14,22 +15,38 @@ namespace HMF.Thesis.Misc
         [SerializeField] private GameObject _instructionsMenu = null!;
         [SerializeField] private GameObject _loadingMenu = null;
         [SerializeField] private List<TMP_Text> _slots = null;
-        [SerializeField] private IInventoryComponent _inventory = null!;
-        [SerializeField] private ICharacterComponent _character = null!;
-        [SerializeField] private IPlayerSateMachine _player = null!;
+        [SerializeField] private List<Button> _slotButtons = null;
+        [SerializeField] private GameObject _playerGO = null!;
+        [SerializeField] private AudioListener _listener = null!;
+
+        private IInventoryComponent _inventory;
+        private ICharacterComponent _character;
+        private IPlayerSateMachine _player;
 
         private int _selectedIndex = -1;
 
-        public List<SaveData> saves;
+        private List<SaveData> _saves;
 
         private void Awake() 
         {
-            saves = new List<SaveData>();
+            _saves = new List<SaveData>();
+            _inventory = _playerGO.GetComponent<IInventoryComponent>();
+            _character = _playerGO.GetComponent<ICharacterComponent>();
+            _player = _playerGO.GetComponent<IPlayerSateMachine>();
+
+            Refress();
+        }
+
+        public void Refress() 
+        {
+            _selectedIndex = -1;
+
+            _saves.Clear();
 
             for (int i = 0; i < 4; i++)
             {
                 var save = SaveSystem.LoadPlayer(i);
-                saves.Add(save);
+                _saves.Add(save);
 
                 if (save == null)
                 {
@@ -39,39 +56,67 @@ namespace HMF.Thesis.Misc
                 {
                     _slots[i].text = $"{save.name} with kills: {save.kills} deaths: {save.deaths} time: {save.time} saved at {save.date}";
                 }
+
+                _slotButtons[i].image.color = new Color(89 / 255f, 17 / 255f, 77 / 255f);
             }
         }
 
         public void Selection(int index)
         {
+            if (_selectedIndex > -1)
+            {
+                _slotButtons[_selectedIndex].image.color = new Color(89 / 255f, 17 / 255f, 77 / 255f);
+            }
+
             _selectedIndex = index;
+
+            _slotButtons[index].image.color = new Color(58 / 255f, 11 / 255f, 50 / 255f);
         }
 
         public void Load()
         {
-            if (_selectedIndex == -1)
+            //Time.timeScale = 1;
+            if (_selectedIndex == -1 || _saves[_selectedIndex] == null)
                 return;
             
-            PersistentData.Instance.CurrentSave = saves[_selectedIndex];
-            if (saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
+            PersistentData.Instance.CurrentSave = _saves[_selectedIndex];
+            if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
             {
                 StartCoroutine(LoadAsyncScene());
                 _loadingMenu.SetActive(true);
             }
             else
             {
+                if (Pause.gameIsPaused)
+                {
+                    Pause.Resume();
+
+                    Menu.Menu.flipPausedBool();
+                }
+
+                if (_playerGO.activeInHierarchy)
+                {
+                    _player.Load();
+                    _playerGO.SetActive(false);
+                    _listener.enabled = true;
+                }
+
+                
+                /*_player.TransformPosition  = new Vector3(
+                                                    _saves[_selectedIndex].transform[0], 
+                                                    _saves[_selectedIndex].transform[1], 
+                                                    _saves[_selectedIndex].transform[2]);*/
+                
                 _instructionsMenu.SetActive(true);
+
                 _saveMenu.SetActive(false);
 
-                var pos = new Vector3(saves[_selectedIndex].transform[0], saves[_selectedIndex].transform[1], saves[_selectedIndex].transform[2]);
-
-                _player.TransformPosition = pos;
             }
         }
 
         private IEnumerator LoadAsyncScene()
         {
-            var asyncLoad = SceneManager.LoadSceneAsync(saves[_selectedIndex].scene);
+            var asyncLoad = SceneManager.LoadSceneAsync(_saves[_selectedIndex].scene);
 
             while (!asyncLoad.isDone)
             {

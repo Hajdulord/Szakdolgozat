@@ -170,6 +170,8 @@ namespace HMF.Thesis.Player
 
             var data = PersistentData.Instance.CurrentSave;
 
+            //Debug.Log(data);
+
             if (data != null)
             {
                 Load(data);
@@ -336,16 +338,34 @@ namespace HMF.Thesis.Player
             Score.Instance.StartTimer();
         }
 
+        public void Load()
+        {
+            var data = PersistentData.Instance.CurrentSave;
+
+            //Debug.Log(data);
+
+            if (data != null)
+            {
+                Load(data);
+            }
+        }
+
         private void Load(SaveData data)
         {
+            transform.position = new Vector3(data.transform[0], data.transform[1], data.transform[2]);
+
             Score.Instance.ElapsedTime = data.time;
             Score.Instance.Kills = data.kills;
             Score.Instance.Deaths = data.deaths;
             Score.Instance.Name = data.name;
 
+            Debug.Log(data.name + " " + data.time);
+
             _characterComponent.Character.Health = data.health;
 
             _inventoryComponent.Inventory.RemoveAll();
+
+            //Debug.Log(_inventoryComponent.Inventory.InUse.Count);
 
             _inventoryComponent.Inventory.MainWeapon = ItemSorter(data.mainWeapon);
 
@@ -353,12 +373,23 @@ namespace HMF.Thesis.Player
             {
                 var item = ItemSorter(data.inUseItems[i]);
 
+                
+
                 if (item != null)
                 {
                     _inventoryComponent.Inventory.AddItem(item, data.inUseItemsQuantity[i]);
                     _inventoryComponent.Inventory.SetUse(item);
+                    Debug.Log(item.Name);
                 }
             }
+
+            /*Time.timeScale = 1f;
+
+            Pause.gameIsPaused = false;
+
+            Score.Instance.StartTimer();*/
+
+            inventoryUI.UpdateDisplay();
         }
 
         private IItem ItemSorter(string name)

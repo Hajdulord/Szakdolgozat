@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Misc;
+using HMF.Thesis.Menu;
 using HMF.Thesis.Items;
 using HMF.Thesis.ScriptableObjects;
 
@@ -288,6 +289,8 @@ namespace HMF.Thesis.Player
             Misc.Pause.PauseGame();
             //GetComponent<PlayerInput>().enabled = true;
             _pauseMenu.SetActive(true);
+
+            Menu.Menu.flipPausedBool();
         }
 
         public void UnPause()
@@ -297,6 +300,8 @@ namespace HMF.Thesis.Player
             Misc.Pause.Resume();
             //GetComponent<PlayerInput>().enabled = true;
             _pauseMenu.SetActive(false);
+            
+            Menu.Menu.flipPausedBool();
         }
     }
 }

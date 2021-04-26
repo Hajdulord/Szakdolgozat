@@ -45,10 +45,10 @@ namespace HMF.Thesis.Misc
 
             for (int i = 0; i < 4; i++)
             {
-                var item = inventory.InUse[i];
-
-                if (item != null)
+                if (inventory.InUse.ContainsKey(i))
                 {
+                    var item = inventory.InUse[i];
+                    
                     inUseItems[i] = item.Name;
                     inUseItemsQuantity[i] = inventory.InventoryShelf[item.Name].Quantity;
                 }
