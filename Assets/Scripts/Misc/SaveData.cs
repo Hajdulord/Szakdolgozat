@@ -7,8 +7,8 @@ namespace HMF.Thesis.Misc
     [System.Serializable]
     public class SaveData
     {
-        public int mainWeapon;
-        public int[] inUseItems;
+        public string mainWeapon;
+        public string[] inUseItems;
         public int[] inUseItemsQuantity;
         public float[] transform;
         public float health;
@@ -19,6 +19,8 @@ namespace HMF.Thesis.Misc
         public string name;
 
         public int scene;
+
+        public string date;
 
         public SaveData(ICharacter character, IInventory inventory, Transform pos, int sceneIndex)
         {
@@ -36,10 +38,10 @@ namespace HMF.Thesis.Misc
 
             health = character.Health;
 
-            inUseItems = new int[4]{-1, -1, -1, -1};
+            inUseItems = new string[4]{string.Empty, string.Empty, string.Empty, string.Empty};
             inUseItemsQuantity = new int[4]{0, 0, 0, 0};
 
-            mainWeapon = ItemSort(inventory.MainWeapon.Name);
+            mainWeapon = inventory.MainWeapon.Name;
 
             for (int i = 0; i < 4; i++)
             {
@@ -47,46 +49,17 @@ namespace HMF.Thesis.Misc
 
                 if (item != null)
                 {
-                    inUseItems[i] = ItemSort(item.Name);
+                    inUseItems[i] = item.Name;
                     inUseItemsQuantity[i] = inventory.InventoryShelf[item.Name].Quantity;
                 }
                 else
                 {
-                    inUseItems[i] = ItemSort("");
+                    inUseItems[i] = string.Empty;
                 }
             }
 
+            date = System.DateTime.Now.ToString();
         }
 
-        private int ItemSort(string name)
-        {
-            switch (name)
-            {
-                case "Katana":
-                    return 0;
-
-                case "Masamune":
-                    return 1;
-
-                case "Muramasa":
-                    return 2;
-
-                case "Cure Potion":
-                    return 3;
-
-                case "Health Potion":
-                    return 4;
-
-                case "Fire Burst":
-                    return 5;
-
-                case "Ice Lance":
-                    return 6;
-                
-                case "":
-                default:
-                    return -1;
-            }
-        }
     }
 }
