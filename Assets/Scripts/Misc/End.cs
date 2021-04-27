@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using HMF.Thesis.Status;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace HMF.Thesis.Misc
 {
@@ -9,22 +10,25 @@ namespace HMF.Thesis.Misc
     {
         [SerializeField] private GameObject _endMenu = null!;
         [SerializeField] private GameObject _enemys = null!;
+        [SerializeField] private TMP_Text _score = null!;
 
         private void OnTriggerEnter2D(Collider2D other) 
         {
             if (other.gameObject.tag == "Player")
             {
                 Score.Instance.StopTimer();
-                Debug.Log($"Name: {Score.Instance.Name}\nTime: {Score.Instance.ElapsedTime}\nKills: {Score.Instance.Kills}\nDeaths: {Score.Instance.Deaths}\nScore: {Score.Instance.CalculatedScore()}");
+                //Debug.Log($"Name: {Score.Instance.Name}\nTime: {Score.Instance.ElapsedTime}\nKills: {Score.Instance.Kills}\nDeaths: {Score.Instance.Deaths}\nScore: {Score.Instance.CalculatedScore()}");
 
                 Score.Instance.AddToScoreBoard(SceneManager.GetActiveScene().buildIndex);
 
-                foreach(var item in Score.Instance.GetScoreBoard(SceneManager.GetActiveScene().buildIndex))
+                /*foreach(var item in Score.Instance.GetScoreBoard(SceneManager.GetActiveScene().buildIndex))
                 {
                     Debug.Log($"{item.Name} {item.Score}");
-                }
+                }*/
 
                 SaveSystem.SaveScore();
+
+                _score.text = $"Your last score is {Score.Instance.CalculatedScore()}";
 
                 Score.Instance.ResetData();
                 //Debug.Log(Score.Instance.ScoreBoard.OrderBy(s => s.Score).Take(10));

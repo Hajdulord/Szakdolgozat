@@ -7,8 +7,6 @@ namespace HMF.Thesis.Logic
     public class InventoryLogic : IInventory
     {
         public Dictionary<string, (IItem Item, int Quantity)> InventoryShelf { get; private set;}
-
-        private List<IItem> _inUse;
         
         private int _inUseNextIndex;
         private int _inUseSize;
@@ -118,6 +116,15 @@ namespace HMF.Thesis.Logic
             }
 
             return item;
+        }
+
+        public void RemoveAll()
+        {
+            _inUseNextIndex = 0;
+
+            InventoryShelf.Clear();
+
+            InUse.Clear();
         }
     }
 }

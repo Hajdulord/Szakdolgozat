@@ -16,5 +16,8 @@ namespace HMF.Thesis.Interfaces
         LayerMask LayersToTarget { get; set; }
         bool IsStunned { get; set; }
         LayerMask PickUpLayers { get; set; }
+        Vector3 TransformPosition {get; set;}
+
+        void Load();
     }
 }

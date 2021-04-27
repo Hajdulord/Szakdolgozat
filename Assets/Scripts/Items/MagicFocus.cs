@@ -1,5 +1,6 @@
 using UnityEngine;
 using HMF.Thesis.Interfaces;
+using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Magic;
 
@@ -8,7 +9,7 @@ namespace HMF.Thesis.Items
     public class MagicFocus : IItem
     {
         private MagicFocusData _magicFocusData;
-        private MagicHandler _magicHandler;
+        //private MagicHandler _magicHandler;
 
         public string Name => _magicFocusData.name;
         public string Description => _magicFocusData.description;
@@ -18,21 +19,28 @@ namespace HMF.Thesis.Items
         public float attackTime => _magicFocusData.attackTime;
         public AudioClip Clip => _magicFocusData.clip;
 
-        public MagicFocus(MagicFocusData magicFocusData, IMagicHandler magicHandler)
+        public MagicFocus(MagicFocusData magicFocusData)
         {
             _magicFocusData = magicFocusData;
-            _magicHandler = magicHandler as MagicHandler;
-            _magicHandler.AddNewMagic(_magicFocusData.magicType.ToString(), _magicFocusData);
+            //_magicHandler = magicHandler as MagicHandler;
+            //_magicHandler.AddNewMagic(_magicFocusData.magicType.ToString(), _magicFocusData);
         }
 
         public void Use(GameObject origin, string[] tagsToTarget, LayerMask layersToTarget)
         {
-            _magicHandler.UseMagic(
-                _magicFocusData.magicType.ToString(), 
-                tagsToTarget, origin.transform.position, 
-                layersToTarget, 
-                _magicFocusData.animationToSpawn, 
-                origin.transform.right.x);
+            var magicHandler = origin.gameObject.GetComponent<IMagicHandlerComponent>()?.MagicHandler as MagicHandler;
+
+            if (magicHandler != null)
+            {
+                magicHandler.AddNewMagic(_magicFocusData.magicType.ToString(), _magicFocusData);
+                
+                magicHandler.UseMagic(
+                    _magicFocusData.magicType.ToString(), 
+                    tagsToTarget, origin.transform.position, 
+                    layersToTarget, 
+                    _magicFocusData.animationToSpawn, 
+                    origin.transform.right.x);
+            }
         }
     }
 }

@@ -8,7 +8,8 @@ namespace HMF.Thesis.Misc
 
         public void RemoveListener()
         {
-           Destroy(_listener);
+           //Destroy(_listener);
+           _listener.enabled = false;
         }
     }
 }
