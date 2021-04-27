@@ -19,6 +19,7 @@ namespace HMF.Thesis.Player
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
         [SerializeField] private GameObject _pauseMenu = null!;
+        [SerializeField] private GameObject _saveMenu = null!;
 
         private Rigidbody2D _rigidbody = null;
 
@@ -300,6 +301,7 @@ namespace HMF.Thesis.Player
             Misc.Pause.Resume();
             //GetComponent<PlayerInput>().enabled = true;
             _pauseMenu.SetActive(false);
+            _saveMenu.SetActive(false);
             
             Menu.Menu.flipPausedBool();
         }

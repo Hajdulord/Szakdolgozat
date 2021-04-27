@@ -12,6 +12,8 @@ namespace HMF.Thesis.Misc
     public class SavePlayer : MonoBehaviour
     {
         [SerializeField] private GameObject _saveMenu = null!;
+        [SerializeField] private GameObject _endMenu = null!;
+        [SerializeField] private GameObject _enemys = null!;
         [SerializeField] private GameObject _instructionsMenu = null!;
         [SerializeField] private GameObject _loadingMenu = null;
         [SerializeField] private List<TMP_Text> _slots = null;
@@ -110,6 +112,10 @@ namespace HMF.Thesis.Misc
                 _instructionsMenu.SetActive(true);
 
                 _saveMenu.SetActive(false);
+
+                _endMenu.SetActive(false);
+
+                _enemys.SetActive(true);
 
             }
         }

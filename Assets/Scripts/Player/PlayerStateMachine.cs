@@ -389,6 +389,14 @@ namespace HMF.Thesis.Player
 
             Score.Instance.StartTimer();*/
 
+            gameObject.GetComponent<PlayerInput>().enabled = true;
+            gameObject.GetComponent<Dummy>().enabled = true;
+
+            gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
+
+            _rigidbody.constraints = RigidbodyConstraints2D.None;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
             inventoryUI.UpdateDisplay();
         }
 

@@ -3481,6 +3481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _saveMenu: {fileID: 405240374}
+  _endMenu: {fileID: 118872304}
+  _enemys: {fileID: 1821164652}
   _instructionsMenu: {fileID: 1545427898}
   _loadingMenu: {fileID: 1687682038}
   _slots:
@@ -17682,18 +17684,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 91654225}
-        m_TargetAssemblyTypeName: HMF.Thesis.Menu.Menu, Menu
-        m_MethodName: flipPausedBool
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &471839308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25644,6 +25634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateMachine: {fileID: 600795973}
   _pauseMenu: {fileID: 148721224}
+  _saveMenu: {fileID: 405240374}
 --- !u!114 &600795975
 MonoBehaviour:
   m_ObjectHideFlags: 0
