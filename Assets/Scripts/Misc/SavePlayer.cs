@@ -93,6 +93,7 @@ namespace HMF.Thesis.Misc
             if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
             {
                 _loadingMenu.SetActive(true);
+                PersistentData.Instance.Loaded = true;
                 StartCoroutine(LoadAsyncScene());
             }
             else

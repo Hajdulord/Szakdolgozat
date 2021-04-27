@@ -5,8 +5,9 @@ namespace HMF.Thesis.Misc
     public class PersistentData : MonoBehaviour
     {
         private SaveData _currentSave = null;
-
         private string _name = string.Empty;
+        private bool _loaded = false;
+
         public static PersistentData Instance {get; private set;}
         public SaveData CurrentSave 
         {
@@ -28,6 +29,17 @@ namespace HMF.Thesis.Misc
                 return output;
             } 
             set => _name = value;
+        }
+
+        public bool Loaded 
+        { 
+            get
+            {
+                var output = _loaded;
+                _loaded = false;
+                return output;
+            } 
+            set => _loaded = value; 
         }
 
         private void Awake() 
