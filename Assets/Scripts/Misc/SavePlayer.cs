@@ -103,7 +103,8 @@ namespace HMF.Thesis.Misc
                     _listener.enabled = true;
                 }
 
-                
+                //Menu.Menu.flipPausedBool();
+                Menu.Menu.flipBool();
                 /*_player.TransformPosition  = new Vector3(
                                                     _saves[_selectedIndex].transform[0], 
                                                     _saves[_selectedIndex].transform[1], 

@@ -48,7 +48,13 @@ namespace HMF.Thesis.Misc
                     _scoreBoardHard.Add((data.hardNames[i], data.hardScores[i]));
                 }  
             }
-            
+
+            var name = PersistentData.Instance.Name;
+
+            if (name != string.Empty)
+            {
+                Name = name;
+            }
         }
 
         private void Update()
@@ -90,10 +96,6 @@ namespace HMF.Thesis.Misc
                         score = Mathf.FloorToInt(10 * _kills / (_deaths + 1)) * ((Mathf.RoundToInt(_elapsedTime) / 60) + 1);
                     }
                 }
-                else
-                {
-                    score = 0;
-                }
             }
             else
             {
@@ -107,10 +109,6 @@ namespace HMF.Thesis.Misc
                     {  
                         score = 10 * _kills * ((Mathf.RoundToInt(_elapsedTime) / 60 ) + 1) + 10;
                     }
-                }
-                else
-                {
-                    score = 0;
                 }
             }
 
@@ -152,6 +150,11 @@ namespace HMF.Thesis.Misc
                     break;
             }
             
+        }
+
+        private void OnDestroy() 
+        {
+            Instance = null;    
         }
     }
 }

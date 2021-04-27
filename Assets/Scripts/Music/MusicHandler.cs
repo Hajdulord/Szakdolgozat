@@ -49,7 +49,11 @@ namespace HMF.Thesis.Music
                 default:
                     return null;
             }
-            
+        }
+
+        private void OnDestroy() 
+        {
+            Instance = null;    
         }
     }
 }

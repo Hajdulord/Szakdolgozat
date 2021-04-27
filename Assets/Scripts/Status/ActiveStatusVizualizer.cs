@@ -65,5 +65,10 @@ namespace HMF.Thesis.Status
                 _images[i].color = new Color(0, 0, 0, 0);
             }
         }
+
+        private void OnDestroy() 
+        {
+            Instance = null;    
+        }
     }
 }
