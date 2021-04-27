@@ -117,6 +117,7 @@ var hierarchy =
       [ "HMF.Thesis.Enemys.TargetSetter", "class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html", null ],
       [ "HMF.Thesis.Magic.DestroyAfterAnimationEnds", "class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html", null ],
       [ "HMF.Thesis.Menu.Menu", "class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html", null ],
+      [ "HMF.Thesis.Misc.AllScriptableObjects", "class_h_m_f_1_1_thesis_1_1_misc_1_1_all_scriptable_objects.html", null ],
       [ "HMF.Thesis.Misc.DropDownSetters", "class_h_m_f_1_1_thesis_1_1_misc_1_1_drop_down_setters.html", null ],
       [ "HMF.Thesis.Misc.End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
@@ -124,8 +125,10 @@ var hierarchy =
       [ "HMF.Thesis.Misc.Name", "class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html", null ],
       [ "HMF.Thesis.Misc.OptionSaver", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html", null ],
       [ "HMF.Thesis.Misc.Pause", "class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html", null ],
+      [ "HMF.Thesis.Misc.PersistentData", "class_h_m_f_1_1_thesis_1_1_misc_1_1_persistent_data.html", null ],
       [ "HMF.Thesis.Misc.PlayMusic", "class_h_m_f_1_1_thesis_1_1_misc_1_1_play_music.html", null ],
       [ "HMF.Thesis.Misc.RemoveAudioListener", "class_h_m_f_1_1_thesis_1_1_misc_1_1_remove_audio_listener.html", null ],
+      [ "HMF.Thesis.Misc.SavePlayer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_save_player.html", null ],
       [ "HMF.Thesis.Misc.Score", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html", null ],
       [ "HMF.Thesis.Misc.ScoreBoard", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score_board.html", null ],
       [ "HMF.Thesis.Misc.SpawnPointSet", "class_h_m_f_1_1_thesis_1_1_misc_1_1_spawn_point_set.html", null ],
@@ -143,6 +146,7 @@ var hierarchy =
       [ "HMF.Thesis.Status.Dummy", "class_h_m_f_1_1_thesis_1_1_status_1_1_dummy.html", null ]
     ] ],
     [ "HMF.Thesis.Tests.Logic.MoveLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html", null ],
+    [ "HMF.Thesis.Misc.SaveData", "class_h_m_f_1_1_thesis_1_1_misc_1_1_save_data.html", null ],
     [ "HMF.Thesis.Misc.ScoreData", "class_h_m_f_1_1_thesis_1_1_misc_1_1_score_data.html", null ],
     [ "ScriptableObject", null, [
       [ "HMF.Thesis.ScriptableObjects.CharacterData", "class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_character_data.html", null ],

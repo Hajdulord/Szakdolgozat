@@ -1,6 +1,7 @@
 var class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine =
 [
     [ "Dead", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a81b890bb4af543815e2de6cc3f852b79", null ],
+    [ "Load", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#abb63859790cab1f6fe83a5c963469459", null ],
     [ "PushBack", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a72c7bcc00dbfa75af4f7ff2d5edff029", null ],
     [ "Respawn", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a48207cec7acce67c32ccccfc8b99a33c", null ],
     [ "Step", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#ade8812fbf2ead4e886742bd2703290f5", null ],
@@ -21,5 +22,6 @@ var class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine =
     [ "PickUpLayers", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a9c515daf2329ce0de9a9203968976cf3", null ],
     [ "PushBackDir", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a703ca81e7103d6b758a0aedce16f9388", null ],
     [ "PushBackInmunity", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a0b6dee294c5b0dd79729f98969b5071c", null ],
-    [ "PushBackTime", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a684f3c12124a57a43e65928b91fb3e48", null ]
+    [ "PushBackTime", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a684f3c12124a57a43e65928b91fb3e48", null ],
+    [ "TransformPosition", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html#a921941bd957535661d911c01c4e9850c", null ]
 ];

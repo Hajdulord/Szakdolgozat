@@ -1,5 +1,6 @@
 var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine =
 [
+    [ "Load", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a3153efb48e6d94ee33005c47bc4d0c29", null ],
     [ "CurrentItem", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a252e92877bbb7732cbbb2cd781e839b9", null ],
     [ "CurrentSpawnPoint", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#aa94c1729c26df1f08cd85c575e3748be", null ],
     [ "Inventory", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a85005ce87bb763ca49b5e5bd438ed376", null ],
@@ -10,5 +11,6 @@ var interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine =
     [ "MoveDirection", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a2a19562bcff23b9d2c5bc3e84cdaecc8", null ],
     [ "PickUpLayers", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a1330ff79630abd2a2960262644e37692", null ],
     [ "PushBackDir", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#af0be4d3ee7c305430f3d94fb73100d3f", null ],
-    [ "PushBackTime", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a8125f8c4290660afbe49ffe4432876f4", null ]
+    [ "PushBackTime", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#a8125f8c4290660afbe49ffe4432876f4", null ],
+    [ "TransformPosition", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html#aa3ce00bf682fa2125b765adfd4d3f1df", null ]
 ];
