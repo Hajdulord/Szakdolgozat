@@ -252,7 +252,7 @@ var assemblies = [
   {
     "name": "Status",
     "classes": [
-      { "name": "HMF.Thesis.Status.ActiveStatusVizualizer", "rp": "Status_ActiveStatusVizualizer.html", "cl": 0, "ucl": 40, "cal": 40, "tl": 69, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HMF.Thesis.Status.ActiveStatusVizualizer", "rp": "Status_ActiveStatusVizualizer.html", "cl": 0, "ucl": 43, "cal": 43, "tl": 74, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.ActualStatuses.Bleeding", "rp": "Status_Bleeding.html", "cl": 2, "ucl": 10, "cal": 12, "tl": 36, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.ActualStatuses.Burning", "rp": "Status_Burning.html", "cl": 2, "ucl": 10, "cal": 12, "tl": 34, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HMF.Thesis.Status.ActualStatuses.Frozen", "rp": "Status_Frozen.html", "cl": 3, "ucl": 22, "cal": 25, "tl": 47, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
