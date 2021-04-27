@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Misc;
+using HMF.Thesis.Menu;
 using HMF.Thesis.Items;
 using HMF.Thesis.ScriptableObjects;
 
@@ -18,6 +19,7 @@ namespace HMF.Thesis.Player
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
         [SerializeField] private GameObject _pauseMenu = null!;
+        [SerializeField] private GameObject _saveMenu = null!;
 
         private Rigidbody2D _rigidbody = null;
 
@@ -246,8 +248,7 @@ namespace HMF.Thesis.Player
 
                 case MyScriptableObjects.MagicFocusData:
                     //Debug.Log("MagicFocus");
-                    return new MagicFocus(data.ScriptableData as MagicFocusData, 
-                        _stateMachine.gameObject.GetComponent<IMagicHandlerComponent>().MagicHandler);
+                    return new MagicFocus(data.ScriptableData as MagicFocusData);
 
                 case MyScriptableObjects.ConsumableData:
                     switch (data.Consumable)
@@ -289,6 +290,8 @@ namespace HMF.Thesis.Player
             Misc.Pause.PauseGame();
             //GetComponent<PlayerInput>().enabled = true;
             _pauseMenu.SetActive(true);
+
+            Menu.Menu.flipPausedBool();
         }
 
         public void UnPause()
@@ -298,6 +301,9 @@ namespace HMF.Thesis.Player
             Misc.Pause.Resume();
             //GetComponent<PlayerInput>().enabled = true;
             _pauseMenu.SetActive(false);
+            _saveMenu.SetActive(false);
+            
+            Menu.Menu.flipPausedBool();
         }
     }
 }

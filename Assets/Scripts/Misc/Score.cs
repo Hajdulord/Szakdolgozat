@@ -12,9 +12,9 @@ namespace HMF.Thesis.Misc
         private  int _kills = 0;
         private int _deaths = 0;
 
-        public int Deaths { get => _deaths;}
-        public int Kills { get => _kills;}
-        public float ElapsedTime { get => _elapsedTime;}
+        public int Deaths { get => _deaths; set => _deaths = value; }
+        public int Kills { get => _kills; set => _kills = value; }
+        public float ElapsedTime { get => _elapsedTime; set => _elapsedTime = value; }
         public string Name { get; set;} = "Anonymus";
         private List<(string Name, int Score)> _scoreBoardEasy  = new List<(string Name, int Score)>();
         private List<(string Name, int Score)> _scoreBoardMedium  = new List<(string Name, int Score)>();

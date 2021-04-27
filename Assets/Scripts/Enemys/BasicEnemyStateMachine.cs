@@ -29,7 +29,6 @@ namespace HMF.Thesis.Enemys
         private StateMachine _stateMachine;
         private IMove _move;
         private IAttack _attack;
-        private IMagicHandler _magicHandler;
         private ICharacter _character;
         private Animator _animator;
 
@@ -54,14 +53,13 @@ namespace HMF.Thesis.Enemys
 
             _move = GetComponent<IMoveComponent>().Move;
             _attack = GetComponent<IAttackComponent>().Attack;
-            _magicHandler = GetComponent<IMagicHandlerComponent>()?.MagicHandler;
             _character = GetComponent<ICharacterComponent>().Character;
             _animator = GetComponent<Animator>();
             
             Weapon = new Weapon(_weaponData);
             if (_magicFocusData != null)
             {
-                MagicFocus = new MagicFocus(_magicFocusData, _magicHandler);   
+                MagicFocus = new MagicFocus(_magicFocusData);   
             }
 
             var idle = new Idle(_animator);

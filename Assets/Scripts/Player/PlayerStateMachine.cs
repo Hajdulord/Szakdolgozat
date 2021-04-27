@@ -70,6 +70,7 @@ namespace HMF.Thesis.Player
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
         public LayerMask PickUpLayers { get => _pickUpLayers; set => _pickUpLayers = value; }
+        public Vector3 TransformPosition {get => gameObject.transform.position; set => gameObject.transform.position = value; }
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
@@ -166,12 +167,21 @@ namespace HMF.Thesis.Player
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
 
             _stateMachine.SetState(idle);
+
+            var data = PersistentData.Instance.CurrentSave;
+
+            //Debug.Log(data);
+
+            if (data != null)
+            {
+                Load(data);
+            }
         }
 
         private void SetupInventory()
         {
-            _magicItem = new MagicFocus(_magicFocusData[0], GetComponent<IMagicHandlerComponent>().MagicHandler);
-            _magicItem2 = new MagicFocus(_magicFocusData[1], GetComponent<IMagicHandlerComponent>().MagicHandler);
+            _magicItem = new MagicFocus(_magicFocusData[0]);
+            _magicItem2 = new MagicFocus(_magicFocusData[1]);
             _consumableItem = new HealthPotion(_consumableData);
 
             _inventoryComponent.Inventory.AddItem(_magicItem, 1);
@@ -327,5 +337,98 @@ namespace HMF.Thesis.Player
 
             Score.Instance.StartTimer();
         }
+
+        public void Load()
+        {
+            var data = PersistentData.Instance.CurrentSave;
+
+            //Debug.Log(data);
+
+            if (data != null)
+            {
+                Load(data);
+            }
+        }
+
+        private void Load(SaveData data)
+        {
+            transform.position = new Vector3(data.transform[0], data.transform[1], data.transform[2]);
+
+            Score.Instance.ElapsedTime = data.time;
+            Score.Instance.Kills = data.kills;
+            Score.Instance.Deaths = data.deaths;
+            Score.Instance.Name = data.name;
+
+            Debug.Log(data.name + " " + data.time);
+
+            _characterComponent.Character.Health = data.health;
+
+            _inventoryComponent.Inventory.RemoveAll();
+
+            //Debug.Log(_inventoryComponent.Inventory.InUse.Count);
+
+            _inventoryComponent.Inventory.MainWeapon = ItemSorter(data.mainWeapon);
+
+            for (int i = 0; i < data.inUseItems.Length; i++)
+            {
+                var item = ItemSorter(data.inUseItems[i]);
+
+                
+
+                if (item != null)
+                {
+                    _inventoryComponent.Inventory.AddItem(item, data.inUseItemsQuantity[i]);
+                    _inventoryComponent.Inventory.SetUse(item);
+                    Debug.Log(item.Name);
+                }
+            }
+
+            /*Time.timeScale = 1f;
+
+            Pause.gameIsPaused = false;
+
+            Score.Instance.StartTimer();*/
+
+            gameObject.GetComponent<PlayerInput>().enabled = true;
+            gameObject.GetComponent<Dummy>().enabled = true;
+
+            gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
+
+            _rigidbody.constraints = RigidbodyConstraints2D.None;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            inventoryUI.UpdateDisplay();
+        }
+
+        private IItem ItemSorter(string name)
+        {
+            switch(name)
+            {
+                case "Katana":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.katana);
+
+                case "Masamune":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.masamune);
+
+                case "Muramasa":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.muramasa);
+
+                case "Cure Potion":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.curePotion);
+
+                case "Health Potion":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.healthPotion);
+
+                case "Fire Burst":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.fireBurst);
+
+                case "Ice Lance":
+                    return ItemFactory.GetItem(name, AllScriptableObjects.Instance.iceLance);
+                
+                default:
+                    return null;
+            }
+        }
+        
     }
 }
