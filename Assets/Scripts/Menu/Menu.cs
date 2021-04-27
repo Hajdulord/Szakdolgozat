@@ -26,7 +26,7 @@ namespace HMF.Thesis.Menu
                 _pauseMenu.SetActive(true);
             }
 
-            Debug.Log(isEnd + " " + isPaused);
+            //Debug.Log(isEnd + " " + isPaused);
         }
 
         public static void flipBool() => isEnd = !isEnd;

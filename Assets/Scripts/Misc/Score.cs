@@ -48,7 +48,13 @@ namespace HMF.Thesis.Misc
                     _scoreBoardHard.Add((data.hardNames[i], data.hardScores[i]));
                 }  
             }
-            
+
+            var name = PersistentData.Instance.Name;
+
+            if (name != string.Empty)
+            {
+                Name = name;
+            }
         }
 
         private void Update()
@@ -144,6 +150,11 @@ namespace HMF.Thesis.Misc
                     break;
             }
             
+        }
+
+        private void OnDestroy() 
+        {
+            Instance = null;    
         }
     }
 }

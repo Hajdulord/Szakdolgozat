@@ -359,7 +359,7 @@ namespace HMF.Thesis.Player
             Score.Instance.Deaths = data.deaths;
             Score.Instance.Name = data.name;
 
-            Debug.Log(data.name + " " + data.time);
+            //Debug.Log(data.name + " " + data.time);
 
             _characterComponent.Character.Health = data.health;
 
@@ -379,7 +379,7 @@ namespace HMF.Thesis.Player
                 {
                     _inventoryComponent.Inventory.AddItem(item, data.inUseItemsQuantity[i]);
                     _inventoryComponent.Inventory.SetUse(item);
-                    Debug.Log(item.Name);
+                    //Debug.Log(item.Name);
                 }
             }
 
