@@ -27,6 +27,9 @@ namespace HMF.Thesis.Player
         {
             //Debug.Log("PushBack");
             _move.PushBack(_playerStateMachine.PushBackDir);
+
+            //_rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
+
             _animator.SetBool("IsHurt", true);
             _time = Time.time + _playerStateMachine.PushBackTime;
 
@@ -49,7 +52,9 @@ namespace HMF.Thesis.Player
             }
 
             _playerStateMachine.PushBackInmunity = Time.time + 2f;
-
+            _playerStateMachine.IsDashing = false;
+            _playerStateMachine.CurrentItem = null;
+            //Debug.Log("PushBack exit");
         }
 
         public void Tick()
@@ -63,6 +68,14 @@ namespace HMF.Thesis.Player
             else if(Time.time < _time && !_playerStateMachine.GroundCheck())
             {
                 _move.PushBack(_playerStateMachine.PushBackDir);
+                _rigidbody.AddForce(Vector2.down * 5, ForceMode2D.Impulse);
+                //Debug.Log("a");
+            }
+
+            if (!_playerStateMachine.GroundCheck())
+            {
+                _rigidbody.AddForce(new Vector2(_playerStateMachine.PushBackDir, -1) * 5f, ForceMode2D.Impulse);
+                //Debug.Log("b");
             }
         }
     }

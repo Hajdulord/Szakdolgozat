@@ -9,7 +9,7 @@ namespace HMF.Thesis.Interfaces
         IInventory Inventory { get; }
         IItem CurrentItem { get; set;}
         bool IsJumping { get; set;}
-        bool IsDashing { get; }
+        bool IsDashing { get; set;}
         int MoveDirection { get; }
         float PushBackDir { get; set; }
         float PushBackTime { get; }

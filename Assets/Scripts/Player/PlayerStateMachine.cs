@@ -68,7 +68,7 @@ namespace HMF.Thesis.Player
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
-        public bool IsDashing {get; internal set; } = false;
+        public bool IsDashing {get; set; } = false;
         public bool IsJumping {get; set; } = false;
         public IItem CurrentItem {get; set; } = null;
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
@@ -145,7 +145,7 @@ namespace HMF.Thesis.Player
             At(move, attack, isAttacking());
             At(jump, attack, isAttacking());
             At(fall, attack, isAttacking());
-            At(pushBack, attack, isAttacking());
+            //At(pushBack, attack, isAttacking());
 
             At(attack, idle, notAttackingAndIdle());
             //At(attack, jump, notAttackingAndJumping());
@@ -284,13 +284,13 @@ namespace HMF.Thesis.Player
             return output;
         }
 
-        void OnDrawGizmosSelected()
+        /*void OnDrawGizmosSelected()
         {
             // Display the explosion radius when selected
             Gizmos.color = new Color(1, 1, 0, 0.75F);
             //Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .1f));
             Gizmos.DrawSphere(_groundCheck.position, .2f);
-        }
+        }*/
 
         public void Dead()
         {

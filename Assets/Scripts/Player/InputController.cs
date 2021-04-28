@@ -202,7 +202,7 @@ namespace HMF.Thesis.Player
 
                 foreach(var collider in colliders)
                 {
-                    Debug.Log("Found collider");
+                    //Debug.Log("Found collider");
                     var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
 
                     if (pickUp != null)
