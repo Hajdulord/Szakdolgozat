@@ -11,16 +11,16 @@ namespace HMF.Thesis.Misc
 {
     public class SavePlayer : MonoBehaviour
     {
-        [SerializeField] private GameObject _saveMenu = null!;
+        /*[SerializeField] private GameObject _saveMenu = null!;
         [SerializeField] private GameObject _endMenu = null!;
         [SerializeField] private GameObject _enemys = null!;
         [SerializeField] private GameObject _items = null!;
-        [SerializeField] private GameObject _instructionsMenu = null!;
+        [SerializeField] private GameObject _instructionsMenu = null!;*/
         [SerializeField] private GameObject _loadingMenu = null;
         [SerializeField] private List<TMP_Text> _slots = null;
         [SerializeField] private List<Button> _slotButtons = null;
         [SerializeField] private GameObject _playerGO = null!;
-        [SerializeField] private AudioListener _listener = null!;
+        //[SerializeField] private AudioListener _listener = null!;
 
         private IInventoryComponent _inventory;
         private ICharacterComponent _character;
@@ -91,8 +91,12 @@ namespace HMF.Thesis.Misc
                 return;
             
             PersistentData.Instance.CurrentSave = _saves[_selectedIndex];
+
+            _loadingMenu.SetActive(true);
+            PersistentData.Instance.Loaded = true;
+            StartCoroutine(LoadAsyncScene());
             
-            if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
+            /*if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
             {
                 _loadingMenu.SetActive(true);
                 PersistentData.Instance.Loaded = true;
@@ -116,10 +120,7 @@ namespace HMF.Thesis.Misc
 
                 //Menu.Menu.flipPausedBool();
                 Menu.Menu.flipBool();
-                /*_player.TransformPosition  = new Vector3(
-                                                    _saves[_selectedIndex].transform[0], 
-                                                    _saves[_selectedIndex].transform[1], 
-                                                    _saves[_selectedIndex].transform[2]);*/
+
                 
                 _instructionsMenu.SetActive(true);
 
@@ -134,7 +135,7 @@ namespace HMF.Thesis.Misc
                     _items.transform.GetChild(i).gameObject.SetActive(true);
                 }
 
-            }
+            }*/
         }
 
         private IEnumerator LoadAsyncScene()
