@@ -39,14 +39,12 @@ namespace HMF.Thesis.Enemys
             {
                 foreach (var collider in colliders)
                 {
-                    if (!collider.isTrigger)
-                    {
-                        collider.attachedRigidbody.gravityScale = 0;
-                        collider.enabled = false;
-                    }   
+                    collider.attachedRigidbody.gravityScale = 0;
+                    collider.enabled = false;
                 }
             }
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb.simulated = false;
         }
 
         public void OnExit()
