@@ -85,6 +85,7 @@ var annotated_dup =
           [ "End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
           [ "HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar" ],
           [ "ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer" ],
+          [ "LoadScenes", "class_h_m_f_1_1_thesis_1_1_misc_1_1_load_scenes.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_load_scenes" ],
           [ "Name", "class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_name" ],
           [ "OptionSaver", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver" ],
           [ "Pause", "class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html", null ],

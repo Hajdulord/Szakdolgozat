@@ -122,6 +122,7 @@ var hierarchy =
       [ "HMF.Thesis.Misc.End", "class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html", null ],
       [ "HMF.Thesis.Misc.HealthBar", "class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html", null ],
       [ "HMF.Thesis.Misc.ItemCooldownVisualizer", "class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html", null ],
+      [ "HMF.Thesis.Misc.LoadScenes", "class_h_m_f_1_1_thesis_1_1_misc_1_1_load_scenes.html", null ],
       [ "HMF.Thesis.Misc.Name", "class_h_m_f_1_1_thesis_1_1_misc_1_1_name.html", null ],
       [ "HMF.Thesis.Misc.OptionSaver", "class_h_m_f_1_1_thesis_1_1_misc_1_1_option_saver.html", null ],
       [ "HMF.Thesis.Misc.Pause", "class_h_m_f_1_1_thesis_1_1_misc_1_1_pause.html", null ],

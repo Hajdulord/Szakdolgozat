@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"functions_prop.html":[1,3,2],
+"hierarchy.html":[1,2],
+"index.html":[],
+"interface_controls_1_1_i_gameplay_actions.html":[1,0,1,1],
 "interface_controls_1_1_i_gameplay_actions.html#a25251f7102607595a02ed5cda29a327d":[1,0,1,1,8],
 "interface_controls_1_1_i_gameplay_actions.html#a3b92523cd8c324594fbe04e515f0d1b4":[1,0,1,1,1],
 "interface_controls_1_1_i_gameplay_actions.html#a3cc59c70aca0150d4e7ab5ab643d3f6d":[1,0,1,1,2],
