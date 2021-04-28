@@ -33,6 +33,7 @@ namespace HMF.Thesis.Player.PlayerStates
         {
             //_playerStateMachine.IsJumping = false;
             //_animator.SetBool("IsJumping", false);
+            _playerStateMachine.IsDashing = false;
         }
 
         public void Tick()

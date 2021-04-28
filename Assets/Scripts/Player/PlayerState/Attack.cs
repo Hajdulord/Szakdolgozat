@@ -66,6 +66,7 @@ namespace HMF.Thesis.Player
             _playerStateMachine.IsJumping = false;
             _animator.SetBool("IsAttacking", false);
             _animator.SetBool("IsMagic", false);
+            _playerStateMachine.IsDashing = false;
         }
 
         public void Tick() => _playerStateMachine.CurrentItem = null;

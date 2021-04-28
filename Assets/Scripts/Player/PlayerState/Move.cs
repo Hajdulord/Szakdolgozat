@@ -31,6 +31,7 @@ namespace HMF.Thesis.Player.PlayerStates
         {
             _move.Move(_playerStateMachine.MoveDirection);
             _playerStateMachine.IsJumping = false;
+            _playerStateMachine.IsDashing = false;
         }
 
         public void Tick()

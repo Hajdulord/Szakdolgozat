@@ -36,6 +36,8 @@ namespace HMF.Thesis.Player
             _playerStateMachine.AudioSource.clip = MusicHandler.Instance.jumpLand;
             _playerStateMachine.AudioSource.Play();
             _animator.SetInteger("YDir", 0);
+            _playerStateMachine.IsDashing = false;
+
             //_animator.SetBool("IsFalling", false);
         }
 
