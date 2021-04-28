@@ -33,8 +33,8 @@ namespace HMF.Thesis.Player
         {
             _playerStateMachine.IsJumping = false;
             //_playerStateMachine.audioSource.clip = _playerStateMachine.musicHandler.jumpLand;
-            _playerStateMachine.audioSource.clip = MusicHandler.Instance.jumpLand;
-            _playerStateMachine.audioSource.Play();
+            _playerStateMachine.AudioSource.clip = MusicHandler.Instance.jumpLand;
+            _playerStateMachine.AudioSource.Play();
             _animator.SetInteger("YDir", 0);
             //_animator.SetBool("IsFalling", false);
         }
@@ -47,10 +47,10 @@ namespace HMF.Thesis.Player
             {
                 if(_move.Dash())
                 {
-                    _playerStateMachine.dashDust.transform.forward = -_playerStateMachine.transform.forward;
-                    _playerStateMachine.dashDust.transform.position = _playerStateMachine.transform.position + -_playerStateMachine.MoveDirection * Vector3.right * 2;
+                    _playerStateMachine.DashDust.transform.forward = -_playerStateMachine.transform.forward;
+                    _playerStateMachine.DashDust.transform.position = _playerStateMachine.transform.position + -_playerStateMachine.MoveDirection * Vector3.right * 2;
                     //Debug.Log(_playerStateMachine.dashDust.gameObject.transform.position + " " + _playerStateMachine.gameObject.transform.position);
-                    _playerStateMachine.dashDust.SetActive(true);
+                    _playerStateMachine.DashDust.SetActive(true);
                 }
                 _playerStateMachine.IsDashing = false;
             }

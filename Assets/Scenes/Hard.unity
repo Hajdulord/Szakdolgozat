@@ -1772,11 +1772,11 @@ Transform:
   - {fileID: 2113696579}
   - {fileID: 1479082054}
   - {fileID: 1738820440}
+  - {fileID: 673096189}
   - {fileID: 637864273}
   - {fileID: 1353848792}
-  - {fileID: 673096189}
-  - {fileID: 1889944211}
   - {fileID: 407441827}
+  - {fileID: 1889944211}
   - {fileID: 630715953}
   - {fileID: 1196732455}
   - {fileID: 1906405666}
@@ -49148,7 +49148,7 @@ MonoBehaviour:
   _enemys: {fileID: 60235851}
   _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
   DeathCanvas: {fileID: 1596007698}
-  _currentSpawnPoint: {fileID: 0}
+  _currentSpawnPoint: {fileID: 1889482470}
   _layersToTarget:
     serializedVersion: 2
     m_Bits: 128
@@ -49156,12 +49156,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _pushBackTime: 3
-  dashDust: {fileID: 1556212808}
-  swordPoint: {fileID: 236330006}
+  _dashDust: {fileID: 1556212808}
+  _swordPoint: {fileID: 236330006}
   inventoryUI: {fileID: 635193639}
-  audioSource: {fileID: 1223436854}
-  audioSourceAttack: {fileID: 1223436852}
-  audioSourceAttack2: {fileID: 1223436853}
+  _audioSource: {fileID: 1223436854}
+  _audioSourceAttack: {fileID: 1223436853}
+  _audioSourceAttack2: {fileID: 1223436852}
 --- !u!114 &1223436862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66888,6 +66888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd01b1b23f076b43a08459bcf49b754, type: 3}
+--- !u!4 &1889482470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 929508590230169052, guid: 0bd01b1b23f076b43a08459bcf49b754, type: 3}
+  m_PrefabInstance: {fileID: 1889482469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1889944210
 PrefabInstance:
   m_ObjectHideFlags: 0

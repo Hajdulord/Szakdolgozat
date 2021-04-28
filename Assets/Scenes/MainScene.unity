@@ -24018,6 +24018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd01b1b23f076b43a08459bcf49b754, type: 3}
+--- !u!4 &545162501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 929508590230169052, guid: 0bd01b1b23f076b43a08459bcf49b754, type: 3}
+  m_PrefabInstance: {fileID: 545162500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &545648531
 GameObject:
   m_ObjectHideFlags: 0
@@ -25597,7 +25602,7 @@ MonoBehaviour:
   _enemys: {fileID: 1821164652}
   _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
   DeathCanvas: {fileID: 420494069}
-  _currentSpawnPoint: {fileID: 0}
+  _currentSpawnPoint: {fileID: 545162501}
   _layersToTarget:
     serializedVersion: 2
     m_Bits: 128
@@ -25605,12 +25610,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _pushBackTime: 3
-  dashDust: {fileID: 1928777164}
-  swordPoint: {fileID: 1702327519}
+  _dashDust: {fileID: 1928777164}
+  _swordPoint: {fileID: 1702327519}
   inventoryUI: {fileID: 380593710}
-  audioSource: {fileID: 600795989}
-  audioSourceAttack: {fileID: 600795991}
-  audioSourceAttack2: {fileID: 600795990}
+  _audioSource: {fileID: 600795989}
+  _audioSourceAttack: {fileID: 600795990}
+  _audioSourceAttack2: {fileID: 600795991}
 --- !u!114 &600795974
 MonoBehaviour:
   m_ObjectHideFlags: 0
