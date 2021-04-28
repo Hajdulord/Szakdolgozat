@@ -23,6 +23,9 @@ namespace HMF.Thesis.Misc
             }
         }
 
-        
+        private void OnDestroy() 
+        {
+            Instance = null;    
+        }
     }
 }
