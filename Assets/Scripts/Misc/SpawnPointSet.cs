@@ -9,7 +9,7 @@ namespace HMF.Thesis.Misc
         {
             if (other.gameObject.tag == "Player")
             {
-                var stateMachine = other.gameObject.GetComponent<IPlayerSateMachine>();
+                var stateMachine = other.gameObject.GetComponent<IPlayerStateMachine>();
 
                 stateMachine.CurrentSpawnPoint = transform;
             }

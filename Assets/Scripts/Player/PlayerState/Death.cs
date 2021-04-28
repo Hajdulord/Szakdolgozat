@@ -21,8 +21,8 @@ namespace HMF.Thesis.Player.PlayerStates
             //Debug.Log("Dead");
             _animator.SetBool("IsDead", true);
             //_stateMachine.audioSource.clip = _stateMachine.musicHandler.Serve(Music.Category.Deaths);
-            _stateMachine.audioSource.clip = MusicHandler.Instance.Serve(Category.Deaths);
-            _stateMachine.audioSource.Play();
+            _stateMachine.AudioSource.clip = MusicHandler.Instance.Serve(Category.Deaths);
+            _stateMachine.AudioSource.Play();
             //_stateMachine.gameObject.GetComponent<IStatusHandlerComponent>().DestroyThis();
             //_stateMachine.g
             //_playerStateMachine.Respawn();

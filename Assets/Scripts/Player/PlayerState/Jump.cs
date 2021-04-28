@@ -44,10 +44,10 @@ namespace HMF.Thesis.Player.PlayerStates
             {
                 if(_move.Dash())
                 {
-                    _playerStateMachine.dashDust.transform.forward = -_playerStateMachine.transform.forward;
-                    _playerStateMachine.dashDust.transform.position = _playerStateMachine.transform.position + -_playerStateMachine.MoveDirection * Vector3.right * 2;
+                    _playerStateMachine.DashDust.transform.forward = -_playerStateMachine.transform.forward;
+                    _playerStateMachine.DashDust.transform.position = _playerStateMachine.transform.position + -_playerStateMachine.MoveDirection * Vector3.right * 2;
                     //Debug.Log(_playerStateMachine.dashDust.gameObject.transform.position + " " + _playerStateMachine.gameObject.transform.position);
-                    _playerStateMachine.dashDust.SetActive(true);
+                    _playerStateMachine.DashDust.SetActive(true);
                 }
                 _playerStateMachine.IsDashing = false;
             }
