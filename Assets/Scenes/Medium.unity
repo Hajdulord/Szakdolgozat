@@ -6363,7 +6363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &232126800
 Transform:
   m_ObjectHideFlags: 0
@@ -65679,29 +65679,29 @@ MonoBehaviour:
   _jumpLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  _groundCheck: {fileID: 1995718342}
-  _tagsToTarget:
-  - Enemy
-  _magicFocusData:
-  - {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
-  - {fileID: 11400000, guid: 8926b05facec6ea4994ffa59aba510a8, type: 2}
-  _enemys: {fileID: 232126799}
-  _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
-  DeathCanvas: {fileID: 1320417287}
-  _currentSpawnPoint: {fileID: 1560640467}
   _layersToTarget:
     serializedVersion: 2
     m_Bits: 128
   _pickUpLayers:
     serializedVersion: 2
     m_Bits: 512
-  _pushBackTime: 3
+  _groundCheck: {fileID: 1995718342}
+  _currentSpawnPoint: {fileID: 1560640467}
+  _tagsToTarget:
+  - Enemy
+  _magicFocusData:
+  - {fileID: 11400000, guid: 48103046f9a1a81479a5d269d718332f, type: 2}
+  - {fileID: 11400000, guid: 8926b05facec6ea4994ffa59aba510a8, type: 2}
+  _enemys: {fileID: 232126799}
+  DeathCanvas: {fileID: 1320417287}
   _dashDust: {fileID: 958803227}
   _swordPoint: {fileID: 1852937319}
-  inventoryUI: {fileID: 229830029}
   _audioSource: {fileID: 2073703211}
   _audioSourceAttack: {fileID: 2073703210}
   _audioSourceAttack2: {fileID: 2073703209}
+  _pushBackTime: 3
+  _consumableData: {fileID: 11400000, guid: df894741ca668e643ae890c409cb3fa8, type: 2}
+  inventoryUI: {fileID: 229830029}
 --- !u!114 &2073703219
 MonoBehaviour:
   m_ObjectHideFlags: 0
