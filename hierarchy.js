@@ -74,7 +74,7 @@ var hierarchy =
     [ "HMF.Thesis.Interfaces.ComponentInterfaces.IPickUpableComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html", [
       [ "HMF.Thesis.Components.PickUpableComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html", null ]
     ] ],
-    [ "HMF.Thesis.Interfaces.IPlayerSateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html", [
+    [ "HMF.Thesis.Interfaces.IPlayerStateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html", [
       [ "HMF.Thesis.Player.PlayerStateMachine", "class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html", null ]
     ] ],
     [ "IState", null, [

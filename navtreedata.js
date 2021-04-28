@@ -45,7 +45,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html#a148c6d44aab7d3939e48c4263e04bcb3",
-"functions_prop.html"
+"functions_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

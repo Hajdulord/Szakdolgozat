@@ -49,7 +49,7 @@ var annotated_dup =
           [ "IItem", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item" ],
           [ "IMagicHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler" ],
           [ "IMove", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move" ],
-          [ "IPlayerSateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine" ],
+          [ "IPlayerStateMachine", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine" ],
           [ "IStatusHandler", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler.html", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler" ]
         ] ],
         [ "Items", "namespace_h_m_f_1_1_thesis_1_1_items.html", [

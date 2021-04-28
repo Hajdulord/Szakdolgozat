@@ -25,7 +25,7 @@ var searchData=
   ['inventorycomponent_95',['InventoryComponent',['../class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component.html',1,'HMF::Thesis::Components']]],
   ['inventorylogic_96',['InventoryLogic',['../class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html',1,'HMF::Thesis::Logic']]],
   ['ipickupablecomponent_97',['IPickUpableComponent',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html',1,'HMF::Thesis::Interfaces::ComponentInterfaces']]],
-  ['iplayersatemachine_98',['IPlayerSateMachine',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html',1,'HMF::Thesis::Interfaces']]],
+  ['iplayerstatemachine_98',['IPlayerStateMachine',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html',1,'HMF::Thesis::Interfaces']]],
   ['istatushandler_99',['IStatusHandler',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_status_handler.html',1,'HMF::Thesis::Interfaces']]],
   ['istatushandlercomponent_100',['IStatusHandlerComponent',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html',1,'HMF::Thesis::Interfaces::ComponentInterfaces']]],
   ['itemcooldownvisualizer_101',['ItemCooldownVisualizer',['../class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html',1,'HMF::Thesis::Misc']]]

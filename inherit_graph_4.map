@@ -22,7 +22,7 @@
 <area shape="rect" id="node21" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html" title="A wrapper for the MoveLogic." alt="" coords="309,631,513,672"/>
 <area shape="rect" id="node22" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html" title=" " alt="" coords="12,696,235,737"/>
 <area shape="rect" id="node23" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html" title=" " alt="" coords="312,696,511,737"/>
-<area shape="rect" id="node24" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="25,2387,222,2428"/>
+<area shape="rect" id="node24" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html" title=" " alt="" coords="25,2387,222,2428"/>
 <area shape="rect" id="node25" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html" title="This class is used to manage the player&#39;s state." alt="" coords="326,2387,497,2428"/>
 <area shape="rect" id="node26" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html" title=" " alt="" coords="5,2452,241,2493"/>
 <area shape="rect" id="node27" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html" title=" " alt="" coords="306,2452,517,2493"/>

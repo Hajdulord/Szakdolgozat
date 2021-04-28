@@ -101,7 +101,7 @@ Inheritance diagram for HMF.Thesis.Player.PlayerStateMachine:</div>
 <map name="a_h_m_f_8_thesis_8_player_8_player_state_machine_inherit__map" id="a_h_m_f_8_thesis_8_player_8_player_state_machine_inherit__map">
 <area shape="rect" title="This class is used to manage the player&#39;s state." alt="" coords="51,80,221,121"/>
 <area shape="rect" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="141,5,280,32"/>
+<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html" title=" " alt="" coords="141,5,283,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -112,7 +112,7 @@ Collaboration diagram for HMF.Thesis.Player.PlayerStateMachine:</div>
 <area shape="rect" title="This class is used to manage the player&#39;s state." alt="" coords="100,171,271,212"/>
 <area shape="rect" title=" " alt="" coords="5,5,117,32"/>
 <area shape="rect" href="class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html" title=" " alt="" coords="83,81,287,108"/>
-<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html" title=" " alt="" coords="312,81,451,108"/>
+<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html" title=" " alt="" coords="311,81,454,108"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -136,24 +136,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6117c9d490bba81bb39f84502b7b5437"><td class="memItemLeft" align="right" valign="top"><a id="a6117c9d490bba81bb39f84502b7b5437"></a>
-GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>dashDust</b> = null!</td></tr>
-<tr class="separator:a6117c9d490bba81bb39f84502b7b5437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e09647c49d8f8444dbc8e1144065528"><td class="memItemLeft" align="right" valign="top"><a id="a3e09647c49d8f8444dbc8e1144065528"></a>
-GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>swordPoint</b> = null!</td></tr>
-<tr class="separator:a3e09647c49d8f8444dbc8e1144065528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09622f19011a530e2777ac139dda57bf"><td class="memItemLeft" align="right" valign="top"><a id="a09622f19011a530e2777ac139dda57bf"></a>
 <a class="el" href="class_h_m_f_1_1_thesis_1_1_misc_1_1_use_inventory.html">UseInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inventoryUI</b> = null!</td></tr>
 <tr class="separator:a09622f19011a530e2777ac139dda57bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a189ccb57f5bc9e6a59df7b6a4d50eee9"><td class="memItemLeft" align="right" valign="top"><a id="a189ccb57f5bc9e6a59df7b6a4d50eee9"></a>
-AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>audioSource</b> = null</td></tr>
-<tr class="separator:a189ccb57f5bc9e6a59df7b6a4d50eee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac23a2278fbaa4b19f15c3d18fc45edda"><td class="memItemLeft" align="right" valign="top"><a id="ac23a2278fbaa4b19f15c3d18fc45edda"></a>
-AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>audioSourceAttack</b> = null</td></tr>
-<tr class="separator:ac23a2278fbaa4b19f15c3d18fc45edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32114907ebd4a39b83668b512ac5a82e"><td class="memItemLeft" align="right" valign="top"><a id="a32114907ebd4a39b83668b512ac5a82e"></a>
-AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>audioSourceAttack2</b> = null</td></tr>
-<tr class="separator:a32114907ebd4a39b83668b512ac5a82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -196,43 +181,79 @@ LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>PickUpLayers</b>
 <tr class="memitem:a921941bd957535661d911c01c4e9850c"><td class="memItemLeft" align="right" valign="top"><a id="a921941bd957535661d911c01c4e9850c"></a>
 Vector3&#160;</td><td class="memItemRight" valign="bottom"><b>TransformPosition</b><code> [get, set]</code></td></tr>
 <tr class="separator:a921941bd957535661d911c01c4e9850c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine.html">HMF.Thesis.Interfaces.IPlayerSateMachine</a></td></tr>
-<tr class="memitem:aa94c1729c26df1f08cd85c575e3748be inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="aa94c1729c26df1f08cd85c575e3748be"></a>
+<tr class="memitem:a6343c9aeba15104d96d58565989017e7"><td class="memItemLeft" align="right" valign="top"><a id="a6343c9aeba15104d96d58565989017e7"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>DashDust</b><code> [get, set]</code></td></tr>
+<tr class="separator:a6343c9aeba15104d96d58565989017e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20b619f90b6716ee0a3371f4e2ba010"><td class="memItemLeft" align="right" valign="top"><a id="af20b619f90b6716ee0a3371f4e2ba010"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>SwordPoint</b><code> [get, set]</code></td></tr>
+<tr class="separator:af20b619f90b6716ee0a3371f4e2ba010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3688821e5cf6fd8903720e5edc70b104"><td class="memItemLeft" align="right" valign="top"><a id="a3688821e5cf6fd8903720e5edc70b104"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSource</b><code> [get, set]</code></td></tr>
+<tr class="separator:a3688821e5cf6fd8903720e5edc70b104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf37f6eb7df6c179edf9379f293d163"><td class="memItemLeft" align="right" valign="top"><a id="aaaf37f6eb7df6c179edf9379f293d163"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSourceAttack</b><code> [get, set]</code></td></tr>
+<tr class="separator:aaaf37f6eb7df6c179edf9379f293d163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f361b5681bccc71d153aeff50d8331"><td class="memItemLeft" align="right" valign="top"><a id="a55f361b5681bccc71d153aeff50d8331"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSourceAttack2</b><code> [get, set]</code></td></tr>
+<tr class="separator:a55f361b5681bccc71d153aeff50d8331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a605b731c06202a77de6dd317aae090fa"><td class="memItemLeft" align="right" valign="top"><a id="a605b731c06202a77de6dd317aae090fa"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>ThisGameObject</b><code> [get]</code></td></tr>
+<tr class="separator:a605b731c06202a77de6dd317aae090fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html">HMF.Thesis.Interfaces.IPlayerStateMachine</a></td></tr>
+<tr class="memitem:a7be49f278b53e981cfc4d007f103bc27 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a7be49f278b53e981cfc4d007f103bc27"></a>
 Transform&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentSpawnPoint</b><code> [get, set]</code></td></tr>
-<tr class="separator:aa94c1729c26df1f08cd85c575e3748be inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85005ce87bb763ca49b5e5bd438ed376 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a85005ce87bb763ca49b5e5bd438ed376"></a>
+<tr class="separator:a7be49f278b53e981cfc4d007f103bc27 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6918f4da1b24aa7fcd940c5fba6d92 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="abb6918f4da1b24aa7fcd940c5fba6d92"></a>
 <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html">IInventory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Inventory</b><code> [get]</code></td></tr>
-<tr class="separator:a85005ce87bb763ca49b5e5bd438ed376 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252e92877bbb7732cbbb2cd781e839b9 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a252e92877bbb7732cbbb2cd781e839b9"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentItem</b><code> [get]</code></td></tr>
-<tr class="separator:a252e92877bbb7732cbbb2cd781e839b9 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c3a2d51f455f5b97a010d507f00d64 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a31c3a2d51f455f5b97a010d507f00d64"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsJumping</b><code> [get]</code></td></tr>
-<tr class="separator:a31c3a2d51f455f5b97a010d507f00d64 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaf2ffcc4d94cb91671b52bd5d65f280 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="acaf2ffcc4d94cb91671b52bd5d65f280"></a>
+<tr class="separator:abb6918f4da1b24aa7fcd940c5fba6d92 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e421e36494346c0c9c7be1af8cfa0bc inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a6e421e36494346c0c9c7be1af8cfa0bc"></a>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentItem</b><code> [get, set]</code></td></tr>
+<tr class="separator:a6e421e36494346c0c9c7be1af8cfa0bc inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3024a9d8b42dba6ab200a6b548cda7 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a7e3024a9d8b42dba6ab200a6b548cda7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsJumping</b><code> [get, set]</code></td></tr>
+<tr class="separator:a7e3024a9d8b42dba6ab200a6b548cda7 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639855302324b999ecfb4da5f91a2ad5 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a639855302324b999ecfb4da5f91a2ad5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDashing</b><code> [get]</code></td></tr>
-<tr class="separator:acaf2ffcc4d94cb91671b52bd5d65f280 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a19562bcff23b9d2c5bc3e84cdaecc8 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a2a19562bcff23b9d2c5bc3e84cdaecc8"></a>
+<tr class="separator:a639855302324b999ecfb4da5f91a2ad5 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6648c5bf6d7a152a6be091c823800bd inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="ad6648c5bf6d7a152a6be091c823800bd"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>MoveDirection</b><code> [get]</code></td></tr>
-<tr class="separator:a2a19562bcff23b9d2c5bc3e84cdaecc8 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0be4d3ee7c305430f3d94fb73100d3f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="af0be4d3ee7c305430f3d94fb73100d3f"></a>
+<tr class="separator:ad6648c5bf6d7a152a6be091c823800bd inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fce850b1e923cbf2535d294786b9e7e inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a0fce850b1e923cbf2535d294786b9e7e"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackDir</b><code> [get, set]</code></td></tr>
-<tr class="separator:af0be4d3ee7c305430f3d94fb73100d3f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8125f8c4290660afbe49ffe4432876f4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a8125f8c4290660afbe49ffe4432876f4"></a>
+<tr class="separator:a0fce850b1e923cbf2535d294786b9e7e inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9571bae41e71071fb136d80dfb35690d inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a9571bae41e71071fb136d80dfb35690d"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>PushBackTime</b><code> [get]</code></td></tr>
-<tr class="separator:a8125f8c4290660afbe49ffe4432876f4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a726ce1189638f3a69d377c540c3bfe3b inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a726ce1189638f3a69d377c540c3bfe3b"></a>
+<tr class="separator:a9571bae41e71071fb136d80dfb35690d inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2f0bf239971e1a7b6f08e87c480e21 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a5b2f0bf239971e1a7b6f08e87c480e21"></a>
 LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>LayersToTarget</b><code> [get, set]</code></td></tr>
-<tr class="separator:a726ce1189638f3a69d377c540c3bfe3b inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b27050c8f1f7d5244d004843f67825f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a6b27050c8f1f7d5244d004843f67825f"></a>
+<tr class="separator:a5b2f0bf239971e1a7b6f08e87c480e21 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a68f5140e5cc9825ba2fa40eb0bbd4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a78a68f5140e5cc9825ba2fa40eb0bbd4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsStunned</b><code> [get, set]</code></td></tr>
-<tr class="separator:a6b27050c8f1f7d5244d004843f67825f inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1330ff79630abd2a2960262644e37692 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="a1330ff79630abd2a2960262644e37692"></a>
+<tr class="separator:a78a68f5140e5cc9825ba2fa40eb0bbd4 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0efce3d2684e821746893ae3c975dbd2 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a0efce3d2684e821746893ae3c975dbd2"></a>
 LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>PickUpLayers</b><code> [get, set]</code></td></tr>
-<tr class="separator:a1330ff79630abd2a2960262644e37692 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3ce00bf682fa2125b765adfd4d3f1df inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memItemLeft" align="right" valign="top"><a id="aa3ce00bf682fa2125b765adfd4d3f1df"></a>
+<tr class="separator:a0efce3d2684e821746893ae3c975dbd2 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3611bc92674a61c6748472dd28d7d0 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a9e3611bc92674a61c6748472dd28d7d0"></a>
 Vector3&#160;</td><td class="memItemRight" valign="bottom"><b>TransformPosition</b><code> [get, set]</code></td></tr>
-<tr class="separator:aa3ce00bf682fa2125b765adfd4d3f1df inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_sate_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a9e3611bc92674a61c6748472dd28d7d0 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98744316ddd175d8d00ca34d432b5a78 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a98744316ddd175d8d00ca34d432b5a78"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>DashDust</b><code> [get, set]</code></td></tr>
+<tr class="separator:a98744316ddd175d8d00ca34d432b5a78 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a88edb40e76b77fd5b66b4e0191871a inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a7a88edb40e76b77fd5b66b4e0191871a"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>SwordPoint</b><code> [get, set]</code></td></tr>
+<tr class="separator:a7a88edb40e76b77fd5b66b4e0191871a inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e35c714286a64e6738208fe6c4bf28 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a79e35c714286a64e6738208fe6c4bf28"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSource</b><code> [get, set]</code></td></tr>
+<tr class="separator:a79e35c714286a64e6738208fe6c4bf28 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d10dc1cc0120be5f4aa4ad96f5f774 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a40d10dc1cc0120be5f4aa4ad96f5f774"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSourceAttack</b><code> [get, set]</code></td></tr>
+<tr class="separator:a40d10dc1cc0120be5f4aa4ad96f5f774 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c19ca58337a33f93d82bbcedc2e2ef inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a41c19ca58337a33f93d82bbcedc2e2ef"></a>
+AudioSource&#160;</td><td class="memItemRight" valign="bottom"><b>AudioSourceAttack2</b><code> [get, set]</code></td></tr>
+<tr class="separator:a41c19ca58337a33f93d82bbcedc2e2ef inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba062ae36a67834904aa3186c1b1ef6 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memItemLeft" align="right" valign="top"><a id="a6ba062ae36a67834904aa3186c1b1ef6"></a>
+GameObject&#160;</td><td class="memItemRight" valign="bottom"><b>ThisGameObject</b><code> [get]</code></td></tr>
+<tr class="separator:a6ba062ae36a67834904aa3186c1b1ef6 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is used to manage the player's state. </p>
@@ -246,7 +267,7 @@ Vector3&#160;</td><td class="memItemRight" valign="bottom"><b>TransformPosition<
 			<ul>
 				<li class="navelem"><a class="el" href="namespace_h_m_f.html">HMF</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis.html">Thesis</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis_1_1_player.html">Player</a></li><li class="navelem"><a class="el" href="class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html">PlayerStateMachine</a></li>
 				<li class="footer">
-					Generated on Wed Apr 28 2021 10:15:46 for Thesis by <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Apr 28 2021 16:43:38 for Thesis by <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"
                      onerror="this.onerror=null;this.src='doxygen.svg';"/></a> 1.9.1.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
