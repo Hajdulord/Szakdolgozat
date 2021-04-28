@@ -90,6 +90,7 @@ namespace HMF.Thesis.Misc
                 return;
             
             PersistentData.Instance.CurrentSave = _saves[_selectedIndex];
+            
             if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
             {
                 _loadingMenu.SetActive(true);

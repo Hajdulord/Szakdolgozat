@@ -12,6 +12,7 @@ namespace HMF.Thesis.Misc
         public void LoadScene(int buildIndex)
         {
             _loadingMenu.SetActive(true);
+            PersistentData.Instance.Loaded = true;
             StartCoroutine(LoadAsyncScene(buildIndex));
         }
 
@@ -39,7 +40,11 @@ namespace HMF.Thesis.Misc
                 Time.timeScale = 1f;
 
                 //Menu.Menu.flipPausedBool();
-                Menu.Menu.flipBool();
+                Menu.Menu.isEnd = false;
+
+                Menu.Menu.isPaused = false;
+
+                Pause.gameIsPaused = false;
                 
                 _mainMenu.SetActive(false);
 
