@@ -14,6 +14,7 @@ namespace HMF.Thesis.Misc
         [SerializeField] private GameObject _saveMenu = null!;
         [SerializeField] private GameObject _endMenu = null!;
         [SerializeField] private GameObject _enemys = null!;
+        [SerializeField] private GameObject _items = null!;
         [SerializeField] private GameObject _instructionsMenu = null!;
         [SerializeField] private GameObject _loadingMenu = null;
         [SerializeField] private List<TMP_Text> _slots = null;
@@ -23,7 +24,7 @@ namespace HMF.Thesis.Misc
 
         private IInventoryComponent _inventory;
         private ICharacterComponent _character;
-        private IPlayerSateMachine _player;
+        private IPlayerStateMachine _player;
 
         private int _selectedIndex = -1;
 
@@ -34,7 +35,7 @@ namespace HMF.Thesis.Misc
             _saves = new List<SaveData>();
             _inventory = _playerGO.GetComponent<IInventoryComponent>();
             _character = _playerGO.GetComponent<ICharacterComponent>();
-            _player = _playerGO.GetComponent<IPlayerSateMachine>();
+            _player = _playerGO.GetComponent<IPlayerStateMachine>();
 
             Refress();
         }
@@ -127,6 +128,11 @@ namespace HMF.Thesis.Misc
                 _endMenu.SetActive(false);
 
                 _enemys.SetActive(true);
+
+                for (int i = 0; i < _items.transform.childCount; i++)
+                {
+                    _items.transform.GetChild(i).gameObject.SetActive(true);
+                }
 
             }
         }

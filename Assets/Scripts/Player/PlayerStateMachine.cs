@@ -19,20 +19,36 @@ using UnityEngine.InputSystem;
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 
-    public class PlayerStateMachine : MonoBehaviour, IPlayerSateMachine
+    public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     {
-        [Header("Serialized Private Fields")]
+        [Header("LayerMasks")]
         [SerializeField] private LayerMask _jumpLayerMask;
-        [SerializeField] private Transform _groundCheck;
-        [SerializeField] private List<string> _tagsToTarget = new List<string>();
-        [SerializeField] private List<MagicFocusData> _magicFocusData = null!;
-        [SerializeField] private GameObject _enemys = null!;
-        [SerializeField] private ConsumableData _consumableData = null!;
-        [SerializeField] private GameObject DeathCanvas = null!;
-        [SerializeField] private Transform _currentSpawnPoint = null!;
         [SerializeField] private LayerMask _layersToTarget;
         [SerializeField] private LayerMask _pickUpLayers;
+
+        [Header("Transforms")]
+        [SerializeField] private Transform _groundCheck;
+        [SerializeField] private Transform _currentSpawnPoint = null!;
+
+        [Header("Lists")]
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();
+        [SerializeField] private List<MagicFocusData> _magicFocusData = null!;
+
+        [Header("Gameobjects")]
+        [SerializeField] private GameObject _enemys = null!;
+        [SerializeField] private GameObject DeathCanvas = null!;
+        [SerializeField] private GameObject _dashDust = null!;
+        [SerializeField] private GameObject _swordPoint = null!;
+
+        [Header("Audio")]
+        [SerializeField] private AudioSource _audioSource = null;
+        [SerializeField] private AudioSource _audioSourceAttack = null;
+        [SerializeField] private AudioSource _audioSourceAttack2 = null;
+
+        [Header("Other")]
         [SerializeField] private float _pushBackTime = 2f;
+        [SerializeField] private ConsumableData _consumableData = null!;
+        [SerializeField] public UseInventory inventoryUI = null!;
 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
         private IMoveComponent _moveComponent;
@@ -49,20 +65,12 @@ namespace HMF.Thesis.Player
         private HealthPotion _consumableItem;
         private float _pushBackInmunity = 0;
 
-        [Header("Serialized Public Fields")]
-        [SerializeField] public GameObject dashDust = null!;
-        [SerializeField] public GameObject swordPoint = null!;
-        [SerializeField] public UseInventory inventoryUI = null!;
-        [SerializeField] public AudioSource audioSource = null;
-        [SerializeField] public AudioSource audioSourceAttack = null;
-        [SerializeField] public AudioSource audioSourceAttack2 = null;
 
         public float PushBackDir { get; set; }
         public int MoveDirection { get; internal set; } = 0;
         public bool IsDashing {get; internal set; } = false;
-        public bool IsJumping {get; internal set; } = false;
-        public IItem CurrentItem {get; internal set; } = null;
-
+        public bool IsJumping {get; set; } = false;
+        public IItem CurrentItem {get; set; } = null;
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
         public float PushBackTime { get => _pushBackTime;}
@@ -71,6 +79,12 @@ namespace HMF.Thesis.Player
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
         public LayerMask PickUpLayers { get => _pickUpLayers; set => _pickUpLayers = value; }
         public Vector3 TransformPosition {get => gameObject.transform.position; set => gameObject.transform.position = value; }
+        public GameObject DashDust { get => _dashDust; set => _dashDust = value; }
+        public GameObject SwordPoint { get => _swordPoint; set => _swordPoint = value; }
+        public AudioSource AudioSource { get => _audioSource; set => _audioSource = value; }
+        public AudioSource AudioSourceAttack { get => _audioSourceAttack; set => _audioSourceAttack = value; }
+        public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2; set => _audioSourceAttack2 = value; }
+        public GameObject ThisGameObject => gameObject;
 
         /// Runs before the Start methode, this is used for the setting up the enviornment.
         private void Start()
@@ -141,14 +155,6 @@ namespace HMF.Thesis.Player
             At(death, idle, isAlive());
             _stateMachine.AddAnyTransition(death, isDead());
 
-            /*Func<bool> isIdle() => () => MoveDirection == 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> isMoving() => () => MoveDirection != 0 && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> grundedAndReadyToJump() => () => IsJumping && Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> falling() => () => _rigidbody.velocity.y < 0f;
-            Func<bool> grunded() => () => Physics2D.Raycast(transform.position, Vector2.down, _distToGround + 0.05f, _jumpLayerMask);
-            Func<bool> isPushedBack() => () => PushBackDir != 0f;
-            Func<bool> notPushedBack() => () => PushBackDir == 0f;*/
-
             Func<bool> isIdle() => () => MoveDirection == 0 && GroundCheck();
             Func<bool> isMoving() => () => MoveDirection != 0 && GroundCheck();
             Func<bool> grundedAndReadyToJump() => () => IsJumping && GroundCheck();
@@ -185,8 +191,8 @@ namespace HMF.Thesis.Player
             _consumableItem = new HealthPotion(_consumableData);
 
             _inventoryComponent.Inventory.AddItem(_magicItem, 1);
-            _inventoryComponent.Inventory.AddItem(_magicItem2, 1);
-            _inventoryComponent.Inventory.AddItem(_consumableItem, 1);
+            _inventoryComponent.Inventory.AddItem(_magicItem2, 3);
+            _inventoryComponent.Inventory.AddItem(_consumableItem, 2);
 
             _inventoryComponent.Inventory.SetUse(_magicItem);
             _inventoryComponent.Inventory.SetUse(_magicItem2);
@@ -205,7 +211,7 @@ namespace HMF.Thesis.Player
             else
             {  
                 //Debug.Log(_inventoryComponent.Inventory.InventoryShelf[_magicItem2]);
-                _inventoryComponent.Inventory.AddItem(_magicItem2, 10);
+                _inventoryComponent.Inventory.AddItem(_magicItem2, 3);
                 _inventoryComponent.Inventory.SetUse(_magicItem2);
                 //Debug.Log("B");
             }
@@ -217,7 +223,7 @@ namespace HMF.Thesis.Player
             }
             else
             {  
-                _inventoryComponent.Inventory.AddItem(_consumableItem, 4);
+                _inventoryComponent.Inventory.AddItem(_consumableItem, 2);
                 _inventoryComponent.Inventory.SetUse(_consumableItem);
             }
             
@@ -302,8 +308,8 @@ namespace HMF.Thesis.Player
         public void Step()
         {
             //audioSource.clip = musicHandler.playerStep;
-            audioSource.clip = MusicHandler.Instance.playerStep;
-            audioSource.Play();
+            _audioSource.clip = MusicHandler.Instance.playerStep;
+            _audioSource.Play();
         }
 
         public IEnumerator Respawn()

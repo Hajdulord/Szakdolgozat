@@ -30,7 +30,7 @@ namespace HMF.Thesis.Status.ActualStatuses
                 //Debug.Log("lock");
             }
 
-            var player = gameObject.GetComponent<IPlayerSateMachine>();
+            var player = gameObject.GetComponent<IPlayerStateMachine>();
 
             if (player != null)
             {
@@ -47,7 +47,7 @@ namespace HMF.Thesis.Status.ActualStatuses
                 rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
 
-            var player = gameObject.GetComponent<IPlayerSateMachine>();
+            var player = gameObject.GetComponent<IPlayerStateMachine>();
 
             if (player != null)
             {

@@ -3,12 +3,12 @@ using UnityEngine;
 //! Needs corrections for parameters.
 namespace HMF.Thesis.Interfaces
 {
-    public interface IPlayerSateMachine
+    public interface IPlayerStateMachine
     {
         Transform CurrentSpawnPoint { get; set; }
         IInventory Inventory { get; }
-        IItem CurrentItem { get; }
-        bool IsJumping { get; }
+        IItem CurrentItem { get; set;}
+        bool IsJumping { get; set;}
         bool IsDashing { get; }
         int MoveDirection { get; }
         float PushBackDir { get; set; }
@@ -17,6 +17,12 @@ namespace HMF.Thesis.Interfaces
         bool IsStunned { get; set; }
         LayerMask PickUpLayers { get; set; }
         Vector3 TransformPosition {get; set;}
+        GameObject DashDust { get; set; }
+        GameObject SwordPoint { get; set; }
+        AudioSource AudioSource { get; set; }
+        AudioSource AudioSourceAttack { get; set; }
+        AudioSource AudioSourceAttack2 { get; set; }
+        GameObject ThisGameObject {get; }
 
         void Load();
     }

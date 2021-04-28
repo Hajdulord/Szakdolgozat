@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace HMF.Thesis.Misc
 {
@@ -47,7 +48,7 @@ namespace HMF.Thesis.Misc
                 Pause.gameIsPaused = false;
                 
                 _mainMenu.SetActive(false);
-
+                
                 _instructionsMenu.SetActive(true);
 
 

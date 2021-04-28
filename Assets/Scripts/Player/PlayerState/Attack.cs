@@ -12,13 +12,13 @@ namespace HMF.Thesis.Player
 
         private string[] _tagsToTarget;
 
-        private PlayerStateMachine _playerStateMachine;
+        private IPlayerStateMachine _playerStateMachine;
 
         private IMove _move;
 
         private Animator _animator;
 
-        public Attack(IAttack attack, Animator animator, string[] tagsToTarget, PlayerStateMachine playerStateMachine, IMove move)
+        public Attack(IAttack attack, Animator animator, string[] tagsToTarget, IPlayerStateMachine playerStateMachine, IMove move)
         {
             _attack = attack;
             _tagsToTarget = tagsToTarget;
@@ -32,29 +32,29 @@ namespace HMF.Thesis.Player
         {
             //Debug.Log($"Attack with {_playerStateMachine.CurrentItem.Name}");
 
-            _playerStateMachine.audioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
-            _playerStateMachine.audioSourceAttack2.Play();
+            _playerStateMachine.AudioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
+            _playerStateMachine.AudioSourceAttack2.Play();
 
             if(_playerStateMachine.CurrentItem is MagicFocus || _playerStateMachine.CurrentItem is Consumable)
             {
                 _animator.SetBool("IsMagic", true);
-                _attack.Origin = _playerStateMachine.gameObject;
+                _attack.Origin = _playerStateMachine.ThisGameObject;
 
                 if (_playerStateMachine.CurrentItem is MagicFocus)
                 {
-                    _playerStateMachine.audioSourceAttack.clip = (_playerStateMachine.CurrentItem as MagicFocus).Clip;
-                    _playerStateMachine.audioSourceAttack.Play();
+                    _playerStateMachine.AudioSourceAttack.clip = (_playerStateMachine.CurrentItem as MagicFocus).Clip;
+                    _playerStateMachine.AudioSourceAttack.Play();
                 }
                 
             }
             else
             {
                 _animator.SetBool("IsAttacking", true);
-                _attack.Origin = _playerStateMachine.swordPoint;
+                _attack.Origin = _playerStateMachine.SwordPoint;
 
                 //_playerStateMachine.audioSourceAttack.clip = _playerStateMachine.musicHandler.Serve(Music.Category.Swords);
-                _playerStateMachine.audioSourceAttack.clip = MusicHandler.Instance.Serve(Category.Swords);
-                _playerStateMachine.audioSourceAttack.Play();
+                _playerStateMachine.AudioSourceAttack.clip = MusicHandler.Instance.Serve(Category.Swords);
+                _playerStateMachine.AudioSourceAttack.Play();
             }
             
             
