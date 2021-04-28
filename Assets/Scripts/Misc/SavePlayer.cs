@@ -56,7 +56,15 @@ namespace HMF.Thesis.Misc
                 }
                 else
                 {
-                    _slots[i].text = $"{save.name} with kills: {save.kills} deaths: {save.deaths} time: {save.time} saved at {save.date}";
+                    var scene = save.scene switch
+                    {
+                        0 => "Easy",
+                        1 => "Medium",
+                        2 => "Hard",
+                        _ => string.Empty
+                    };
+
+                    _slots[i].text = $"{save.name} on {scene} level with kills: {save.kills} deaths: {save.deaths} time: {save.time} saved at {save.date}";
                 }
 
                 _slotButtons[i].image.color = new Color(89 / 255f, 17 / 255f, 77 / 255f);
@@ -82,10 +90,12 @@ namespace HMF.Thesis.Misc
                 return;
             
             PersistentData.Instance.CurrentSave = _saves[_selectedIndex];
+            
             if (_saves[_selectedIndex].scene != SceneManager.GetActiveScene().buildIndex)
             {
-                StartCoroutine(LoadAsyncScene());
                 _loadingMenu.SetActive(true);
+                PersistentData.Instance.Loaded = true;
+                StartCoroutine(LoadAsyncScene());
             }
             else
             {
