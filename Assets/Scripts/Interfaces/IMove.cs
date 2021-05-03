@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//! Needs corrections for parameters.
 namespace HMF.Thesis.Interfaces
 {
     /// Interface for Movement.
@@ -36,9 +33,6 @@ namespace HMF.Thesis.Interfaces
         bool Dash();
 
         /// Implementation of a jump.
-        /*!
-          \param direction is the horizontal direction of the movement.
-        */
         void Jump();
 
         /// Applying force to push back the object.
