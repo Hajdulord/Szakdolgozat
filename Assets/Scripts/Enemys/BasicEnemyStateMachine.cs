@@ -11,62 +11,84 @@ using HMF.Thesis.Items;
 
 namespace HMF.Thesis.Enemys
 {
+    /// The statemachine and the barain of a basic enemy.
     public class BasicEnemyStateMachine : MonoBehaviour, IEnemyStateMachine
     {
         [Header("Serialized Private Fields")]
-        [SerializeField] private List<string> _tagsToTarget = new List<string>();
-        [SerializeField] private WeaponData _weaponData = null!;
-        [SerializeField] private MagicFocusData _magicFocusData = null;
-        [SerializeField] private GameObject _swordPoint = null!;
-        [SerializeField] private InRange _inRange = null!;
-        [SerializeField] private AudioSource _audioSource = null;
-        [SerializeField] private AudioSource _audioSourceAttack = null;
-        [SerializeField] private AudioSource _audioSourceAttack2 = null;
-        [SerializeField] private LayerMask _layersToTarget;
+        [SerializeField] private List<string> _tagsToTarget = new List<string>();  ///< List of strings that with the tags to target.
+        [SerializeField] private WeaponData _weaponData = null!; ///< The data of main weapon.
+        [SerializeField] private MagicFocusData _magicFocusData = null; ///< The data of the magicFocus.
+        [SerializeField] private GameObject _swordPoint = null!; ///< The gameObject for the swordPoint.
+        [SerializeField] private InRange _inRange = null!; ///< Detects if a target is in range.
+        [SerializeField] private AudioSource _audioSource = null; ///< The audio source for movement sounds.
+        [SerializeField] private AudioSource _audioSourceAttack = null; ///< The audio source for sword clases.
+        [SerializeField] private AudioSource _audioSourceAttack2 = null; ///< The audio source for screams.
+        [SerializeField] private LayerMask _layersToTarget; ///< The layermask that confines the search for enemys.
 
-        //[SerializeField] public MusicHandler _musicHandler = null;
+        private StateMachine _stateMachine; ///< The statemachine.
+        private IMove _move; ///< The movement logic.
+        private IAttack _attack; ///< The attack logic.
+        private ICharacter _character; ///< The character logic.
+        private Animator _animator; ///< The animator, for playing animations.
 
-        private StateMachine _stateMachine;
-        private IMove _move;
-        private IAttack _attack;
-        private ICharacter _character;
-        private Animator _animator;
-
+        /// The current target to attack.
         public GameObject Target {get; set;} = null;
+
+        /// The actual main weapon.
         public IItem Weapon {get; private set;}
+
+        /// The actual magicFocus.
         public IItem MagicFocus {get; private set;} = null;
+
+        /// Property for swordPoint.
         public GameObject SwordPoint {get => _swordPoint; set => _swordPoint = value;}
+
+        /// Getter for Weapon data.
         public WeaponData WeaponData => _weaponData;
+
+        /// Getter for magicFocus data.
         public MagicFocusData MagicFocusData => _magicFocusData;
+
+        /// Getter for the gameObject of this script.
         public GameObject ThisGameObject => gameObject;
 
+        /// Getter for Main audio source.
         public AudioSource AudioSource { get => _audioSource;}
+
+        /// Getter for the audio source used for sword clases.
         public AudioSource AudioSourceAttack { get => _audioSourceAttack;}
+
+        /// Getter for the audio source used for screams.
         public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2;}
+
+        /// Getter for tagsToIgnore layermask.
         public LayerMask LayersToTarget { get => _layersToTarget; }
 
-        //public MusicHandler MusicHandler { get => _musicHandler;}
-
+        /// Setup
         private void Awake()
         {
             _stateMachine = new StateMachine();
 
+            // Gets the logics
             _move = GetComponent<IMoveComponent>().Move;
             _attack = GetComponent<IAttackComponent>().Attack;
             _character = GetComponent<ICharacterComponent>().Character;
             _animator = GetComponent<Animator>();
             
+            // Weapon setup
             Weapon = new Weapon(_weaponData);
             if (_magicFocusData != null)
             {
                 MagicFocus = new MagicFocus(_magicFocusData);   
             }
 
+            // state init
             var idle = new Idle(_animator);
             var moveTo = new MoveTo(_move, this, _animator);
             var attack = new Attack(_attack, _tagsToTarget.ToArray(), this, _animator);
             var dead = new Dead(this, _animator);
 
+            // transition setup
             At(idle, moveTo, targetFound());
             At(moveTo, idle, targetLost());
 
@@ -77,27 +99,30 @@ namespace HMF.Thesis.Enemys
             
             _stateMachine.AddAnyTransition(dead, isDead());
 
+            // transition conditions
             Func<bool> targetFound() => () => Target != null;
             Func<bool> targetLost() => () => Target == null;
             Func<bool> reachedTarget() => () => Target != null && _inRange.inRange;
             Func<bool> targetOutOfReach() => () => Target != null && !_inRange.inRange;
             Func<bool> isDead() => () => _character.Health <= 0;
-            //Func<bool> isAlive() => () => _character.Health > 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
 
+            // sets atartup state
             _stateMachine.SetState(idle);
         }
 
+        /// Update loop.
         private void Update() => _stateMachine.Tick();
 
+        /// Plays sound when step triggers are fired in animations
         public void Step()
         {
-            //_audioSource.clip = _musicHandler.enemyStep;
             _audioSource.clip = MusicHandler.Instance.enemyStep;
             _audioSource.Play();
         }
 
+        /// If the enemy is disabled.
         private void OnDisable() 
         {
             if (_character.Health <= 0)

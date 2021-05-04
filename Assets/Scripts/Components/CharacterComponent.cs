@@ -13,7 +13,7 @@ namespace HMF.Thesis.Components
     {
         [Header("Serialized Fields")]
         [SerializeField] private CharacterData _characterData = null!; ///< The data of the Character.
-        [SerializeField] private HealthBar _healthBar = null;
+        [SerializeField] private HealthBar _healthBar = null; ///< The healtbar script.
         private ICharacter _character; ///< The Logic that this class wraps Character.
 
         /// Getter for the Character logic.

@@ -4,54 +4,34 @@ using UnityEngine;
 namespace HMF.Thesis.Enemys
 {
     [RequireComponent(typeof(CircleCollider2D))]
+    /// Component for  detecting if the player is in range.
     public class InRange : MonoBehaviour
     {
-        [SerializeField] private CircleCollider2D _collider = null!;
+        [SerializeField] private CircleCollider2D _collider = null!; ///< The Collider for setting range for detection.
         
-        private IEnemyStateMachine _stateMachine = null!;
+        private IEnemyStateMachine _stateMachine = null!; ///< The statemachine for the enemy.
 
-        [SerializeField] public bool inRange = false;
+        [SerializeField] public bool inRange = false; ///< if in range.
 
+        /// Setup.
         private void Awake() 
         {
             _stateMachine = GetComponentInParent<IEnemyStateMachine>();
             _collider.radius = _stateMachine.WeaponData.attackRange / 4;
         }
 
+        /// When player enters switches the inRange.
         private void OnTriggerEnter2D(Collider2D other) 
         {
-            /*//_stateMachine.TriggerFromChild = true;
-            if (other.gameObject.tag == "Player"  && _stateMachine.TriggerFromChild)
-            {
-                ++_stateMachine.TriggerCount;
-                if (_stateMachine.TriggerCount == 2)
-                {
-                    inRange = true; 
-                }
-            }
-            Debug.Log(_stateMachine.TriggerCount);*/
-
             if (other.gameObject.tag == "Player")
             {
                 inRange = true;
             }
-
         }
-
+        
+        /// When player leaves switches the inRange.
         private void OnTriggerExit2D(Collider2D other) 
         {
-            /*//_stateMachine.TriggerFromChild = true;
-            if (other.gameObject.tag == "Player"  && _stateMachine.TriggerFromChild)
-            {
-                if (_stateMachine.TriggerCount == 2)
-                {
-                    inRange = false; 
-                }
-                --_stateMachine.TriggerCount;
-            }
-            
-            Debug.Log(_stateMachine.TriggerCount);*/
-
             if (other.gameObject.tag == "Player")
             {
                 inRange = false;
