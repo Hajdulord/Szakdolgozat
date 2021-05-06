@@ -513,17 +513,17 @@
 % ------------------------------
 % Témabejelentő
 \newcommand{\topicdeclaration}{
-	\thispagestyle{empty}
-	\begin{center}
-		\vspace*{\fill}
+    \thispagestyle{empty}
+    % \begin{center}
+        \vspace*{\fill}
 
-		{\large \declarationplaceholder}
+        \input{chapters/topic.tex}
 
-		\vspace*{\fill}
-	\end{center}
+        \vspace*{\fill}
+    % \end{center}
 
 
-	\cleardoublepage
-	\setcounter{page}{1}
+    \cleardoublepage
+    \setcounter{page}{1}
 }
 % ------------------------------
