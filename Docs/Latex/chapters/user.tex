@@ -1,2 +1,91 @@
 \chapter{Felhasználói dokumentáció} % User guide
 \label{ch:user}
+
+\section{A játék rövid leírása}
+A játék Hack-and-Slash stílusú. A célunk, hogy haladjunk előre egy pályán, ahol különböző nehézségű és számosságú ellenfelek jönnek velünk szembe. A pályán találhatunk felvehető tárgyakat, amik szituációtól függően erősítenek bennünket. Halál esetén újraéledünk egy előre meghatározott ellenőrző ponton, ahonnan folytathatjuk a játékot. A pálya végén értékel minket a játék, és ha más játékosokhoz képest (mint egy árkád játékban, local high score) jobban teljesítettünk, vagy még nem telt be az eredménytábla, akkor az előbb említett táblára felkerülünk. A játék 3 pályát/szintet tartalmaz, amik egyre nehezebbek, ezen felül állásunkat el tudjuk mentei, valamint betölteni. Mindezzel egy kohézív gyors, kihívásokkal teli játékélményt kínálunk.
+\subsection{Célközönség}
+A játék azon eberek számára lehet érdekes, akik szeretik a gyors kihívással teli árkát stílusú Hack-and-Slash játékokat. 15 életévet minimum betöltött embernek ajánljuk, mivel a játék vért és erőszakot (ellenfelek legyőzése) tartalmaz.
+\newpage
+\section{Rendszerkövetelmények}
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{ | m{0.1\textwidth} | m{0.45\textwidth} | m{0.45\textwidth} | }
+		\hline
+		\textbf{Adatok} & \textbf{Minimum követelménye} & \textbf{Ajánlott követelmény} \\
+		\hline \hline
+		CPU & Intel i5-8250U & Intel i5-8600K \\ \hline
+		GPU & Nvidia GeForce MX150 & Nvidia GTX 1050Ti \\ \hline
+		RAM & 8Gb & 16Gb \\ \hline
+		OS & \multicolumn{2}{c|}{Windows, Linux} \\
+		\hline
+		Disc & \multicolumn{2}{c|}{300Mb} \\
+		\hline
+	\end{tabular}
+	\caption{rendszerkövetelmények}
+	\label{sysReq}
+\end{table}
+\subsection{Játék indítása}
+A játék nem igényel telepítést. Futtatásához indítsa el a 'The Quest for the Thesis.exe'-t (kattintson rá bal egérgombbal kétszer Windows-on).
+
+\newpage
+\section{Funkciók ismertetése}
+A következő fejezetekben a játék funkcióinak részletesebb ismertetése lesz kifejtve. Hogyan is néz ki a játék, és mivel találkozhatunk miután elindítottuk.
+
+\subsection{Grafikus Felhasználói Interfész}
+Kettőféle Grafikus Felhasználói Interfész különböztethetünk meg a játék során. Az egyik, ami tisztán információt közöl velünk, a másik amivel interaktálhatunk is.
+\subsubsection{Tisztán információ közlő GUI-k}
+Játékon belüli indikátorok azok a grafikus elemek, amik visszajelzik nekünk a játékos aktuális állapotát. 
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUse}}
+	\caption{Játékon belüli indikátorok}
+	\label{inUse}
+\end{figure}
+
+Itt látható a játékos jelenlegi élete.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseHealth}}
+	\caption{Játékos életereje}
+	\label{inUseHealth}
+\end{figure}
+
+A játékos képességei és tárgyai, valamint az idő addig amíg újra lehet használni a tárgyat/képességet.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseItems}}
+	\caption{Játékos képességei és tárgyai}
+	\label{inUseItems}
+\end{figure}
+
+Valamint a játékost éppen érintő státuszeffekteket.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseStatuses}}
+	\caption{Játékost érintő státuszeffekteket}
+	\label{inUseStatuses}
+\end{figure}
+
+Ezeken felül ebbe a kategóriába tartozik még a töltőképernyő, ami a szintek között jelenhet meg.
+\begin{figure}[H]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{loading}}
+	\caption{Töltőképernyő}
+	\label{loading}
+\end{figure}
+
+\newpage
+Valamint a halálképernyő, ami akkor jelenik meg, ha a játékos meghalt.
+\begin{figure}[H]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{dead}}
+	\caption{Halálképernyő}
+	\label{dead}
+\end{figure}
+
+\subsubsection{Interaktív GUI-k}
+
+\subsection{Pályák}
+\subsection{Irányítás}
+\subsection{Tárgyak}
+\subsection{Ellenfelek}
