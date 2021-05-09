@@ -31,7 +31,7 @@ A játék nem igényel telepítést. Futtatásához indítsa el a 'The Quest for
 \section{Funkciók ismertetése}
 A következő fejezetekben a játék funkcióinak részletesebb ismertetése lesz kifejtve. Hogyan is néz ki a játék, és mivel találkozhatunk miután elindítottuk.
 
-\subsection{Grafikus Felhasználói Interfész}
+\subsection{Grafikus Felhasználói Interfész (GUI)}
 Kettőféle Grafikus Felhasználói Interfész különböztethetünk meg a játék során. Az egyik, ami tisztán információt közöl velünk, a másik amivel interaktálhatunk is.
 \subsubsection{Tisztán információ közlő GUI-k}
 Játékon belüli indikátorok azok a grafikus elemek, amik visszajelzik nekünk a játékos aktuális állapotát. 
@@ -84,8 +84,132 @@ Valamint a halálképernyő, ami akkor jelenik meg, ha a játékos meghalt.
 \end{figure}
 
 \subsubsection{Interaktív GUI-k}
+Ezeken a képernyőkön vannak gombok, lenyíló listák, vagy csúszkák, amikkel interaktálhatunk a játékkal.
+
+\begin{enumerate}
+	\item \label{fomenu} \textbf{Főmenü} az első GUI elem amit látunk a játék indításakor. Öt gomb látható ezen a felületen:
+	\begin{itemize}
+		\item \textit{Start} ha erre a gombra kattintunk akkor tovább lépünk a \textit{Pályaválasztóra \ref{levelSelector}}.
+		\item \textit{Settings} erre kattintva megnyitjuk a \textit{Beállítások \ref{setting}} menüt.
+		\item \textit{Score Board}-ra kattintva eljutunk az \textit{Eredménytáblára \ref{scoreboard}}.
+		\item \textit{Credit} gombra kattintva eljutunk a \textit{Köszönetnyilvánító \ref{credit}} menüre.
+		\item \textit{Exit} gomb lenyomásával kilépünk a játékból.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{mainMenu}}
+		\caption{A Kezdőképernyő}
+		\label{mainMenu}
+	\end{figure}
+	
+	\item \label{levelSelector} \textbf{Pályaválasztó} menün  adhatjuk meg a nevünket ami később az \textit{Eredménytáblán \ref{scoreboard}} látható.
+	\begin{itemize}
+	\item A \textit{Easy, Medium} és \textit{Hard} gombok lenyomásával átléphetünk az \textit{Utasítások \ref{instructions}} menübe, és a játék betölti a megfelelő pályát.
+	\item \textit{Load} gomb lenyomását követően átlépünk a \textit{Mentés és Betöltés \ref{save}} menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{levelSelection}}
+		\caption{A Pályaválasztó menü}
+		\label{levelSelection}
+	\end{figure}
+	
+	\item \label{instructions} \textbf{Utasítások} menüben láthatók a játék bemeneteire végrehajtott akciók.
+	\begin{itemize}
+		\item \textit{Play} gomb lenyomását követően elkezdődik a játék.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{instructions}}
+		\caption{Utasítások menü}
+		\label{instructionsF}
+	\end{figure}	
+	
+	\item \label{scoreboard} \textbf{Eredménytábla} ahol a szinteken elért eredmények láthatók.
+	\begin{itemize}
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{scoreBoard}}
+		\caption{Eredménytábla}
+		\label{scoreBoardF}
+	\end{figure}
+	
+	\item \label{credit} \textbf{Köszönetnyilvánító} menün található a játék készítéséhez felhasznált assetek készítői.
+	\begin{itemize}
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{credit}}
+		\caption{Köszönetnyilvánító menü}
+		\label{creditF}
+	\end{figure}
+	
+	\item \label{setting} \textbf{Beállítások} menüben változtathatjuk meg az alapértelmezett beállításainkat.
+	\begin{itemize}
+		\item Bal felül választhatjuk ki egy lenyíló listából a kívánt felbontást.
+		\item Jobb felül választhatjuk ki egy lenyíló listából a játékablak üzemmódját.
+		\item \textit{Graphics Quality} menüpontban egy lenyíló listából kiválaszthatjuk a játék minőségi beállításait.
+		\item \textit{Main Volume} csúszkán a fő hangerőt tudjuk állítani.
+		\item \textit{Music Volume} csúszkán a zene hangerejét tudjuk állítani.
+		\item \textit{SFX Volume} csúszkán az effektek hangerejét tudjuk állítani.
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{settings}}
+		\caption{Beállítások}
+		\label{settings}
+	\end{figure}
+	
+	\item \label{save} \textbf{Mentés és Betöltés} menün található a 4 mentési hely. Ahol ha már volt mentésünk akkor a mentésben szereplő adatok jelennek meg, ha nem akkor az \textit{Empty Slot} felirat.   
+	\begin{itemize}
+		\item \textit{Load} gombot megnyomva a kijelölt mentés fog betölteni.
+		\item \textit{Save} gombra kattintva a kijelölt mentési helyre elmentődik a jelenlegi állás (csak játék közben látható).
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{saveLoad}}
+		\caption{Mentés és Betöltés menü}
+		\label{saveLoad}
+	\end{figure}
+	
+	\item \label{pause} \textbf{Szünet} menüt a játék közben az \textbf{ESC} gomb lenyomásával hívhatjuk elő.
+	\begin{itemize}
+		\item \textit{Resume} gomb lenyomását követően a játék folytatódik.
+		\item \textit{Save / Load} gombot megnyomva továbblépünk a \textit{Mentés és Betöltés \ref{save}} menüre.
+		\item \textit{Exit} gomb lenyomását követően a játék bezáródik.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{pause}}
+		\caption{Szünet menü}
+		\label{pauseF}
+	\end{figure}
+	
+	\item \label{end} \textbf{Vég} menü egy pálya végén jelenik meg.
+	\begin{itemize}
+		\item Legfelül látható a pálya elvégzését követő eredményünk.
+		\item A szerzett pontunk alatt láthatóak a többi pályákat reprezentáló gombok, amik re kattintva a megfelelő pálya betöltődik (különböző pályákról érkezve a Vég menübe más pályák jelennek meg itt).
+		\item \textit{Load} gombot megnyomva továbblépünk a \textit{Mentés és Betöltés \ref{save}} menüre.
+		\item \textit{Score Board}-ra kattintva eljutunk az \textit{Eredménytáblára \ref{scoreboard}}.
+		\item \textit{Credit} gombra kattintva eljutunk a \textit{Köszönetnyilvánító \ref{credit}} menüre.
+		\item \textit{Exit} gomb lenyomását követően a játék bezáródik.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{end}}
+		\caption{Vég menü}
+		\label{endF}
+	\end{figure}
+	
+\end{enumerate}
 
 \subsection{Pályák}
+
 \subsection{Irányítás}
 \subsection{Tárgyak}
 \subsection{Ellenfelek}
