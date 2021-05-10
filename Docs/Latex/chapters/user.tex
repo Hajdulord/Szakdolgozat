@@ -5,7 +5,7 @@
 A játék Hack-and-Slash stílusú. A célunk, hogy haladjunk előre egy pályán, ahol különböző nehézségű és számosságú ellenfelek jönnek velünk szembe. A pályán találhatunk felvehető tárgyakat, amik szituációtól függően erősítenek bennünket. Halál esetén újraéledünk egy előre meghatározott ellenőrző ponton, ahonnan folytathatjuk a játékot. A pálya végén értékel minket a játék, és ha más játékosokhoz képest (mint egy árkád játékban, local high score) jobban teljesítettünk, vagy még nem telt be az eredménytábla, akkor az előbb említett táblára felkerülünk. A játék 3 pályát/szintet tartalmaz, amik egyre nehezebbek, ezen felül állásunkat el tudjuk mentei, valamint betölteni. Mindezzel egy kohézív gyors, kihívásokkal teli játékélményt kínálunk.
 \subsection{Célközönség}
 A játék azon eberek számára lehet érdekes, akik szeretik a gyors kihívással teli árkát stílusú Hack-and-Slash játékokat. 15 életévet minimum betöltött embernek ajánljuk, mivel a játék vért és erőszakot (ellenfelek legyőzése) tartalmaz.
-\newpage
+\cleardoublepage
 \section{Rendszerkövetelmények}
 \begin{table}[htb]
 	\centering
@@ -27,7 +27,7 @@ A játék azon eberek számára lehet érdekes, akik szeretik a gyors kihíváss
 \subsection{Játék indítása}
 A játék nem igényel telepítést. Futtatásához indítsa el a 'The Quest for the Thesis.exe'-t (kattintson rá bal egérgombbal kétszer Windows-on).
 
-\newpage
+\cleardoublepage
 \section{Funkciók ismertetése}
 A következő fejezetekben a játék funkcióinak részletesebb ismertetése lesz kifejtve. Hogyan is néz ki a játék, és mivel találkozhatunk miután elindítottuk.
 
@@ -74,7 +74,7 @@ Ezeken felül ebbe a kategóriába tartozik még a töltőképernyő, ami a szin
 	\label{loading}
 \end{figure}
 
-\newpage
+\cleardoublepage
 Valamint a halálképernyő, ami akkor jelenik meg, ha a játékos meghalt.
 \begin{figure}[H]
 	\noindent\makebox[\textwidth]{
@@ -209,7 +209,219 @@ Ezeken a képernyőkön vannak gombok, lenyíló listák, vagy csúszkák, amikk
 \end{enumerate}
 
 \subsection{Pályák}
+A játékban három pályát különítünk el: Easy, Medium, Hard
+
+\begin{itemize}
+	\item \textbf{Easy} pálya a névből eredően a legkönnyebb. A tárgyak és az ellenfelek megismerésére tökéletesen alkalmas.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{easy}}
+		\caption{Easy pálya}
+	\end{figure}
+		\cleardoublepage
+		\item \textbf{Medium} pálya közepes nehézségű. Több ellenség érkezik felén és a felvehető tárgyak ritkák.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{medium}}
+		\caption{Medium pálya}
+	\end{figure}
+	
+		\item \textbf{Hard} pálya a legnehezebb. A tárgyak kevesek, az ellenségek számosak és az erősebb fajtából valók.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{hard}}
+		\caption{Hard pálya}
+	\end{figure}
+\end{itemize}
 
 \subsection{Irányítás}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ | m{0.3\textwidth} | m{0.5\textwidth} | }
+		\hline
+		\textbf{Akció} & \textbf{Gomb} \\
+		\hline \hline
+		Bal irányú mozgás & A \\ \hline
+		Jobb irányú mozgás & D \\ \hline
+		Ugrás & SPACE \\ \hline
+		Gyors hirtelen mozgás & Baloldali ALT \\ \hline
+		Sima Támadás & Baloldali egérgomb \\ \hline
+		1, 2, 3, 4 gombok & megfelelő helyen lévő tárgy használata \\ \hline
+		Tárgyak felvétele & E \\ \hline
+		Játék megállítása & ESC \\ \hline
+	\end{tabular}
+	\label{instruc}
+\end{table}
+
 \subsection{Tárgyak}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+		\hline
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		Gyógyító ital & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{CurePotion}}
+		& Megszünteti az összes státuszeffektust.
+		& \label{que:curePotion}
+		\\ \hline
+		
+		Életerő ital & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{HealthPotion}}
+		& Gyógyítja a játékost és a \textit{Gyógyul \ref{que:healing}} státuszeffektet rakja rá.
+		& \label{que:healthPotion}
+		\\ \hline		
+		
+		Tűz varázsfókusz & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{FireMagicFocus}}
+		& Lehetővé teszi a \textit{Tűzkarika \ref{que:fireBurst}} varázslat használatára a játékost.
+		& \label{que:fireMagicFocus}
+		\\ \hline
+		
+		Jég varázsfókusz & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{IceMagicFocus}}
+		& Lehetővé teszi a \textit{Jéglándzsa \ref{que:iceLance}} varázslat használatára a játékost.
+		& \label{que:iceMagicFocus}
+		\\ \hline
+		
+		Katana & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Katana}}
+		& Egy egyszerű kard amivel sebzed az ellenségeket.
+		& \label{que:katana}
+		\\ \hline
+		
+		Masamune & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Masamune}}
+		& Gyengén sebzi az ellenségeket, azonban \textit{Vérzés \ref{que:bleeding}} státuszeffektet rak rájuk.
+		& \label{que:masamune}
+		\\ \hline
+		
+		Muramasa & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Muramasa}}
+		& Erősen megsebzi az ellenségeket, és \textit{Kábult \ref{que::stunned}} státuszeffektet rak rájuk, azonban alacsony a támadási sebessége.
+		& \label{que:muramasa}
+		\\ \hline
+		
+	\end{tabular}
+\end{table}
+
+\subsection{Varázslatok}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+		\hline
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		
+		Tűzkarika & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{fireBurst}}
+		& Rengeteg sebzést okoz az összes közeli ellenségnek, és az \textit{Égés \ref{que:burning}} státuszeffektet rakja rájuk, nagy az újrahasználási ideje.
+		& \label{que:fireBurst}
+		\\ \hline
+		
+		Jéglándzsa & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{iceLance}}
+		& Megsebzi az ellenségeket, és \textit{Fagyás \ref{que:frozen}} státuszeffektet rak rájuk.
+		& \label{que:iceLance}
+		\\ \hline
+		
+	\end{tabular}
+\end{table}
+
+\subsection{Státuszeffektusok}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+		\hline
+		 \textbf{Név} & \textbf{Kép} & \textbf{Leírás} &\\
+		\hline \hline
+		
+		Vérzés & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Bleeding}}
+		& Időközönként megsebzi kicsit a célpontot.
+		& \label{que:bleeding}
+		\\ \hline
+		
+		Égés & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Burning}}
+		& Időközönként megsebzi a célpontot.
+		& \label{que:burning}
+		\\ \hline
+		
+		Fagyás & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Frozen}}
+		& Időközönként megsebzi és lelassítja a célpontot.
+		& \label{que:frozen}
+		\\ \hline
+		
+		Kábult & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Stunned}}
+		& Rendkívül megsebzi a célpontot és lezárja a mozgási lehetőségeit egy időre.
+		& \label{que::stunned}
+		\\ \hline
+		
+		Gyógyul & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Healing}}
+		& Időközönként gyógyítja a célpontot.
+		& \label{que:healing}
+		\\ \hline		
+		
+	\end{tabular}
+\end{table}
+
+\cleardoublepage
+
 \subsection{Ellenfelek}
+Minden ellenségnek kettő típusa van: járőr és őr. Az őr egy helybe áll és vár a játékosra. A járőr kettő pont között mozog.
+\begin{center}
+	\begin{longtable}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+	%\centering
+		\hline
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		
+		Alap Ellenség & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{enemy}}
+		& A leggyengébb ellenség, ami egy \textit{Katanaát \ref{que:katana}} használ a fő fegyvereként.
+		& \label{que:enemy}
+		\\ \hline
+		
+		Erős Ellenség & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{strongEnemy}}
+		& Egy lényegesen erősebb ellenség, ami egy \textit{Masamunet \ref{que:masamune}} használ a fő fegyvereként.
+		& \label{que:strongEnemy}
+		\\ \hline		
+		
+		Tűzvarázsló & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{fireMage}}
+		& Egy varázsló egység, ami egy \textit{Muramasat \ref{que:muramasa}} használ a fő fegyvereként, azonban képes a \textit{Tűzgyűrű \ref{que:muramasa}} varázslat használatára is.
+		& \label{que:fireMage}
+		\\ \hline
+		
+		Jégvarázsló & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{iceMage}}
+		& Egy rendkívül veszélyes varázsló egység, ami egy \textit{Masamunet \ref{que:masamune}} használ a fő fegyvereként és képes a \textit{Jéglándzsa \ref{que:muramasa}} varázslat használatára is.
+		& \label{que:iceeMage}
+		\\ \hline		
+		
+	\end{longtable}
+\end{center}

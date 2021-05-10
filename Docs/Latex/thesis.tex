@@ -36,6 +36,16 @@
 % Add bibliography file
 \addbibresource{thesis.bib}
 
+\newcounter{rowcntr}[table]
+\renewcommand{\therowcntr}{\thesubsection.\arabic{rowcntr}}
+
+% A new columntype to apply automatic stepping
+\newcolumntype{N}{>{\refstepcounter{rowcntr}\therowcntr}m{0.1\textwidth}}
+
+% Reset the rowcntr counter at each new tabular
+\AtBeginEnvironment{tabular}{\setcounter{rowcntr}{0}}
+\usepackage{longtable}
+
 % A dolgozat
 % The document
 \begin{document}
