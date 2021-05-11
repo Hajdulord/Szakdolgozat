@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0.0.0.0">
-  <Summary numSequencePoints="661" visitedSequencePoints="229" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="34.64" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="13" numClasses="28" visitedMethods="64" numMethods="151" />
+  <Summary numSequencePoints="661" visitedSequencePoints="232" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="35.10" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="13" numClasses="28" visitedMethods="64" numMethods="151" />
   <Modules>
     <Module>
       <Summary numSequencePoints="239" visitedSequencePoints="37" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="15.48" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="7" numClasses="11" visitedMethods="14" numMethods="52" />
@@ -1100,7 +1100,7 @@
       </Classes>
     </Module>
     <Module>
-      <Summary numSequencePoints="195" visitedSequencePoints="192" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="98.46" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="6" numClasses="6" visitedMethods="50" numMethods="50" />
+      <Summary numSequencePoints="195" visitedSequencePoints="195" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="6" numClasses="6" visitedMethods="50" numMethods="50" />
       <ModuleTime>0001-01-01T00:00:00</ModuleTime>
       <ModuleName>Logic</ModuleName>
       <Files>
@@ -1314,7 +1314,7 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="91" visitedSequencePoints="88" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="96.70" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="16" numMethods="16" />
+          <Summary numSequencePoints="91" visitedSequencePoints="91" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0.0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="1" numClasses="1" visitedMethods="16" numMethods="16" />
           <FullName>HMF.Thesis.Logic.InventoryLogic</FullName>
           <Methods>
             <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="true" isSetter="false">
@@ -1383,7 +1383,7 @@
               <Name>System.Collections.Generic.Dictionary[Int32,IItem] HMF.Thesis.Logic.InventoryLogic::get_InUse()</Name>
               <FileRef uid="18" />
               <SequencePoints>
-                <SequencePoint vc="94" uspid="410" ordinal="0" offset="0" sl="17" sc="46" el="17" ec="46" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="95" uspid="410" ordinal="0" offset="0" sl="17" sc="46" el="17" ec="46" bec="0" bev="0" fileid="18" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1446,17 +1446,17 @@
               </SequencePoints>
               <BranchPoints />
             </Method>
-            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="72.73" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
-              <Summary numSequencePoints="11" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="72.73" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+            <Method visited="true" cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="100.0" branchCoverage="0" crapScore="0" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="11" visitedSequencePoints="11" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100.0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken>100663324</MetadataToken>
               <Name>System.Void HMF.Thesis.Logic.InventoryLogic::SetUse(HMF.Thesis.Interfaces.IItem)</Name>
               <FileRef uid="18" />
               <SequencePoints>
                 <SequencePoint vc="18" uspid="434" ordinal="0" offset="0" sl="81" sc="9" el="81" ec="9" bec="0" bev="0" fileid="18" />
                 <SequencePoint vc="18" uspid="435" ordinal="0" offset="1" sl="82" sc="13" el="82" ec="13" bec="0" bev="0" fileid="18" />
-                <SequencePoint vc="0" uspid="436" ordinal="0" offset="22" sl="83" sc="13" el="83" ec="13" bec="0" bev="0" fileid="18" />
-                <SequencePoint vc="0" uspid="437" ordinal="0" offset="23" sl="84" sc="17" el="84" ec="17" bec="0" bev="0" fileid="18" />
-                <SequencePoint vc="0" uspid="438" ordinal="0" offset="40" sl="85" sc="13" el="85" ec="13" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="1" uspid="436" ordinal="0" offset="22" sl="83" sc="13" el="83" ec="13" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="1" uspid="437" ordinal="0" offset="23" sl="84" sc="17" el="84" ec="17" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="1" uspid="438" ordinal="0" offset="40" sl="85" sc="13" el="85" ec="13" bec="0" bev="0" fileid="18" />
                 <SequencePoint vc="18" uspid="439" ordinal="0" offset="41" sl="87" sc="13" el="87" ec="13" bec="0" bev="0" fileid="18" />
                 <SequencePoint vc="18" uspid="440" ordinal="0" offset="101" sl="88" sc="13" el="88" ec="13" bec="0" bev="0" fileid="18" />
                 <SequencePoint vc="18" uspid="441" ordinal="0" offset="102" sl="89" sc="17" el="89" ec="17" bec="0" bev="0" fileid="18" />
