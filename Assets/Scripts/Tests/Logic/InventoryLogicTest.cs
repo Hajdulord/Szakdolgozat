@@ -316,6 +316,46 @@ namespace HMF.Thesis.Tests.Logic
 
         }
 
+        [Test]
+        public void InUseInnerCounterWorkingCorrectly2()
+        {
+            //* Setup
+            var itemMoq = new Mock<IItem>();
+            itemMoq.SetupGet(p => p.Name).Returns("Test Item");
+
+            var itemMoq2 = new Mock<IItem>();
+            itemMoq2.SetupGet(p => p.Name).Returns("Test Item2");
+
+            var itemMoq3 = new Mock<IItem>();
+            itemMoq3.SetupGet(p => p.Name).Returns("Test Item2");
+
+
+            var inventory = new InventoryLogic(4, itemMoq.Object);
+            
+            inventory.AddItem(itemMoq.Object, 1);
+            inventory.AddItem(itemMoq2.Object, 1);
+            inventory.AddItem(itemMoq3.Object, 1);
+
+            inventory.SetUse(itemMoq.Object);
+            inventory.SetUse(itemMoq2.Object);
+            inventory.SetUse(itemMoq3.Object);
+
+            //* Affect
+            
+            inventory.RemoveUse(1);
+            inventory.RemoveUse(0);
+
+            inventory.SetUse(itemMoq2.Object);
+            inventory.SetUse(itemMoq.Object);
+
+            //* Testing
+
+            Assert.AreEqual(3, inventory.InUse.Count);
+            Assert.AreEqual(itemMoq2.Object, inventory.InUse[0]);
+            Assert.AreEqual(itemMoq.Object, inventory.InUse[1]);
+            Assert.AreEqual(itemMoq3.Object, inventory.InUse[2]);
+
+        }
 
         [Test]
         public void RemoveAll()
