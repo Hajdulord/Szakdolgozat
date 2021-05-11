@@ -6,10 +6,10 @@ using HMF.HMFUtilities.Utilities;
 //! Implementation needed.
 namespace HMF.Thesis.Logic
 {
-	/// Logic fore the mocement.
+	/// Logic for the movement.
 	public class MoveLogic : IMove
 	{
-		private CharacterData _character; ///< The thata of a Character.
+		private CharacterData _character; ///< The data of a Character.
 		private Rigidbody2D _rigidbody; ///< Used for physics.
 		private Vector2 _movementVector;
 		private float _dashDistance = 5f;

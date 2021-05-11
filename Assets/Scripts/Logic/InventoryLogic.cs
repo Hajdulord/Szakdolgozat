@@ -17,7 +17,11 @@ namespace HMF.Thesis.Logic
         public Dictionary<int, IItem> InUse {get; private set;}
         public int InUseSize { get => _inUseSize;}
 
-        public InventoryLogic(int inUseSize, IItem mainWeapon, Dictionary<string, (IItem Item, int Quantity)> inventory = null, Dictionary<int, IItem> inUse = null, IItem currentItem = null)
+        public InventoryLogic(int inUseSize, 
+                            IItem mainWeapon, 
+                            Dictionary<string, (IItem Item, int Quantity)> inventory = null, 
+                            Dictionary<int, IItem> inUse = null, 
+                            IItem currentItem = null)
         {
             if (inventory != null)
             {

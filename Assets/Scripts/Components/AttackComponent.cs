@@ -5,12 +5,15 @@ using UnityEngine;
 
 namespace HMF.Thesis.Components
 {
+    /// The Component that wraps the Attack Logic.
     public class AttackComponent : MonoBehaviour, IAttackComponent
     {
         [Header("Serializable Fields")]
-        [SerializeField] private GameObject _origin = null!;
+        [SerializeField] private GameObject _origin = null!; ///< The origin of the attack.
 
-        private IAttack _attack;
+        private IAttack _attack; ///< The attack logic.
+
+        /// Getter for attack logic.
         public IAttack Attack => _attack;
 
         private void Awake()

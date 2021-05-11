@@ -1,7 +1,7 @@
 \documentclass[
 	%parspace, % Térköz bekezdések közé / Add vertical space between paragraphs
 	%noindent, % Bekezdésének első sora ne legyen behúzva / No indentation of first lines in each paragraph
-	%nohyp, % Szavak sorvégi elválasztásának tiltása / No hyphenation of words
+	nohyp, % Szavak sorvégi elválasztásának tiltása / No hyphenation of words
 	%twoside, % Kétoldalas nyomtatás / Double sided format
 	%draft, % Gyorsabb fordítás ábrák rajzolása nélkül / Quicker draft compilation without rendering images
 	final, % Teendők elrejtése / Set final to hide todos
@@ -36,10 +36,20 @@
 % Add bibliography file
 \addbibresource{thesis.bib}
 
+\newcounter{rowcntr}[table]
+\renewcommand{\therowcntr}{\thesubsection.\arabic{rowcntr}}
+
+% A new columntype to apply automatic stepping
+\newcolumntype{N}{>{\refstepcounter{rowcntr}\therowcntr}m{0.1\textwidth}}
+
+% Reset the rowcntr counter at each new tabular
+\AtBeginEnvironment{tabular}{\setcounter{rowcntr}{0}}
+\usepackage{longtable}
+
 % A dolgozat
 % The document
 \begin{document}
-
+\nocite{*}
 % Nyelv kiválasztása
 % Set document language
 \documentlang{magyar}
@@ -56,9 +66,9 @@
 % Címlap (kötelező)
 % Title page (mandatory)
 \maketitle
-\input{chapters/topic.tex}
-%\topicdeclaration
-\cleardoublepage
+%\input{chapters/topic.tex}
+\topicdeclaration
+%\cleardoublepage
 
 % Tartalomjegyzék (kötelező)
 % Table of contents (mandatory)
@@ -81,9 +91,9 @@
 
 % Függelékek (opcionális) - hosszabb részletező táblázatok, sok és/vagy nagy kép esetén hasznos
 % Appendices (optional) - useful for detailed information in long tables, many and/or large figures, etc.
-\appendix
-\input{appendices/sim.tex}
-\cleardoublepage
+% \appendix
+% \input{appendices/sim.tex}
+% \cleardoublepage
 
 % Irodalomjegyzék (kötelező)
 % Bibliography (mandatory)

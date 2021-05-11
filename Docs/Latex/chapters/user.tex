@@ -1,204 +1,427 @@
 \chapter{Felhasználói dokumentáció} % User guide
 \label{ch:user}
 
-Lorem ipsum dolor sit amet $\mathbb{N}$\nomenclature{$\mathbb{N}$}{Set of natural numbers}, consectetur adipiscing elit. Duis nibh leo, dapibus in elementum nec, aliquet id sem. Suspendisse potenti. Nullam sit amet consectetur nibh. Donec scelerisque varius turpis at tincidunt. Cras a diam in mauris viverra vehicula. Vivamus mi odio, fermentum vel arcu efficitur, lacinia viverra nibh. Aliquam aliquam ante mi, vel pretium arcu dapibus eu. Nulla finibus ante vel arcu tincidunt, ut consectetur ligula finibus. Mauris mollis lectus sed ipsum bibendum, ac ultrices erat dictum. Suspendisse faucibus euismod lacinia $\mathbb{Z}$\nomenclature{$\mathbb{Z}$}{Set of integer numbers}.
+\section{A játék rövid leírása}
+A játék Hack-and-Slash stílusú. A célunk, hogy haladjunk előre egy pályán, ahol különböző nehézségű és számosságú ellenfelek jönnek velünk szembe. A pályán találhatunk felvehető tárgyakat, amik szituációtól függően erősítenek bennünket. Halál esetén újraéledünk egy előre meghatározott ellenőrző ponton, ahonnan folytathatjuk a játékot. A pálya végén értékel minket a játék, és ha más játékosokhoz képest (mint egy árkád játékban, local high score) jobban teljesítettünk, vagy még nem telt be az eredménytábla, akkor az előbb említett táblára felkerülünk. A játék 3 pályát/szintet tartalmaz, amik egyre nehezebbek, ezen felül állásunkat el tudjuk mentei, valamint betölteni. Mindezzel egy kohézív gyors, kihívásokkal teli játékélményt kínálunk.
+\subsection{Célközönség}
+A játék azon eberek számára lehet érdekes, akik szeretik a gyors kihívással teli árkát stílusú Hack-and-Slash játékokat. 15 életévet minimum betöltött embernek ajánljuk, mivel a játék vért és erőszakot (ellenfelek legyőzése) tartalmaz.
+\cleardoublepage
+\section{Rendszerkövetelmények}
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{ | m{0.1\textwidth} | m{0.45\textwidth} | m{0.45\textwidth} | }
+		\hline
+		\textbf{Adatok} & \textbf{Minimum követelménye} & \textbf{Ajánlott követelmény} \\
+		\hline \hline
+		CPU & Intel i5-8250U & Intel i5-8600K \\ \hline
+		GPU & Nvidia GeForce MX150 & Nvidia GTX 1050Ti \\ \hline
+		RAM & 8Gb & 16Gb \\ \hline
+		OS & \multicolumn{2}{c|}{Windows, Linux} \\
+		\hline
+		Disc & \multicolumn{2}{c|}{300Mb} \\
+		\hline
+	\end{tabular}
+	\caption{rendszerkövetelmények}
+	\label{sysReq}
+\end{table}
+\subsection{Játék indítása}
+A játék nem igényel telepítést. Futtatásához indítsa el a 'The Quest for the Thesis.exe'-t (kattintson rá bal egérgombbal kétszer Windows-on).
 
+\cleardoublepage
+\section{Funkciók ismertetése}
+A következő fejezetekben a játék funkcióinak részletesebb ismertetése lesz kifejtve. Hogyan is néz ki a játék, és mivel találkozhatunk miután elindítottuk.
 
-\section{Felsorolások} % Enumerations and lists
+\subsection{Grafikus Felhasználói Interfész (GUI)}
+Kettőféle Grafikus Felhasználói Interfész különböztethetünk meg a játék során. Az egyik, ami tisztán információt közöl velünk, a másik amivel interaktálhatunk is.
+\subsubsection{Tisztán információ közlő GUI-k}
+Játékon belüli indikátorok azok a grafikus elemek, amik visszajelzik nekünk a játékos aktuális állapotát. 
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUse}}
+	\caption{Játékon belüli indikátorok}
+	\label{inUse}
+\end{figure}
 
-Etiam vel odio ante. Etiam pulvinar nibh quis massa auctor congue. Pellentesque quis odio vitae sapien molestie vestibulum sit amet et quam. Pellentesque vel dui eget enim hendrerit finibus at sit amet libero. Quisque sollicitudin ultrices enim, nec porta magna imperdiet vitae. Cras condimentum nunc dui, eget molestie nunc accumsan vel.
+Itt látható a játékos jelenlegi élete.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseHealth}}
+	\caption{Játékos életereje}
+	\label{inUseHealth}
+\end{figure}
 
-\begin{itemize}
-	\item Fusce in aliquet neque, in pretium sem.
-	\item Donec tincidunt tellus id lectus pretium fringilla.
-	\item Nunc faucibus, erat pretium tempus tempor, tortor mi fringilla neque, ac congue ex dui vitae mauris.
-\end{itemize}
+A játékos képességei és tárgyai, valamint az idő addig amíg újra lehet használni a tárgyat/képességet.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseItems}}
+	\caption{Játékos képességei és tárgyai}
+	\label{inUseItems}
+\end{figure}
 
-Donec dapibus sodales ante, at scelerisque nunc laoreet sit amet. Mauris porttitor tincidunt neque, vel ullamcorper neque pulvinar et. Integer eu lorem euismod, faucibus lectus sed, accumsan felis. Nunc ornare mi at augue vulputate, eu venenatis magna mollis. Nunc sed posuere dui, et varius nulla. Sed mollis nibh augue, eget scelerisque eros ornare nec.
+Valamint a játékost éppen érintő státuszeffekteket.
+\begin{figure}[htb]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{inUseStatuses}}
+	\caption{Játékost érintő státuszeffekteket}
+	\label{inUseStatuses}
+\end{figure}
+
+Ezeken felül ebbe a kategóriába tartozik még a töltőképernyő, ami a szintek között jelenhet meg.
+\begin{figure}[H]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{loading}}
+	\caption{Töltőképernyő}
+	\label{loading}
+\end{figure}
+
+\cleardoublepage
+Valamint a halálképernyő, ami akkor jelenik meg, ha a játékos meghalt.
+\begin{figure}[H]
+	\noindent\makebox[\textwidth]{
+	\includegraphics[width= 1\textwidth]{dead}}
+	\caption{Halálképernyő}
+	\label{dead}
+\end{figure}
+
+\subsubsection{Interaktív GUI-k}
+Ezeken a képernyőkön vannak gombok, lenyíló listák, vagy csúszkák, amikkel interaktálhatunk a játékkal.
 
 \begin{enumerate}
-	\item\label{step:first} Donec pretium et quam a cursus. Ut sollicitudin tempus urna et mollis.
-	\item Aliquam et aliquam turpis, sed fermentum mauris. Nulla eget ex diam.
-	\item Donec eget tellus pharetra, semper neque eget, rutrum diam Step~\ref{step:first}.
+	\item \label{fomenu} \textbf{Főmenü} az első GUI elem amit látunk a játék indításakor. Öt gomb látható ezen a felületen:
+	\begin{itemize}
+		\item \textit{Start} ha erre a gombra kattintunk akkor tovább lépünk a \textit{Pályaválasztóra \ref{levelSelector}}.
+		\item \textit{Settings} erre kattintva megnyitjuk a \textit{Beállítások \ref{setting}} menüt.
+		\item \textit{Score Board}-ra kattintva eljutunk az \textit{Eredménytáblára \ref{scoreboard}}.
+		\item \textit{Credit} gombra kattintva eljutunk a \textit{Köszönetnyilvánító \ref{credit}} menüre.
+		\item \textit{Exit} gomb lenyomásával kilépünk a játékból.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{mainMenu}}
+		\caption{A Kezdőképernyő}
+		\label{mainMenu}
+	\end{figure}
+	
+	\item \label{levelSelector} \textbf{Pályaválasztó} menün  adhatjuk meg a nevünket ami később az \textit{Eredménytáblán \ref{scoreboard}} látható.
+	\begin{itemize}
+	\item A \textit{Easy, Medium} és \textit{Hard} gombok lenyomásával átléphetünk az \textit{Utasítások \ref{instructions}} menübe, és a játék betölti a megfelelő pályát.
+	\item \textit{Load} gomb lenyomását követően átlépünk a \textit{Mentés és Betöltés \ref{save}} menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{levelSelection}}
+		\caption{A Pályaválasztó menü}
+		\label{levelSelection}
+	\end{figure}
+	
+	\item \label{instructions} \textbf{Utasítások} menüben láthatók a játék bemeneteire végrehajtott akciók.
+	\begin{itemize}
+		\item \textit{Play} gomb lenyomását követően elkezdődik a játék.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{instructions}}
+		\caption{Utasítások menü}
+		\label{instructionsF}
+	\end{figure}	
+	
+	\item \label{scoreboard} \textbf{Eredménytábla} ahol a szinteken elért eredmények láthatók.
+	\begin{itemize}
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{scoreBoard}}
+		\caption{Eredménytábla}
+		\label{scoreBoardF}
+	\end{figure}
+	
+	\item \label{credit} \textbf{Köszönetnyilvánító} menün található a játék készítéséhez felhasznált assetek készítői.
+	\begin{itemize}
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{credit}}
+		\caption{Köszönetnyilvánító menü}
+		\label{creditF}
+	\end{figure}
+	
+	\item \label{setting} \textbf{Beállítások} menüben változtathatjuk meg az alapértelmezett beállításainkat.
+	\begin{itemize}
+		\item Bal felül választhatjuk ki egy lenyíló listából a kívánt felbontást.
+		\item Jobb felül választhatjuk ki egy lenyíló listából a játékablak üzemmódját.
+		\item \textit{Graphics Quality} menüpontban egy lenyíló listából kiválaszthatjuk a játék minőségi beállításait.
+		\item \textit{Main Volume} csúszkán a fő hangerőt tudjuk állítani.
+		\item \textit{Music Volume} csúszkán a zene hangerejét tudjuk állítani.
+		\item \textit{SFX Volume} csúszkán az effektek hangerejét tudjuk állítani.
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{settings}}
+		\caption{Beállítások}
+		\label{settings}
+	\end{figure}
+	
+	\item \label{save} \textbf{Mentés és Betöltés} menün található a 4 mentési hely. Ahol ha már volt mentésünk akkor a mentésben szereplő adatok jelennek meg, ha nem akkor az \textit{Empty Slot} felirat.   
+	\begin{itemize}
+		\item \textit{Load} gombot megnyomva a kijelölt mentés fog betölteni.
+		\item \textit{Save} gombra kattintva a kijelölt mentési helyre elmentődik a jelenlegi állás (csak játék közben látható).
+		\item \textit{Back} gomb lenyomását követően visszatérünk az előző menübe.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{saveLoad}}
+		\caption{Mentés és Betöltés menü}
+		\label{saveLoad}
+	\end{figure}
+	
+	\item \label{pause} \textbf{Szünet} menüt a játék közben az \textbf{ESC} gomb lenyomásával hívhatjuk elő.
+	\begin{itemize}
+		\item \textit{Resume} gomb lenyomását követően a játék folytatódik.
+		\item \textit{Save / Load} gombot megnyomva továbblépünk a \textit{Mentés és Betöltés \ref{save}} menüre.
+		\item \textit{Exit} gomb lenyomását követően a játék bezáródik.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{pause}}
+		\caption{Szünet menü}
+		\label{pauseF}
+	\end{figure}
+	
+	\item \label{end} \textbf{Vég} menü egy pálya végén jelenik meg.
+	\begin{itemize}
+		\item Legfelül látható a pálya elvégzését követő eredményünk.
+		\item A szerzett pontunk alatt láthatóak a többi pályákat reprezentáló gombok, amik re kattintva a megfelelő pálya betöltődik (különböző pályákról érkezve a Vég menübe más pályák jelennek meg itt).
+		\item \textit{Load} gombot megnyomva továbblépünk a \textit{Mentés és Betöltés \ref{save}} menüre.
+		\item \textit{Score Board}-ra kattintva eljutunk az \textit{Eredménytáblára \ref{scoreboard}}.
+		\item \textit{Credit} gombra kattintva eljutunk a \textit{Köszönetnyilvánító \ref{credit}} menüre.
+		\item \textit{Exit} gomb lenyomását követően a játék bezáródik.
+	\end{itemize}
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{end}}
+		\caption{Vég menü}
+		\label{endF}
+	\end{figure}
+	
 \end{enumerate}
 
-Praesent porta, metus eget eleifend consequat, eros ligula eleifend ex, a pellentesque mi est vitae urna. Vivamus turpis nunc, iaculis non leo eget, mattis vulputate tellus. Maecenas rutrum eros sem, pharetra interdum nulla porttitor sit amet. In vitae viverra ante. Maecenas sit amet placerat orci, sed tincidunt velit. Vivamus mattis, enim vel suscipit elementum, quam odio venenatis elit\footnote{Phasellus faucibus varius purus, nec tristique enim porta vitae.}, et mollis nulla nunc a risus. Praesent purus magna, tristique sed lacus sit amet, convallis malesuada magna. 
+\subsection{Pályák}
+A játékban három pályát különítünk el: Easy, Medium, Hard
 
-\begin{description}
-	\item[Vestibulum venenatis] malesuada enim, ac auctor erat vestibulum et. Phasellus id purus a leo suscipit accumsan.
-	\item[Orci varius natoque] penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam interdum rhoncus nisl, vel pharetra arcu euismod sagittis. Vestibulum ac turpis auctor, viverra turpis at, tempus tellus.
-	\item[Morbi dignissim] erat ut rutrum aliquet. Nulla eu rutrum urna. Integer non urna at mauris scelerisque rutrum sed non turpis.
-\end{description}
+\begin{itemize}
+	\item \textbf{Easy} pálya a névből eredően a legkönnyebb. A tárgyak és az ellenfelek megismerésére tökéletesen alkalmas.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{easy}}
+		\caption{Easy pálya}
+	\end{figure}
+		\cleardoublepage
+		\item \textbf{Medium} pálya közepes nehézségű. Több ellenség érkezik felén és a felvehető tárgyak ritkák.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{medium}}
+		\caption{Medium pálya}
+	\end{figure}
+	
+		\item \textbf{Hard} pálya a legnehezebb. A tárgyak kevesek, az ellenségek számosak és az erősebb fajtából valók.
+	\begin{figure}[H]
+		\noindent\makebox[\textwidth]{
+		\includegraphics[width= 1\textwidth]{hard}}
+		\caption{Hard pálya}
+	\end{figure}
+\end{itemize}
 
-\subsection{Szoros térközű felsorolások} % Lists with narrow spacing inbetween items
-
-Phasellus ultricies, sapien sit amet ultricies placerat, velit purus viverra ligula, id consequat ipsum odio imperdiet enim:
-\begin{compactenum}
-	\item Maecenas eget lobortis leo.
-	\item Donec eget libero enim.
-	\item In eu eros a eros lacinia maximus ullamcorper eget augue.
-\end{compactenum}
-
-\bigskip
-
-In quis turpis metus. Proin maximus nibh et massa eleifend, a feugiat augue porta. Sed eget est purus. Duis in placerat leo. Donec pharetra eros nec enim convallis:
-\begin{compactitem}
-	\item Pellentesque odio lacus.
-	\item Maximus ut nisl auctor.
-	\item Sagittis vulputate lorem.
-\end{compactitem}
-
-\bigskip
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed lorem libero, dignissim vitae gravida a, ornare vitae est.
-\begin{compactdesc}
-	\item[Cras maximus] massa commodo pellentesque viverra.
-	\item[Morbi sit] amet ante risus. Aliquam nec sollicitudin mauris
-	\item[Ut aliquam rhoncus sapien] luctus viverra arcu iaculis posuere
-\end{compactdesc}
-
-
-\section{Képek, ábrák} % Images and figures
-
-Aliquam vehicula luctus mi a pretium. Nulla quam neque, maximus nec velit in, aliquam mollis tortor. Aliquam erat volutpat. Curabitur vitae laoreet turpis. Integer id diam ligula. Nulla sodales purus id mi consequat, eu venenatis odio pharetra. Cras a arcu quam. Suspendisse augue risus, pulvinar a turpis et, commodo aliquet turpis. Nulla aliquam scelerisque mi eget pharetra. Mauris sed posuere elit, ac lobortis metus. Proin lacinia sit amet diam sed auctor. Nam viverra orci id sapien sollicitudin, a aliquam lacus suscipit, Figure~\ref{fig:example-1}:
-
-\begin{figure}[H]
+\subsection{Irányítás}
+\begin{table}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth,height=100px]{elte_cimer_szines}
-	\caption{Quisque ac tincidunt leo}
-	\label{fig:example-1}
-\end{figure}
+	\begin{tabular}{ | m{0.3\textwidth} | m{0.5\textwidth} | }
+		\hline
+		\textbf{Akció} & \textbf{Gomb} \\
+		\hline \hline
+		Bal irányú mozgás & A \\ \hline
+		Jobb irányú mozgás & D \\ \hline
+		Ugrás & SPACE \\ \hline
+		Gyors hirtelen mozgás & Baloldali ALT \\ \hline
+		Sima Támadás & Baloldali egérgomb \\ \hline
+		1, 2, 3, 4 gombok & megfelelő helyen lévő tárgy használata \\ \hline
+		Tárgyak felvétele & E \\ \hline
+		Játék megállítása & ESC \\ \hline
+	\end{tabular}
+	\label{instruc}
+\end{table}
 
-\subsection{Képek szegélyezése} % Framing figures
-
-Ut aliquet nec neque eget fermentum. Cras volutpat tellus sed placerat elementum. Quisque neque dui, consectetur nec finibus eget, blandit id purus. Nam eget ipsum non nunc placerat interdum.
-
-\begin{figure}[H]
+\subsection{Tárgyak}
+\begin{table}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth,height=100px,frame]{elte_cimer_szines}
-	\caption{Quisque ac tincidunt leo}
-\end{figure}
+	\begin{tabular}{ | m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+		\hline
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		Gyógyító ital & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{CurePotion}}
+		& Megszünteti az összes státuszeffektust.
+		& \label{que:curePotion}
+		\\ \hline
+		
+		Életerő ital & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{HealthPotion}}
+		& Gyógyítja a játékost és a \textit{Gyógyul \ref{que:healing}} státuszeffektet rakja rá.
+		& \label{que:healthPotion}
+		\\ \hline		
+		
+		Tűz varázsfókusz & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{FireMagicFocus}}
+		& Lehetővé teszi a \textit{Tűzkarika \ref{que:fireBurst}} varázslat használatára a játékost.
+		& \label{que:fireMagicFocus}
+		\\ \hline
+		
+		Jég varázsfókusz & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{IceMagicFocus}}
+		& Lehetővé teszi a \textit{Jéglándzsa \ref{que:iceLance}} varázslat használatára a játékost.
+		& \label{que:iceMagicFocus}
+		\\ \hline
+		
+		Katana & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Katana}}
+		& Egy egyszerű kard amivel sebzed az ellenségeket.
+		& \label{que:katana}
+		\\ \hline
+		
+		Masamune & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Masamune}}
+		& Gyengén sebzi az ellenségeket, azonban \textit{Vérzés \ref{que:bleeding}} státuszeffektet rak rájuk.
+		& \label{que:masamune}
+		\\ \hline
+		
+		Muramasa & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{Muramasa}}
+		& Erősen megsebzi az ellenségeket, és \textit{Kábult \ref{que::stunned}} státuszeffektet rak rájuk, azonban alacsony a támadási sebessége.
+		& \label{que:muramasa}
+		\\ \hline
+		
+	\end{tabular}
+\end{table}
 
-\subsection{Képek csoportosítása} % Subfigures
-
-In non ipsum fermentum urna feugiat rutrum a at odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla tincidunt mattis nisl id suscipit. Sed bibendum ac felis sed volutpat. Nam pharetra nisi nec facilisis faucibus. Aenean tristique nec libero non commodo. Nulla egestas laoreet tempus. Nunc eu aliquet nulla, quis vehicula dui. Proin ac risus sodales, gravida nisi vitae, efficitur neque, Figure~\ref{fig:example-2}:
-
-\begin{figure}[H]
+\subsection{Varázslatok}
+\begin{table}[H]
 	\centering
-	\subfigure[Vestibulum quis mattis urna]{
-		\includegraphics[width=0.45\linewidth]{elte_cimer_szines}}
-	\hspace{5pt}
-	\subfigure[Donec hendrerit quis dui sit amet venenatis]{
-		\includegraphics[width=0.45\linewidth]{elte_cimer_szines}}
-	\caption{Aenean porttitor mi volutpat massa gravida}
-	\label{fig:example-2}
-\end{figure}
+	\begin{tabular}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+		\hline
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		
+		Tűzkarika & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{fireBurst}}
+		& Rengeteg sebzést okoz az összes közeli ellenségnek, és az \textit{Égés \ref{que:burning}} státuszeffektet rakja rájuk, nagy az újrahasználási ideje.
+		& \label{que:fireBurst}
+		\\ \hline
+		
+		Jéglándzsa & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{iceLance}}
+		& Megsebzi az ellenségeket, és \textit{Fagyás \ref{que:frozen}} státuszeffektet rak rájuk.
+		& \label{que:iceLance}
+		\\ \hline
+		
+	\end{tabular}
+\end{table}
 
-Nam et nunc eget elit tincidunt sollicitudin. Quisque ligula ipsum, tempor vitae tortor ut, commodo rhoncus diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus vehicula quam dui, eu convallis metus porta ac.
-
-
-\section{Táblázatok} % Tables
-
-Nam magna ex, euismod nec interdum sed, sagittis nec leo. Nam blandit massa bibendum mattis tristique. Phasellus tortor ligula, sodales a consectetur vitae, placerat vitae dolor. Aenean consequat in quam ac mollis. 
+\subsection{Státuszeffektusok}
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{ | m{0.25\textwidth} | m{0.65\textwidth} | }
+	\begin{tabular}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
 		\hline
-		\textbf{Phasellus tortor} & \textbf{Aenean consequat} \\
+		 \textbf{Név} & \textbf{Kép} & \textbf{Leírás} &\\
 		\hline \hline
-		\emph{Sed malesuada} & Aliquam aliquam velit in convallis ultrices. \\
-		\hline
-		\emph{Purus sagittis} &  Quisque lobortis eros vitae urna lacinia euismod. \\
-		\hline
-		\emph{Pellentesque} & Curabitur ac lacus pellentesque, eleifend sem ut, placerat enim. Ut auctor tempor odio ut dapibus. \\
-		\hline
+		
+		Vérzés & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Bleeding}}
+		& Időközönként megsebzi kicsit a célpontot.
+		& \label{que:bleeding}
+		\\ \hline
+		
+		Égés & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Burning}}
+		& Időközönként megsebzi a célpontot.
+		& \label{que:burning}
+		\\ \hline
+		
+		Fagyás & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Frozen}}
+		& Időközönként megsebzi és lelassítja a célpontot.
+		& \label{que:frozen}
+		\\ \hline
+		
+		Kábult & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Stunned}}
+		& Rendkívül megsebzi a célpontot és lezárja a mozgási lehetőségeit egy időre.
+		& \label{que::stunned}
+		\\ \hline
+		
+		Gyógyul & 
+			\noindent\makebox[0.15\textwidth]{
+			\includegraphics[width= 0.15\textwidth]{Healing}}
+		& Időközönként gyógyítja a célpontot.
+		& \label{que:healing}
+		\\ \hline		
+		
 	\end{tabular}
-	\caption{Maecenas tincidunt non justo quis accumsan}
-	\label{tab:example-1}
 \end{table}
 
-\subsection{Sorok és oszlopok egyesítése} % Multi rows and multi columns
+\cleardoublepage
 
-Mauris a dapibus lectus. Vestibulum commodo nibh ante, ut maximus magna eleifend vel. Integer vehicula elit non lacus lacinia, vitae porttitor dolor ultrices. Vivamus gravida faucibus efficitur. Ut non erat quis arcu vehicula lacinia. Nulla felis mauris, laoreet sed malesuada in, euismod et lacus. Aenean at finibus ipsum. Pellentesque dignissim elit sit amet lacus congue vulputate.
-
-\begin{table}[htb]
-	\centering
-	\begin{tabular}{ | c | r | r | r | r | r | r | }
-		\hline
-		\multirow{2}{*}{\textbf{Quisque}} & \multicolumn{2}{ c | }{\textbf{Suspendisse}} & \multicolumn{2}{ c | }{\textbf{Aliquam}} & \multicolumn{2}{ c | }{\textbf{Vivamus}} \\
-		\cline{2-7}
-		& Proin & Nunc & Proin & Nunc & Proin & Nunc \\
-		\hline \hline		
-		Leo & 2,80 MB & 100\% & 232 KB & 8,09\% & 248 KB & 8,64\% \\
-		\hline
-		Vel & 9,60 MB & 100\% & 564 KB & 5,74\% & 292 KB & 2,97\% \\
-		\hline
-		Auge & 78,2 MB & 100\% & 52,3 MB & 66,88\% & 3,22 MB & 4,12\% \\
-		\hline 
-	\end{tabular}
-	\caption[Rövid cím a táblázatjegyzékbe]{Vivamus ac arcu fringilla, fermentum neque sed, interdum erat. Mauris bibendum mauris vitae enim mollis, et eleifend turpis aliquet.}
-	\label{tab:example-2}
-\end{table}
-
-\subsection{Több oldalra átnyúló táblázatok} % Long tables over multiple pages
-
-Nunc porta placerat leo, sit amet porttitor dui porta molestie. Aliquam at fermentum mi. Maecenas vitae lorem at leo tincidunt volutpat at nec tortor. Vivamus semper lacus eu diam laoreet congue. Vivamus in ipsum risus. Nulla ullamcorper finibus mauris non aliquet. Vivamus elementum rhoncus ex ut porttitor.
-
+\subsection{Ellenfelek}
+Minden ellenségnek kettő típusa van: járőr és őr. Az őr egy helybe áll és vár a játékosra. A járőr kettő pont között mozog.
 \begin{center}
-	\begin{longtable}{ | p{0.3\textwidth} | p{0.7\textwidth} | }
-		
+	\begin{longtable}{| m{0.2\textwidth} | m{0.2\textwidth} | m{0.5\textwidth} | N |}
+	%\centering
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Praesent aliquam mauris enim}}
+		\textbf{Név} & \textbf{Kép} & \textbf{Leírás} & \\
+		\hline \hline
+		
+		Alap Ellenség & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{enemy}}
+		& A leggyengébb ellenség, ami egy \textit{Katanaát \ref{que:katana}} használ a fő fegyvereként.
+		& \label{que:enemy}
 		\\ \hline
 		
-		\emph{Suspendisse potenti} & \emph{Lorem ipsum dolor sit amet}
-		\\ \hline \hline
-		\endfirsthead % első oldal fejléce
+		Erős Ellenség & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{strongEnemy}}
+		& Egy lényegesen erősebb ellenség, ami egy \textit{Masamunet \ref{que:masamune}} használ a fő fegyvereként.
+		& \label{que:strongEnemy}
+		\\ \hline		
 		
-		\hline
-		\emph{Suspendisse potenti} & \emph{Lorem ipsum dolor sit amet}
-		\\ \hline \hline
-		\endhead % többi oldal fejléce
-		
-		\hline
-		\endfoot % többi oldal lábléce
-		
-		\endlastfoot % utolsó oldal lábléce
-		
-		\emph{Praesent}
-		& Nulla ultrices et libero sit amet fringilla. Nunc scelerisque ante tempus sapien placerat convallis.
+		Tűzvarázsló & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{fireMage}}
+		& Egy varázsló egység, ami egy \textit{Muramasat \ref{que:muramasa}} használ a fő fegyvereként, azonban képes a \textit{Tűzgyűrű \ref{que:muramasa}} varázslat használatára is.
+		& \label{que:fireMage}
 		\\ \hline
 		
-		\emph{Luctus}
-		& Integer hendrerit erat massa, non hendrerit risus convallis at. Curabitur ultrices, justo in imperdiet condimentum, neque tortor luctus enim, luctus posuere massa erat vitae nibh.
-		\\ \hline
+		Jégvarázsló & 
+			\noindent\makebox[0.2\textwidth]{
+			\includegraphics[width= 0.2\textwidth]{iceMage}}
+		& Egy rendkívül veszélyes varázsló egység, ami egy \textit{Masamunet \ref{que:masamune}} használ a fő fegyvereként és képes a \textit{Jéglándzsa \ref{que:muramasa}} varázslat használatára is.
+		& \label{que:iceeMage}
+		\\ \hline		
 		
-		\emph{Egestas}
-		& Duis fermentum feugiat augue in blandit. Mauris a tempor felis. Pellentesque ultricies tristique dignissim. Pellentesque aliquam semper tristique. Nam nec egestas dolor. Vestibulum id elit quis enim fringilla tempor eu a mauris. Aliquam vitae lacus tellus. Phasellus mauris lectus, aliquam id leo eget, auctor dapibus magna. Fusce lacinia felis ac elit luctus luctus.
-		\\ \hline
-		
-		\emph{Dignissim}
-		& Praesent aliquam mauris enim, vestibulum posuere massa facilisis in. Suspendisse potenti. Nam quam purus, rutrum eu augue ut, varius vehicula tellus. Fusce dui diam, aliquet sit amet eros at, sollicitudin facilisis quam. Phasellus tempor metus vel augue gravida pretium. Proin aliquam aliquam blandit. Nulla id tempus mi. Fusce in aliquam tortor.
-		\\ \hline
-		
-		\emph{Pellentesque}
-		& Donec felis nibh, imperdiet a arcu non, vehicula gravida nibh. Quisque interdum sapien eu massa commodo, ac elementum felis faucibus.
-		\\ \hline
-		
-		\emph{Molestie}
-		& Cras ullamcorper tellus et auctor ultricies. Maecenas tincidunt euismod lectus nec venenatis. Suspendisse potenti. Pellentesque pretium nunc ut euismod cursus. Nam venenatis condimentum quam. Curabitur suscipit efficitur aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-		\\ \hline
-		
-		\emph{Vivamus semper}
-		& In purus purus, faucibus eu libero vulputate, tristique sodales nunc. Nulla ut gravida dolor. Fusce vel pellentesque mi, vel efficitur eros. Nunc vitae elit tellus. Sed vestibulum auctor consequat. 
-		\\ \hline
-		
-		\emph{Condimentum}
-		& Nulla scelerisque, leo et facilisis pretium, risus enim cursus turpis, eu suscipit ipsum ipsum in mauris. Praesent eget pulvinar ipsum, suscipit interdum nunc. Nam varius massa ut justo ullamcorper sollicitudin. Vivamus facilisis suscipit neque, eu fermentum risus. Ut at mi mauris.
-		\\ \hline
-		
-		\caption{Praesent ullamcorper consequat tellus ut eleifend}
-		\label{tab:example-3}		
 	\end{longtable}
 \end{center}
