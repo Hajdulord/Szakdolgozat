@@ -342,18 +342,18 @@ namespace HMF.Thesis.Tests.Logic
 
             //* Affect
             
-            inventory.RemoveUse(1);
             inventory.RemoveUse(0);
+            inventory.RemoveUse(2);
 
-            inventory.SetUse(itemMoq2.Object);
+            inventory.SetUse(itemMoq3.Object);
             inventory.SetUse(itemMoq.Object);
 
             //* Testing
 
             Assert.AreEqual(3, inventory.InUse.Count);
-            Assert.AreEqual(itemMoq2.Object, inventory.InUse[0]);
-            Assert.AreEqual(itemMoq.Object, inventory.InUse[1]);
-            Assert.AreEqual(itemMoq3.Object, inventory.InUse[2]);
+            Assert.AreEqual(itemMoq3.Object, inventory.InUse[0]);
+            Assert.AreEqual(itemMoq2.Object, inventory.InUse[1]);
+            Assert.AreEqual(itemMoq.Object, inventory.InUse[2]);
 
         }
 
