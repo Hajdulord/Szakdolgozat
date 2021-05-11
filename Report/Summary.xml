@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>04/28/2021 - 20:28:46</Generatedon>
+    <Generatedon>05/11/2021 - 18:37:32</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>4</Assemblies>
     <Classes>24</Classes>
     <Files>24</Files>
-    <Coveredlines>111</Coveredlines>
-    <Uncoveredlines>503</Uncoveredlines>
+    <Coveredlines>214</Coveredlines>
+    <Uncoveredlines>400</Uncoveredlines>
     <Coverablelines>614</Coverablelines>
-    <Totallines>1244</Totallines>
-    <Linecoverage>18</Linecoverage>
+    <Totallines>1248</Totallines>
+    <Linecoverage>34.8</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
@@ -22,13 +22,13 @@
       <Class name="HMF.Thesis.Items.MagicFocus" coverage="0" coveredlines="0" coverablelines="19" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Items.Weapon" coverage="0" coveredlines="0" coverablelines="31" totallines="50" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
-    <Assembly name="Logic" classes="6" coverage="42.3" coveredlines="78" coverablelines="184" totallines="379" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="HMF.Thesis.Logic.AttackLogic" coverage="0" coveredlines="0" coverablelines="8" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Logic" classes="6" coverage="98.3" coveredlines="181" coverablelines="184" totallines="383" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="HMF.Thesis.Logic.AttackLogic" coverage="100" coveredlines="8" coverablelines="8" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Logic.CharacterLogic" coverage="100" coveredlines="16" coverablelines="16" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Logic.DamageableCharacterLogic" coverage="100" coveredlines="10" coverablelines="10" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="HMF.Thesis.Logic.HealableLogic" coverage="100" coveredlines="7" coverablelines="7" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Logic.InventoryLogic" coverage="0" coveredlines="0" coverablelines="87" totallines="130" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="HMF.Thesis.Logic.MoveLogic" coverage="80.3" coveredlines="45" coverablelines="56" totallines="129" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Logic.InventoryLogic" coverage="96.5" coveredlines="84" coverablelines="87" totallines="134" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="HMF.Thesis.Logic.MoveLogic" coverage="100" coveredlines="56" coverablelines="56" totallines="129" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
     <Assembly name="Magic" classes="5" coverage="0" coveredlines="0" coverablelines="106" totallines="200" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="HMF.Thesis.Magic.ActualMagic.Burst" coverage="0" coveredlines="0" coverablelines="23" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" />
