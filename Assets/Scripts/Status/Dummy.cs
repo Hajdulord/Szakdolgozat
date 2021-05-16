@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace HMF.Thesis.Status
 {
-    public class Dummy : MonoBehaviour
-    {
-        
-    }
+    /// An empty calass so coroutines can be started and stopped by code.
+    public class Dummy : MonoBehaviour{}
 }

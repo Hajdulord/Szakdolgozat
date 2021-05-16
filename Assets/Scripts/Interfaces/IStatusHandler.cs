@@ -7,7 +7,7 @@ namespace HMF.Thesis.Interfaces
         /*!
           \param status is the name of the status.
         */
-        public void AddStatus(string status);
+        void AddStatus(string status);
 
         /// Removes all statuses.
         void RemoveAllStatuses();

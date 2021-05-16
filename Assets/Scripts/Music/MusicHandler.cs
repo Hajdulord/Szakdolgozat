@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace HMF.Thesis.Music
 {
+    /// Enum for the sound categories.
     public enum Category
     {
         Deaths,
@@ -10,17 +11,20 @@ namespace HMF.Thesis.Music
         Attacks
     }
 
+    // This class handles the audioclip distribution.
     public class MusicHandler : MonoBehaviour
     {
-        [SerializeField] private List<AudioClip> _deaths = null!;
-        [SerializeField] private List<AudioClip> _swords = null!;
-        [SerializeField] private List<AudioClip> _attacks = null!;
-        [SerializeField] public AudioClip jumpLand = null!;
-        [SerializeField] public AudioClip playerStep = null!;
-        [SerializeField] public AudioClip enemyStep = null!;
+        [SerializeField] private List<AudioClip> _deaths = null!; ///< List of death souds.
+        [SerializeField] private List<AudioClip> _swords = null!; ///< List of sword clashes.
+        [SerializeField] private List<AudioClip> _attacks = null!; ///< List of battlecys.
+        [SerializeField] public AudioClip jumpLand = null!; ///< Sound of landing.
+        [SerializeField] public AudioClip playerStep = null!; ///< Sound of the player stepping.
+        [SerializeField] public AudioClip enemyStep = null!; ///< Sound of the enemys stepping.
 
+        /// Singleton instance.
         public static MusicHandler Instance {get; private set;} = null;
 
+        /// Sets the singleton instance.
         private void Awake() 
         {
             if (Instance == null)
@@ -29,6 +33,10 @@ namespace HMF.Thesis.Music
             }
         }
 
+        /// Serves a random sound from the requested category.
+        /*!
+          \param category is Category of the sound requested.
+        */
         public AudioClip Serve(Category category)
         {
             int index;
@@ -51,6 +59,7 @@ namespace HMF.Thesis.Music
             }
         }
 
+        /// Clears the singleton instance.
         private void OnDestroy() 
         {
             Instance = null;    

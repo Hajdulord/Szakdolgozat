@@ -3,7 +3,7 @@ using UnityEngine;
 namespace HMF.Thesis.Interfaces
 {
 
-    /// The onterface for an item.
+    /// The interface for an item.
     public interface IItem
     {
         /// The name of the Item.

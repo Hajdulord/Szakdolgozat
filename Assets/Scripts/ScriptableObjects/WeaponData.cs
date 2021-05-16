@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace HMF.Thesis.ScriptableObjects
 {
+    /// Data of a weapon.
     [CreateAssetMenu(fileName = "Weapon", menuName = "Items/Weapon")]
     public class WeaponData : ScriptableObject
     {

@@ -9,7 +9,7 @@ namespace HMF.Thesis.Logic
     {
         private float _health; ///< The Current health of the Character.
         private CharacterData _characterData = null!; ///< The data of the Character.
-        private IHealthBar _healthBar;
+        private IHealthBar _healthBar; ///< Reference to the health bar.
 
         /// Basic constructor with CharacterData as data
         /*!
