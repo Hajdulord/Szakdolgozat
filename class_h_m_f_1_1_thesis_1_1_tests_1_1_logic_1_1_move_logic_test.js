@@ -8,6 +8,8 @@ var class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test =
     [ "MoveLogicConstructorTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a5c770a877763fb6980d68d31ae71a3a0", null ],
     [ "MoveToLeft", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a4af4b393d0ca888190f18de142693e86", null ],
     [ "MoveToLeftWithYVelocity", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a23833c6e017796143c073be02307a4fc", null ],
+    [ "MoveToPointLeft", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#abdd1a4e52517be5cf4629033a55a4dc2", null ],
+    [ "MoveToPointRight", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a2d969960e8d46eb034a4576be2a60b66", null ],
     [ "MoveToRight", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a0c044c9cde8f024326b0974ee7ba944b", null ],
     [ "MoveToRightWithYVelocity", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a6ea565476d8dc97143fadb4605d2b571", null ],
     [ "NotMove", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#aeb5242f6f710b0f88ef6b103e6a909c5", null ],

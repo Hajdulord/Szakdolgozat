@@ -89,22 +89,95 @@ $(document).ready(function(){initNavTree('interface_h_m_f_1_1_thesis_1_1_interfa
 <div class="title">HMF.Thesis.Interfaces.IMagicHandler Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The Interface for the MagicHandler.  
+ <a href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HMF.Thesis.Interfaces.IMagicHandler:</div>
 <div class="dyncontent">
 <div class="center"><img src="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler__inherit__graph.png" border="0" usemap="#a_h_m_f_8_thesis_8_interfaces_8_i_magic_handler_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_h_m_f_8_thesis_8_interfaces_8_i_magic_handler_inherit__map" id="a_h_m_f_8_thesis_8_interfaces_8_i_magic_handler_inherit__map">
-<area shape="rect" title=" " alt="" coords="15,5,211,47"/>
-<area shape="rect" href="class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_handler.html" title=" " alt="" coords="5,95,220,121"/>
+<area shape="rect" title="The Interface for the MagicHandler." alt="" coords="15,5,211,47"/>
+<area shape="rect" href="class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_handler.html" title="Class for handling the casting of magic." alt="" coords="5,95,220,121"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab38a5949b019663146742355dc9ec75a"><td class="memItemLeft" align="right" valign="top"><a id="ab38a5949b019663146742355dc9ec75a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UseMagic</b> (string magic, string[] tagsToIgnore, Vector2 center, LayerMask layersToTarget, GameObject animation, float dir=0)</td></tr>
-<tr class="separator:ab38a5949b019663146742355dc9ec75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3386d20dbecdef8e6282e06db96da653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html#a3386d20dbecdef8e6282e06db96da653">UseMagic</a> (string magic, string[] tagsToTarget, Vector2 center, LayerMask layersToTarget, GameObject animation, float dir=0)</td></tr>
+<tr class="memdesc:a3386d20dbecdef8e6282e06db96da653"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can use magic by this.  <a href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html#a3386d20dbecdef8e6282e06db96da653">More...</a><br /></td></tr>
+<tr class="separator:a3386d20dbecdef8e6282e06db96da653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The Interface for the MagicHandler. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3386d20dbecdef8e6282e06db96da653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3386d20dbecdef8e6282e06db96da653">&#9670;&nbsp;</a></span>UseMagic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HMF.Thesis.Interfaces.IMagicHandler.UseMagic </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>magic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string[]&#160;</td>
+          <td class="paramname"><em>tagsToTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LayerMask&#160;</td>
+          <td class="paramname"><em>layersToTarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject&#160;</td>
+          <td class="paramname"><em>animation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dir</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>You can use magic by this. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">magic</td><td>is the name of the magic. </td></tr>
+    <tr><td class="paramname">tagsToTarget</td><td>is a string array that holds all the tags the attack will target. </td></tr>
+    <tr><td class="paramname">center</td><td>is the center of the magic. </td></tr>
+    <tr><td class="paramname">layersToTarget</td><td>is a LayerMask. You can set it to the lyers you want to target. It makes the target finding faster, than just tag based identifying. </td></tr>
+    <tr><td class="paramname">animation</td><td>is ta animation to play. </td></tr>
+    <tr><td class="paramname">dir</td><td>is the direction of the magic. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_h_m_f_1_1_thesis_1_1_magic_1_1_magic_handler.html#ac72d62c20f2c2d645a791f5c9ecf3e83">HMF.Thesis.Magic.MagicHandler</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
 <li>Assets/Scripts/Interfaces/IMagicHandler.cs</li>
 </ul>
@@ -115,7 +188,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>UseMagic</b> (string 
 			<ul>
 				<li class="navelem"><a class="el" href="namespace_h_m_f.html">HMF</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis.html">Thesis</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis_1_1_interfaces.html">Interfaces</a></li><li class="navelem"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_magic_handler.html">IMagicHandler</a></li>
 				<li class="footer">
-					Generated on Wed Apr 28 2021 20:38:26 for Thesis by <a href="http://www.doxygen.org/index.html">
+					Generated on Mon May 17 2021 13:46:49 for Thesis by <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"
                      onerror="this.onerror=null;this.src='doxygen.svg';"/></a> 1.9.1.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.

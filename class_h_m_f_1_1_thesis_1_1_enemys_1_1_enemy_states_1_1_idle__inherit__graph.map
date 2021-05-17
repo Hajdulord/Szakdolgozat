@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Enemys.EnemyStates.Idle" name="HMF.Thesis.Enemys.EnemyStates.Idle">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,252,107"/>
+<area shape="rect" id="node1" title="Idle state for the enmys." alt="" coords="5,80,252,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="100,5,157,32"/>
 </map>

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "HMF.Thesis.Tests.Logic.AttackLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_attack_logic_test.html", null ],
     [ "HMF.Thesis.Tests.Logic.CharacterLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_character_logic_test.html", null ],
     [ "HMF.Thesis.Tests.Logic.DamageableCharacterLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_damageable_character_logic_test.html", null ],
     [ "Controls.GameplayActions", "struct_controls_1_1_gameplay_actions.html", null ],
@@ -71,6 +72,7 @@ var hierarchy =
     [ "HMF.Thesis.Interfaces.ComponentInterfaces.IMoveComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html", [
       [ "HMF.Thesis.Components.MoveComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html", null ]
     ] ],
+    [ "HMF.Thesis.Tests.Logic.InventoryLogicTest", "class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_inventory_logic_test.html", null ],
     [ "HMF.Thesis.Interfaces.ComponentInterfaces.IPickUpableComponent", "interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html", [
       [ "HMF.Thesis.Components.PickUpableComponent", "class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html", null ]
     ] ],

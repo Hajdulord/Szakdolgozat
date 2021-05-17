@@ -1,5 +1,5 @@
 <map id="HMF.Thesis.Magic.MagicBase" name="HMF.Thesis.Magic.MagicBase">
-<area shape="rect" id="node1" title=" " alt="" coords="127,5,325,32"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_burst.html" title=" " alt="" coords="5,80,215,121"/>
-<area shape="rect" id="node3" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_lance.html" title=" " alt="" coords="239,80,448,121"/>
+<area shape="rect" id="node1" title="The Base class for all magics." alt="" coords="127,5,325,32"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_burst.html" title="A magic implementation that burst from the center." alt="" coords="5,80,215,121"/>
+<area shape="rect" id="node3" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_actual_magic_1_1_lance.html" title="A magic implementation that is a lacne starting from the center." alt="" coords="239,80,448,121"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Status.Dummy" name="HMF.Thesis.Status.Dummy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,187,107"/>
+<area shape="rect" id="node1" title="An empty calass so coroutines can be started and stopped by code." alt="" coords="5,80,187,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="40,5,152,32"/>
 </map>

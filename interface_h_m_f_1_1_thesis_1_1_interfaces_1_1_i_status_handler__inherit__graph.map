@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Interfaces.IStatusHandler" name="HMF.Thesis.Interfaces.IStatusHandler">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,204,47"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler.html" title=" " alt="" coords="17,95,192,136"/>
+<area shape="rect" id="node1" title="The IOnterface for the StatusHandler." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_status_1_1_status_handler.html" title="Class for handling the lifecircle of statuses." alt="" coords="17,95,192,136"/>
 </map>

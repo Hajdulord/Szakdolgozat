@@ -26,15 +26,20 @@ var NAVTREE =
 [
   [ "Thesis", "index.html", [
     [ "Packages", "namespaces.html", [
-      [ "Packages", "namespaces.html", "namespaces_dup" ]
+      [ "Packages", "namespaces.html", "namespaces_dup" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ]
@@ -45,7 +50,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_h_m_f_1_1_thesis_1_1_misc_1_1_score.html#a148c6d44aab7d3939e48c4263e04bcb3",
-"functions_func.html"
+"class_h_m_f_1_1_thesis_1_1_tests_1_1_logic_1_1_move_logic_test.html#a2d969960e8d46eb034a4576be2a60b66",
+"struct_controls_1_1_gameplay_actions.html#a6f54ddc016e657056572769a23e0264a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

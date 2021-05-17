@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Enemys.InRange" name="HMF.Thesis.Enemys.InRange">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,199,107"/>
+<area shape="rect" id="node1" title="Component for detecting if the player is in range." alt="" coords="5,80,199,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="46,5,158,32"/>
 </map>

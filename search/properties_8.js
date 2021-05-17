@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['maxhealth_324',['MaxHealth',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_character.html#a23c982dfd02a8316a708e362e686b6fd',1,'HMF.Thesis.Interfaces.ICharacter.MaxHealth()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_character_logic.html#a1ca151b6cb05f3acdd960f9a899c0c87',1,'HMF.Thesis.Logic.CharacterLogic.MaxHealth()']]],
-  ['move_325',['Move',['../class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html#a34f3bc228581457bc941aaae2960b4e7',1,'HMF::Thesis::Components::MoveComponent']]]
+  ['jumpspeed_611',['JumpSpeed',['../interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_move.html#a295bc98ec6b728aa8f7d3f85b3a2ed95',1,'HMF.Thesis.Interfaces.IMove.JumpSpeed()'],['../class_h_m_f_1_1_thesis_1_1_logic_1_1_move_logic.html#ad91aa474b26b3f8d2c6bf2f257249d73',1,'HMF.Thesis.Logic.MoveLogic.JumpSpeed()']]]
 ];

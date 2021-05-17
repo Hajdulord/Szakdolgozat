@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Interfaces.IHealthBar" name="HMF.Thesis.Interfaces.IHealthBar">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,224,32"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html" title=" " alt="" coords="22,80,207,107"/>
+<area shape="rect" id="node1" title="An interface to access the healthbar." alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html" title="A class that sets the health bar." alt="" coords="22,80,207,107"/>
 </map>

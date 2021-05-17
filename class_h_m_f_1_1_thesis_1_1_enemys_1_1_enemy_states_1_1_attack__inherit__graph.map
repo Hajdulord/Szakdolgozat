@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Enemys.EnemyStates.Attack" name="HMF.Thesis.Enemys.EnemyStates.Attack">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,231,121"/>
+<area shape="rect" id="node1" title="Attack state for enemys." alt="" coords="5,80,231,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="89,5,147,32"/>
 </map>

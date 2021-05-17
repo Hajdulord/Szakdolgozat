@@ -1,5 +1,5 @@
 <map id="HMF.Thesis.Components.PickUpableComponent" name="HMF.Thesis.Components.PickUpableComponent">
-<area shape="rect" id="node1" title=" " alt="" coords="42,80,241,121"/>
+<area shape="rect" id="node1" title="A component that lets you pick up an item." alt="" coords="42,80,241,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,117,32"/>
 <area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html" title=" " alt="" coords="142,5,301,32"/>
 </map>

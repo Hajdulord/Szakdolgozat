@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['weapon_157',['Weapon',['../class_h_m_f_1_1_thesis_1_1_items_1_1_weapon.html',1,'HMF::Thesis::Items']]],
-  ['weapondata_158',['WeaponData',['../class_h_m_f_1_1_thesis_1_1_scriptable_objects_1_1_weapon_data.html',1,'HMF::Thesis::ScriptableObjects']]]
+  ['volumeslider_300',['VolumeSlider',['../class_h_m_f_1_1_thesis_1_1_music_1_1_volume_slider.html',1,'HMF::Thesis::Music']]]
 ];

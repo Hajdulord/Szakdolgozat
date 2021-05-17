@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Interfaces.IInventory" name="HMF.Thesis.Interfaces.IInventory">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,220,32"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html" title=" " alt="" coords="21,80,205,121"/>
+<area shape="rect" id="node1" title="The interface for the inventory system." alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html" title="The logic behind the inventory." alt="" coords="21,80,205,121"/>
 </map>

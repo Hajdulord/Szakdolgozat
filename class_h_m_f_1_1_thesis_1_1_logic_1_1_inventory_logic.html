@@ -90,13 +90,16 @@ $(document).ready(function(){initNavTree('class_h_m_f_1_1_thesis_1_1_logic_1_1_i
 <div class="title">HMF.Thesis.Logic.InventoryLogic Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The logic behind the inventory.  
+ <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for HMF.Thesis.Logic.InventoryLogic:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic__inherit__graph.png" border="0" usemap="#a_h_m_f_8_thesis_8_logic_8_inventory_logic_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_h_m_f_8_thesis_8_logic_8_inventory_logic_inherit__map" id="a_h_m_f_8_thesis_8_logic_8_inventory_logic_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,189,121"/>
-<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html" title=" " alt="" coords="58,5,137,32"/>
+<area shape="rect" title="The logic behind the inventory." alt="" coords="5,80,189,121"/>
+<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html" title="The interface for the inventory system." alt="" coords="58,5,137,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -104,69 +107,247 @@ Collaboration diagram for HMF.Thesis.Logic.InventoryLogic:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic__coll__graph.png" border="0" usemap="#a_h_m_f_8_thesis_8_logic_8_inventory_logic_coll__map" alt="Collaboration graph"/></div>
 <map name="a_h_m_f_8_thesis_8_logic_8_inventory_logic_coll__map" id="a_h_m_f_8_thesis_8_logic_8_inventory_logic_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,189,121"/>
-<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html" title=" " alt="" coords="58,5,137,32"/>
+<area shape="rect" title="The logic behind the inventory." alt="" coords="5,80,189,121"/>
+<area shape="rect" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html" title="The interface for the inventory system." alt="" coords="58,5,137,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a33638002fab6be2b4557728bdf0c3f27"><td class="memItemLeft" align="right" valign="top"><a id="a33638002fab6be2b4557728bdf0c3f27"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>InventoryLogic</b> (int inUseSize, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> mainWeapon, Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt; inventory=null, Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt; inUse=null, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> currentItem=null)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a33638002fab6be2b4557728bdf0c3f27">InventoryLogic</a> (int inUseSize, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> mainWeapon, Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt; inventory=null, Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt; inUse=null, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> currentItem=null)</td></tr>
+<tr class="memdesc:a33638002fab6be2b4557728bdf0c3f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for initialization of fields. <br /></td></tr>
 <tr class="separator:a33638002fab6be2b4557728bdf0c3f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac86086aae316ccae9ce31b2f5bc71d43"><td class="memItemLeft" align="right" valign="top"><a id="ac86086aae316ccae9ce31b2f5bc71d43"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddItem</b> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item, int quantity)</td></tr>
+<tr class="memitem:ac86086aae316ccae9ce31b2f5bc71d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#ac86086aae316ccae9ce31b2f5bc71d43">AddItem</a> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item, int quantity)</td></tr>
+<tr class="memdesc:ac86086aae316ccae9ce31b2f5bc71d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the InventoryShelf.  <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#ac86086aae316ccae9ce31b2f5bc71d43">More...</a><br /></td></tr>
 <tr class="separator:ac86086aae316ccae9ce31b2f5bc71d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e5750248bdfc4313de86e005ef73769"><td class="memItemLeft" align="right" valign="top"><a id="a3e5750248bdfc4313de86e005ef73769"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveItem</b> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item, int quantity)</td></tr>
+<tr class="memitem:a3e5750248bdfc4313de86e005ef73769"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a3e5750248bdfc4313de86e005ef73769">RemoveItem</a> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item, int quantity)</td></tr>
+<tr class="memdesc:a3e5750248bdfc4313de86e005ef73769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item from the InventoryShelf if the quantity is zero if not just a decrease.  <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a3e5750248bdfc4313de86e005ef73769">More...</a><br /></td></tr>
 <tr class="separator:a3e5750248bdfc4313de86e005ef73769"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a94cdf06291422a41454023af62a99d"><td class="memItemLeft" align="right" valign="top"><a id="a9a94cdf06291422a41454023af62a99d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetUse</b> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item)</td></tr>
+<tr class="memitem:a9a94cdf06291422a41454023af62a99d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a9a94cdf06291422a41454023af62a99d">SetUse</a> (<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> item)</td></tr>
+<tr class="memdesc:a9a94cdf06291422a41454023af62a99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the InUse inventory.  <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a9a94cdf06291422a41454023af62a99d">More...</a><br /></td></tr>
 <tr class="separator:a9a94cdf06291422a41454023af62a99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa1deb7b55d3df7f20d993051b9de399"><td class="memItemLeft" align="right" valign="top"><a id="aaa1deb7b55d3df7f20d993051b9de399"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveUse</b> (int slotNumber)</td></tr>
+<tr class="memitem:aaa1deb7b55d3df7f20d993051b9de399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#aaa1deb7b55d3df7f20d993051b9de399">RemoveUse</a> (int slotNumber)</td></tr>
+<tr class="memdesc:aaa1deb7b55d3df7f20d993051b9de399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an item from the InUse inventory.  <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#aaa1deb7b55d3df7f20d993051b9de399">More...</a><br /></td></tr>
 <tr class="separator:aaa1deb7b55d3df7f20d993051b9de399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e3265b3f9dc543a65edbd96367e5566"><td class="memItemLeft" align="right" valign="top"><a id="a9e3265b3f9dc543a65edbd96367e5566"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetItem</b> (int slotNumber)</td></tr>
+<tr class="memitem:a9e3265b3f9dc543a65edbd96367e5566"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a9e3265b3f9dc543a65edbd96367e5566">GetItem</a> (int slotNumber)</td></tr>
+<tr class="memdesc:a9e3265b3f9dc543a65edbd96367e5566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an item from the inUse inventory.  <a href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a9e3265b3f9dc543a65edbd96367e5566">More...</a><br /></td></tr>
 <tr class="separator:a9e3265b3f9dc543a65edbd96367e5566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a050ee424335d1c01071a1dcf574d463f"><td class="memItemLeft" align="right" valign="top"><a id="a050ee424335d1c01071a1dcf574d463f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveAll</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a050ee424335d1c01071a1dcf574d463f">RemoveAll</a> ()</td></tr>
+<tr class="memdesc:a050ee424335d1c01071a1dcf574d463f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items. <br /></td></tr>
 <tr class="separator:a050ee424335d1c01071a1dcf574d463f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:af9cae0cd6cf37deced55416b46c3b8ca"><td class="memItemLeft" align="right" valign="top"><a id="af9cae0cd6cf37deced55416b46c3b8ca"></a>
-Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InventoryShelf</b><code> [get]</code></td></tr>
+Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#af9cae0cd6cf37deced55416b46c3b8ca">InventoryShelf</a><code> [get]</code></td></tr>
+<tr class="memdesc:af9cae0cd6cf37deced55416b46c3b8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the actual inventory. <br /></td></tr>
 <tr class="separator:af9cae0cd6cf37deced55416b46c3b8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32d80bf75406ab45162cfdfd9d0c1259"><td class="memItemLeft" align="right" valign="top"><a id="a32d80bf75406ab45162cfdfd9d0c1259"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MainWeapon</b><code> [get, set]</code></td></tr>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a32d80bf75406ab45162cfdfd9d0c1259">MainWeapon</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a32d80bf75406ab45162cfdfd9d0c1259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the main weapon. <br /></td></tr>
 <tr class="separator:a32d80bf75406ab45162cfdfd9d0c1259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e90f17a35fdebbb22d6aec08de3e2b1"><td class="memItemLeft" align="right" valign="top"><a id="a7e90f17a35fdebbb22d6aec08de3e2b1"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentItem</b><code> [get, set]</code></td></tr>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a7e90f17a35fdebbb22d6aec08de3e2b1">CurrentItem</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a7e90f17a35fdebbb22d6aec08de3e2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the currently used item. <br /></td></tr>
 <tr class="separator:a7e90f17a35fdebbb22d6aec08de3e2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fe2bf0e3bff8908c14f9605397c0bbe"><td class="memItemLeft" align="right" valign="top"><a id="a0fe2bf0e3bff8908c14f9605397c0bbe"></a>
-Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InUse</b><code> [get]</code></td></tr>
+Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a0fe2bf0e3bff8908c14f9605397c0bbe">InUse</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0fe2bf0e3bff8908c14f9605397c0bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property for the usable item inventory. <br /></td></tr>
 <tr class="separator:a0fe2bf0e3bff8908c14f9605397c0bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76d465d33daab0499a7071f10065d051"><td class="memItemLeft" align="right" valign="top"><a id="a76d465d33daab0499a7071f10065d051"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>InUseSize</b><code> [get]</code></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html#a76d465d33daab0499a7071f10065d051">InUseSize</a><code> [get]</code></td></tr>
+<tr class="memdesc:a76d465d33daab0499a7071f10065d051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the InUse inventory's size. <br /></td></tr>
 <tr class="separator:a76d465d33daab0499a7071f10065d051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html">HMF.Thesis.Interfaces.IInventory</a></td></tr>
 <tr class="memitem:a892d4f090cb1c5f6a5541b97151d4871 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memItemLeft" align="right" valign="top"><a id="a892d4f090cb1c5f6a5541b97151d4871"></a>
-Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InventoryShelf</b><code> [get]</code></td></tr>
+Dictionary&lt; string,(<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> Item, int Quantity)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a892d4f090cb1c5f6a5541b97151d4871">InventoryShelf</a><code> [get]</code></td></tr>
+<tr class="memdesc:a892d4f090cb1c5f6a5541b97151d4871 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual inventory. <br /></td></tr>
 <tr class="separator:a892d4f090cb1c5f6a5541b97151d4871 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e451d209b025182e57973c466785493 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memItemLeft" align="right" valign="top"><a id="a1e451d209b025182e57973c466785493"></a>
-Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InUse</b><code> [get]</code></td></tr>
+Dictionary&lt; int, <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a1e451d209b025182e57973c466785493">InUse</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1e451d209b025182e57973c466785493 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The items that is available. <br /></td></tr>
 <tr class="separator:a1e451d209b025182e57973c466785493 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32e44b1948c47a1133d1421624adb944 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memItemLeft" align="right" valign="top"><a id="a32e44b1948c47a1133d1421624adb944"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MainWeapon</b><code> [get, set]</code></td></tr>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a32e44b1948c47a1133d1421624adb944">MainWeapon</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a32e44b1948c47a1133d1421624adb944 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main weapon. <br /></td></tr>
 <tr class="separator:a32e44b1948c47a1133d1421624adb944 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e07e34d1d4386aff616196ec30fb3b3 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memItemLeft" align="right" valign="top"><a id="a0e07e34d1d4386aff616196ec30fb3b3"></a>
-<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentItem</b><code> [get, set]</code></td></tr>
+<a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a0e07e34d1d4386aff616196ec30fb3b3">CurrentItem</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0e07e34d1d4386aff616196ec30fb3b3 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The currently used weapon. <br /></td></tr>
 <tr class="separator:a0e07e34d1d4386aff616196ec30fb3b3 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb3f5d779856c48b9e2f8bcf6001288 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memItemLeft" align="right" valign="top"><a id="a2cb3f5d779856c48b9e2f8bcf6001288"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>InUseSize</b><code> [get]</code></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a2cb3f5d779856c48b9e2f8bcf6001288">InUseSize</a><code> [get]</code></td></tr>
+<tr class="memdesc:a2cb3f5d779856c48b9e2f8bcf6001288 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the InUse inventory. <br /></td></tr>
 <tr class="separator:a2cb3f5d779856c48b9e2f8bcf6001288 inherit properties_interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The logic behind the inventory. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac86086aae316ccae9ce31b2f5bc71d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac86086aae316ccae9ce31b2f5bc71d43">&#9670;&nbsp;</a></span>AddItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HMF.Thesis.Logic.InventoryLogic.AddItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>quantity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an item to the InventoryShelf. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>is the IItem to add. </td></tr>
+    <tr><td class="paramname">quantity</td><td>is the amount to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a678088e0c80919402700d61cba7d1765">HMF.Thesis.Interfaces.IInventory</a>.</p>
+
+</div>
+</div>
+<a id="a9e3265b3f9dc543a65edbd96367e5566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3265b3f9dc543a65edbd96367e5566">&#9670;&nbsp;</a></span>GetItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a> HMF.Thesis.Logic.InventoryLogic.GetItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>slotNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get an item from the inUse inventory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slotNumber</td><td>is the index in the inUse inventory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IItem. </dd></dl>
+
+<p>Implements <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a82430b6daff9705123d4afa59b18433e">HMF.Thesis.Interfaces.IInventory</a>.</p>
+
+</div>
+</div>
+<a id="a3e5750248bdfc4313de86e005ef73769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5750248bdfc4313de86e005ef73769">&#9670;&nbsp;</a></span>RemoveItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HMF.Thesis.Logic.InventoryLogic.RemoveItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>quantity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an item from the InventoryShelf if the quantity is zero if not just a decrease. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>is the IItem to remove. </td></tr>
+    <tr><td class="paramname">quantity</td><td>is the amount to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a099427b6b24975bb80ce484dc9d6da76">HMF.Thesis.Interfaces.IInventory</a>.</p>
+
+</div>
+</div>
+<a id="aaa1deb7b55d3df7f20d993051b9de399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa1deb7b55d3df7f20d993051b9de399">&#9670;&nbsp;</a></span>RemoveUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HMF.Thesis.Logic.InventoryLogic.RemoveUse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>slotNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an item from the InUse inventory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slotNumber</td><td>is the index in the inUse inventory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#adb3dde12f256dfc074677adbbabede3c">HMF.Thesis.Interfaces.IInventory</a>.</p>
+
+</div>
+</div>
+<a id="a9a94cdf06291422a41454023af62a99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a94cdf06291422a41454023af62a99d">&#9670;&nbsp;</a></span>SetUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HMF.Thesis.Logic.InventoryLogic.SetUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_item.html">IItem</a>&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an item to the InUse inventory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>is the IItem to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_inventory.html#a71e371b2b6ee951f7a4118df11e7f747">HMF.Thesis.Interfaces.IInventory</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Assets/Scripts/Logic/InventoryLogic.cs</li>
 </ul>
@@ -177,7 +358,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>InUseSize</b><code> [g
 			<ul>
 				<li class="navelem"><a class="el" href="namespace_h_m_f.html">HMF</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis.html">Thesis</a></li><li class="navelem"><a class="el" href="namespace_h_m_f_1_1_thesis_1_1_logic.html">Logic</a></li><li class="navelem"><a class="el" href="class_h_m_f_1_1_thesis_1_1_logic_1_1_inventory_logic.html">InventoryLogic</a></li>
 				<li class="footer">
-					Generated on Wed Apr 28 2021 20:38:26 for Thesis by <a href="http://www.doxygen.org/index.html">
+					Generated on Mon May 17 2021 13:46:49 for Thesis by <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"
                      onerror="this.onerror=null;this.src='doxygen.svg';"/></a> 1.9.1.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
