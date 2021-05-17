@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace HMF.Thesis.ScriptableObjects
 {
+    /// Data of a consumable.
     [CreateAssetMenu(fileName = "Consumable", menuName = "Items/Consumable")]
     public class ConsumableData : ScriptableObject
     {

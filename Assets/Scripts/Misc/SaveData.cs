@@ -3,25 +3,32 @@ using UnityEngine;
 
 namespace HMF.Thesis.Misc
 {
-
+    /// Data class for saving progress.
     [System.Serializable]
     public class SaveData
     {
-        public string mainWeapon;
-        public string[] inUseItems;
-        public int[] inUseItemsQuantity;
-        public float[] transform;
-        public float health;
+        public string mainWeapon; ///< The name of the mainWeapon.
+        public string[] inUseItems; ///< The names of the items.
+        public int[] inUseItemsQuantity; ///< The quantity of the items.
+        public float[] transform; ///< The position of the player.
+        public float health; ///< The health of the player.
 
-        public float time;
-        public int deaths;
-        public int kills;
-        public string name;
+        public float time; ///< The elapsed time since the start of the game.
+        public int deaths; ///< The death count of the player.
+        public int kills; ///< The kill count of the player.
+        public string name; ///< The name of the player.
 
-        public int scene;
+        public int scene; ///< The current scene's buildIndex.
 
-        public string date;
+        public string date; ///< The current date.
 
+        /// Constructor to set the fields.
+        /*!
+          \param character is the player's character data.
+          \param inventory is the player's inventory data.
+          \param pos is the player's position.
+          \param sceneIndex is the current scenes buildIndex.
+        */
         public SaveData(ICharacter character, IInventory inventory, Transform pos, int sceneIndex)
         {
             time = Score.Instance.ElapsedTime;

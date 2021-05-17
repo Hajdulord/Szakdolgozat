@@ -5,8 +5,10 @@ using UnityEngine;
 
 namespace HMF.Thesis.Misc
 {
+    /// Class for saving gamedata to a file.
     public static class SaveSystem
     {
+        /// Saves the score using a binaryFormatter to a file.
         public static void SaveScore()
         {
             var formatter = new BinaryFormatter();
@@ -22,6 +24,10 @@ namespace HMF.Thesis.Misc
             stream.Close();
         }
 
+        /// Loads the score using a binaryFormatter from a file.
+        /*!
+          \returns ScoreData.
+        */
         public static ScoreData LoadScore()
         {
             string path = Application.persistentDataPath + "/scores.hmf";
@@ -44,6 +50,13 @@ namespace HMF.Thesis.Misc
             }
         }
 
+        /// Saves the gameData using a binaryFormatter to a file.
+        /*!
+          \param character is the player's character data.
+          \param inventory is the player's inventory data.
+          \param pos is the player's position.
+          \param sceneIndex is the current scenes buildIndex.
+        */
         public static void SavePlayer(ICharacter character, IInventory inventory, Transform pos, int sceneIndex, int saveIndex)
         {
             var formatter = new BinaryFormatter();
@@ -59,6 +72,11 @@ namespace HMF.Thesis.Misc
             stream.Close();
         }
 
+        /// Loads the gameData using a binaryFormatter from a file.
+        /*!
+          \param saveIndex is the index of the saveslot.
+          \returns SaveData.
+        */
         public static SaveData LoadPlayer(int saveIndex)
         {
             string path = Application.persistentDataPath + "/save" + saveIndex + ".hmf";

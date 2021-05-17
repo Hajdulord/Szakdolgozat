@@ -1,21 +1,22 @@
 using UnityEngine;
 using TMPro;
 using System.Linq;
-using System;
 
 namespace HMF.Thesis.Misc
 {
+    /// Class for the dropdown menu's logic.
     public class DropDownSetters : MonoBehaviour
     {
-        [SerializeField] private TMP_Dropdown _ResolutionsDropdown = null!;
-        [SerializeField] private TMP_Dropdown _QualityDropdown = null!;
-        [SerializeField] private TMP_Dropdown _ScreenModeDropdown = null!;
+        [SerializeField] private TMP_Dropdown _ResolutionsDropdown = null!; ///< The dropwdown for the resolutions.
+        [SerializeField] private TMP_Dropdown _QualityDropdown = null!; ///< The dropwdown for the quality settings.
+        [SerializeField] private TMP_Dropdown _ScreenModeDropdown = null!; ///< The dropwdown for the screen modes.
 
+        private Resolution[] _resolutions; ///< All resolutions.
 
-        private Resolution[] _resolutions;
-
-        private void Awake() 
+        /// Setting the default values of the dropdowns.
+        private void Awake()
         {
+            // getting the distinct resolutions (no refresh rate)
             _resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
             _ResolutionsDropdown.ClearOptions();
@@ -24,7 +25,8 @@ namespace HMF.Thesis.Misc
             
             int index = 0;
             var currentResolution = Screen.currentResolution;
-
+            
+            // getting the index of the current resolution
             foreach(var res in _resolutions)
             {
                 if (res.width == currentResolution.width && 
@@ -38,9 +40,7 @@ namespace HMF.Thesis.Misc
             _ResolutionsDropdown.value = index;
             _ResolutionsDropdown.RefreshShownValue();
 
-            //Debug.Log($"Starting index: {index}");
-            //Debug.Log($"Starting resolution:{Screen.currentResolution}");
-
+            // quality dropdown setup
             _QualityDropdown.value = QualitySettings.GetQualityLevel();
             _QualityDropdown.RefreshShownValue();
 
@@ -59,28 +59,26 @@ namespace HMF.Thesis.Misc
                     break;
             }
             _ScreenModeDropdown.RefreshShownValue();
-
-            //Debug.Log(_resolutions.Length);
         }
 
+        /// Setting the resolutions.
         public void SetResolution(int index)
         {
             if (_resolutions != null)
             {
                 var res = _resolutions[index];
                 Screen.SetResolution(res.width, res.height, Screen.fullScreenMode);
-                //Debug.Log($"Set index: {index}");
-                //Debug.Log($"Found resolution: {res}");
-                //Debug.Log($"set resolution:{Screen.currentResolution}");
             }
             
         }
 
+        /// Setting the quality.
         public void SetQuality(int qualityIndex)
         {
             QualitySettings.SetQualityLevel(qualityIndex);
         }
 
+        /// Setting the Screen mode.
         public void SetScreenOption(int index)
         {
             switch (index)
@@ -97,8 +95,6 @@ namespace HMF.Thesis.Misc
                     Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
                     break;
             }
-           // Debug.Log(Screen.fullScreenMode);
-
         }
     }
 }

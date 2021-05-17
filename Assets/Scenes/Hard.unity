@@ -59928,7 +59928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score Board
+  m_text: ScoreBoard
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4645ec884d5926e449489ad503cbee7c, type: 2}
   m_sharedMaterial: {fileID: 8768209567491260560, guid: 4645ec884d5926e449489ad503cbee7c, type: 2}
@@ -68056,7 +68056,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88.75
+  m_fontSize: 93.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

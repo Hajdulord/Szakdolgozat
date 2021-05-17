@@ -5,18 +5,21 @@ using System.Linq;
 
 namespace HMF.Thesis.Misc
 {
+    /// Class for updating the scoreboard.
     public class ScoreBoard : MonoBehaviour
     {
-        [SerializeField] private List<TMP_Text> _easy = null!;
-        [SerializeField] private List<TMP_Text> _medium = null!;
-        [SerializeField] private List<TMP_Text> _hard = null!;
+        [SerializeField] private List<TMP_Text> _easy = null!; ///< List of textFields for the easy scores.
+        [SerializeField] private List<TMP_Text> _medium = null!; ///< List of textFields for the medium scores.
+        [SerializeField] private List<TMP_Text> _hard = null!; ///< List of textFields for the hard scores.
 
+        /// Updates the scores.
         public void UpdateScores()
         {
             var easy = Score.Instance.GetScoreBoard(0);
             var medium = Score.Instance.GetScoreBoard(1);
             var hard = Score.Instance.GetScoreBoard(2);
 
+            // sets the name and score of the players in the textField.
             for (int i = 0; i < 10; i++)
             {
                 var easyItem = easy.ElementAtOrDefault(i);

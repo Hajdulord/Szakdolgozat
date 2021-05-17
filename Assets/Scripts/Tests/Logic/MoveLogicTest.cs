@@ -447,5 +447,57 @@ namespace HMF.Thesis.Tests.Logic
             Assert.AreEqual(0.0f, rigidbody.position.x, 0.01f);
         }
 
+        [Test]
+        public void MoveToPointLeft()
+        {
+            //* Setup
+            var data = ScriptableObject.CreateInstance<CharacterData>();
+
+            data.baseSpeed = 10;
+
+            var dummyGameobject = new GameObject();
+            
+            var rigidbody = dummyGameobject.AddComponent<Rigidbody2D>();
+
+            rigidbody.position = Vector2.zero;
+
+            var move = new MoveLogic(data, rigidbody);
+
+            //* Affect
+
+            move.MoveToPoint(Vector2.left);
+
+            //* Testing
+
+            Assert.AreEqual(-10.0f, rigidbody.velocity.x, 0.01f);
+            Assert.AreEqual(0.0f, rigidbody.velocity.y, 0.01f);
+        }
+
+        [Test]
+        public void MoveToPointRight()
+        {
+            //* Setup
+            var data = ScriptableObject.CreateInstance<CharacterData>();
+
+            data.baseSpeed = 10;
+
+            var dummyGameobject = new GameObject();
+            
+            var rigidbody = dummyGameobject.AddComponent<Rigidbody2D>();
+
+            rigidbody.position = Vector2.zero;
+
+            var move = new MoveLogic(data, rigidbody);
+
+            //* Affect
+
+            move.MoveToPoint(Vector2.right);
+
+            //* Testing
+
+            Assert.AreEqual(10.0f, rigidbody.velocity.x, 0.01f);
+            Assert.AreEqual(0.0f, rigidbody.velocity.y, 0.01f);
+        }
+
     }
 }

@@ -6,18 +6,25 @@ using UnityEngine;
 
 namespace HMF.Thesis.Enemys.EnemyStates
 {
+    /// Attack state for enemys.
     public class Attack : IState
     {
-        private IAttack _attack;
+        private IAttack _attack; ///< The attack Logic.
 
-        private string[] _tagsToTarget;
+        private string[] _tagsToTarget; ///< List of strings for tags to target.
 
-        private IEnemyStateMachine _stateMachine;
+        private IEnemyStateMachine _stateMachine; ///< The enemy's statemachine.
 
-        private float _time = 0;
-        private float _timeMagic = 0;
-        private Animator _animator;
+        private float _time = 0; ///< Next time to attack.
+        private float _timeMagic = 0; ///< Next time to cast magic.
+        private Animator _animator; ///< The animator for playing animations.
 
+        /// Constructor.
+        /*!
+          \param move is the enemy's movelogic.
+          \param stateMachine is the enemy's stateMachine.
+          \param animator is the animator.
+        */
         public Attack(IAttack attack, string[] tagsToTarget, IEnemyStateMachine stateMachine, Animator animator)
         {
             _attack = attack;
@@ -26,19 +33,19 @@ namespace HMF.Thesis.Enemys.EnemyStates
             _animator = animator;
         }
 
+        /// Stops movement animation.
         public void OnEnter()
         {
             //Debug.Log("Enemy Attack");
             _animator.SetFloat("Speed", 0);
         }
 
-        public void OnExit()
-        {
-            
-        }
+        public void OnExit(){ }
 
+        /// Attacks periodically.
         public void Tick()
         {
+            // calculate attack direction
             var dir = HMFutilities.DirectionTo(_stateMachine.ThisGameObject.transform.position.x, _stateMachine.Target.transform.position.x);
 
             if (dir >= 0)
@@ -51,12 +58,12 @@ namespace HMF.Thesis.Enemys.EnemyStates
             }
 
             _stateMachine.ThisGameObject.transform.right = new Vector3(dir,0,0);
-            
+
+            // plays animation and sound while attacking
             if (Time.time >= _time)
             {
                 _animator.SetBool("IsAttacking", true);
 
-                //_stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
                 _stateMachine.AudioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
                 _stateMachine.AudioSourceAttack2.Play();
 
@@ -64,7 +71,6 @@ namespace HMF.Thesis.Enemys.EnemyStates
                 _attack.Attack(_stateMachine.Weapon, _tagsToTarget, _stateMachine.LayersToTarget);
                 _time = Time.time + _stateMachine.WeaponData.attackTime;
 
-                //_stateMachine.AudioSourceAttack.clip = _stateMachine.MusicHandler.Serve(Music.Category.Swords);
                 _stateMachine.AudioSourceAttack.clip = MusicHandler.Instance.Serve(Category.Swords);
                 _stateMachine.AudioSourceAttack.Play();
             }
@@ -73,11 +79,11 @@ namespace HMF.Thesis.Enemys.EnemyStates
                 _animator.SetBool("IsAttacking", false);
             }
 
+            // plays animation and sound while casting magic
             if (_stateMachine.MagicFocusData != null && Time.time >= _timeMagic)
             {
                 _animator.SetBool("IsMagic", true);
 
-                //_stateMachine.AudioSourceAttack2.clip = _stateMachine.MusicHandler.Serve(Music.Category.Attacks);
                 _stateMachine.AudioSourceAttack2.clip = MusicHandler.Instance.Serve(Category.Attacks);
                 _stateMachine.AudioSourceAttack2.Play();
 

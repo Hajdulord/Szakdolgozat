@@ -2,16 +2,18 @@ using System.Linq;
 
 namespace HMF.Thesis.Misc
 {
+    /// Data of the scoreboards.
     [System.Serializable]
     public class ScoreData
     {
-        public string[] easyNames;
-        public int[] easyScores;
-        public string[] mediumNames;
-        public int[] mediumScores;
-        public string[] hardNames;
-        public int[] hardScores;
+        public string[] easyNames; ///< The names of the players in the easy scoreboard.
+        public int[] easyScores; ///< The scores of the players in the easy scoreboard.
+        public string[] mediumNames; ///< The names of the players in the medium scoreboard.
+        public int[] mediumScores; ///< The scores of the players in the medium scoreboard.
+        public string[] hardNames; ///< The names of the players in the hard scoreboard.
+        public int[] hardScores; ///< The scores of the players in the hard scoreboard.
 
+        /// Constructor that gets the current scoreboard.
         public ScoreData()
         {
             easyNames = Score.Instance.GetScoreBoard(0).Select(t => t.Name).ToArray();

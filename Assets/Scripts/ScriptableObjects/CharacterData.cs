@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//! Needs Comments.
 namespace HMF.Thesis.ScriptableObjects
 {
+    /// Data of a character.
     [CreateAssetMenu(menuName = "Character")]
     public class CharacterData : ScriptableObject
     {

@@ -315,7 +315,7 @@
 % pdflatex-hez
 \newcommand{\hyperrefComp}{}
 
-\RequirePackage[pdfborder={0 0 0}, unicode, pdfusetitle, \hyperrefComp]{hyperref}
+\RequirePackage[pdfborder={0 0 0}, unicode, pdfusetitle, hypertexnames=false, \hyperrefComp]{hyperref}
 \RequirePackage[all]{hypcap}
 \RequirePackage{url}
 \RequirePackage{bookmark}
@@ -513,17 +513,17 @@
 % ------------------------------
 % Témabejelentő
 \newcommand{\topicdeclaration}{
-	\thispagestyle{empty}
-	\begin{center}
-		\vspace*{\fill}
+    \thispagestyle{empty}
+    % \begin{center}
+        \vspace*{\fill}
 
-		{\large \declarationplaceholder}
+        \input{chapters/topic.tex}
 
-		\vspace*{\fill}
-	\end{center}
+        \vspace*{\fill}
+    % \end{center}
 
 
-	\cleardoublepage
-	\setcounter{page}{1}
+    \cleardoublepage
+    \setcounter{page}{1}
 }
 % ------------------------------

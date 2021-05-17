@@ -6,36 +6,33 @@ using TMPro;
 
 namespace HMF.Thesis.Misc
 {
+    /// Logic of the end segment.
     public class End : MonoBehaviour
     {
-        [SerializeField] private GameObject _endMenu = null!;
-        [SerializeField] private GameObject _enemys = null!;
-        [SerializeField] private TMP_Text _score = null!;
+        [SerializeField] private GameObject _endMenu = null!; ///< Reference to the end menu.
+        [SerializeField] private GameObject _enemys = null!; ///< The parent of the enemys.
+        [SerializeField] private TMP_Text _score = null!; ///< The textField for the end score.
 
+        /// Stops gameplay elements when in range.
         private void OnTriggerEnter2D(Collider2D other) 
         {
             if (other.gameObject.tag == "Player")
             {
                 Score.Instance.StopTimer();
-                //Debug.Log($"Name: {Score.Instance.Name}\nTime: {Score.Instance.ElapsedTime}\nKills: {Score.Instance.Kills}\nDeaths: {Score.Instance.Deaths}\nScore: {Score.Instance.CalculatedScore()}");
 
                 Score.Instance.AddToScoreBoard(SceneManager.GetActiveScene().buildIndex);
-
-                /*foreach(var item in Score.Instance.GetScoreBoard(SceneManager.GetActiveScene().buildIndex))
-                {
-                    Debug.Log($"{item.Name} {item.Score}");
-                }*/
 
                 SaveSystem.SaveScore();
 
                 _score.text = $"Your last score is {Score.Instance.CalculatedScore()}";
 
                 Score.Instance.ResetData();
-                //Debug.Log(Score.Instance.ScoreBoard.OrderBy(s => s.Score).Take(10));
 
+                // cannot move or attack while in the end menu
                 other.gameObject.GetComponent<PlayerInput>().enabled = false;
                 var dummy = other.gameObject.GetComponent<Dummy>();
 
+                // clears statuses
                 dummy?.StopAllCoroutines();
                 dummy.enabled = false;
 

@@ -1,27 +1,36 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace HMF.Thesis.Misc
 {
+    /// The calss for dealing with the scores and scoreboards.
     public class Score : MonoBehaviour
     {
-        private bool _timer = false;
-        private float _elapsedTime = 0f;
-        private  int _kills = 0;
-        private int _deaths = 0;
+        private bool _timer = false; ///< Sould the timer be runnig.
+        private float _elapsedTime = 0f; ///< Elapsed time wile the timer is running.
+        private  int _kills = 0; ///< The player's kills.
+        private int _deaths = 0; ///< The player's death.
 
+        /// Propery for the _deaths.
         public int Deaths { get => _deaths; set => _deaths = value; }
-        public int Kills { get => _kills; set => _kills = value; }
-        public float ElapsedTime { get => _elapsedTime; set => _elapsedTime = value; }
-        public string Name { get; set;} = "Anonymus";
-        private List<(string Name, int Score)> _scoreBoardEasy  = new List<(string Name, int Score)>();
-        private List<(string Name, int Score)> _scoreBoardMedium  = new List<(string Name, int Score)>();
-        private List<(string Name, int Score)> _scoreBoardHard  = new List<(string Name, int Score)>();
 
+        /// Propery for the _kills.
+        public int Kills { get => _kills; set => _kills = value; }
+
+        /// Propery for the _elapsedTime.
+        public float ElapsedTime { get => _elapsedTime; set => _elapsedTime = value; }
+
+        /// Propery for the player's name.
+        public string Name { get; set;} = "Anonymus";
+        private List<(string Name, int Score)> _scoreBoardEasy  = new List<(string Name, int Score)>(); ///< Scores of the easy scoreboard.
+        private List<(string Name, int Score)> _scoreBoardMedium  = new List<(string Name, int Score)>(); ///< Scores of the medium scoreboard.
+        private List<(string Name, int Score)> _scoreBoardHard  = new List<(string Name, int Score)>(); ///< Scores of the hard scoreboard.
+
+        /// Singleton instance.
         public static Score Instance {get; private set;}
 
+        /// Sets the singleton instance and loads the existing scores.
         private void Awake() 
         {
             if (Instance == null)
@@ -57,6 +66,7 @@ namespace HMF.Thesis.Misc
             }
         }
 
+        /// Increases the _elapsedTime.
         private void Update()
         {
             if (_timer)
@@ -65,6 +75,7 @@ namespace HMF.Thesis.Misc
             }
         }
 
+        /// Resets data to zero.
         public void ResetData()
         {
             _elapsedTime = 0f;
@@ -72,13 +83,19 @@ namespace HMF.Thesis.Misc
             _deaths = 0;
         }
 
+        /// Incement the _kills by one.
         public void IncreaseKills() => ++_kills;
 
+        /// Incement the _deaths by one.
         public void IncreaseDeaths() => ++_deaths;
 
+        /// Set _timer to true.
         public void StartTimer() => _timer = true;
+
+        /// Set _timer to false.
         public void StopTimer() => _timer = false;
 
+        /// Calculates the player's score.
         public int CalculatedScore()
         {
             var score = 0;
@@ -115,6 +132,11 @@ namespace HMF.Thesis.Misc
             return score;
         }
 
+        /// Gets the scoreboard of a level.
+        /*!
+          \param level is levels index.
+          \returns List<(string Name, int Score)> the name and the score orderd by the score.
+        */
         public List<(string Name, int Score)> GetScoreBoard(int level)
         {
             switch (level)
@@ -132,6 +154,10 @@ namespace HMF.Thesis.Misc
             
         }
 
+        /// Adds a player and its score to the relevent scoreboard.
+        /*!
+          \param level is levels index.
+        */
         public void AddToScoreBoard(int level)
         {
             switch (level)
@@ -149,9 +175,9 @@ namespace HMF.Thesis.Misc
                 default:
                     break;
             }
-            
         }
 
+        /// Free the singleton instance.
         private void OnDestroy() 
         {
             Instance = null;    

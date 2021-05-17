@@ -2,18 +2,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using HMF.Thesis.Interfaces;
 using System.Collections;
-using System;
 
-//!Comments and Tests.
 namespace HMF.Thesis.Status
 {
+    /// Class for handling the lifecircle of statuses.
     public class StatusHandler : IStatusHandler
     {
-        private Dictionary<string, StatusBase> _cachedStatuses;
-        private Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)> _activeStatuses;
+        private Dictionary<string, StatusBase> _cachedStatuses; ///< Cache of the used statuses.
+        private Dictionary<string, (StatusBase Status, float ExpirationTime, float EffectTime)> _activeStatuses; ///< All the active satatuses and their ExpirationTime and EffectTime. 
 
-        private GameObject _gameObject;
+        private GameObject _gameObject; ///< The GameObject that is the parent of this handler.
 
+        /// Constructor to initialize private fields.
+        /*!
+          \param gameObject is the parent object of this handler.
+        */
         public StatusHandler(GameObject gameObject)
         {
             _cachedStatuses = new Dictionary<string, StatusBase>();
@@ -21,17 +24,20 @@ namespace HMF.Thesis.Status
             _gameObject = gameObject;
         }
 
+        /// Adds a status to the _activeStatuses dictionary and starts it.
         public void AddStatus(string status)
         {
-            //_reset = false;
             var alreadyActive = false;
+
             if(_activeStatuses.ContainsKey(status))
             {
+                // happens when a status is alrady active
                 _activeStatuses[status] = (_activeStatuses[status].Status, Time.time + _activeStatuses[status].ExpirationTime, _activeStatuses[status].EffectTime);
                 alreadyActive = true;
             }
             else if(_cachedStatuses.ContainsKey(status))
             {
+                // happens when a status is not active currently but is cached
                 var newStatus = StatusFactory.GetStatus(status);
                 if (newStatus != null)
                 {
@@ -40,6 +46,7 @@ namespace HMF.Thesis.Status
             }
             else
             {
+                // happens when a status is completly new
                 var newStatus = StatusFactory.GetStatus(status);
                 if (newStatus != null)
                 {
@@ -51,13 +58,15 @@ namespace HMF.Thesis.Status
 
             if (_activeStatuses.ContainsKey(status) && !alreadyActive)
             {
-                //_activeStatuses[status].Status.PrePhase(_gameObject);
-                //_activeStatuses[status].Status.Affect(_gameObject);
-                //Debug.Log($"{_activeStatuses[status].Status.Name} has effected.");
+                // starts the Coroutine for the status
                 _gameObject.GetComponent<Dummy>().StartCoroutine(Use(_activeStatuses[status].Status));
             }
         }
 
+        /// Starts a statuseffect.
+        /*!
+          \param status is the status to start.
+        */
         private IEnumerator Use(StatusBase status)
         {
             var time = 0f;
@@ -65,11 +74,9 @@ namespace HMF.Thesis.Status
 
             if (_gameObject.tag == "Player")
             {
+                // activates the statusindicator on the player
                 ActiveStatusVizualizer.Instance.Add(status.Name);
             }
-
-            
-            //Debug.Log($"{status.Name} started.");
 
             while (time < status.LifeTime)
             {
@@ -77,14 +84,10 @@ namespace HMF.Thesis.Status
                 
                 status.Affect(_gameObject);
 
-                //Debug.Log($"{status.Name} has effected.");
-
                 yield return new WaitForSeconds(status.EffectInterval);
             }
 
             status.CloseUp(_gameObject);
-
-            //Debug.Log($"{status.Name} has ended.");
 
             if (_gameObject.tag == "Player")
             {
@@ -94,9 +97,9 @@ namespace HMF.Thesis.Status
             _activeStatuses.Remove(status.Name);
         }
 
+        /// Stoppes all Statuses.
         public void RemoveAllStatuses()
         {
-            //_reset = true;
 
             foreach (var status in _activeStatuses)
             {
