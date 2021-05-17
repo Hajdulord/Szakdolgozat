@@ -3,6 +3,7 @@ using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.ScriptableObjects
 {
+    /// Data of a magicFocus.
     [CreateAssetMenu(fileName = "Magic Focus", menuName = "Items/Magic Focus")]
     public class MagicFocusData : ScriptableObject
     {
@@ -18,7 +19,6 @@ namespace HMF.Thesis.ScriptableObjects
         public bool isUnique;
         public float attackTime;
         public GameObject animationToSpawn;
-
         public AudioClip clip;
     }
 }

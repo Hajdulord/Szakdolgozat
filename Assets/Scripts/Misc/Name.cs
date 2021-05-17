@@ -3,10 +3,12 @@ using TMPro;
 
 namespace HMF.Thesis.Misc
 {
+    /// A calss for the players name input.
     public class Name : MonoBehaviour
     {
-        [SerializeField] private TMP_InputField _field = null!;
+        [SerializeField] private TMP_InputField _field = null!; ///< Reference to the inputField.
 
+        /// If there was a saved name loads it into the input field.
         private void Start() 
         {
             if (PlayerPrefs.HasKey("PlayerName"))
@@ -19,6 +21,10 @@ namespace HMF.Thesis.Misc
             }
         }
 
+        /// Saves the new name.
+        /*!
+          \param inp is the input from the inputField.
+        */
         public void Change(string inp)
         {
             if (inp == "Name" || inp == string.Empty)
@@ -31,6 +37,7 @@ namespace HMF.Thesis.Misc
             }
         }
 
+        /// Saves the name to the PlayerPrefs.
         public void Save()
         {
             PlayerPrefs.SetString("PlayerName", Score.Instance.Name);

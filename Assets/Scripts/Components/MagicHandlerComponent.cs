@@ -15,7 +15,7 @@ namespace HMF.Thesis.Components
 
         private void Awake() 
         {
-            _magicHandler = new MagicHandler(gameObject);
+            _magicHandler = new MagicHandler();
         }
     }
 }

@@ -4,17 +4,19 @@ using HMF.Thesis.Interfaces;
 
 namespace HMF.Thesis.Player
 {
+    /// The pushback state of the Player.
     public class PushBack : IState
     {
-        private IMove _move;
-        private Rigidbody2D _rigidbody;
-        private PlayerStateMachine _playerStateMachine;
-        private Animator _animator;
+        private IMove _move; ///< The move logic of the player.
+        private Rigidbody2D _rigidbody; ///<  The rigidbody of the player.
+        private PlayerStateMachine _playerStateMachine; ///< The statemachine of the player.
+        private Animator _animator;  ///< The Animator of the player.
 
-        private float _time = 0f;
+        private float _time = 0f; ///< Time of the pushback.
 
-        private RigidbodyConstraints2D _constrains;
+        private RigidbodyConstraints2D _constrains; ///< previous constrains.
 
+        /// Constructor to set the private fields.
         public PushBack(IMove move, Animator animator, Rigidbody2D rigidbody, PlayerStateMachine playerStateMachine)
         {
             _move = move;
@@ -23,14 +25,13 @@ namespace HMF.Thesis.Player
             _animator = animator;
         }
 
+        /// Starts a pushBack, save and set constrains and sets animation variable.
         public void OnEnter()
         {
-            //Debug.Log("PushBack");
             _move.PushBack(_playerStateMachine.PushBackDir);
 
-            //_rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
-
             _animator.SetBool("IsHurt", true);
+
             _time = Time.time + _playerStateMachine.PushBackTime;
 
             _constrains = _rigidbody.constraints;
@@ -38,6 +39,7 @@ namespace HMF.Thesis.Player
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
+        /// Reset constrains, sets state variables, sets pushback immunity and sets animation variable.
         public void OnExit()
         {
             _playerStateMachine.IsJumping = false;
@@ -54,9 +56,9 @@ namespace HMF.Thesis.Player
             _playerStateMachine.PushBackInmunity = Time.time + 2f;
             _playerStateMachine.IsDashing = false;
             _playerStateMachine.CurrentItem = null;
-            //Debug.Log("PushBack exit");
         }
 
+        /// If the player is not grounded pushes it back again.
         public void Tick()
         {
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -69,13 +71,11 @@ namespace HMF.Thesis.Player
             {
                 _move.PushBack(_playerStateMachine.PushBackDir);
                 _rigidbody.AddForce(Vector2.down * 5, ForceMode2D.Impulse);
-                //Debug.Log("a");
             }
 
             if (!_playerStateMachine.GroundCheck())
             {
                 _rigidbody.AddForce(new Vector2(_playerStateMachine.PushBackDir, -1) * 5f, ForceMode2D.Impulse);
-                //Debug.Log("b");
             }
         }
     }

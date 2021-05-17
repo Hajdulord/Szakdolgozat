@@ -3,7 +3,6 @@ using HMF.Thesis.Interfaces;
 using HMF.Thesis.ScriptableObjects;
 using HMF.HMFUtilities.Utilities;
 
-//! Implementation needed.
 namespace HMF.Thesis.Logic
 {
 	/// Logic for the movement.
@@ -11,10 +10,10 @@ namespace HMF.Thesis.Logic
 	{
 		private CharacterData _character; ///< The data of a Character.
 		private Rigidbody2D _rigidbody; ///< Used for physics.
-		private Vector2 _movementVector;
-		private float _dashDistance = 5f;
-		private int _chachedDirection = 1;
-		private float _nextDashTime = 0f;
+		private Vector2 _movementVector; ///< The vector for the movement.
+		private float _dashDistance = 5f; ///< The distance of the dash.
+		private int _chachedDirection = 1; ///< The cached direction of the movement.
+		private float _nextDashTime = 0f; ///< Time of the next possible dash.
 
 		/// The Constructor where we set the cahracterData and the characterController.
 		/*!
@@ -67,7 +66,6 @@ namespace HMF.Thesis.Logic
 		*/
 		public void MoveToPoint(Vector2 to)
 		{
-			//var pos = Vector2.MoveTowards(_rigidbody.position, to, Time.deltaTime * Speed);
 			var dir = 0;
 			if (HMFutilities.DirectionTo(_rigidbody.transform.position.x, to.x) >= 0)
 			{
@@ -77,7 +75,6 @@ namespace HMF.Thesis.Logic
 			{
 				dir = -1;
 			}
-			//_rigidbody.MovePosition(pos);
 			_rigidbody.velocity = new Vector2(dir * Speed, _rigidbody.velocity.y );
 		}
 
@@ -125,5 +122,5 @@ namespace HMF.Thesis.Logic
 			_rigidbody.AddForce(Vector2.down * FallSpeed, ForceMode2D.Impulse);
 		}
 
-		}
+	}
 }

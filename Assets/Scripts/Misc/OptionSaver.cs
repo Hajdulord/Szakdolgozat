@@ -3,10 +3,12 @@ using UnityEngine.Audio;
 
 namespace HMF.Thesis.Misc
 {
+    /// A class for saving and loading the options.
     public class OptionSaver : MonoBehaviour
     {
-        [SerializeField] private AudioMixer _mixer = null!;
+        [SerializeField] private AudioMixer _mixer = null!; ///< Reference to the audio mixer.
 
+        /// Loads the settings.
         private void Start()
         {
             if (PlayerPrefs.HasKey("QualityLevel"))
@@ -20,13 +22,9 @@ namespace HMF.Thesis.Misc
 
             if (PlayerPrefs.HasKey("SFXVolume"))
                 _mixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
-
-            /*Debug.Log(PlayerPrefs.GetInt("QualityLevel"));
-            Debug.Log(PlayerPrefs.GetFloat("Volume"));
-            Debug.Log(PlayerPrefs.GetFloat("MusicVolume"));
-            Debug.Log(PlayerPrefs.GetFloat("SFXVolume"));*/
         }
 
+        /// Saves the settings.
         public void Save()
         {
             _mixer.GetFloat("Volume",out float volume);
@@ -41,11 +39,6 @@ namespace HMF.Thesis.Misc
             PlayerPrefs.SetInt("QualityLevel", QualitySettings.GetQualityLevel());
 
             PlayerPrefs.Save();
-
-            /*Debug.Log(QualitySettings.GetQualityLevel());
-            Debug.Log(volume);
-            Debug.Log(musicVolume);
-            Debug.Log(SFXVolume);*/
         }
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 using HMF.Thesis.Misc;
-using HMF.Thesis.Menu;
 using HMF.Thesis.Items;
 using HMF.Thesis.ScriptableObjects;
 
@@ -18,16 +17,16 @@ namespace HMF.Thesis.Player
 
         [Header("Serializable Fields")]
         [SerializeField] private PlayerStateMachine _stateMachine = null!; ///< The statemachine we get state switching properties from here.
-        [SerializeField] private GameObject _pauseMenu = null!;
-        [SerializeField] private GameObject _saveMenu = null!;
+        [SerializeField] private GameObject _pauseMenu = null!; ///< Reference to the pause menu.
+        [SerializeField] private GameObject _saveMenu = null!; ///< Reference to the save menu.
 
-        private Rigidbody2D _rigidbody = null;
+        private Rigidbody2D _rigidbody = null; ///< the rigidbogy of the player.
 
-        private float _mainWeaponTime = 0;
-        private float _inventoryOneTime = 0;
-        private float _inventoryTwoTime = 0;
-        private float _inventoryThreeTime = 0;
-        private float _inventoryFourTime = 0;
+        private float _mainWeaponTime = 0; ///< Time for the nex possible use of the main weapon.
+        private float _inventoryOneTime = 0; ///< Time for the nex possible use of the first item.
+        private float _inventoryTwoTime = 0; ///< Time for the nex possible use of the second item.
+        private float _inventoryThreeTime = 0; ///< Time for the nex possible use of the third item.
+        private float _inventoryFourTime = 0; ///< Time for the nex possible use of the fourth item.
 
         private void Awake() 
         {
@@ -79,6 +78,7 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Input call for the first inventory slot.
         public void InventoryOne(InputAction.CallbackContext callback)
         {
             if(callback.started && 
@@ -95,12 +95,12 @@ namespace HMF.Thesis.Player
                 }
 
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(0);
-                //Debug.Log(_stateMachine.Inventory.InUse[0].Name);
 
                 _stateMachine.inventoryUI.UpdateDisplay();
             }
         }
 
+        /// Input call for the second inventory slot.
         public void InventoryTwo(InputAction.CallbackContext callback)
         {
             if(callback.started && 
@@ -109,7 +109,7 @@ namespace HMF.Thesis.Player
                 !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(1, (int) _stateMachine.Inventory.InUse[1].attackTime);
-                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+
                 _inventoryTwoTime = Time.time + _stateMachine.Inventory.InUse[1].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(1);
 
@@ -122,6 +122,7 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Input call for the third inventory slot.
         public void InventoryThree(InputAction.CallbackContext callback)
         {
             if(callback.started && 
@@ -130,7 +131,7 @@ namespace HMF.Thesis.Player
                 !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(2, (int) _stateMachine.Inventory.InUse[2].attackTime);
-                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+
                 _inventoryThreeTime = Time.time + _stateMachine.Inventory.InUse[2].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(2);
 
@@ -143,6 +144,7 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Input call for the fourth inventory slot.
         public void InventoryFour(InputAction.CallbackContext callback)
         {
             if(callback.started && 
@@ -151,7 +153,7 @@ namespace HMF.Thesis.Player
                 !Misc.Pause.gameIsPaused)
             {
                 ItemCooldownVisualizer.Instance.StartCooldown(3, (int) _stateMachine.Inventory.InUse[3].attackTime);
-                //Debug.Log(_stateMachine.Inventory.MainWeapon);
+
                 _inventoryFourTime = Time.time + _stateMachine.Inventory.InUse[3].attackTime;
                 _stateMachine.CurrentItem = _stateMachine.Inventory.GetItem(3);
 
@@ -176,12 +178,11 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Input call to pause.
         public void PauseCall(InputAction.CallbackContext callback)
         {
             if(callback.started)
             {
-                //Debug.Log("PauseCall");
-
                 if (Misc.Pause.gameIsPaused)
                 {
                     UnPause();
@@ -190,19 +191,20 @@ namespace HMF.Thesis.Player
                 {
                     Pause();
                 }
-
             }
         }
 
+        /// Picks up an item.
         public void PickUp(InputAction.CallbackContext callback)
         {
             if(callback.started)
             {
+                // gets all items in range.
                 var colliders = Physics2D.OverlapCircleAll(_rigidbody.position, 2f, _stateMachine.PickUpLayers);
 
                 foreach(var collider in colliders)
                 {
-                    //Debug.Log("Found collider");
+                    // checks if the item is PickUpable
                     var pickUp = collider.gameObject.GetComponent<IPickUpableComponent>();
 
                     if (pickUp != null)
@@ -211,6 +213,7 @@ namespace HMF.Thesis.Player
 
                         var item = ParseData(data);
 
+                        // adds the item to inventory.
                         if (item != null)
                         {
                             if (item is Weapon)
@@ -228,7 +231,6 @@ namespace HMF.Thesis.Player
                                 _stateMachine.Inventory.SetUse(item);
                             }
                             
-                            //Debug.Log("Added Item");
                             _stateMachine.inventoryUI.UpdateDisplay();
                         }
 
@@ -238,42 +240,42 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Parses data into an item.
+        /*!
+          \param data holds the actual ScriptableObject, the quantity of it, its type.
+          \returns IItem.
+        */
         private IItem ParseData((ScriptableObject ScriptableData, int Quantity, MyScriptableObjects Scriptable, MyConsumables Consumable) data)
         {
             switch (data.Scriptable)
             {
                 case MyScriptableObjects.WeaponData:
-                    //Debug.Log("Weapon");
                     return new Weapon(data.ScriptableData as WeaponData);
 
                 case MyScriptableObjects.MagicFocusData:
-                    //Debug.Log("MagicFocus");
                     return new MagicFocus(data.ScriptableData as MagicFocusData);
 
                 case MyScriptableObjects.ConsumableData:
                     switch (data.Consumable)
                     {
                         case MyConsumables.HealthPotion:
-                            //Debug.Log("HealthPotion");
                             return new HealthPotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.CurePotion:
-                            //Debug.Log("CurePotion");
                             return new CurePotion(data.ScriptableData as ConsumableData);
 
                         case MyConsumables.None:
                         default:
-                            Debug.LogError(" MysConsumable is none or default.");
                             return null;
                     }
 
                 case MyScriptableObjects.None:
                 default:
-                    Debug.LogError(" MyScriptableObject is none or default.");
                     return null;
             }
         }
 
+        /// Reseets the cooldowns.
         public void ResetTimes()
         {
             _mainWeaponTime = 0;
@@ -283,23 +285,21 @@ namespace HMF.Thesis.Player
             _inventoryFourTime = 0;
         }
 
+        /// Pauses the game.
         public void Pause()
         {
-            //Debug.Log("Pause");
-
             Misc.Pause.PauseGame();
-            //GetComponent<PlayerInput>().enabled = true;
+
             _pauseMenu.SetActive(true);
 
             Menu.Menu.flipPausedBool();
         }
 
+        /// Unpauses the game.
         public void UnPause()
         {
-            //Debug.Log("UnPause");
-
             Misc.Pause.Resume();
-            //GetComponent<PlayerInput>().enabled = true;
+
             _pauseMenu.SetActive(false);
             _saveMenu.SetActive(false);
             

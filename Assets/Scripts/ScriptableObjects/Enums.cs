@@ -2,6 +2,7 @@ namespace HMF.Thesis.ScriptableObjects
 {
     public static class Enums
     {
+        /// All of the current statues.
         public enum Statuses
         {
             None,
@@ -12,6 +13,7 @@ namespace HMF.Thesis.ScriptableObjects
             Stunned
         }
 
+        /// All of the current magic.
         public enum Magics
         {
             None,
