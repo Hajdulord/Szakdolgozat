@@ -14,82 +14,118 @@ using HMF.Thesis.Items;
 using HMF.Thesis.Status;
 using UnityEngine.InputSystem;
 
-//! Needs Unit Testing!
-//! Needs Comments!
 namespace HMF.Thesis.Player
 {
     /// This class is used to manage the player's state. 
     public class PlayerStateMachine : MonoBehaviour, IPlayerStateMachine
     {
         [Header("LayerMasks")]
-        [SerializeField] private LayerMask _jumpLayerMask;
-        [SerializeField] private LayerMask _layersToTarget;
-        [SerializeField] private LayerMask _pickUpLayers;
+        [SerializeField] private LayerMask _jumpLayerMask; ///< Layermask for the ground.
+        [SerializeField] private LayerMask _layersToTarget; ///< You can set it to the lyers you want to target. It makes the target finding faster, than just tag based identifying.
+        [SerializeField] private LayerMask _pickUpLayers; ///< You can set it to the lyers you want to target for picking up items.
 
         [Header("Transforms")]
-        [SerializeField] private Transform _groundCheck;
-        [SerializeField] private Transform _currentSpawnPoint = null!;
+        [SerializeField] private Transform _groundCheck; ///< The transfor of the ground checker object.
+        [SerializeField] private Transform _currentSpawnPoint = null!; ///< The transfor for the current SpawnPoint.
 
         [Header("Lists")]
-        [SerializeField] private List<string> _tagsToTarget = new List<string>();
-        [SerializeField] private List<MagicFocusData> _magicFocusData = null!;
+        [SerializeField] private List<string> _tagsToTarget = new List<string>(); ///< List of tags to target.
+        [SerializeField] private List<MagicFocusData> _magicFocusData = null!; ///< The list of magicfocusData.
 
         [Header("Gameobjects")]
-        [SerializeField] private GameObject _enemys = null!;
-        [SerializeField] private GameObject DeathCanvas = null!;
-        [SerializeField] private GameObject _dashDust = null!;
-        [SerializeField] private GameObject _swordPoint = null!;
+        [SerializeField] private GameObject _enemys = null!; ///< Reference to the enemys.
+        [SerializeField] private GameObject DeathCanvas = null!; ///< Reference to the Death menu.
+        [SerializeField] private GameObject _dashDust = null!; ///< The gameObject for the dasDust animation.
+        [SerializeField] private GameObject _swordPoint = null!; ///< The gameObject for the swordPoint.
 
         [Header("Audio")]
-        [SerializeField] private AudioSource _audioSource = null;
-        [SerializeField] private AudioSource _audioSourceAttack = null;
-        [SerializeField] private AudioSource _audioSourceAttack2 = null;
+        [SerializeField] private AudioSource _audioSource = null; ///< AudioScource for movement based souns.
+        [SerializeField] private AudioSource _audioSourceAttack = null; ///< AudioSource for sword clashes.
+        [SerializeField] private AudioSource _audioSourceAttack2 = null; ///< AudioSource for screams.
 
         [Header("Other")]
-        [SerializeField] private float _pushBackTime = 2f;
-        [SerializeField] private ConsumableData _consumableData = null!;
-        [SerializeField] public UseInventory inventoryUI = null!;
-
+        [SerializeField] private float _pushBackTime = 2f; ///< The time of the pushBack inmunity.
+        [SerializeField] private ConsumableData _consumableData = null!; ///< The added Consumable's data.
+        [SerializeField] public UseInventory inventoryUI = null!; ///< Reference to the UseInventory scipt.
+ ///< 
         private StateMachine _stateMachine; ///< The statemachine is used to garantee the consistency of the players state.
-        private IMoveComponent _moveComponent;
-        private ICharacterComponent _characterComponent;
-        private IInventoryComponent _inventoryComponent;
-        private IInputController _inputController;
-        private IAttackComponent _attackComponent;
-        private IDamageableComponent _damageableComponent;
-        private Rigidbody2D _rigidbody;
-        private Animator _animator;
-        private float _distToGround;
-        private MagicFocus _magicItem;
-        private MagicFocus _magicItem2;
-        private HealthPotion _consumableItem;
-        private float _pushBackInmunity = 0;
+        private IMoveComponent _moveComponent; ///< Component that wraps the move logic.
+        private ICharacterComponent _characterComponent; ///< Component that wraps the caharacter logic.
+        private IInventoryComponent _inventoryComponent; ///< Component that wraps the inventory logic.
+        private IInputController _inputController; ///< Parses the player input.
+        private IAttackComponent _attackComponent; ///< Component that wraps the attack logic.
+        private IDamageableComponent _damageableComponent; ///< Component that wraps the damageable logic.
+        private Rigidbody2D _rigidbody; ///< Rigidbody of the player.
+        private Animator _animator; ///< Animator of the player.
+        private float _distToGround; ///< Max distance to the ground.
+        private MagicFocus _magicItem; ///< Added magicFocus.
+        private MagicFocus _magicItem2; ///< Added magicFocus.
+        private HealthPotion _consumableItem; ///< Added healthPotion.
+        private float _pushBackInmunity = 0; ///< Time of the end of the immunity.
 
-
+        /// The direction of the pushback.
         public float PushBackDir { get; set; }
+
+        /// The direction of the movement.
         public int MoveDirection { get; internal set; } = 0;
+
+        // Is the player Dashing.
         public bool IsDashing {get; set; } = false;
+
+        /// Is the Player Jumping.
         public bool IsJumping {get; set; } = false;
+
+        /// The Currently used Item.
         public IItem CurrentItem {get; set; } = null;
+
+        /// The Inventory.
         public IInventory Inventory {get => _inventoryComponent.Inventory; }
+
+        /// Property for _currentSpawnPoint.
         public Transform CurrentSpawnPoint { get => _currentSpawnPoint; set => _currentSpawnPoint = value; }
+
+        /// Getter for _pushBackTime.
         public float PushBackTime { get => _pushBackTime;}
+
+        /// Is the Player Stunned.
         public bool IsStunned { get; set;} = false;
+
+        /// Property for the _pushBackInmunity;
         public float PushBackInmunity { get => _pushBackInmunity; set => _pushBackInmunity = value; }
+
+        /// Property for _layersToTarget;
         public LayerMask LayersToTarget { get => _layersToTarget; set => _layersToTarget = value; }
+
+        /// Property for _pickUpLayers.
         public LayerMask PickUpLayers { get => _pickUpLayers; set => _pickUpLayers = value; }
+
+        /// The position of the player.
         public Vector3 TransformPosition {get => gameObject.transform.position; set => gameObject.transform.position = value; }
+        
+        /// Property for _dashDust.
         public GameObject DashDust { get => _dashDust; set => _dashDust = value; }
+       
+        /// Property for _swordPoint.
         public GameObject SwordPoint { get => _swordPoint; set => _swordPoint = value; }
+        
+        /// Property for _audioSource.
         public AudioSource AudioSource { get => _audioSource; set => _audioSource = value; }
+        
+        /// Property for _audioSourceAttack.
         public AudioSource AudioSourceAttack { get => _audioSourceAttack; set => _audioSourceAttack = value; }
+        
+        /// Property for _audioSourceAttack2.
         public AudioSource AudioSourceAttack2 { get => _audioSourceAttack2; set => _audioSourceAttack2 = value; }
+        
+        /// Getter for the player's gameObject.
         public GameObject ThisGameObject => gameObject;
 
-        /// Runs before the Start methode, this is used for the setting up the enviornment.
+        /// Inicializes the fields and sets up the statemachine states and transitions.
         private void Start()
         {
             Score.Instance.StartTimer();
+
+            // field setup
             _stateMachine = new StateMachine();
 
             _distToGround = GetComponent<CapsuleCollider2D>().bounds.extents.y;
@@ -102,16 +138,17 @@ namespace HMF.Thesis.Player
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
 
+            // value setup
             PushBackDir = 0f;
 
             SetupInventory();
 
-            //! Need to implement this better.
             _moveComponent.Move.JumpSpeed = 400;
             _moveComponent.Move.DashRate = 0.5f;
             _moveComponent.Move.FallSpeed = 5f;
             _moveComponent.Move.PushBackSpeed = 5f;
 
+            // state initializations
             var idle = new Idle(_rigidbody, _animator);
             var move = new Move(_moveComponent.Move, _animator, this);
             var jump = new Jump(_moveComponent.Move, _animator, this);
@@ -120,6 +157,7 @@ namespace HMF.Thesis.Player
             var attack = new Attack(_attackComponent.Attack, _animator, _tagsToTarget.ToArray(), this, _moveComponent.Move);
             var death = new Death(_animator, this);
 
+            // Transitions
             At(idle, move, isMoving());
             At(move, idle, isIdle());
 
@@ -127,7 +165,6 @@ namespace HMF.Thesis.Player
             At(move, jump, grundedAndReadyToJump());
 
             At(jump, fall, falling());
-            //At(jump, idle, grunded());
 
             At(fall, idle, grunded());
 
@@ -138,23 +175,21 @@ namespace HMF.Thesis.Player
 
             At(pushBack, idle, notPushedBack());
             At(pushBack, move, notPushedBack());
-            //At(pushBack, jump, notPushedBack());
             At(pushBack, fall, notPushedBack());
 
             At(idle, attack, isAttacking());
             At(move, attack, isAttacking());
             At(jump, attack, isAttacking());
             At(fall, attack, isAttacking());
-            //At(pushBack, attack, isAttacking());
 
             At(attack, idle, notAttackingAndIdle());
-            //At(attack, jump, notAttackingAndJumping());
             At(attack, fall, notAttackingAndFalling());
             At(attack, pushBack, notAttackingAndPushedBack());
 
             At(death, idle, isAlive());
             _stateMachine.AddAnyTransition(death, isDead());
 
+            // Tansition conditions
             Func<bool> isIdle() => () => MoveDirection == 0 && GroundCheck();
             Func<bool> isMoving() => () => MoveDirection != 0 && GroundCheck();
             Func<bool> grundedAndReadyToJump() => () => IsJumping && GroundCheck();
@@ -165,18 +200,17 @@ namespace HMF.Thesis.Player
             Func<bool> isAttacking() => () => CurrentItem != null;
             Func<bool> notAttackingAndIdle() => () => CurrentItem == null && MoveDirection == 0 && GroundCheck();
             Func<bool> notAttackingAndFalling() => () => CurrentItem == null && _rigidbody.velocity.y < 0f;
-            //Func<bool> notAttackingAndJumping() => () => CurrentItem == null && _rigidbody.velocity.y > 0f && IsJumping;
             Func<bool> notAttackingAndPushedBack() => () => CurrentItem == null && PushBackDir != 0f;
             Func<bool> isDead() => () => _characterComponent.Character.Health <= 0;
             Func<bool> isAlive() => () => _characterComponent.Character.Health > 0;
 
             void At(IState from, IState to, Func<bool> condition) => _stateMachine.AddTransition(from, to, condition);
 
+            // default state set
             _stateMachine.SetState(idle);
 
+            // data load
             var data = PersistentData.Instance.CurrentSave;
-
-            //Debug.Log(data);
 
             if (data != null)
             {
@@ -184,6 +218,7 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Sets up default inventory.
         private void SetupInventory()
         {
             _magicItem = new MagicFocus(_magicFocusData[0]);
@@ -199,6 +234,7 @@ namespace HMF.Thesis.Player
             _inventoryComponent.Inventory.SetUse(_consumableItem);
         }
 
+        /// Refills default inventory.
         private void RefillInventory()
         {
 
@@ -206,14 +242,11 @@ namespace HMF.Thesis.Player
             {
                 var num = 10 - _inventoryComponent.Inventory.InventoryShelf[_magicItem2.Name].Quantity;
                 _inventoryComponent.Inventory.AddItem(_magicItem2, num);
-                //Debug.Log("A");
             }
             else
             {  
-                //Debug.Log(_inventoryComponent.Inventory.InventoryShelf[_magicItem2]);
                 _inventoryComponent.Inventory.AddItem(_magicItem2, 3);
                 _inventoryComponent.Inventory.SetUse(_magicItem2);
-                //Debug.Log("B");
             }
             
             if (_inventoryComponent.Inventory.InventoryShelf.ContainsKey(_consumableItem.Name))
@@ -226,11 +259,12 @@ namespace HMF.Thesis.Player
                 _inventoryComponent.Inventory.AddItem(_consumableItem, 2);
                 _inventoryComponent.Inventory.SetUse(_consumableItem);
             }
-            
         }
 
+        /// Runs the current state's Tick.
         private void Update() => _stateMachine?.Tick();
-
+        
+        /// First impact collision with enemy.
         private void OnCollisionEnter2D(Collision2D other) 
         {
             if (other.gameObject.tag == "Enemy")
@@ -238,7 +272,8 @@ namespace HMF.Thesis.Player
                 PushBack(other.gameObject);
             }
         }
-
+        
+        /// Glitching into the enemy.
         private void OnCollisionStay2D(Collision2D other) 
         {
             if (other.gameObject.tag == "Enemy")
@@ -247,6 +282,10 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Pushes back from the oter entity.
+        /*!
+          \param other is entity you collided with.
+        */
         public void PushBack(GameObject other)
         {
             if (Time.time >= _pushBackInmunity)
@@ -263,15 +302,15 @@ namespace HMF.Thesis.Player
 
                 PushBackDir = dir;
             }
-            //_damageableComponent.Damageable.TakeDamage();
         }
 
+        /// Checks if the player is grounded.
         internal bool GroundCheck()
         {
             var output = false;
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheck.position, .2f, _jumpLayerMask);
-            //Collider2D[] colliders = Physics2D.OverlapBoxAll(_groundCheck.transform.position, new Vector2(.3f, .1f), 0, _jumpLayerMask);
+    
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].gameObject != gameObject)
@@ -284,34 +323,29 @@ namespace HMF.Thesis.Player
             return output;
         }
 
-        /*void OnDrawGizmosSelected()
-        {
-            // Display the explosion radius when selected
-            Gizmos.color = new Color(1, 1, 0, 0.75F);
-            //Gizmos.DrawCube(_groundCheck.transform.position, new Vector2(.3f, .1f));
-            Gizmos.DrawSphere(_groundCheck.position, .2f);
-        }*/
-
+        /// Resets values when player dies.
         public void Dead()
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<PlayerInput>().enabled = false;
+
             RefillInventory();
+
             inventoryUI.UpdateDisplay();
+
             GetComponent<InputController>().ResetTimes();
+
             Misc.ItemCooldownVisualizer.Instance.ResetAll();
-            //ActiveStatusVizualizer.Instance.
-            //GetComponent<StatusHandlerComponent>().enabled = true;
-            //gameObject.AddComponent<StatusHandlerComponent>();
         }
 
+        /// Plays audio on step. 
         public void Step()
         {
-            //audioSource.clip = musicHandler.playerStep;
             _audioSource.clip = MusicHandler.Instance.playerStep;
             _audioSource.Play();
         }
 
+        /// Respawns the player.
         public IEnumerator Respawn()
         {
             DeathCanvas.SetActive(true);
@@ -323,6 +357,7 @@ namespace HMF.Thesis.Player
 
             yield return new WaitForSeconds(5f);
 
+            // reset values
             transform.position = _currentSpawnPoint.position;
 
             _characterComponent.Character.Health = _characterComponent.Character.MaxHealth;
@@ -333,9 +368,11 @@ namespace HMF.Thesis.Player
 
             _enemys.SetActive(true);
 
+            // reset default constrains
             _rigidbody.constraints = RigidbodyConstraints2D.None;
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+            // enables th visuals and the input of the player. 
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<PlayerInput>().enabled = true;
             
@@ -344,11 +381,10 @@ namespace HMF.Thesis.Player
             Score.Instance.StartTimer();
         }
 
+        /// Loads saved data.
         public void Load()
         {
             var data = PersistentData.Instance.CurrentSave;
-
-            //Debug.Log(data);
 
             if (data != null)
             {
@@ -356,22 +392,24 @@ namespace HMF.Thesis.Player
             }
         }
 
+        /// Loads saved data.
+        /*!
+          \param data is loaded gamedata.
+        */
         private void Load(SaveData data)
         {
             transform.position = new Vector3(data.transform[0], data.transform[1], data.transform[2]);
 
+            // score
             Score.Instance.ElapsedTime = data.time;
             Score.Instance.Kills = data.kills;
             Score.Instance.Deaths = data.deaths;
             Score.Instance.Name = data.name;
 
-            //Debug.Log(data.name + " " + data.time);
-
             _characterComponent.Character.Health = data.health;
 
+            // inventory 
             _inventoryComponent.Inventory.RemoveAll();
-
-            //Debug.Log(_inventoryComponent.Inventory.InUse.Count);
 
             _inventoryComponent.Inventory.MainWeapon = ItemSorter(data.mainWeapon);
 
@@ -379,33 +417,31 @@ namespace HMF.Thesis.Player
             {
                 var item = ItemSorter(data.inUseItems[i]);
 
-                
-
                 if (item != null)
                 {
                     _inventoryComponent.Inventory.AddItem(item, data.inUseItemsQuantity[i]);
                     _inventoryComponent.Inventory.SetUse(item);
-                    //Debug.Log(item.Name);
                 }
             }
 
-            /*Time.timeScale = 1f;
-
-            Pause.gameIsPaused = false;
-
-            Score.Instance.StartTimer();*/
-
+            // enables th visuals and the input of the player. 
             gameObject.GetComponent<PlayerInput>().enabled = true;
             gameObject.GetComponent<Dummy>().enabled = true;
 
             gameObject.GetComponent<IStatusHandlerComponent>().StatusHandler.RemoveAllStatuses();
 
+            // resets default constrains.
             _rigidbody.constraints = RigidbodyConstraints2D.None;
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             inventoryUI.UpdateDisplay();
         }
 
+        /// Gives the requested item by name.
+        /*!
+          \param name is the items name.
+          \returns IItem.
+        */
         private IItem ItemSorter(string name)
         {
             switch(name)
