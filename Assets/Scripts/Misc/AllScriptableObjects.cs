@@ -3,7 +3,7 @@ using HMF.Thesis.ScriptableObjects;
 
 namespace HMF.Thesis.Misc
 {
-    /// 
+    /// All of my scripatbleObjects.
     public class AllScriptableObjects : MonoBehaviour 
     {
         [SerializeField] public WeaponData katana = null!; ///< Data of the katana.

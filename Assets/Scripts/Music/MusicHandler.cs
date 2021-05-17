@@ -3,14 +3,6 @@ using UnityEngine;
 
 namespace HMF.Thesis.Music
 {
-    /// Enum for the sound categories.
-    public enum Category
-    {
-        Deaths,
-        Swords,
-        Attacks
-    }
-
     // This class handles the audioclip distribution.
     public class MusicHandler : MonoBehaviour
     {
@@ -64,5 +56,13 @@ namespace HMF.Thesis.Music
         {
             Instance = null;    
         }
+    }
+
+    /// Enum for the sound categories.
+    public enum Category
+    {
+        Deaths,
+        Swords,
+        Attacks
     }
 }

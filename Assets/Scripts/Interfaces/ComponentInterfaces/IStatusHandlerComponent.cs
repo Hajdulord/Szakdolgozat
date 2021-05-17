@@ -1,6 +1,6 @@
 namespace HMF.Thesis.Interfaces.ComponentInterfaces
 {
-    // An Interface for the StatusHandlerComponent wrapper.
+    /// An Interface for the StatusHandlerComponent wrapper.
     public interface IStatusHandlerComponent
     {
         /// StatusHandler Logic.
