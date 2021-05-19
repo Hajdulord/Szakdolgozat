@@ -1,6 +1,5 @@
 using UnityEngine.InputSystem;
 
-//! Needs Comments!
 namespace HMF.Thesis.Interfaces
 {
     /// The Interface that represents a Player's inputs.

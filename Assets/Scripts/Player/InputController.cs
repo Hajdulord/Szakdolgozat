@@ -8,8 +8,7 @@ using HMF.Thesis.ScriptableObjects;
 
 namespace HMF.Thesis.Player
 {
-    /// Input Controller that parse the player input.
-    /// This class has the methodes for the Input system to call when an input action is performed.
+    /// Input Controller that parse the player input. This class has the methodes for the Input system to call when an input action is performed.
     [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(PlayerStateMachine))]
     public class InputController : MonoBehaviour, IInputController
