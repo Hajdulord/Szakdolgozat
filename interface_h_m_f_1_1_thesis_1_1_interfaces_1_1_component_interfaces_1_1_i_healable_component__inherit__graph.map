@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Interfaces.ComponentInterfaces.IHealableComponent" name="HMF.Thesis.Interfaces.ComponentInterfaces.IHealableComponent">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,228,47"/>
+<area shape="rect" id="node1" title="An Interface for the HealableComponent wrapper." alt="" coords="5,5,228,47"/>
 <area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_healable_component.html" title="The Component wrapper for healable logic." alt="" coords="5,95,228,136"/>
 </map>

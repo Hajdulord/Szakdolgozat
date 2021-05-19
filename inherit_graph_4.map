@@ -1,37 +1,37 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_attack_component.html" title=" " alt="" coords="12,5,235,47"/>
+<area shape="rect" id="node1" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_attack_component.html" title="An Interface for the AttackComponent wrapper." alt="" coords="12,5,235,47"/>
 <area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_attack_component.html" title="The Component that wraps the Attack Logic." alt="" coords="306,5,517,47"/>
-<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_character_component.html" title=" " alt="" coords="12,71,235,112"/>
+<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_character_component.html" title="An Interface for the CharacterComponent wrapper." alt="" coords="12,71,235,112"/>
 <area shape="rect" id="node4" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_character_component.html" title="Character Component that wraps the CharacterLogic class." alt="" coords="297,71,525,112"/>
-<area shape="rect" id="node5" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_damageable_component.html" title=" " alt="" coords="11,136,236,177"/>
+<area shape="rect" id="node5" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_damageable_component.html" title="An Interface for the DamageableComponent wrapper." alt="" coords="11,136,236,177"/>
 <area shape="rect" id="node6" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_damageable_character_component.html" title="A wrapper for DamageableCharacter." alt="" coords="289,136,533,177"/>
 <area shape="rect" id="node7" href="$interface_h_m_f_1_1_thesis_1_1_enemys_1_1_i_enemy_state_machine.html" title="Interface for enemys." alt="" coords="29,227,217,268"/>
 <area shape="rect" id="node8" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_basic_enemy_state_machine.html" title="The statemachine and the barain of a basic enemy." alt="" coords="303,267,520,308"/>
 <area shape="rect" id="node9" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_patrol_enemy_state_machine.html" title="The statemachine and the barain of a patrolling enemy." alt="" coords="322,201,501,243"/>
-<area shape="rect" id="node10" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_healable_component.html" title=" " alt="" coords="12,317,235,359"/>
+<area shape="rect" id="node10" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_healable_component.html" title="An Interface for the HealableComponent wrapper." alt="" coords="12,317,235,359"/>
 <area shape="rect" id="node11" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_healable_component.html" title="The Component wrapper for healable logic." alt="" coords="300,332,523,373"/>
 <area shape="rect" id="node12" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_health_bar.html" title="An interface to access the healthbar." alt="" coords="14,383,233,410"/>
 <area shape="rect" id="node13" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_health_bar.html" title="A class that sets the health bar." alt="" coords="319,398,504,425"/>
 <area shape="rect" id="node14" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_input_controller.html" title="The Interface that represents a Player&#39;s inputs." alt="" coords="28,435,219,476"/>
-<area shape="rect" id="node15" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html" title=" " alt="" coords="302,449,521,475"/>
-<area shape="rect" id="node16" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component.html" title=" " alt="" coords="12,500,235,541"/>
+<area shape="rect" id="node15" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html" title="Input Controller that parse the player input. This class has the methodes for the Input system to cal..." alt="" coords="302,449,521,475"/>
+<area shape="rect" id="node16" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component.html" title="An Interface for the InventoryComponent wrapper." alt="" coords="12,500,235,541"/>
 <area shape="rect" id="node17" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_inventory_component.html" title="The component wrapper of the inventory logic." alt="" coords="299,500,524,541"/>
-<area shape="rect" id="node18" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component.html" title=" " alt="" coords="7,565,240,607"/>
+<area shape="rect" id="node18" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_magic_handler_component.html" title="An Interface for the AttackComponent wrapper." alt="" coords="7,565,240,607"/>
 <area shape="rect" id="node19" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_magic_handler_component.html" title="The wrapper component of the magic handler." alt="" coords="308,565,515,607"/>
-<area shape="rect" id="node20" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html" title=" " alt="" coords="12,631,235,672"/>
+<area shape="rect" id="node20" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_move_component.html" title="An Interface for the AttackComponent wrapper." alt="" coords="12,631,235,672"/>
 <area shape="rect" id="node21" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_move_component.html" title="A wrapper for the MoveLogic." alt="" coords="309,631,513,672"/>
-<area shape="rect" id="node22" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html" title=" " alt="" coords="12,696,235,737"/>
+<area shape="rect" id="node22" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_pick_upable_component.html" title="An Interface for the PickUpableComponent wrapper." alt="" coords="12,696,235,737"/>
 <area shape="rect" id="node23" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_pick_upable_component.html" title="A component that lets you pick up an item." alt="" coords="312,696,511,737"/>
 <area shape="rect" id="node24" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_i_player_state_machine.html" title="The interface for the Player&#39;s statemachine." alt="" coords="25,2387,222,2428"/>
 <area shape="rect" id="node25" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_player_state_machine.html" title="This class is used to manage the player&#39;s state." alt="" coords="326,2387,497,2428"/>
-<area shape="rect" id="node26" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html" title=" " alt="" coords="5,2452,241,2493"/>
+<area shape="rect" id="node26" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_status_handler_component.html" title="An Interface for the StatusHandlerComponent wrapper." alt="" coords="5,2452,241,2493"/>
 <area shape="rect" id="node27" href="$class_h_m_f_1_1_thesis_1_1_components_1_1_status_handler_component.html" title="The wrapper component of the status handler." alt="" coords="306,2452,517,2493"/>
 <area shape="rect" id="node28" title=" " alt="" coords="67,1255,179,1282"/>
 <area shape="rect" id="node29" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_in_range.html" title="Component for detecting if the player is in range." alt="" coords="315,1482,508,1509"/>
 <area shape="rect" id="node30" href="$class_h_m_f_1_1_thesis_1_1_enemys_1_1_target_setter.html" title="Sets the target if in attack range." alt="" coords="320,1533,503,1575"/>
 <area shape="rect" id="node31" href="$class_h_m_f_1_1_thesis_1_1_magic_1_1_destroy_after_animation_ends.html" title="Destroys the animation GameObject after the animation ends." alt="" coords="322,1599,501,1640"/>
 <area shape="rect" id="node32" href="$class_h_m_f_1_1_thesis_1_1_menu_1_1_menu.html" title="Menu interacctions." alt="" coords="330,1665,493,1691"/>
-<area shape="rect" id="node33" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_all_scriptable_objects.html" title=" " alt="" coords="311,1716,511,1757"/>
+<area shape="rect" id="node33" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_all_scriptable_objects.html" title="All of my scripatbleObjects." alt="" coords="311,1716,511,1757"/>
 <area shape="rect" id="node34" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_drop_down_setters.html" title="Class for the dropdown menu&#39;s logic." alt="" coords="318,1781,505,1823"/>
 <area shape="rect" id="node35" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_end.html" title="Logic of the end segment." alt="" coords="337,1847,486,1874"/>
 <area shape="rect" id="node36" href="$class_h_m_f_1_1_thesis_1_1_misc_1_1_item_cooldown_visualizer.html" title="A Class for showing the cooldown of items." alt="" coords="306,1899,517,1940"/>

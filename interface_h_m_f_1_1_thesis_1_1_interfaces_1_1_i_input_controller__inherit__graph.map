@@ -1,4 +1,4 @@
 <map id="HMF.Thesis.Interfaces.IInputController" name="HMF.Thesis.Interfaces.IInputController">
 <area shape="rect" id="node1" title="The Interface that represents a Player&#39;s inputs." alt="" coords="19,5,210,47"/>
-<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html" title=" " alt="" coords="5,95,224,121"/>
+<area shape="rect" id="node2" href="$class_h_m_f_1_1_thesis_1_1_player_1_1_input_controller.html" title="Input Controller that parse the player input. This class has the methodes for the Input system to cal..." alt="" coords="5,95,224,121"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="HMF.Thesis.Components.InventoryComponent" name="HMF.Thesis.Components.InventoryComponent">
 <area shape="rect" id="node1" title="The component wrapper of the inventory logic." alt="" coords="25,80,250,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component.html" title=" " alt="" coords="142,5,287,32"/>
+<area shape="rect" id="node3" href="$interface_h_m_f_1_1_thesis_1_1_interfaces_1_1_component_interfaces_1_1_i_inventory_component.html" title="An Interface for the InventoryComponent wrapper." alt="" coords="142,5,287,32"/>
 </map>
