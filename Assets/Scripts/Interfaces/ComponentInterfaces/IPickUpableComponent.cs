@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace HMF.Thesis.Interfaces.ComponentInterfaces
 {
-    // An Interface for the PickUpableComponent wrapper.
+    /// An Interface for the PickUpableComponent wrapper.
     public interface IPickUpableComponent
     {
         /// A function for Picking up items.

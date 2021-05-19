@@ -2,9 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using HMF.Thesis.ScriptableObjects;
 using HMF.Thesis.Logic;
-using Moq;
 
-//! Test out the HealthBar!!
 namespace HMF.Thesis.Tests.Logic
 {
     /// Tests for the Characterlogic class.

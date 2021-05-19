@@ -3,7 +3,6 @@ using HMF.Thesis.Status;
 using HMF.Thesis.Interfaces;
 using HMF.Thesis.Interfaces.ComponentInterfaces;
 
-//! Needs Comments!
 namespace HMF.Thesis.Components
 {
     [RequireComponent(typeof(Dummy))]
