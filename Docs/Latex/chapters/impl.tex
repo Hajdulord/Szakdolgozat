@@ -85,9 +85,28 @@ Ez a tervminta egy csoportosítási problémát szándékozz megoldani hasonlóa
 \textbf{Type Object/Flyweight} - avagy a \textit{Típusobjektum/Pehelysúlyú}\\
 Ezen tervezési minták, habár különböző, azonban egymáshoz rendkívüli módon kapcsolódó koncepciókat írnak le. A Típusobjektum lényeg, hogy a példányspecifikus adatokat a típusolt objektumban tároljuk, míg az ezeket alkalmazó metódusokat/függvényeket, vagy közös adatokat a típusobjektumban definiáljuk, így a közös részeket és az egyedi adatokat elszeparáljuk. A Pehelysúlyú tervminta nagyon hasonlóan el akarja különíteni a példányspecifikus adatokat a megosztott minden azonos osztály számára szükséges és azonos adatoktól, ezáltal létrehozva egy pehelykönnyű osztályt. Mint láthattuk mindkettő tervminta célja a példányspecifikus adatok szeparálása, Unity-ben erre rendkívül jól használhatóak a \textit{ScriptableObject}-ek. Ezek egy különleges osztályok, amik többnyire adatstruktúrákat és közös működéseket írnak le. Miután definiáltunk egy ScriptableObject-et, azt legtöbbször nem a tradícionális módon kódból példányosítjuk, hanem a Unity Editor-ban hozzuk létre, mint új Asset-et, itt tudjuk az általunk megadott mezők értékeit kitölteni. Ha egy a ScriptableObject-et hozzárendelünk GameObject-ekhez akkor a különböző GameObject-ek között a ScriptableObject azonos marad, csak egyszer töltődik be a memóriába és minden változást az összes GameObject lát ha az adott ScriptableObject hozzá van rendelve.
 
+\textbf{Prototype} - avagy a \textit{Prototípus}\\
+A Prototípus minta lényege, hogy elkerüljük a felesleges alosztályok léterehozását azzal, hogy létrehozunk, egy prototípus osztályt, ami klónozással hoz létre új példányokat. Unity-ben ez a \textbf{prefab}-ekkel van megoldva. A prefab-ek egy asset-ként elmentett elemek, amit az editoron keresztül tudunk módosítani tetszés szerint, majd példányosítani azt. 
+
 \textbf{Observer} - avagy a \textit{Figyelő}\\
 Ez a tervminta annyira elterjedt, hogy a C\# nyelvbe natívan támogatva is van az eseményrendszeren keresztül. Unity-ben is támogatva van a C\#-os eseményrendszer, azonban a Unity-biztosít egy saját eseménykezelést is ez nem más mint a \textit{Unity event}-ek. Ezek lényegében egy kényelmi funkciót látnak el, hogy égszerűen tudjunk az Editor-ban összekötni eseményeket, ezen események általában olyan elemek, amit kóddal ritkán váltunk ki (általában UI gombnyomások vagy az Input System-ből érkező események), azonban saját funkciót szeretnénk kötni különösebb komplikáció nélkül.
 
+\textbf{Object Pool/Object Pooling} - avagy az \textit{Objektumkészlet}\\
+Az Objektumkészlet tervezési minta mögötti elv, a memória használat csökkentése és a teljesítmény növelése. Ezt azzal érjük el, hogy az objektumainkat, nem mindig újonnan hozzuk létre, hanem  egy előre legyártott készletből kérünk egy elemet, és mikor erre az elemre már nincs szükségünk, akkor ez visszakerül a készletbe. Ez egy játékba különösen fontos, hiszen egy objektum létrehozása költséges művelet. Unity-ben, ami ugye egy C\# alapú játékmotor, nem is feltétlen a példányosításnál látjuk a problémákat, hanem, mikor a Garbage Collector lefut és felszabadítja a nem használt erőforrásokat. Ilyen esetekben nagy a valószínűsége a frame rate bezuhanásának, ami rossz felhasználói élményhez vezet. Erre tökéletes megoldást jelent az Objektumkészlet, hiszen, ha nincs megszűnt objektum, akkor nincs Garbage Collection sem.
+
+\textbf{Command} - avagy a \textit{Parancs}\\
+A Command pattern lényegében egy callback objektumorientált megfelelője, vagyis használhatunk vele objektumokat arra, hogy más rendszerek/objektumok mit csináljanak. A játékfejlesztésben ez rengeteg helyen hasznosítható. Egyszerűen lehet a parancs tervmintával játékos bemeneteket, kezelni, és akár visszavonni azokat, vagy akár egy játékon belüli boltban a vétel is lehet egy parancs és, ha meggondolunk magunkat, akkor a vétel parancs undo metódusával visszacsinálhatjuk a tranzakciónkat, csak hogy egy konkrétabb példával éljek.
+
+\textbf{Singleton} - avagy az \textit{Egyke}\\
+Az egyke tervezési minta, egy egyszerű elven alapszik, biztosítsuk, hogy egy osztálynak, csak egy globálisan elérhető példánya legyen. Ez bizonyos rendszereknél, például mentési rendszer, scene menedzser rendszer, hangkezelő rendszer. Ezen rendszerekben közös, hogy ha több lenne belőlük, akkor az problémákhoz vezethet (csak egy példány legyen), elérni nem feltétlenül egy helyen szeretnénk őket (legyenek globálisok), szóval láthatjuk miért hasznos ilyen esetekben ha ezen osztályaink/rendszereink egykék lennének. Azonban a singleton tervminta túlhasználtsága, architekturális problémákhoz vezethet, ezzel a bonyolultabb tervezést megkerülve könnyen elérhető azonban globális struktúrákat definiálhatunk, amik problémákhoz vezethet, például ha publikusan elérhető akárki által változtatható adatokat tárolunk egy egyke osztályban, az könnyen látható, hogy problémákhoz vezethet. Azonban talán az egyik legnagyobb hátrányuk az egyke osztályoknak, hogy egységtesztelhetőségük nehézkes, különösen Unity-ben ahol ezen osztályok gyakran MonoBehaviour-ök is, amik tesztelése rendkívül körülményes.
+
+\textbf{Humble Object} - avagy a \textit{Szerény Objektum}\\
+A Szerény Objektum, Unity-ben egy kimagaslóan hasznos tervezési minta, hiszen az a lényege, hogy egy bonyolultabb objektumból, ami több nehezen tesztelhető függőséggel rendelkezik (például a MonoBehaviour, aminek tesztelése sok felesleges előkészülettel jár), kiemeljük a tesztelni kívánt logikát, olyan szinten, hogy az így keletkezett Szerény Objektumot, már ne kelljen tesztelni. Az így kapott logikai osztály már csak minimális függőségekkel kell rendelkeznie és már (egység) tesztelni egyszerű.
+
+\textbf{Factory} - avagy a \textit{Gyártó}\\
+A gyártó minta célja, hogy átadjuk az példánykészítés folyamatát egy erre speciálisan kitalált osztálynak. Ennek az az értelme, hogy nem keletkeznek elszórt példányosítások, amiknek a módosítása egyesével bonyodalmas és problémákat vethet fel. Ehelyett a példányaink egy helyről származnak, ha valahogy módosítani szeretnénk létrejöttjüket, azt egy helyen meg tudjuk tenni. Ennek a mintának az előnye a játékfejlesztésben nagyon hamar elő tud jönni, hiszen a játékokban, gyakran vannak különböző tárgyak, varázslatok, effektusok, akár ellenségek, amiket dinamikusan akarunk létrehozni és egy központi gyártó osztállyal mindezt strukturáltabban el tudjuk érni.
+
+\textbf{State} - avagy a \textit{Állapot}\\
 
 \cleardoublepage
 \section{Megvalósítás}
@@ -99,10 +118,10 @@ Ez a tervminta annyira elterjedt, hogy a C\# nyelvbe natívan támogatva is van 
 	\label{GeneralComponentSystem}
 \end{figure}
 
-\subsection{Felhasználói esetek}
+\subsection{Felhasználói esetdiagram} 
 \begin{figure}[H]
 	\noindent\makebox[\textwidth]{
-	\includegraphics[width= 1.1\textwidth]{useCase}}
+	\includegraphics[width= 1.15\textwidth]{useCase}}
 	\caption{Felhasználói eset diagram}
 	\label{useCase}
 \end{figure}
