@@ -524,6 +524,6 @@
 
 
     \cleardoublepage
-    \setcounter{page}{1}
+    
 }
 % ------------------------------
